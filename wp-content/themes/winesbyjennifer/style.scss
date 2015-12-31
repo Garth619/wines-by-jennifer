@@ -794,12 +794,13 @@ h3#reply-title {
 	width:90%;
 	border:3px solid #fff;
 	background:url(images/cloth.jpg) top left repeat;
-	
-	margin:60px auto 15px;
+	margin:60px auto 0px;
 	-webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
 	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
 }
+
+
 
 .mobile_header {
 	width:100%;
@@ -904,25 +905,30 @@ h3#reply-title {
 .events {
 	background:#fbf9f6;
 	width:100%;
-
+	border-bottom:grey 1px solid;
 	overflow: hidden;
 	padding:15px;
+	
 	.social_icon {
 		width:10%;
 		float:left;
-		
+		height:100%;
 		img {
-			float: right;
-			margin-right:10px;
+			display: block;
+			margin:0 auto;
 		}
 	}
 	.events_content {
 		width:90%;
 		float:left;
 		p {
-			font-size:14px;
+			font-size:15px;
 			margin-bottom:10px;
 			display: inline-block;
+		}
+		a {
+			color:#363636;
+			text-decoration: none;
 		}
 	}
 }
@@ -934,8 +940,28 @@ h3#reply-title {
 	border-bottom: 5px solid transparent;
 	border-left: 5px solid #5871a8;
 	display: inline-block;
-	margin-left:4px;
+	margin-left:0px;
 	position: relative;
 	top:1px;
 	
+}
+
+.testimonials {
+	background:#fbf9f6;
+	padding:15px;
+	p {
+		font-size:15px;
+		margin-bottom:10px;
+		display: inline-block;
+	}
+	img.testimonial_img {
+		width:15%;
+	}
+}
+
+.footer {
+	width:90%;
+	background:#163b2b;
+	height:200px;
+	margin:0 auto;
 }

@@ -57,9 +57,14 @@ get_header(); ?>
 			<img src="<?php bloginfo('template_directory');?>/images/fb.png"/>
 		</div><!-- social_icon -->
 		<div class="events_content">
-			<p>Lorem ipsum dolor sit amet, cons ectet ur adipi sicing elit, sed do eiusmod tem por inc idid unt ut labore et dolore magn...</p>
-			<p>Read More <div class="arrow-right"></div></p>
+			<p>Lorem ipsum dolor sit amet, cons ectet ur adipi sicing elit, sed do eiusmod tem por inc idid unt ut labore et dolore magnrem ipsum dolor sit amet, cons ectet ur adipi sicing...</p>
+			<a href="">Read More <div class="arrow-right"></div></a>
 		</div><!-- events_content -->
 	</div><!-- events -->
+	<div class="testimonials">
+		
+		<p>"Thank you for helping make our wedding and reception absolutely perfect! We were able to relax, enjoy the evening with loved ones, as well as enjoy the outstanding food and drink. It was truly a surreal and  magical evening."</p>
+		<img class="testimonial_img" src="<?php bloginfo('template_directory');?>/images/circle.png"/>
+	</div><!-- testimonials -->
 
 <?php get_footer(); ?>

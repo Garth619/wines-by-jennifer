@@ -11,7 +11,11 @@
  */
 ?>
 
+
 </div><!-- wrapper -->
+<div class="footer">
+	
+</div><!-- footer -->
 
 <div class="mobile_shopping_cart"></div><!-- mobile_shopping_cart -->
 	
