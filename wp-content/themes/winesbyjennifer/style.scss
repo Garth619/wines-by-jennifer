@@ -16,6 +16,7 @@ Author: Garrett Cullen
 
 $cinzel:'Cinzel', serif;
 $green:#163b2b;
+$lato:'Lato', sans-serif;
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -35,7 +36,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 body {
 	line-height: 1;
 	background:url(images/bg.jpg) fixed;
-	font-family: 'Lato', sans-serif;
+	font-family: $lato;
 	color:#363636;
 	
 	
@@ -806,10 +807,11 @@ h3#reply-title {
 .mobile_header {
 	width:100%;
 	overflow:hidden;
-	background:#8c2555;
+	background:url(images/texture.png) top left repeat #8c2555;
 	position: fixed;
 	top:0;
 	z-index:100;
+	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
 	h1 {
 		color:#fff;
 		font-size:19px;
@@ -841,13 +843,14 @@ h3#reply-title {
 		background:url(images/intro_bg.jpg);
 		font-style: italic;
 		text-align: center;
+		font-size:3vw;
 		padding:20px;
 	}
 
 }
 
 .mobile_shopping_cart {
-	background:#8c2555;
+	background:url(images/texture.png) top left repeat #8c2555;
 	width:100px;
 	height:25px;
 	position: fixed;
@@ -856,8 +859,53 @@ h3#reply-title {
 }
 
 .newsletter_signup {
-	width:100%;
-	height:75px;
+	position: relative;
+// 	z-index:300;
+	img.newsletter_bg {
+		width:100%;
+	}
+	img.flyer {
+		position: absolute;
+    right: 5%;
+    top: -9px;
+    width: 29%;
+			}
+	.newsletter_text_wrap {
+		height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+		.newsletter_text {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+			-webkit-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+			margin-left:4%;
+			img.gift_icon {
+				width:6%;
+			}
+			
+			a.newsletter_title {
+			display: block;
+			color:#fff;
+			font-size:7vw;
+			font-family:$cinzel;
+			text-shadow: 0px 1px 2px rgba(0, 0, 0, 1);
+			text-decoration: none;
+			
+			}
+			a.newsletter_subtitle {
+				display: block;
+				color:#fff;
+				font-size:3vw;
+				font-family:$lato;
+				text-shadow: 0px 1px 2px rgba(0, 0, 0, 1);
+				text-decoration: none;
+			}
+		}
+	}
 	
 }
 
@@ -868,7 +916,7 @@ h3#reply-title {
 	.square {
 		width:50%;
 		height:18vh;
-		background:$green;
+		background:url(images/green-texture.png) top left repeat $green;
 		float:left;
 		a {
 			position: relative;
@@ -931,6 +979,10 @@ h3#reply-title {
 			font-size:8.5vw;
 			text-shadow: 0px 1px 2px rgba(0, 0, 0, 1);
 // 			font-weight:700;
+			a {
+				color:#fff;
+				text-decoration: none;
+			}
 		}
 	}
 }
@@ -979,6 +1031,18 @@ h3#reply-title {
 	
 }
 
+.arrow-right-yellow {
+	width: 0; 
+	height: 0; 
+	border-top: 7px solid transparent;
+	border-bottom: 7px solid transparent;
+	border-left: 7px solid #e5c854;
+	display: inline-block;
+	margin-left:0px;
+	position: relative;
+	top:1px;
+}
+
 .testimonials {
 	background:#fbf9f6;
 	padding:15px;
@@ -994,13 +1058,22 @@ h3#reply-title {
 
 .footer {
 	width:90%;
-	background:$green;
-	height:200px;
-	margin:0 auto;
+	background:url(images/green-texture.png) top left repeat $green;
+	font-size:15px;
+	margin:0 auto 25px;
 	color:#fff;
 	text-align: center;
+	padding:25px;
 	ul {
 		list-style: none;
 		margin:0;
+		li {
+			margin-bottom:4px;
+			text-transform: uppercase;
+			a {
+				color:#fff;
+				text-decoration: none;
+			}
+		}
 	}
 }

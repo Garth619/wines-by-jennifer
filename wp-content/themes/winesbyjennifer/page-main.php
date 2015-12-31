@@ -35,29 +35,39 @@ get_header(); ?>
 		<a href="">Store</a>
 	</div><!-- square -->
 </div><!-- four_squares -->
-<div class="newsletter_signup"></div><!-- newsletter_signup -->
+<div class="newsletter_signup">
+	<img class="newsletter_bg" src="<?php bloginfo('template_directory');?>/images/newsletter.png"/>
+	<div class="newsletter_text_wrap">
+		<div class="newsletter_text">
+		<a href="" class="newsletter_title"><img class="gift_icon" src="<?php bloginfo('template_directory');?>/images/gift.png"/>Free Gift!</a>
+		
+			<a href="" class="newsletter_subtitle">“5 DAYS TO EXPERT WINE TASTING”r <div class="arrow-right-yellow"></div> </a>
+		</div><!-- newsletter_text -->
+	</div><!-- newsletter_text_wrap -->
+	<img class="flyer" src="<?php bloginfo('template_directory');?>/images/flyer.png"/>
+</div><!-- newsletter_signup -->
 	<div class="box">
 		<img src="<?php bloginfo('template_directory');?>/images/box1.jpg"/>
 		<div class="box_text_wrap">
-			<h2>Join the Club</h2>
+			<h2><a href="">Join the Club</a></h2>
 		</div><!-- box_text_wrap -->
 	</div><!-- box -->
 	<div class="box">
 		<img src="<?php bloginfo('template_directory');?>/images/box2.jpg"/>
 		<div class="box_text_wrap">
-			<h2>Become an Ambassador</h2>
+			<h2><a href="">Become an Ambassador</a></h2>
 		</div><!-- box_text_wrap -->
 	</div><!-- box -->
 	<div class="box">
 		<img src="<?php bloginfo('template_directory');?>/images/box3.jpg"/>
 		<div class="box_text_wrap">
-			<h2>Own a Franchise</h2>
+			<h2><a href="">Own a Franchise</a></h2>
 		</div><!-- box_text_wrap -->
 	</div><!-- box -->
 	<div class="box">
 		<img src="<?php bloginfo('template_directory');?>/images/box4.jpg"/>
 		<div class="box_text_wrap">
-			<h2>WBJr Blog</h2>
+			<h2><a href="">WBJr Blog</a></h2>
 		</div><!-- box_text_wrap -->
 	</div><!-- box -->
 	<div class="events">
