@@ -795,7 +795,7 @@ h3#reply-title {
 	width:90%;
 	border:3px solid #fff;
 	background:url(images/cloth.jpg) top left repeat;
-	margin:60px auto 0px;
+	margin:70px auto 0px;
 	-webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
 	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
@@ -870,7 +870,7 @@ h3#reply-title {
 		height:18vh;
 		background:$green;
 		float:left;
-		h2 {
+		a {
 			position: relative;
 			top: 50%;
 			transform: translateY(-50%);
@@ -880,6 +880,8 @@ h3#reply-title {
 			text-align: center;
 			font-size:5.5vw;
 			font-family:$cinzel;
+			display: block;
+			text-decoration: none;
 		}
 	}
 	.square1 {

@@ -342,7 +342,7 @@ h3#reply-title { margin: 18px 0; }
 #respond .form-submit input { font-size: 14px; width: auto; }
 
 /* Wines by Jennifer */
-.wrapper { width: 90%; border: 3px solid #fff; background: url(images/cloth.jpg) top left repeat; margin: 60px auto 0px; -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); }
+.wrapper { width: 90%; border: 3px solid #fff; background: url(images/cloth.jpg) top left repeat; margin: 70px auto 0px; -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); }
 
 .mobile_header { width: 100%; overflow: hidden; background: #8c2555; position: fixed; top: 0; z-index: 100; }
 .mobile_header h1 { color: #fff; font-size: 19px; font-family: "Cinzel", serif; padding: 15px; float: left; }
@@ -359,7 +359,7 @@ h3#reply-title { margin: 18px 0; }
 
 .four_squares { background: #fff; overflow: hidden; }
 .four_squares .square { width: 50%; height: 18vh; background: #163b2b; float: left; }
-.four_squares .square h2 { position: relative; top: 50%; transform: translateY(-50%); -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); color: #fff; text-align: center; font-size: 5.5vw; font-family: "Cinzel", serif; }
+.four_squares .square a { position: relative; top: 50%; transform: translateY(-50%); -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); color: #fff; text-align: center; font-size: 5.5vw; font-family: "Cinzel", serif; display: block; text-decoration: none; }
 .four_squares .square1 { border-right: 2px solid #fff; border-bottom: 2px solid #fff; }
 .four_squares .square2 { border-bottom: 2px solid #fff; }
 .four_squares .square3 { border-right: 2px solid #fff; }
