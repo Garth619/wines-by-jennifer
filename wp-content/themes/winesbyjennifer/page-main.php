@@ -15,11 +15,14 @@
 get_header(); ?>
 
 <div class="intro">
-	<img class="logo" src="<?php bloginfo('template_directory');?>/images/logo.jpg"/>
+<!-- 	<img class="logo" src="<?php bloginfo('template_directory');?>/images/logo.jpg"/> -->
 	<div class="intro_content">
 		<p>Wines by Jennifer R is a unique luxury entertainment destination that has been helping people enjoy an authentic global wine country experience since 2003.</p>
 	</div><!-- intro_content -->
 </div><!-- intro -->
+<div class="newsletter_signup">
+	
+</div><!-- newsletter_signup -->
 <!--
 	<div class="slideshow">
 		<img src="<?php bloginfo('template_directory');?>/images/slide1.jpg"/>
@@ -32,21 +35,21 @@ get_header(); ?>
 		</div><!-- box_text_wrap -->
 	</div><!-- box -->
 	<div class="box">
-		<img src="<?php bloginfo('template_directory');?>/images/box1.jpg"/>
+		<img src="<?php bloginfo('template_directory');?>/images/box2.jpg"/>
 		<div class="box_text_wrap">
-			<h2>Join the Club</h2>
+			<h2>Become an Ambassador</h2>
 		</div><!-- box_text_wrap -->
 	</div><!-- box -->
 	<div class="box">
-		<img src="<?php bloginfo('template_directory');?>/images/box1.jpg"/>
+		<img src="<?php bloginfo('template_directory');?>/images/box3.jpg"/>
 		<div class="box_text_wrap">
-			<h2>Join the Club</h2>
+			<h2>Own a Franchise</h2>
 		</div><!-- box_text_wrap -->
 	</div><!-- box -->
 	<div class="box">
-		<img src="<?php bloginfo('template_directory');?>/images/box1.jpg"/>
+		<img src="<?php bloginfo('template_directory');?>/images/box4.jpg"/>
 		<div class="box_text_wrap">
-			<h2>Join the Club</h2>
+			<h2>WBJr Blog</h2>
 		</div><!-- box_text_wrap -->
 	</div><!-- box -->
 	
