@@ -72,7 +72,7 @@
 			
 		</div><!-- mobile_header --> 
 		
-		
+		<div class="bg_bug">
 		
 		<div class="wrapper">
 			
