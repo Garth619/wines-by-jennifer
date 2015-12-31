@@ -355,7 +355,7 @@ h3#reply-title { margin: 18px 0; }
 .mobile_menu .white_bar { width: 35px; height: 4px; background: #fff; margin-bottom: 4px; }
 
 .intro .logo_wrapper { display: none; }
-.intro .intro_content { background: url(images/intro_bg.jpg); font-style: italic; text-align: center; font-size: 5vh; padding: 30px 30px; }
+.intro .intro_content { background: url(images/intro_bg.jpg); font-style: italic; text-align: center; font-size: 4vh; padding: 30px 30px; }
 
 .mobile_shopping_cart { background: url(images/texture.png) top left repeat #8c2555; width: 100px; height: 25px; position: fixed; bottom: 0; right: 0px; }
 
