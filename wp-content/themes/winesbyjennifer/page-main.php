@@ -21,6 +21,19 @@ get_header(); ?>
 	</div><!-- intro_content -->
 </div><!-- intro -->
 
+
+<div class="newsletter_signup">
+	<img class="newsletter_bg" src="<?php bloginfo('template_directory');?>/images/newsletter.png"/>
+	<div class="newsletter_text_wrap">
+		<div class="newsletter_text">
+		<a href="" class="newsletter_title"><img class="gift_icon" src="<?php bloginfo('template_directory');?>/images/gift.png"/>Free Gift!</a>
+		
+			<a href="" class="newsletter_subtitle">“5 DAYS TO EXPERT WINE TASTING”r <div class="arrow-right-yellow"></div> </a>
+		</div><!-- newsletter_text -->
+	</div><!-- newsletter_text_wrap -->
+	
+	<img class="flyer" src="<?php bloginfo('template_directory');?>/images/flyer.png"/>
+</div><!-- newsletter_signup -->
 <div class="four_squares">
 	<div class="square square1">
 		<a href="">About Us</a>
@@ -35,17 +48,6 @@ get_header(); ?>
 		<a href="">Store</a>
 	</div><!-- square -->
 </div><!-- four_squares -->
-<div class="newsletter_signup">
-	<img class="newsletter_bg" src="<?php bloginfo('template_directory');?>/images/newsletter.png"/>
-	<div class="newsletter_text_wrap">
-		<div class="newsletter_text">
-		<a href="" class="newsletter_title"><img class="gift_icon" src="<?php bloginfo('template_directory');?>/images/gift.png"/>Free Gift!</a>
-		
-			<a href="" class="newsletter_subtitle">“5 DAYS TO EXPERT WINE TASTING”r <div class="arrow-right-yellow"></div> </a>
-		</div><!-- newsletter_text -->
-	</div><!-- newsletter_text_wrap -->
-	<img class="flyer" src="<?php bloginfo('template_directory');?>/images/flyer.png"/>
-</div><!-- newsletter_signup -->
 	<div class="box">
 		<img src="<?php bloginfo('template_directory');?>/images/box1.jpg"/>
 		<div class="box_text_wrap">
