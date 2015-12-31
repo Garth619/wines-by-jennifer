@@ -349,9 +349,9 @@ h3#reply-title { margin: 18px 0; }
 .wrapper { width: 90%; border: 3px solid #fff; background: url(images/cloth.jpg) top left repeat; margin: 70px auto 0px; -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); }
 
 .mobile_header { width: 100%; overflow: hidden; background: url(images/texture.png) top left repeat #8c2555; position: fixed; top: 0; z-index: 100; box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); }
-.mobile_header h1 { color: #fff; font-size: 19px; font-family: "Cinzel", serif; padding: 15px; float: left; }
+.mobile_header h1 { color: #fff; font-size: 19px; font-family: "Cinzel", serif; padding: 10px 15px; float: left; }
 
-.mobile_menu { float: right; padding: 13px 12px 0 0; }
+.mobile_menu { float: right; padding: 9px 12px 0 0; }
 .mobile_menu .white_bar { width: 35px; height: 4px; background: #fff; margin-bottom: 4px; }
 
 .intro .logo_wrapper { display: none; }
@@ -361,12 +361,12 @@ h3#reply-title { margin: 18px 0; }
 
 .newsletter_signup { position: relative; border-top: 2px #fff solid; }
 .newsletter_signup img.newsletter_bg { width: 100%; }
-.newsletter_signup img.flyer { position: absolute; right: 5%; top: -9px; width: 29%; }
-.newsletter_signup .newsletter_text_wrap { height: 100%; position: absolute; top: 0; width: 100%; z-index: 50; }
-.newsletter_signup .newsletter_text_wrap .newsletter_text { position: relative; top: 50%; transform: translateY(-50%); -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); margin-left: 4%; }
-.newsletter_signup .newsletter_text_wrap .newsletter_text img.gift_icon { width: 6%; }
-.newsletter_signup .newsletter_text_wrap .newsletter_text a.newsletter_title { display: block; color: #fff; font-size: 7vw; font-family: "Cinzel", serif; text-shadow: 0px 1px 2px black; text-decoration: none; }
-.newsletter_signup .newsletter_text_wrap .newsletter_text a.newsletter_subtitle { display: block; color: #fff; font-size: 3vw; font-family: "Lato", sans-serif; text-shadow: 0px 1px 2px black; text-decoration: none; }
+.newsletter_signup img.flyer { display: none; }
+.newsletter_signup .newsletter_text_wrap { height: 100%; position: absolute; top: 0; width: 100%; z-index: 50; background: transparent; background: rgba(0, 0, 0, 0.3); }
+.newsletter_signup .newsletter_text_wrap .newsletter_text { position: relative; top: 50%; transform: translateY(-50%); -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); text-align: center; }
+.newsletter_signup .newsletter_text_wrap .newsletter_text img.gift_icon { width: 8%; }
+.newsletter_signup .newsletter_text_wrap .newsletter_text a.newsletter_title { display: block; color: #fff; font-size: 10vw; font-family: "Cinzel", serif; text-shadow: 0px 1px 2px black; text-decoration: none; }
+.newsletter_signup .newsletter_text_wrap .newsletter_text a.newsletter_subtitle { display: block; color: #fff; font-size: 4vw; font-family: "Lato", sans-serif; text-shadow: 0px 1px 2px black; text-decoration: none; }
 
 .four_squares { background: #fff; overflow: hidden; }
 .four_squares .square { width: 50%; height: 15vh; background: url(images/green-texture.png) top left repeat #163b2b; float: left; }
@@ -406,6 +406,11 @@ h3#reply-title { margin: 18px 0; }
   .intro .logo_wrapper { display: block; float: left; width: 18%; }
   .intro .logo_wrapper .logo { width: 100%; height: auto; }
   .intro .intro_content { background: none; width: 82%; float: left; text-align: left; font-size: 3vw; padding: 30px 30px; }
+  .newsletter_signup img.flyer { position: absolute; right: 5%; top: -9px; width: 29%; display: block; z-index: 75; }
+  .newsletter_signup .newsletter_text_wrap .newsletter_text { text-align: left; margin-left: 4%; }
+  .newsletter_signup .newsletter_text_wrap .newsletter_text img.gift_icon { width: 6%; }
+  .newsletter_signup .newsletter_text_wrap .newsletter_text a.newsletter_title { font-size: 7vw; }
+  .newsletter_signup .newsletter_text_wrap .newsletter_text a.newsletter_subtitle { font-size: 3vw; }
   .box_row { overflow: hidden; }
   .box { width: 50%; float: left; border: none; }
   .box img { width: 100%; display: block; }

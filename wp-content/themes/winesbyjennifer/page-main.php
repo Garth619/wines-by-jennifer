@@ -69,7 +69,7 @@ get_header(); ?>
 			<div class="box">
 				<img src="<?php bloginfo('template_directory');?>/images/box3.jpg"/>
 				<div class="box_text_wrap">
-					<h2><a href="">Own a Franchise</a></h2>
+					<h2><a href="">Own a<br/>Franchise</a></h2>
 				</div><!-- box_text_wrap -->
 			</div><!-- box -->
 			<div class="box">
