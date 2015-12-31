@@ -14,7 +14,12 @@
 
 </div><!-- wrapper -->
 <div class="footer">
-	
+	<ul>
+		<li>Contact</li>
+		<li>FAQ</li>
+		<li>Privacy</li>
+		<li>Please Drink Responsibly</li>
+	</ul>
 </div><!-- footer -->
 
 <div class="mobile_shopping_cart"></div><!-- mobile_shopping_cart -->

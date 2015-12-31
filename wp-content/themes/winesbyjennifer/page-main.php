@@ -20,14 +20,21 @@ get_header(); ?>
 		<p>Wines by Jennifer R is a unique luxury entertainment destination that has been helping people enjoy an authentic global wine country experience since 2003.</p>
 	</div><!-- intro_content -->
 </div><!-- intro -->
-<div class="newsletter_signup">
-	
-</div><!-- newsletter_signup -->
-<!--
-	<div class="slideshow">
-		<img src="<?php bloginfo('template_directory');?>/images/slide1.jpg"/>
-	</div>
---><!-- slideshow -->
+<div class="newsletter_signup"></div><!-- newsletter_signup -->
+<div class="four_squares">
+	<div class="square square1">
+		<h2>About Us</h2>
+	</div><!-- square -->
+	<div class="square square2">
+		
+	</div><!-- square -->
+	<div class="square square3">
+		
+	</div><!-- square -->
+	<div class="square square4">
+		
+	</div><!-- square -->
+</div><!-- four_squares -->
 	<div class="box">
 		<img src="<?php bloginfo('template_directory');?>/images/box1.jpg"/>
 		<div class="box_text_wrap">

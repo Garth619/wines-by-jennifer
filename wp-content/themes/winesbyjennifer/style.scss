@@ -15,6 +15,7 @@ Author: Garrett Cullen
 }
 
 $cinzel:'Cinzel', serif;
+$green:#163b2b;
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -861,12 +862,42 @@ h3#reply-title {
 }
 
 
-.slideshow {
-	img {
-		max-width:100%;
-		height:auto;
+.four_squares {
+	background: #fff;
+	overflow: hidden;
+	.square {
+		width:50%;
+		height:18vh;
+		background:$green;
+		float:left;
+		h2 {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+			-webkit-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+			color:#fff;
+			text-align: center;
+			font-size:5.5vw;
+			font-family:$cinzel;
+		}
+	}
+	.square1 {
+		border-right:2px solid #fff;
+		border-bottom:2px solid #fff;
+	}
+	.square2 {
+		border-bottom:2px solid #fff;
+	}
+	.square3 {
+		border-right:2px solid #fff;
+	}
+	.square4 {
+		
 	}
 }
+
+
 
 .box {
 	position:relative;
@@ -961,7 +992,13 @@ h3#reply-title {
 
 .footer {
 	width:90%;
-	background:#163b2b;
+	background:$green;
 	height:200px;
 	margin:0 auto;
+	color:#fff;
+	text-align: center;
+	ul {
+		list-style: none;
+		margin:0;
+	}
 }
