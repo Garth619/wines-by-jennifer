@@ -24,6 +24,8 @@
 	</ul>
 </div><!-- footer -->
 
+</div><!-- bg_bug -->
+
 <div class="mobile_shopping_cart"></div><!-- mobile_shopping_cart -->
 	
 <?php wp_footer(); ?>
