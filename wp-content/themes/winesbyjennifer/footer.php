@@ -10,6 +10,8 @@
  * @since Twenty Ten 1.0
  */
 ?>
+
+</div><!-- wrapper -->
 	
 <?php wp_footer(); ?>
 </body>

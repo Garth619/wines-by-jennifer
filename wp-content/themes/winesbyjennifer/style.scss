@@ -24,6 +24,8 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 }
 body {
 	line-height: 1;
+	background:url(images/bg.jpg) fixed;
+	
 }
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
@@ -765,6 +767,18 @@ h3#reply-title {
 #respond .form-submit input {
 	font-size: 14px;
 	width: auto;
+}
+
+
+
+/* Wines by Jennifer */
+
+.wrapper {
+	width:90%;
+	border:3px solid #fff;
+	background:url(images/cloth.jpg) top left repeat;
+	height:500px;
+	margin:15px auto;
 }
 
 
