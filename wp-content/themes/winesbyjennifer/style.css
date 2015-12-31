@@ -4,9 +4,15 @@ Author: Garrett Cullen
 */
 /* =Reset default browser CSS. Based on work by Eric Meyer.
 -------------------------------------------------------------- */
+*, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background: transparent; border: 0; margin: 0; padding: 0; vertical-align: baseline; }
 
-body { line-height: 1; background: url(images/bg.jpg) fixed; }
+body { line-height: 1; background: url(images/bg.jpg) fixed; font-family: 'Lato', sans-serif; color: #363636; }
+
+a { outline: none; }
+
+a img { border: none; }
 
 h1, h2, h3, h4, h5, h6 { clear: both; font-weight: normal; }
 
@@ -25,11 +31,12 @@ a img { border: none; }
 
 hr { background-color: #e7e7e7; border: 0; clear: both; height: 1px; margin-bottom: 18px; }
 
-/* Text elements */
-p { margin-bottom: 18px; }
-
-ul { list-style: square; margin: 0 0 18px 1.5em; }
-
+/*
+ul {
+	list-style: square;
+	margin: 0 0 18px 1.5em;
+}
+*/
 ol { list-style: decimal; margin: 0 0 18px 1.5em; }
 
 ol ol { list-style: upper-alpha; }
@@ -335,10 +342,22 @@ h3#reply-title { margin: 18px 0; }
 #respond .form-submit input { font-size: 14px; width: auto; }
 
 /* Wines by Jennifer */
-.wrapper { width: 90%; border: 3px solid #fff; background: url(images/cloth.jpg) top left repeat; height: 100vh; margin: 60px auto 15px; -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); }
+.wrapper { width: 90%; border: 3px solid #fff; background: url(images/cloth.jpg) top left repeat; margin: 60px auto 15px; -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); }
 
-.mobile_header { width: 100%; overflow: hidden; background: #8c2555; position: fixed; top: 0; }
-.mobile_header h1 { color: #fff; font-size: 17px; font-family: 'Cinzel', serif; padding: 15px; float: left; }
+.mobile_header { width: 100%; overflow: hidden; background: #8c2555; position: fixed; top: 0; z-index: 100; }
+.mobile_header h1 { color: #fff; font-size: 19px; font-family: "Cinzel", serif; padding: 15px; float: left; }
 
 .mobile_menu { float: right; padding: 13px 12px 0 0; }
 .mobile_menu .white_bar { width: 35px; height: 4px; background: #fff; margin-bottom: 4px; }
+
+.intro .logo { display: block; margin: 0 auto; }
+.intro .intro_content { background: url(images/intro_bg.jpg); font-style: italic; text-align: center; padding: 20px; }
+
+.mobile_shopping_cart { background: #8c2555; width: 35px; height: 35px; position: fixed; bottom: 0; right: 0px; }
+
+.slideshow img { max-width: 100%; height: auto; }
+
+.box { position: relative; }
+.box img { width: 100%; }
+.box .box_text_wrap { position: absolute; z-index: 5px; top: 0; width: 100%; height: 100%; padding: 0 30px; }
+.box .box_text_wrap h2 { font-family: "Cinzel", serif; text-align: center; position: relative; top: 50%; transform: translateY(-50%); -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); color: #fff; font-size: 7.5vw; }

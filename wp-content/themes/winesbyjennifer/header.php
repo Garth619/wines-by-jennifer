@@ -62,7 +62,7 @@
 		
 		<div class="mobile_header">
 			
-			<h1>Wines By Jennifer</h1>
+			<h1>Wines by Jennifer</h1>
 			<div class="mobile_menu">
 				<div class="white_bar"></div>
 				<div class="white_bar"></div>
@@ -72,3 +72,5 @@
 		</div><!-- mobile_header --> 
 		
 		<div class="wrapper">
+			
+			
