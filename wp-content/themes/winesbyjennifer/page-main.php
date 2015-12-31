@@ -52,6 +52,14 @@ get_header(); ?>
 			<h2>WBJr Blog</h2>
 		</div><!-- box_text_wrap -->
 	</div><!-- box -->
-	
+	<div class="events">
+		<div class="social_icon">
+			<img src="<?php bloginfo('template_directory');?>/images/fb.png"/>
+		</div><!-- social_icon -->
+		<div class="events_content">
+			<p>Lorem ipsum dolor sit amet, cons ectet ur adipi sicing elit, sed do eiusmod tem por inc idid unt ut labore et dolore magn...</p>
+			<p>Read More <div class="arrow-right"></div></p>
+		</div><!-- events_content -->
+	</div><!-- events -->
 
 <?php get_footer(); ?>

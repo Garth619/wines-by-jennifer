@@ -361,5 +361,13 @@ h3#reply-title { margin: 18px 0; }
 
 .box { position: relative; border-bottom: 2px solid #fff; }
 .box img { width: 100%; display: block; }
-.box .box_text_wrap { position: absolute; z-index: 5px; top: 0; width: 100%; height: 100%; padding: 0 30px; background: transparent; background: rgba(0, 0, 0, 0.25); }
-.box .box_text_wrap h2 { font-family: "Cinzel", serif; text-align: center; position: relative; top: 50%; transform: translateY(-50%); -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); color: #fff; font-size: 8vw; text-shadow: 0px 1px 2px black; }
+.box .box_text_wrap { position: absolute; z-index: 5px; top: 0; width: 100%; height: 100%; padding: 0 30px; background: transparent; background: rgba(0, 0, 0, 0.2); }
+.box .box_text_wrap h2 { font-family: "Cinzel", serif; text-align: center; position: relative; top: 50%; transform: translateY(-50%); -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); color: #fff; font-size: 8.5vw; text-shadow: 0px 1px 2px black; }
+
+.events { background: #fbf9f6; width: 100%; overflow: hidden; padding: 15px; }
+.events .social_icon { width: 10%; float: left; }
+.events .social_icon img { float: right; margin-right: 10px; }
+.events .events_content { width: 90%; float: left; }
+.events .events_content p { font-size: 14px; margin-bottom: 10px; display: inline-block; }
+
+.arrow-right { width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 5px solid #5871a8; display: inline-block; margin-left: 4px; position: relative; top: 1px; }
