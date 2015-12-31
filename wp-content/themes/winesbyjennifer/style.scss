@@ -859,7 +859,7 @@ h3#reply-title {
 		background:url(images/intro_bg.jpg);
 		font-style: italic;
 		text-align: center;
-		font-size:3vw;
+		font-size:5vh;
 
 		padding: 30px 30px;
 	}
@@ -1106,10 +1106,11 @@ h3#reply-title {
 
 .intro {
 	overflow: hidden;
+	background:url(images/intro_bg.jpg) repeat;
 	.logo_wrapper {
 		display: block;
 		float: left;
-		width:25%;
+		width:18%;
 		.logo {
 			width: 100%;
 			height:auto;
@@ -1117,8 +1118,8 @@ h3#reply-title {
 		}
 	}
 	.intro_content {
-		background:url(images/intro_bg.jpg) repeat;
-		width:75%;
+		background:none;
+		width:82%;
 		float:left;
 		text-align: left;
 		font-size:3vw;

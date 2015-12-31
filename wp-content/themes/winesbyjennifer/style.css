@@ -355,7 +355,7 @@ h3#reply-title { margin: 18px 0; }
 .mobile_menu .white_bar { width: 35px; height: 4px; background: #fff; margin-bottom: 4px; }
 
 .intro .logo_wrapper { display: none; }
-.intro .intro_content { background: url(images/intro_bg.jpg); font-style: italic; text-align: center; font-size: 3vw; padding: 30px 30px; }
+.intro .intro_content { background: url(images/intro_bg.jpg); font-style: italic; text-align: center; font-size: 5vh; padding: 30px 30px; }
 
 .mobile_shopping_cart { background: url(images/texture.png) top left repeat #8c2555; width: 100px; height: 25px; position: fixed; bottom: 0; right: 0px; }
 
@@ -402,10 +402,10 @@ h3#reply-title { margin: 18px 0; }
 .footer ul li { margin-bottom: 4px; text-transform: uppercase; }
 .footer ul li a { color: #fff; text-decoration: none; }
 
-@media screen and (min-width: 660px) { .intro { overflow: hidden; }
-  .intro .logo_wrapper { display: block; float: left; width: 25%; }
+@media screen and (min-width: 660px) { .intro { overflow: hidden; background: url(images/intro_bg.jpg) repeat; }
+  .intro .logo_wrapper { display: block; float: left; width: 18%; }
   .intro .logo_wrapper .logo { width: 100%; height: auto; }
-  .intro .intro_content { background: url(images/intro_bg.jpg) repeat; width: 75%; float: left; text-align: left; font-size: 3vw; padding: 30px 30px; }
+  .intro .intro_content { background: none; width: 82%; float: left; text-align: left; font-size: 3vw; padding: 30px 30px; }
   .box_row { overflow: hidden; }
   .box { width: 50%; float: left; border: none; }
   .box img { width: 100%; display: block; }
