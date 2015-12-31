@@ -852,17 +852,15 @@ h3#reply-title {
 }
 
 .intro {
-	
-	.logo {
-		display: block;
-		margin:0 auto;
-	}
+	.logo_wrapper {
+		display: none;
+		}
 	.intro_content {
 		background:url(images/intro_bg.jpg);
 		font-style: italic;
 		text-align: center;
 		font-size:3vw;
-// 		padding:20px;
+
 		padding: 30px 30px;
 	}
 
@@ -1097,4 +1095,74 @@ h3#reply-title {
 			}
 		}
 	}
+}
+
+
+
+@media screen and (min-width: 660px) {
+	
+
+
+
+.intro {
+	overflow: hidden;
+	.logo_wrapper {
+		display: block;
+		float: left;
+		width:25%;
+		.logo {
+			width: 100%;
+			height:auto;
+		
+		}
+	}
+	.intro_content {
+		background:url(images/intro_bg.jpg) repeat;
+		width:75%;
+		float:left;
+		text-align: left;
+		font-size:3vw;
+		padding: 30px 30px;
+	}
+
+}
+
+
+
+
+.box_wrapper {
+// 	overflow: hidden;
+}
+
+.box_row {
+	overflow: hidden;
+}
+
+
+.box {
+	width:50%;
+	float:left;
+	border:none;
+	img {
+		width:100%;
+		display: block;
+		
+	}
+	.box_text_wrap {
+		
+		
+		h2 {
+			
+			font-size:5.5vw;
+			
+			a {
+				color:#fff;
+				text-decoration: none;
+			}
+		}
+	}
+}
+	
+	
+	
 }
