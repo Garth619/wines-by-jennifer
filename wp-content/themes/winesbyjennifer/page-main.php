@@ -17,7 +17,7 @@ get_header(); ?>
 <div class="intro">
 <!-- 	<img class="logo" src="<?php bloginfo('template_directory');?>/images/logo.jpg"/> -->
 	<div class="intro_content">
-		<p>Wines by Jennifer R is a unique luxury entertainment destination that has been helping people enjoy an authentic global wine country experience since 2003.</p>
+		<p><span class="purple">Wines by Jennifer R</span> is a unique luxury entertainment destination that has been helping people enjoy an authentic global wine country experience since 2003.</p>
 	</div><!-- intro_content -->
 </div><!-- intro -->
 

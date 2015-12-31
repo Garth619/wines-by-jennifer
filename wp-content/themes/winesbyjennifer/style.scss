@@ -17,6 +17,9 @@ Author: Garrett Cullen
 $cinzel:'Cinzel', serif;
 $green:#163b2b;
 $lato:'Lato', sans-serif;
+$purple: #8c2555;
+
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -45,6 +48,10 @@ body {
 
 a {outline: none;}
 a img {border:none}
+
+.purple {
+	color:$purple;
+}
 
 
 h1, h2, h3, h4, h5, h6 {
@@ -807,7 +814,7 @@ h3#reply-title {
 .mobile_header {
 	width:100%;
 	overflow:hidden;
-	background:url(images/texture.png) top left repeat #8c2555;
+	background:url(images/texture.png) top left repeat $purple;
 	position: fixed;
 	top:0;
 	z-index:100;
@@ -844,13 +851,14 @@ h3#reply-title {
 		font-style: italic;
 		text-align: center;
 		font-size:3vw;
-		padding:20px;
+// 		padding:20px;
+		padding: 30px 30px;
 	}
 
 }
 
 .mobile_shopping_cart {
-	background:url(images/texture.png) top left repeat #8c2555;
+	background:url(images/texture.png) top left repeat $purple;
 	width:100px;
 	height:25px;
 	position: fixed;
@@ -860,9 +868,10 @@ h3#reply-title {
 
 .newsletter_signup {
 	position: relative;
+	border-top:2px #fff solid;
 // 	z-index:300;
 	img.newsletter_bg {
-		width:100%;
+	width:100%;
 	}
 	img.flyer {
 		position: absolute;
@@ -875,7 +884,7 @@ h3#reply-title {
     position: absolute;
     top: 0;
     width: 100%;
-    z-index: 100;
+    z-index: 50;
 		.newsletter_text {
 			position: relative;
 			top: 50%;
@@ -915,7 +924,7 @@ h3#reply-title {
 	overflow: hidden;
 	.square {
 		width:50%;
-		height:18vh;
+		height:15vh;
 		background:url(images/green-texture.png) top left repeat $green;
 		float:left;
 		a {
@@ -941,9 +950,10 @@ h3#reply-title {
 	}
 	.square3 {
 		border-right:2px solid #fff;
+		border-bottom:2px solid #fff;
 	}
 	.square4 {
-		
+		border-bottom:2px solid #fff;
 	}
 }
 
