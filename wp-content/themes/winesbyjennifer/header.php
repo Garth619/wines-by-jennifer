@@ -35,7 +35,9 @@
 	?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+<link href='https://fonts.googleapis.com/css?family=Cinzel:400,700|Lato:400,400italic' rel='stylesheet' type='text/css'>
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+
 <?php
 	/*
 	 * We add some JavaScript to pages with the comment form
@@ -57,4 +59,16 @@
 <body <?php body_class(); ?>>
 
 				<?php // wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
+		
+		<div class="mobile_header">
+			
+			<h1>Wines By Jennifer</h1>
+			<div class="mobile_menu">
+				<div class="white_bar"></div>
+				<div class="white_bar"></div>
+				<div class="white_bar"></div>
+			</div><!-- mobile menu -->
+			
+		</div><!-- mobile_header --> 
+		
 		<div class="wrapper">

@@ -777,8 +777,36 @@ h3#reply-title {
 	width:90%;
 	border:3px solid #fff;
 	background:url(images/cloth.jpg) top left repeat;
-	height:500px;
-	margin:15px auto;
+	height:100vh;
+	margin:60px auto 15px;
+	-webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
 }
 
+.mobile_header {
+	width:100%;
+	overflow:hidden;
+	background:#8c2555;
+	position: fixed;
+	top:0;
+	h1 {
+		color:#fff;
+		font-size:17px;
+		font-family: 'Cinzel', serif;
+		padding:15px;
+		float:left;
+	}
+}
 
+.mobile_menu {
+	float:right;
+	padding:13px 12px 0 0;
+	.white_bar {
+		width:35px;
+		height:4px;
+		background:#fff;
+		margin-bottom:4px;
+		
+	}
+}
