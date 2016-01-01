@@ -17,32 +17,6 @@ get_header(); ?>
 
 
 
-<div class="newsletter_signup">
-	<img class="newsletter_bg" src="<?php bloginfo('template_directory');?>/images/newsletter.png"/>
-	<div class="newsletter_text_wrap">
-		<div class="newsletter_text">
-		<a href="" class="newsletter_title"><img class="gift_icon" src="<?php bloginfo('template_directory');?>/images/gift.png"/>Free Gift!</a>
-		
-			<a href="" class="newsletter_subtitle">“5 DAYS TO EXPERT WINE TASTING”r <div class="arrow-right-yellow"></div> </a>
-		</div><!-- newsletter_text -->
-	</div><!-- newsletter_text_wrap -->
-	
-	<img class="flyer" src="<?php bloginfo('template_directory');?>/images/flyer.png"/>
-</div><!-- newsletter_signup -->
-<div class="four_squares">
-	<div class="square square1">
-		<a href="">About Us</a>
-	</div><!-- square -->
-	<div class="square square2">
-		<a href="">Locations</a>
-	</div><!-- square -->
-	<div class="square square3">
-		<a href="">Clubs</a>
-	</div><!-- square -->
-	<div class="square square4">
-		<a href="">Store</a>
-	</div><!-- square -->
-</div><!-- four_squares -->
 	<div class="box_wrapper">
 		<div class="box_row">
 			<div class="box">

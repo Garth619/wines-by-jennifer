@@ -59,7 +59,7 @@
 
 <body <?php body_class(); ?>>
 
-				<?php // wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
+				
 		
 		<div class="mobile_header">
 			
@@ -76,13 +76,46 @@
 		
 		<div class="wrapper">
 						
-			<div class="intro">
-				<div class="logo_wrapper">
-					<img class="logo" src="<?php bloginfo('template_directory');?>/images/logo.jpg"/>
-				</div><!-- logo_wrapper -->
-				<div class="intro_content">
-					<p><span class="purple">Wines by Jennifer R</span> is a unique luxury entertainment destination that has been helping people enjoy an authentic global wine country experience since&nbsp;2003.</p>
-				</div><!-- intro_content -->
-			</div><!-- intro -->
+			<div class="header">
+			
+				<div class="intro">
+					<div class="logo_wrapper">
+						<img class="logo" src="<?php bloginfo('template_directory');?>/images/logo.jpg"/>
+					</div><!-- logo_wrapper -->
+					<div class="intro_content">
+						<p><span class="purple">Wines by Jennifer R</span> is a unique luxury entertainment destination that has been helping people enjoy an authentic global wine country experience since&nbsp;2003.</p>
+					</div><!-- intro_content -->
+				</div><!-- intro -->
+				
+				
+				<div class="right_header">
+					
+					<div class="newsletter_signup">
+						<img class="newsletter_bg" src="<?php bloginfo('template_directory');?>/images/newsletter.png"/>
+						<div class="newsletter_text_wrap">
+							<div class="newsletter_text">
+							<a href="" class="newsletter_title"><img class="gift_icon" src="<?php bloginfo('template_directory');?>/images/gift.png"/>Free Gift!</a>
+							
+								<a href="" class="newsletter_subtitle">“5 DAYS TO EXPERT WINE TASTING”r <div class="arrow-right-yellow"></div> </a>
+							</div><!-- newsletter_text -->
+						</div><!-- newsletter_text_wrap -->
+						
+						<img class="flyer" src="<?php bloginfo('template_directory');?>/images/flyer.png"/>
+					</div><!-- newsletter_signup -->
+				
+				</div>	<!-- right_header -->
+				
+				
+				
+				
+				<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
+				
+				
+				
+				
+				
+				
+
+			</div><!-- header -->
 			
 			
