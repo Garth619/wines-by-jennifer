@@ -14,11 +14,13 @@
 
 </div><!-- wrapper -->
 <div class="footer">
-	<ul>
+	<ul class="menu">
 		<li><a href="">Contact</a></li>
 		<li><a href="">FAQ</a></li>
 		<li><a href="">Privacy</a></li>
 		<li><a href="">Please Drink Responsibly</a></li>
+	</ul>
+	<ul style="clear:both;">
 		<li>View In: Eng ESp</li>
 		<li>c 2015 Wines By Jennifer r</li>
 	</ul>
@@ -26,7 +28,7 @@
 
 
 
-<div class="mobile_shopping_cart"></div><!-- mobile_shopping_cart -->
+<div class="mobile_shopping_cart">Cart | Login | Search</div><!-- mobile_shopping_cart -->
 	
 <?php wp_footer(); ?>
 </body>

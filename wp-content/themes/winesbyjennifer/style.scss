@@ -808,13 +808,15 @@ h3#reply-title {
 
 
 
-/* Wines by Jennifer */
+/* Wines by Jennifer 
+
+--------------------------------------------- */
 
 .wrapper {
-	width:90%;
+	width:92%;
 	border:3px solid #fff;
 	background:url(images/cloth.jpg) top left repeat;
-	margin:70px auto 0px;
+	margin:55px auto 0px;
 	-webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
 	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
@@ -859,8 +861,8 @@ h3#reply-title {
 		background:url(images/intro_bg.jpg);
 		font-style: italic;
 		text-align: center;
-		font-size:4vh;
-
+		font-size:3.5vh;
+		line-height:1.1;
 		padding: 30px 30px;
 	}
 
@@ -868,11 +870,13 @@ h3#reply-title {
 
 .mobile_shopping_cart {
 	background:url(images/texture.png) top left repeat $purple;
-	width:100px;
-	height:25px;
+// 	width:100px;
+// 	height:25px;
+padding:4px;
 	position: fixed;
 	bottom:0;
 	right:0px;
+	z-index:500;
 }
 
 .newsletter_signup {
@@ -1074,7 +1078,7 @@ h3#reply-title {
 }
 
 .footer {
-	width:90%;
+	width:92%;
 	background:url(images/green-texture.png) top left repeat $green;
 	font-size:15px;
 	margin:0 auto 25px;
@@ -1112,7 +1116,7 @@ h3#reply-title {
 		.logo {
 			width: 100%;
 			height:auto;
-		
+			display: block;
 		}
 	}
 	.intro_content {
@@ -1121,7 +1125,7 @@ h3#reply-title {
 		float:left;
 		text-align: left;
 		font-size:3vw;
-		padding: 30px 30px;
+		padding: 24px 30px;
 	}
 
 }
@@ -1198,7 +1202,82 @@ h3#reply-title {
 		}
 	}
 }
+
+
+.footer {
+	ul {
+		overflow:hidden;
+	}
+	ul.menu {
+		margin-bottom:15px;
+		li {
+		display: inline-block;
+		margin-left:8px;
+		margin-right:8px;
+		}
+	}
+}
 	
 	
 	
 }
+
+
+
+@media screen and (min-width: 1020px) {
+	
+	
+	body {
+		background:url(images/bg.jpg) top center no-repeat;
+		background-size:cover;
+	}
+	
+	.bg_bug {
+		display: none;
+	}
+	
+	
+	.wrapper {
+		padding:25px;
+		max-width:1175px;
+		margin: 0 auto;
+	}
+	
+	
+	.mobile_header {
+		display: none;
+	}
+	
+.intro {
+	background:none;
+	width:408px;
+	border: 3px solid #fff;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.75);
+	.logo_wrapper {
+		width:113px;
+		.logo {
+				
+		
+		}
+	}
+	.intro_content {
+		background:url(images/cloth2.jpg) repeat;
+		width:289px;
+		text-align: left;
+		font-size:16px;
+		padding: 28px 17px 0;
+		height: 144px;
+	}
+
+}
+
+	
+	
+
+
+}
+	
+	
+	
+	
+
