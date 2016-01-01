@@ -409,6 +409,8 @@ h3#reply-title { margin: 18px 0; }
 .footer ul li { margin-bottom: 4px; text-transform: uppercase; }
 .footer ul li a { color: #fff; text-decoration: none; }
 
+.desktop_copyright { display: none; }
+
 @media screen and (min-width: 660px) { .intro { overflow: hidden; background: url(images/intro_bg.jpg) repeat; }
   .intro .logo_wrapper { display: block; float: left; width: 18%; }
   .intro .logo_wrapper .logo { width: 100%; height: auto; display: block; }
@@ -453,7 +455,7 @@ h3#reply-title { margin: 18px 0; }
   .menu-header ul li:nth-child(4) { border-bottom: none; }
   .main_top { display: block; width: 100%; overflow: hidden; margin-bottom: 25px; -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); border: 2px solid #fff; }
   .main_top .desktop_testimomials, .main_top .desktop_events { width: 20%; background: #fbf8f4; float: left; height: 350px; }
-  .main_top .slideshow { width: 60%; float: left; background: red; height: 350px; }
+  .main_top .slideshow { width: 60%; float: left; height: 350px; }
   .main_top .slideshow img.slide { width: 100%; }
   .divider { width: 100%; height: 14px; background: url(images/divider.jpg) top left repeat-x; }
   .box_wrapper { overflow: hidden; }
@@ -461,4 +463,17 @@ h3#reply-title { margin: 18px 0; }
   .box { width: 48%; float: left; -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); border: 2px solid #fff; }
   .box .box_text_wrap h2 { font-size: 27px; }
   .box:nth-child(1) { margin-right: 4%; }
-  .box_row:nth-child(1) { margin-right: 2%; } }
+  .box_row:nth-child(1) { margin-right: 2%; }
+  .events, .testimonials { display: none; }
+  .footer { padding: 8px 25px; overflow: hidden; line-height: 1; }
+  .footer ul { overflow: hidden; }
+  .footer ul li { margin-bottom: 0; font-size: 14px; }
+  .footer ul.desktop_copyright { display: block; text-align: left; }
+  .footer ul.menu { margin-bottom: 0px; }
+  .footer ul.menu li { display: inline-block; margin-left: 8px; margin-right: 8px; border-right: #fff solid 1px; padding-right: 8px; }
+  .footer ul.menu li a:hover { text-decoration: underline; }
+  .footer ul.menu li:last-child { padding-right: 0; margin-right: 0px; border: none; }
+  .footer ul.language { text-align: right; }
+  .footer ul.language li:last-child { display: none; }
+  .footer_col1, .footer_col3 { width: 25%; float: left; }
+  .footer_col2 { width: 50%; float: left; } }

@@ -1108,6 +1108,10 @@ h3#reply-title {
 	}
 }
 
+.desktop_copyright {
+	display: none;
+}
+
 
 
 @media screen and (min-width: 660px) {
@@ -1284,6 +1288,7 @@ h3#reply-title {
 	}
 	.intro_content {
 		background:url(images/cloth2.jpg) repeat;
+		
 		width:289px;
 		text-align: left;
 		font-size:16px;
@@ -1418,7 +1423,7 @@ h3#reply-title {
 		.slideshow {
 			width:60%;
 			float:left;
-			background:red;
+			
 			height:350px;
 			img.slide {
 				width:100%;
@@ -1474,6 +1479,73 @@ margin-right:4%;
 .box_row:nth-child(1) {
 	margin-right:2%;
 }
+
+.events, .testimonials {
+	display: none;
+}
+
+
+
+
+.footer {
+	padding:8px 25px;
+	overflow: hidden;
+	line-height: 1;
+	ul {
+		overflow:hidden;
+		li {
+			margin-bottom:0;
+			font-size:14px;
+		}
+	}
+	ul.desktop_copyright {
+		display:block;
+		text-align: left;
+	}
+	ul.menu {
+		margin-bottom:0px;
+		li {
+		display: inline-block;
+		margin-left:8px;
+		margin-right:8px;
+		border-right:#fff solid 1px;
+		padding-right:8px;
+		
+		a:hover {
+			text-decoration: underline;
+		}
+		}
+		li:last-child {
+			padding-right:0;
+			margin-right:0px;
+			border:none;
+		}
+	}
+	ul.language {
+		text-align: right;
+		li:last-child {
+			display: none;
+		}
+	}
+}
+
+.footer_col1, .footer_col3 {
+	width:25%;
+	float:left
+}
+
+.footer_col2 {
+	width:50%;
+	float:left;
+}
+
+.footer_col3 {
+	
+}
+
+
+
+
 	
 
 
