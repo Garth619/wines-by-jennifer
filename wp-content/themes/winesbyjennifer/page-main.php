@@ -19,6 +19,12 @@ get_header(); ?>
 		
 		<div class="desktop_testimomials">
 			
+			<p>"Thank you for helping make our wedding and reception absolutely perfect! We were able to relax, enjoy the evening with loved ones, as well as enjoy the outstanding food and drink. It was truly a surreal and  magical evening."</p>
+			<img class="testimonial_img" src="<?php bloginfo('template_directory');?>/images/circle.png"/>
+			<div class="divider">
+				
+			</div><!-- divider -->
+			
 		</div><!-- desktop_testimomials -->
 		
 		<div class="slideshow">
@@ -28,6 +34,14 @@ get_header(); ?>
 		</div><!-- slideshow -->
 		
 		<div class="desktop_events">
+			
+			<div class="social_icon">
+			<img src="<?php bloginfo('template_directory');?>/images/fb.png"/>
+		</div><!-- social_icon -->
+		<div class="events_content">
+			<p>Lorem ipsum dolor sit amet, cons ectet ur adipi sicing elit, sed do eiusmod tem por inc idid unt ut labore et dolore magnrem ipsum dolor sit amet, cons ectet ur adipi sicing...</p>
+			<a href="">Read More <div class="arrow-right"></div></a>
+		</div><!-- events_content -->
 			
 		</div><!-- desktop_events -->
 		
