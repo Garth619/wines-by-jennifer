@@ -15,6 +15,24 @@
 get_header(); ?>
 
 
+	<div class="main_top">
+		
+		<div class="desktop_testimomials">
+			
+		</div><!-- desktop_testimomials -->
+		
+		<div class="slideshow">
+			
+			<img class="slide" src="<?php bloginfo('template_directory');?>/images/slide1.jpg"/>
+			
+		</div><!-- slideshow -->
+		
+		<div class="desktop_events">
+			
+		</div><!-- desktop_events -->
+		
+	</div><!-- main_top -->
+
 
 
 	<div class="box_wrapper">

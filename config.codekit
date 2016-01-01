@@ -12637,6 +12637,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/wp-content\/themes\/winesbyjennifer\/images\/nav-bg.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5425,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/winesbyjennifer\/images\/nav-bg.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/winesbyjennifer\/images\/nav-bg.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/wp-content\/themes\/winesbyjennifer\/images\/newsletter.png": {
 		"fileType": 32768,
 		"ignore": 0,

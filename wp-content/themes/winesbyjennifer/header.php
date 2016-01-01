@@ -89,7 +89,9 @@
 				
 				
 				<div class="right_header">
-					
+					<div class="desktop_store_wrap">
+						
+					</div><!-- desktop_store_wrap -->
 					<div class="newsletter_signup">
 						<img class="newsletter_bg" src="<?php bloginfo('template_directory');?>/images/newsletter.png"/>
 						<div class="newsletter_text_wrap">
@@ -105,17 +107,17 @@
 				
 				</div>	<!-- right_header -->
 				
-				
+		</div><!-- header -->		
 				
 				
 				<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
 				
 				
-				
+		<div class="main">
 				
 				
 				
 
-			</div><!-- header -->
+			
 			
 			

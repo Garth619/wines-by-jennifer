@@ -361,6 +361,8 @@ h3#reply-title { margin: 18px 0; }
 
 .mobile_shopping_cart { background: url(images/texture.png) top left repeat #8c2555; padding: 4px; position: fixed; bottom: 0; right: 0px; z-index: 500; }
 
+.desktop_store_wrap { display: none; }
+
 .newsletter_signup { position: relative; border-top: 2px #fff solid; }
 .newsletter_signup img.newsletter_bg { width: 100%; }
 .newsletter_signup img.flyer { display: none; }
@@ -379,45 +381,8 @@ h3#reply-title { margin: 18px 0; }
 .menu-header ul li:nth-child(3) { border-right: 2px solid #fff; border-bottom: 2px solid #fff; }
 .menu-header ul li:nth-child(4) { border-bottom: 2px solid #fff; }
 
-/*
-.four_squares {
-	background: #fff;
-	overflow: hidden;
-	.square {
-		width:50%;
-		height:15vh;
-		background:url(images/green-texture.png) top left repeat $green;
-		float:left;
-		a {
-			position: relative;
-			top: 50%;
-			transform: translateY(-50%);
-			-webkit-transform: translateY(-50%);
-			-ms-transform: translateY(-50%);
-			color:#fff;
-			text-align: center;
-			font-size:5.5vw;
-			font-family:$cinzel;
-			display: block;
-			text-decoration: none;
-		}
-	}
-	.square1 {
-		border-right:2px solid #fff;
-		border-bottom:2px solid #fff;
-	}
-	.square2 {
-		border-bottom:2px solid #fff;
-	}
-	.square3 {
-		border-right:2px solid #fff;
-		border-bottom:2px solid #fff;
-	}
-	.square4 {
-		border-bottom:2px solid #fff;
-	}
-}
-*/
+.main_top { display: block; }
+
 .box { position: relative; border-bottom: 2px solid #fff; }
 .box img { width: 100%; display: block; }
 .box .box_text_wrap { position: absolute; z-index: 5px; top: 0; width: 100%; height: 100%; padding: 0 30px; background: transparent; background: rgba(0, 0, 0, 0.2); }
@@ -463,10 +428,30 @@ h3#reply-title { margin: 18px 0; }
   .footer ul.menu li { display: inline-block; margin-left: 8px; margin-right: 8px; } }
 @media screen and (min-width: 1020px) { body { background: url(images/bg.jpg) top center no-repeat; background-size: cover; }
   .bg_bug { display: none; }
-  .wrapper { padding: 25px; max-width: 1175px; margin: 0 auto; }
+  .wrapper { max-width: 1175px; margin: 35px auto 0; }
+  .header { overflow: hidden; width: 100%; padding: 25px; }
+  .main { padding: 25px; }
   .mobile_header { display: none; }
-  .header { overflow: hidden; }
   .intro { background: none; width: 408px; border: 3px solid #fff; box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.75); float: left; }
   .intro .logo_wrapper { width: 113px; }
   .intro .intro_content { background: url(images/cloth2.jpg) repeat; width: 289px; text-align: left; font-size: 16px; padding: 28px 17px 0; height: 144px; }
-  .right_header { float: right; } }
+  .right_header { float: right; }
+  .mobile_shopping_cart { display: none; }
+  .desktop_store_wrap { display: block; width: 100%; height: 52px; background: #363636; }
+  .newsletter_signup img.flyer { right: 2%; top: -5px; }
+  .newsletter_signup .newsletter_text_wrap .newsletter_text { text-align: left; margin-left: 4%; }
+  .newsletter_signup .newsletter_text_wrap .newsletter_text img.gift_icon { width: 6%; }
+  .newsletter_signup .newsletter_text_wrap .newsletter_text a.newsletter_title { font-size: 21px; }
+  .newsletter_signup .newsletter_text_wrap .newsletter_text a.newsletter_subtitle { font-size: 16px; }
+  .menu-header { background: url(images/nav-bg.jpg) top left repeat; width: 100%; }
+  .menu-header ul { list-style: none; margin: 0; width: 75%; overflow: hidden; }
+  .menu-header ul li { width: 25%; height: auto; background: none; float: left; border: none; padding: 4px 0; }
+  .menu-header ul li a { position: relative; top: 0; transform: none; -webkit-transform: none; -ms-transform: none; color: #fff; text-align: center; font-size: 22px; font-family: "Cinzel", serif; display: block; text-decoration: none; text-shadow: 0 1px 2px black; }
+  .menu-header ul li:nth-child(1) { border-right: none; border-bottom: none; }
+  .menu-header ul li:nth-child(2) { border-bottom: none; }
+  .menu-header ul li:nth-child(3) { border-right: none; border-bottom: none; }
+  .menu-header ul li:nth-child(4) { border-bottom: none; }
+  .main_top { display: block; width: 100%; overflow: hidden; margin-bottom: 25px; }
+  .main_top .desktop_testimomials, .main_top .desktop_events { width: 20%; background: #fff; float: left; height: 350px; }
+  .main_top .slideshow { width: 60%; float: left; background: red; height: 350px; }
+  .main_top .slideshow img.slide { width: 100%; } }

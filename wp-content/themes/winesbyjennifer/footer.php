@@ -11,7 +11,7 @@
  */
 ?>
 
-
+</div><!-- main -->
 </div><!-- wrapper -->
 <div class="footer">
 	<ul class="menu">
