@@ -1324,7 +1324,7 @@ h3#reply-title {
     
 	}
 	.newsletter_text_wrap {
-		
+		transition:all .3s ease;
 		.newsletter_text {
 			text-align: left;
 			margin-left:4%;
@@ -1345,20 +1345,28 @@ h3#reply-title {
 			}
 		}
 	}
+	.newsletter_text_wrap:hover {
+		background: transparent;
+		transition:all .3s ease;
+	}
+
 	
 }
 
-	
+
+.nav {
+	overflow: hidden;
+}
 	
 	
 .menu-header {
 	background:url(images/nav-bg.jpg) top left repeat;
-	width:100%;
-	
+	width:75%;
+	float:left;
 	ul {
 		list-style: none;
 		margin:0;
-		width:75%;
+// 		width:75%;
 		overflow: hidden;
 		li {
 			width:25%;
@@ -1366,6 +1374,7 @@ h3#reply-title {
 			background:none;
 			float:left;
 			border:none;
+			
 // 			margin:0 30px;
 			padding:4px 0;
 			a {
@@ -1398,7 +1407,32 @@ h3#reply-title {
 			border-bottom:none;
 		}
 	}
-}		
+}	
+
+
+.social_icons_wrapper {
+	background:url(images/nav-bg.jpg) top left repeat;
+	width:25%;
+	float:left;
+	text-align: center;
+	.social_icons {
+		list-style: none;
+		margin:0;
+		overflow: hidden;
+		height:30px;
+		
+		li {
+			display: inline-block;
+			margin-right:8px;
+			a {
+				img {
+					padding-top:4px;
+					height:25px;
+				}
+			}
+		}
+	}	
+}
 
 	
 	.main_top {
@@ -1460,14 +1494,17 @@ h3#reply-title {
 	border: 2px solid #fff;
 	
 	.box_text_wrap {
-		
-		
+		transition:all .3s ease;
 		h2 {
 			
 			font-size:27px;
 			
 			
 		}
+	}
+	.box_text_wrap:hover {
+		background: transparent;
+		transition:all .3s ease;
 	}
 }
 
@@ -1491,6 +1528,7 @@ margin-right:4%;
 	padding:8px 25px;
 	overflow: hidden;
 	line-height: 1;
+	max-width:1175px;
 	ul {
 		overflow:hidden;
 		li {

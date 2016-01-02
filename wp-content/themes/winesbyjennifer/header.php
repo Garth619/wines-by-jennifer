@@ -80,7 +80,7 @@
 			
 				<div class="intro">
 					<div class="logo_wrapper">
-						<img class="logo" src="<?php bloginfo('template_directory');?>/images/logo.jpg"/>
+						<a href="<?php bloginfo('url');?>"><img class="logo" src="<?php bloginfo('template_directory');?>/images/logo.jpg"/></a>
 					</div><!-- logo_wrapper -->
 					<div class="intro_content">
 						<p><span class="purple">Wines by Jennifer R</span> is a unique luxury entertainment destination that has been helping people enjoy an authentic global wine country experience since&nbsp;2003.</p>
@@ -109,10 +109,19 @@
 				
 		</div><!-- header -->		
 				
-				
-				<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
-				
-				
+				<div class="nav">
+					<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
+					<div class="social_icons_wrapper">
+						<ul class="social_icons">
+							<li><a href="" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/facebook.png"/></a></li>
+							<li><a href="" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/google-plus.png"/></a></li>
+							<li><a href="" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/twitter.png"/></a></li>
+							<li><a href="" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/instagram.png"/></a></li>
+							<li><a href="" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/youtube.png"/></a></li>
+						</ul>
+					</div><!-- social_icons_wrapper -->
+				</div><!-- nav -->
+		
 		<div class="main">
 				
 				

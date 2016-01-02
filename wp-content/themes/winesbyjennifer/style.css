@@ -441,18 +441,25 @@ h3#reply-title { margin: 18px 0; }
   .mobile_shopping_cart { display: none; }
   .desktop_store_wrap { display: block; width: 100%; height: 52px; background: #363636; }
   .newsletter_signup img.flyer { right: 2%; top: -5px; }
+  .newsletter_signup .newsletter_text_wrap { transition: all .3s ease; }
   .newsletter_signup .newsletter_text_wrap .newsletter_text { text-align: left; margin-left: 4%; }
   .newsletter_signup .newsletter_text_wrap .newsletter_text img.gift_icon { width: 6%; }
   .newsletter_signup .newsletter_text_wrap .newsletter_text a.newsletter_title { font-size: 21px; }
   .newsletter_signup .newsletter_text_wrap .newsletter_text a.newsletter_subtitle { font-size: 16px; }
-  .menu-header { background: url(images/nav-bg.jpg) top left repeat; width: 100%; }
-  .menu-header ul { list-style: none; margin: 0; width: 75%; overflow: hidden; }
+  .newsletter_signup .newsletter_text_wrap:hover { background: transparent; transition: all .3s ease; }
+  .nav { overflow: hidden; }
+  .menu-header { background: url(images/nav-bg.jpg) top left repeat; width: 75%; float: left; }
+  .menu-header ul { list-style: none; margin: 0; overflow: hidden; }
   .menu-header ul li { width: 25%; height: auto; background: none; float: left; border: none; padding: 4px 0; }
   .menu-header ul li a { position: relative; top: 0; transform: none; -webkit-transform: none; -ms-transform: none; color: #fff; text-align: center; font-size: 22px; font-family: "Cinzel", serif; display: block; text-decoration: none; text-shadow: 0 1px 2px black; }
   .menu-header ul li:nth-child(1) { border-right: none; border-bottom: none; }
   .menu-header ul li:nth-child(2) { border-bottom: none; }
   .menu-header ul li:nth-child(3) { border-right: none; border-bottom: none; }
   .menu-header ul li:nth-child(4) { border-bottom: none; }
+  .social_icons_wrapper { background: url(images/nav-bg.jpg) top left repeat; width: 25%; float: left; text-align: center; }
+  .social_icons_wrapper .social_icons { list-style: none; margin: 0; overflow: hidden; height: 30px; }
+  .social_icons_wrapper .social_icons li { display: inline-block; margin-right: 8px; }
+  .social_icons_wrapper .social_icons li a img { padding-top: 4px; height: 25px; }
   .main_top { display: block; width: 100%; overflow: hidden; margin-bottom: 25px; -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); border: 2px solid #fff; }
   .main_top .desktop_testimomials, .main_top .desktop_events { width: 20%; background: #fbf8f4; float: left; height: 350px; }
   .main_top .slideshow { width: 60%; float: left; height: 350px; }
@@ -461,11 +468,13 @@ h3#reply-title { margin: 18px 0; }
   .box_wrapper { overflow: hidden; }
   .box_row { float: left; width: 49%; }
   .box { width: 48%; float: left; -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); border: 2px solid #fff; }
+  .box .box_text_wrap { transition: all .3s ease; }
   .box .box_text_wrap h2 { font-size: 27px; }
+  .box .box_text_wrap:hover { background: transparent; transition: all .3s ease; }
   .box:nth-child(1) { margin-right: 4%; }
   .box_row:nth-child(1) { margin-right: 2%; }
   .events, .testimonials { display: none; }
-  .footer { padding: 8px 25px; overflow: hidden; line-height: 1; }
+  .footer { padding: 8px 25px; overflow: hidden; line-height: 1; max-width: 1175px; }
   .footer ul { overflow: hidden; }
   .footer ul li { margin-bottom: 0; font-size: 14px; }
   .footer ul.desktop_copyright { display: block; text-align: left; }
