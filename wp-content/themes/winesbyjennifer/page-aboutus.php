@@ -22,7 +22,7 @@ get_header(); ?>
 </div><!-- inner_banner -->
 
 
-		<div class="main">
+		
 			
 		<h1>hello</h1>	
 

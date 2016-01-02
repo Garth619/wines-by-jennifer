@@ -420,7 +420,7 @@ h3#reply-title { margin: 18px 0; }
 .inner_banner { background: url(images/inner-banner.jpg) top center no-repeat; background-size: cover; }
 .inner_banner h1 { padding: 100px 0; }
 
-.main.inner { padding: 0; }
+.main.inner { padding: 0 0 25px; }
 
 @media screen and (min-width: 660px) { .intro { overflow: hidden; background: url(images/intro_bg.jpg) repeat; }
   .intro .logo_wrapper { display: block; float: left; width: 18%; }
