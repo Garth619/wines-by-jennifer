@@ -62,13 +62,60 @@ get_header(); ?>
 		
 		<div class="desktop_events">
 			
-			<div class="social_icon">
-			<img src="<?php bloginfo('template_directory');?>/images/fb.png"/>
-		</div><!-- social_icon -->
-		<div class="events_content">
-			<p>Lorem ipsum dolor sit amet, cons ectet ur adipi sicing elit, sed do eiusmod tem por inc idid unt ut labore et dolore magnrem ipsum dolor sit amet, cons ectet ur adipi sicing...</p>
-			<a href="">Read More <div class="arrow-right"></div></a>
-		</div><!-- events_content -->
+			<div class="desktop_single_event">
+				<div class="desktop_social_icon">
+					<img src="<?php bloginfo('template_directory');?>/images/fb.png"/>
+				</div><!-- social_icon -->
+				<div class="desktop_events_content">
+					<p>Lorem ipsum dolor sit amet, cons ectet ur adipi sicing elit, sed do eiusmod tem por inc idid unt ut labore et dolore magnrem ipsum dolor sit amet, cons ectet ur adipi sicing...</p>
+					<a href="">Read More <div class="arrow-right"></div></a>
+				</div><!-- events_content -->
+			</div><!-- desktop_single_event -->
+			<div class="divider"></div><!-- divider -->
+			
+			<div class="desktop_single_event">
+				<div class="desktop_social_icon">
+					<img src="<?php bloginfo('template_directory');?>/images/fb.png"/>
+				</div><!-- social_icon -->
+				<div class="desktop_events_content">
+					<p>Lorem ipsum dolor sit amet, cons ectet ur adipi sicing elit, sed do eiusmod tem por inc idid unt ut labore et dolore magnrem ipsum dolor sit amet, cons ectet ur adipi sicing...</p>
+					<a href="">Read More <div class="arrow-right"></div></a>
+				</div><!-- events_content -->
+			</div><!-- desktop_single_event -->
+			<div class="divider"></div><!-- divider -->
+			
+			<div class="desktop_single_event">
+				<div class="desktop_social_icon">
+					<img src="<?php bloginfo('template_directory');?>/images/fb.png"/>
+				</div><!-- social_icon -->
+				<div class="desktop_events_content">
+					<p>Lorem ipsum dolor sit amet, cons ectet ur adipi sicing elit, sed do eiusmod tem por inc idid unt ut labore et dolore magnrem ipsum dolor sit amet, cons ectet ur adipi sicing...</p>
+					<a href="">Read More <div class="arrow-right"></div></a>
+				</div><!-- events_content -->
+			</div><!-- desktop_single_event -->
+			<div class="divider"></div><!-- divider -->
+			
+			<div class="desktop_single_event">
+				<div class="desktop_social_icon">
+					<img src="<?php bloginfo('template_directory');?>/images/fb.png"/>
+				</div><!-- social_icon -->
+				<div class="desktop_events_content">
+					<p>Lorem ipsum dolor sit amet, cons ectet ur adipi sicing elit, sed do eiusmod tem por inc idid unt ut labore et dolore magnrem ipsum dolor sit amet, cons ectet ur adipi sicing...</p>
+					<a href="">Read More <div class="arrow-right"></div></a>
+				</div><!-- events_content -->
+			</div><!-- desktop_single_event -->
+			<div class="divider"></div><!-- divider -->
+			
+			<div class="desktop_single_event">
+				<div class="desktop_social_icon">
+					<img src="<?php bloginfo('template_directory');?>/images/fb.png"/>
+				</div><!-- social_icon -->
+				<div class="desktop_events_content">
+					<p>Lorem ipsum dolor sit amet, cons ectet ur adipi sicing elit, sed do eiusmod tem por inc idid unt ut labore et dolore magnrem ipsum dolor sit amet, cons ectet ur adipi sicing...</p>
+					<a href="">Read More <div class="arrow-right"></div></a>
+				</div><!-- events_content -->
+			</div><!-- desktop_single_event -->
+			<div class="divider"></div><!-- divider -->
 			
 		</div><!-- desktop_events -->
 		

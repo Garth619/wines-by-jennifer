@@ -463,9 +463,10 @@ h3#reply-title { margin: 18px 0; }
   .social_icons_wrapper .social_icons li { display: inline-block; margin-right: 8px; }
   .social_icons_wrapper .social_icons li a img { padding-top: 4px; height: 25px; }
   .main_top { display: block; width: 100%; overflow: hidden; margin-bottom: 25px; -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); border: 2px solid #fff; }
-  .main_top .desktop_testimomials, .main_top .desktop_events { width: 20%; background: #fbf8f4; float: left; height: 350px; }
+  .main_top .desktop_testimomials, .main_top .desktop_events { width: 22%; background: #FBFAF6; float: left; height: 350px; }
   .main_top .desktop_testimomials { position: relative; }
-  .main_top .slideshow { width: 60%; float: left; height: 350px; }
+  .main_top .desktop_events { overflow-x: hidden; overflow-y: scroll; }
+  .main_top .slideshow { width: 56%; float: left; height: 350px; }
   .main_top .slideshow img.slide { width: 100%; }
   .testimonial_top_half { padding: 8px; }
   .testimonial_bottom_half { position: absolute; bottom: 0; width: 100%; }
@@ -480,6 +481,7 @@ h3#reply-title { margin: 18px 0; }
   .review_icons .review_single_icon img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
   .green_bar { width: 100%; background: url(images/green-texture.png) top left repeat; height: 25px; clear: both; text-align: center; }
   .green_bar a { color: #fff; text-decoration: none; }
+  .desktop_single_event { padding: 8px; }
   .box_wrapper { overflow: hidden; }
   .box_row { float: left; width: 49%; }
   .box { width: 48%; float: left; -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); border: 2px solid #fff; }
