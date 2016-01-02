@@ -63,7 +63,8 @@
 		
 		<div class="mobile_header">
 			
-			<h1>Wines by Jennifer r</h1>
+			<h1><a href="<?php bloginfo('url');?>">Wines by Jennifer r</a></h1>
+			
 			<div class="mobile_menu">
 				<div class="white_bar"></div>
 				<div class="white_bar"></div>
@@ -76,6 +77,12 @@
 		
 		<div class="wrapper">
 						
+			<?php if(!is_page_template('page-main.php')) { ?>
+			
+			<div class="inner_page_hide_header">
+			
+			<?php } ?><!-- main page info -->
+			
 			<div class="header">
 			
 				<div class="intro">
@@ -122,7 +129,20 @@
 					</div><!-- social_icons_wrapper -->
 				</div><!-- nav -->
 		
-		<div class="main">
+		
+		<?php if(!is_page_template('page-main.php')) : ?>
+			
+			</div><!-- inner_page_hide_header -->
+			<div class="main inner">
+				
+				<?php else: ?>
+				
+				<div class="main">
+			
+			<?php endif; ?><!-- hide header on mobile inner pages -->
+		
+		
+		
 				
 				
 				

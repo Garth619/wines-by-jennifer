@@ -838,6 +838,10 @@ h3#reply-title {
 		font-family: $cinzel;
 		padding:10px 15px;
 		float:left;
+		a {
+			color:#fff;
+			text-decoration: none;
+		}
 	}
 }
 
@@ -975,6 +979,10 @@ h3#reply-title {
 }		
 
 .social_icons_wrapper {
+	display: none;
+}
+
+.inner_page_hide_header {
 	display: none;
 }
 
@@ -1117,6 +1125,23 @@ h3#reply-title {
 }
 
 
+/* Inner Pages*/
+
+.inner_banner {
+	background:url(images/inner-banner.jpg) top center no-repeat;
+	background-size: cover;
+	
+	h1 {
+		padding:100px 0;
+	}
+}
+
+
+.main.inner {
+	padding:0;
+}
+
+
 
 @media screen and (min-width: 660px) {
 	
@@ -1252,6 +1277,10 @@ h3#reply-title {
 	.bg_bug {
 		display: none;
 	}
+	
+	.inner_page_hide_header {
+		display: block;
+		}
 	
 	
 	.wrapper {
