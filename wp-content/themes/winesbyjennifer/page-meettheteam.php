@@ -15,7 +15,7 @@ get_header(); ?>
 	</div><!-- banner_overlay -->
 	
 </div><!-- inner_banner -->
-<a id="myAnchor"></a>
+<a id="team"></a>
 <div class="content_container">
 	
 	<div id="content">
@@ -25,68 +25,62 @@ get_header(); ?>
 			
 			
 			
+			
+			
 			<div class="single_team_member">
 				
-				<div class="team_profile_wrapper"></div><!-- team_profile_wrapper -->
-				<h2>Member Name</h2>
-				<p class="read_bio">Read Bio</p>
-				<div class="arrow-right-purple"></div>
-			
+				<div class="team_profile_wrapper"><a href="#team"></a></div><!-- team_profile_wrapper -->
+				<h2><a href="#team">Member Name</a></h2>
+				<a href="#team" class="read_bio">Read Bio <div class="arrow-right-purple"></div></a>
+				
 			</div><!-- single_team_member -->
 			
 			<div class="single_team_member">
 				
-				<div class="team_profile_wrapper"></div><!-- team_profile_wrapper -->
-				<h2>Member Name</h2>
-				<p class="read_bio">Read Bio</p>
-				<div class="arrow-right-purple"></div>
-			
+				<div class="team_profile_wrapper"><a href="#team"></a></div><!-- team_profile_wrapper -->
+				<h2><a href="#team">Member Name</a></h2>
+				<a href="#team" class="read_bio">Read Bio <div class="arrow-right-purple"></div></a>
+				
 			</div><!-- single_team_member -->
 			
 			<div class="single_team_member">
 				
-				<div class="team_profile_wrapper"></div><!-- team_profile_wrapper -->
-				<h2>Member Name</h2>
-				<p class="read_bio">Read Bio</p>
-				<div class="arrow-right-purple"></div>
-			
+				<div class="team_profile_wrapper"><a href="#team"></a></div><!-- team_profile_wrapper -->
+				<h2><a href="#team">Member Name</a></h2>
+				<a href="#team" class="read_bio">Read Bio <div class="arrow-right-purple"></div></a>
+				
 			</div><!-- single_team_member -->
 			
 			<div class="single_team_member">
 				
-				<div class="team_profile_wrapper"></div><!-- team_profile_wrapper -->
-				<h2>Member Name</h2>
-				<p class="read_bio">Read Bio</p>
-				<div class="arrow-right-purple"></div>
-			
+				<div class="team_profile_wrapper"><a href="#team"></a></div><!-- team_profile_wrapper -->
+				<h2><a href="#team">Member Name</a></h2>
+				<a href="#team" class="read_bio">Read Bio <div class="arrow-right-purple"></div></a>
+				
 			</div><!-- single_team_member -->
 			
 			<div class="single_team_member">
 				
-				<div class="team_profile_wrapper"></div><!-- team_profile_wrapper -->
-				<h2>Member Name</h2>
-				<p class="read_bio">Read Bio</p>
-				<div class="arrow-right-purple"></div>
-			
+				<div class="team_profile_wrapper"><a href="#team"></a></div><!-- team_profile_wrapper -->
+				<h2><a href="#team">Member Name</a></h2>
+				<a href="#team" class="read_bio">Read Bio <div class="arrow-right-purple"></div></a>
+				
 			</div><!-- single_team_member -->
 			
 			<div class="single_team_member">
 				
-				<div class="team_profile_wrapper"></div><!-- team_profile_wrapper -->
-				<h2>Member Name</h2>
-				<p class="read_bio">Read Bio</p>
-				<div class="arrow-right-purple"></div>
-			
+				<div class="team_profile_wrapper"><a href="#team"></a></div><!-- team_profile_wrapper -->
+				<h2><a href="#team">Member Name</a></h2>
+				<a href="#team" class="read_bio">Read Bio <div class="arrow-right-purple"></div></a>
+				
 			</div><!-- single_team_member -->
 			
 			<div class="single_team_member">
 				
-				<div class="team_profile_wrapper"><a href="#myAnchor" id="anchor1"></a></div><!-- team_profile_wrapper -->
-				<h2><a href="#myAnchor" id="anchor1">Member Name</a></h2>
-				<a href="#myAnchor" id="anchor1" class="read_bio">Read Bio <div class="arrow-right-purple"></div></a>
+				<div class="team_profile_wrapper"><a href="#team"></a></div><!-- team_profile_wrapper -->
+				<h2><a href="#team">Member Name</a></h2>
+				<a href="#team" class="read_bio">Read Bio <div class="arrow-right-purple"></div></a>
 				
-				
-			
 			</div><!-- single_team_member -->			
 			
 			
@@ -111,7 +105,7 @@ get_header(); ?>
 			<div class="right_col_bio">
 				
 				<h1>Member Name</h1>
-				<span class="bio_close">Close Bio <span class="close_button">X</span></span>
+				<span class="bio_close">Close Bio<span class="close_button">X</span></span>
 				<div class="bio_content">
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
