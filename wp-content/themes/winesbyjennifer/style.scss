@@ -259,10 +259,22 @@ textarea {
 #content h4,
 #content h5,
 #content h6 {
-	color: #000;
-	line-height: 1.5em;
+	color: #8d2656;
+	line-height: 1.1;
 	margin: 0 0 20px 0;
+	text-align:center;
 }
+
+#content h1 {
+	font-family: $cinzel;
+	font-size:30px;
+	 
+}
+
+#content a {
+	color:$purple;
+}
+
 #content table {
 	border: 1px solid #e7e7e7;
 	margin: 0 -1px 24px 0;
@@ -297,43 +309,9 @@ textarea {
 .single .hentry {
 	margin: 0 0 36px 0;
 }
-.page-title {
-	color: #000;
-	font-size: 14px;
-	font-weight: bold;
-	margin: 0 0 36px 0;
-}
-.page-title span {
-	color: #333;
-	font-size: 16px;
-	font-style: italic;
-	font-weight: normal;
-}
-.page-title a:link,
-.page-title a:visited {
-	color: #777;
-	text-decoration: none;
-}
-.page-title a:active,
-.page-title a:hover {
-	color: #ff4b33;
-}
-#content .entry-title {
-	color: #000;
-	font-size: 21px;
-	font-weight: bold;
-	line-height: 1.3em;
-	margin-bottom: 0;
-}
-.entry-title a:link,
-.entry-title a:visited {
-	color: #000;
-	text-decoration: none;
-}
-.entry-title a:active,
-.entry-title a:hover {
-	color: #ff4b33;
-}
+
+
+
 .entry-meta {
 	color: #777;
 	font-size: 12px;
@@ -827,7 +805,7 @@ h3#reply-title {
 	width:92%;
 	border:2px solid #fff;
 	background:url(images/cloth.jpg) top left repeat;
-	margin:64px auto 0px;
+	margin:60px auto 0px;
 	-webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
 	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
@@ -1085,6 +1063,19 @@ h3#reply-title {
 	
 }
 
+.arrow-right-purple {
+	width: 0; 
+	height: 0; 
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-left: 5px solid $purple;
+	display: inline-block;
+	margin-left:3px;
+	position: relative;
+	top:-1px;
+	
+}
+
 .arrow-right-yellow {
 	width: 0; 
 	height: 0; 
@@ -1165,6 +1156,10 @@ h3#reply-title {
 	}
 }
 
+.ribbon {
+	display: none;
+}
+
 
 .main.inner {
 	padding:0 0 0px;
@@ -1172,12 +1167,48 @@ h3#reply-title {
 
 .content_container {
 	position: relative;
-	
+	padding:35px;
 	background: #fff;
-	height:1000px;
+	
 	
   
 }
+
+/* Meet the team */
+
+
+.team_wrapper {
+	width:90%;
+	margin: 20px auto 0;
+	text-align: center;
+}
+
+#content .single_team_member {
+	text-align: center;
+	margin:0px 35px 35px;
+	display: inline-block;
+	.team_profile {
+		display: block;
+		margin:0 auto 15px;
+		max-width:175px;
+		height:auto;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		border-radius: 50%;
+		border:2px solid #fff;
+		@include box-shadow($shadow);
+	}
+	h2 {
+		text-transform: uppercase;
+		margin-bottom: 5px;
+	}
+	p.read_bio {
+		text-transform: uppercase;
+		margin-bottom:0px;
+		display: inline-block;
+	}
+}
+
 
 
 
@@ -1324,12 +1355,24 @@ h3#reply-title {
 		
 		h1 {
 			padding: 80px 35px 95px;
-			font-size:38px;
+			font-size:42px;
+			
 		}
 	}
 }
 
 
+.ribbon {
+	display: inline-block;
+}
+
+.ribbon_left {
+	margin-right:15px;
+}
+
+.ribbon_right {
+	margin-left:15px;
+}
 
 
 
@@ -1340,6 +1383,28 @@ h3#reply-title {
 	
 	}
 	
+.content_container.no_banner {
+	margin-top:25px;
+	width: 95%;
+	
+}
+	
+
+
+#content h1,
+#content h2,
+#content h3,
+#content h4,
+#content h5,
+#content h6 {
+	text-align:left;
+}
+
+
+
+
+
+
 }
 
 
@@ -1380,6 +1445,10 @@ h3#reply-title {
 	.main.inner {
     padding: 0 0 25px;
 }
+
+.content_container {
+	width: 86%;
+ }
 	
 	
 	.mobile_header {
@@ -1730,6 +1799,27 @@ margin-right:4%;
 .events, .testimonials {
 	display: none;
 }
+
+
+/* inner pages */
+
+
+.inner_banner {
+	border-top:1px solid #fff;
+	border-bottom:1px solid #fff;
+	.banner_overlay {
+	
+		
+		h1 {
+/*
+			padding: 80px 35px 95px;
+			font-size:42px;
+*/
+			
+		}
+	}
+}
+
 
 
 

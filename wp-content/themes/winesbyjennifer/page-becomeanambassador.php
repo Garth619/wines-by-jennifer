@@ -1,22 +1,15 @@
 <?php
 /**
- * Template Name: About Us
+ * Template Name: Become an Ambassador
  *
  */
 
 get_header(); ?>
 
 
-<div class="inner_banner">
-	<div class="banner_overlay">
-	
-		<h1><img class="ribbon ribbon_left" src="<?php bloginfo('template_directory');?>/images/ribbon.png"/>About Us<img class="ribbon ribbon_right" src="<?php bloginfo('template_directory');?>/images/ribbon-right.png"/></h1>
-	
-	</div><!-- banner_overlay -->
-	
-</div><!-- inner_banner -->
 
-<div class="content_container">
+
+<div class="content_container no_banner">
 	
 	<div id="content">
 	
