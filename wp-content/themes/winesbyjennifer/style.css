@@ -422,10 +422,12 @@ h3#reply-title { margin: 18px 0; }
 /* Meet the team */
 .team_wrapper { width: 90%; margin: 20px auto 0; text-align: center; }
 
-#content .single_team_member { text-align: center; margin: 0px 35px 35px; display: inline-block; }
+#content .single_team_member { text-align: center; display: inline-block; }
 #content .single_team_member .team_profile { display: block; margin: 0 auto 15px; max-width: 175px; height: auto; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; border: 2px solid #fff; -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -ms-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); }
 #content .single_team_member h2 { text-transform: uppercase; margin-bottom: 5px; }
 #content .single_team_member p.read_bio { text-transform: uppercase; margin-bottom: 0px; display: inline-block; }
+
+#content .single_team_member:last-child { margin-bottom: 0; }
 
 @media screen and (min-width: 660px) { .intro { overflow: hidden; background: url(images/intro_bg.jpg) repeat; }
   .intro .logo_wrapper { display: block; float: left; width: 18%; }

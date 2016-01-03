@@ -1185,7 +1185,7 @@ h3#reply-title {
 
 #content .single_team_member {
 	text-align: center;
-	margin:0px 35px 35px;
+// 	margin:0px 35px 35px;
 	display: inline-block;
 	.team_profile {
 		display: block;
@@ -1209,7 +1209,9 @@ h3#reply-title {
 	}
 }
 
-
+#content .single_team_member:last-child {
+	margin-bottom:0;
+}
 
 
 
