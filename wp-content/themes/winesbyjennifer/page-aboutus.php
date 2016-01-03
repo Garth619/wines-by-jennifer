@@ -16,15 +16,22 @@ get_header(); ?>
 
 
 <div class="inner_banner">
+	<div class="banner_overlay">
 	
-	<h1>About Us</h1>
+		<h1><!-- <img src="<?php bloginfo('template_directory');?>/images/ribbon.png"/> -->About Us<!-- <img src="<?php bloginfo('template_directory');?>/images/ribbon-right.png"/> --></h1>
+	
+	</div><!-- banner_overlay -->
 	
 </div><!-- inner_banner -->
 
-
+<div class="content_container">
+	
+	<h1>hello</h1>
+	
+</div><!-- content_container -->
 		
 			
-		<h1>hello</h1>	
+			
 
 	<div class="box_wrapper">
 		<div class="box_row">

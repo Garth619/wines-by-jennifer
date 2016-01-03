@@ -40,5 +40,6 @@
 <div class="mobile_shopping_cart">Cart | Login | Search</div><!-- mobile_shopping_cart -->
 	
 <?php wp_footer(); ?>
+
 </body>
 </html>

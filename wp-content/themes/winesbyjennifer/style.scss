@@ -18,6 +18,17 @@ $cinzel:'Cinzel', serif;
 $green:#163b2b;
 $lato:'Lato', sans-serif;
 $purple: #8c2555;
+$shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);	
+	
+	
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+     -moz-box-shadow: $shadow;
+      -ms-box-shadow: $shadow;
+          box-shadow: $shadow;
+}
+
+
 
 
 
@@ -816,11 +827,12 @@ h3#reply-title {
 	width:92%;
 	border:2px solid #fff;
 	background:url(images/cloth.jpg) top left repeat;
-	margin:55px auto 0px;
+	margin:64px auto 0px;
 	-webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
 	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
 }
+
 
 
 
@@ -834,7 +846,7 @@ h3#reply-title {
 	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
 	h1 {
 		color:#fff;
-		font-size:19px;
+		font-size:20px;
 		font-family: $cinzel;
 		padding:10px 15px;
 		float:left;
@@ -1127,18 +1139,44 @@ h3#reply-title {
 
 /* Inner Pages*/
 
+
+.wrapper.inner {
+// 	background: #fff;
+}
+
+
 .inner_banner {
 	background:url(images/inner-banner.jpg) top center no-repeat;
 	background-size: cover;
-	
-	h1 {
-		padding:100px 0;
+	position: relative;
+	.banner_overlay {
+		background: rgba(0, 0, 0, 0.45);
+		width:100%;
+		
+		h1 {
+			padding: 52px 35px 65px;
+			color:#fff;
+			font-family: $cinzel;
+			text-align: center;
+			text-shadow: 0 1px 2px black;
+			font-size:43px;
+		}
 	}
 }
 
 
 .main.inner {
-	padding:0 0 25px;
+	padding:0 0 0px;
+}
+
+.content_container {
+	
+	background: #fff;
+	height:1000px;
+	margin: -36px auto 0;
+  position: relative;
+  width: 92%;
+	@include box-shadow($shadow);
 }
 
 
@@ -1299,6 +1337,10 @@ h3#reply-title {
 		padding:25px;
 	}
 	
+	.main.inner {
+    padding: 0 0 25px;
+}
+	
 	
 	.mobile_header {
 		display: none;
@@ -1310,7 +1352,9 @@ h3#reply-title {
 	background:none;
 	width:408px;
 	border: 2px solid #fff;
-  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.75);
+	-webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
   float:left;
 	.logo_wrapper {
 		width:113px;

@@ -75,7 +75,20 @@
 		
 		<div class="bg_bug"></div><!-- bg_bug -->
 		
-		<div class="wrapper">
+		
+		<?php if(!is_page_template('page-main.php')) : ?>
+		
+			<div class="wrapper inner">
+				
+			<?php else:?>
+				
+			<div class="wrapper">
+		
+		<?php endif; ?>
+		
+		
+		
+		
 						
 			<?php if(!is_page_template('page-main.php')) { ?>
 			
