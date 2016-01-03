@@ -15,16 +15,13 @@ get_header(); ?>
 	</div><!-- banner_overlay -->
 	
 </div><!-- inner_banner -->
-<a name="id3"></a><!-- http://jsfiddle.net/BjpWB/4/ -->
+
 <div class="content_container">
 	
 	<div id="content">
 	
-	
 		<div class="team_wrapper">
 			
-			
-			
 			<div class="single_team_member">
 				
 				<div class="team_profile_wrapper"></div><!-- team_profile_wrapper -->
@@ -85,7 +82,6 @@ get_header(); ?>
 				<h2>Member Name</h2>
 				<p class="read_bio">Read Bio</p>
 				<div class="arrow-right-purple"></div>
-				<a id="link" href="#">click me to scroll to id3</a>
 			
 			</div><!-- single_team_member -->			
 			

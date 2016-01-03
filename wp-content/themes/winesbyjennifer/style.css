@@ -444,6 +444,8 @@ h3#reply-title { margin: 18px 0; }
 
 .bio_close { display: inline-block; right: 0px; color: #8c2555; cursor: pointer; text-transform: uppercase; margin-bottom: 25px; }
 
+.close_button { background: #8c2555 none repeat scroll 0 0; border-radius: 50%; color: #fff; display: inline-block; height: 22px; line-height: 1; margin-left: 3px; padding: 4px; width: 22px; font-size: 13px; font-weight: bold; position: relative; top: -2px; }
+
 .bio_buttons a { color: #8c2555; text-transform: uppercase; text-decoration: none; }
 .bio_buttons a:hover { text-decoration: underline; }
 .bio_buttons .bio_back { display: inline-block; width: 100%; }
@@ -483,8 +485,8 @@ h3#reply-title { margin: 18px 0; }
   .back_to_bio { color: #8c2555; text-transform: uppercase; cursor: pointer; display: inline-block; }
   .back_to_bio:hover { text-decoration: underline; }
   .bio_close { position: absolute; top: 0; right: 0px; }
-  .bio_buttons .bio_back { float: left; }
-  .bio_buttons .bio_next { float: right; } }
+  .bio_buttons .bio_back { float: left; width: auto; }
+  .bio_buttons .bio_next { float: right; width: auto; } }
 @media screen and (min-width: 1040px) { body { background: url(images/bg.jpg) top center no-repeat; background-size: cover; }
   .bg_bug { display: none; }
   .inner_page_hide_header { display: block; }
