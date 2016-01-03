@@ -1185,8 +1185,10 @@ h3#reply-title {
 
 #content .single_team_member {
 	text-align: center;
-// 	margin:0px 35px 35px;
+	margin:0px 5% 20px;
 	display: inline-block;
+	vertical-align: top;
+	max-width:240px;
 	.team_profile {
 		display: block;
 		margin:0 auto 15px;
@@ -1200,7 +1202,9 @@ h3#reply-title {
 	}
 	h2 {
 		text-transform: uppercase;
-		margin-bottom: 5px;
+		margin-bottom: 2px;
+		text-align: center;
+		font-size:22px;
 	}
 	p.read_bio {
 		text-transform: uppercase;
@@ -1813,10 +1817,10 @@ margin-right:4%;
 	
 		
 		h1 {
-/*
-			padding: 80px 35px 95px;
-			font-size:42px;
-*/
+
+			padding: 120px 35px 130px;
+			font-size:45px;
+
 			
 		}
 	}

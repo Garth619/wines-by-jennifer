@@ -46,6 +46,46 @@ get_header(); ?>
 			
 			</div><!-- single_team_member -->
 			
+			<div class="single_team_member">
+				
+				<img class="team_profile" src="<?php bloginfo('template_directory');?>/images/team-test.png"/>
+				<h2>Member Name</h2>
+				<p class="read_bio">Read Bio <div class="arrow-right-purple"></div></p>
+			
+			</div><!-- single_team_member -->
+			
+			<div class="single_team_member">
+				
+				<img class="team_profile" src="<?php bloginfo('template_directory');?>/images/team-test.png"/>
+				<h2>Member Name</h2>
+				<p class="read_bio">Read Bio <div class="arrow-right-purple"></div></p>
+			
+			</div><!-- single_team_member -->
+			
+			<div class="single_team_member">
+				
+				<img class="team_profile" src="<?php bloginfo('template_directory');?>/images/team-test.png"/>
+				<h2>Member Name</h2>
+				<p class="read_bio">Read Bio <div class="arrow-right-purple"></div></p>
+			
+			</div><!-- single_team_member -->
+			
+			<div class="single_team_member">
+				
+				<img class="team_profile" src="<?php bloginfo('template_directory');?>/images/team-test.png"/>
+				<h2>Member Name</h2>
+				<p class="read_bio">Read Bio <div class="arrow-right-purple"></div></p>
+			
+			</div><!-- single_team_member -->
+			
+			<div class="single_team_member">
+				
+				<img class="team_profile" src="<?php bloginfo('template_directory');?>/images/team-test.png"/>
+				<h2>Member Name</h2>
+				<p class="read_bio">Read Bio <div class="arrow-right-purple"></div></p>
+			
+			</div><!-- single_team_member -->
+			
 			
 		</div><!-- team_wrapper -->
 		
