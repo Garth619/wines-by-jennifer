@@ -1249,14 +1249,14 @@ h3#reply-title {
 
 .single_bio_wrapper {
 	background:#fff;
-	width:95%;
+	width:100%;
 	overflow: hidden;
 	display: none;
-	margin:35px auto;
+	margin:0px auto;
 	.left_col_bio {
 		text-align: center;
-		width:20%;
-		float:left;
+		width:100%;
+		
 		.team_profile {
 			display: block;
 			margin:0 auto 15px;
@@ -1270,9 +1270,9 @@ h3#reply-title {
 		}
 	}
 	.right_col_bio {
-		width:80%;
-		float:right;
-		padding-left:4%;
+		width:100%;
+		
+	
 		position: relative;
 	}
 
@@ -1499,6 +1499,74 @@ h3#reply-title {
 	text-align:left;
 }
 
+
+
+
+.single_bio_wrapper {
+	background:#fff;
+	width:95%;
+	overflow: hidden;
+	display: none;
+	margin:35px auto;
+	.left_col_bio {
+		text-align: center;
+		width:20%;
+		float:left;
+		.team_profile {
+			display: block;
+			margin:0 auto 15px;
+			max-width:175px;
+			height:auto;
+			-webkit-border-radius: 50%;
+			-moz-border-radius: 50%;
+			border-radius: 50%;
+			border:2px solid #fff;
+			@include box-shadow($shadow);
+		}
+	}
+	.right_col_bio {
+		width:80%;
+		float:right;
+		padding-left:4%;
+		position: relative;
+	}
+
+}
+
+.back_to_bio {
+	color:$purple;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.back_to_bio:hover {
+	text-decoration: underline;
+}
+
+.bio_close {
+	position: absolute;
+	top:0;
+	right:0px;
+	color:$purple;
+	cursor:pointer;
+}
+
+.bio_buttons {
+	a {
+		color:$purple;
+		text-transform: uppercase;
+		text-decoration: none;
+	}
+	a:hover {
+		text-decoration:underline;
+	}
+	.bio_back {
+		float:left;
+	}
+	.bio_next {
+		float:right;
+	}
+}
 
 
 
