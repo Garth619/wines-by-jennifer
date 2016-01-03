@@ -1271,29 +1271,27 @@ h3#reply-title {
 	}
 	.right_col_bio {
 		width:100%;
-		
-	
 		position: relative;
+		text-align: center;
+		.bio_content {
+			text-align: left;
+		}
 	}
 
 }
 
-.back_to_bio {
-	color:$purple;
-	text-transform: uppercase;
-	cursor: pointer;
+.back_to_bio_wrapper {
+	display: none;
 }
 
-.back_to_bio:hover {
-	text-decoration: underline;
-}
 
 .bio_close {
-	position: absolute;
-	top:0;
+	display: inline-block;
 	right:0px;
 	color:$purple;
 	cursor:pointer;
+	text-transform: uppercase;
+	margin-bottom:25px;
 }
 
 .bio_buttons {
@@ -1306,12 +1304,16 @@ h3#reply-title {
 		text-decoration:underline;
 	}
 	.bio_back {
-		float:left;
+		display: inline-block;
+		width:100%;
 	}
 	.bio_next {
-		float:right;
+		display: inline-block;
+		width:100%;
 	}
 }
+
+
 
 @media screen and (min-width: 660px) {
 	
@@ -1503,63 +1505,58 @@ h3#reply-title {
 
 
 .single_bio_wrapper {
-	background:#fff;
+	
 	width:95%;
-	overflow: hidden;
-	display: none;
+	
+	
 	margin:35px auto;
 	.left_col_bio {
-		text-align: center;
-		width:20%;
+		
+		width:30%;
 		float:left;
 		.team_profile {
-			display: block;
+			
 			margin:0 auto 15px;
 			max-width:175px;
 			height:auto;
-			-webkit-border-radius: 50%;
-			-moz-border-radius: 50%;
-			border-radius: 50%;
-			border:2px solid #fff;
-			@include box-shadow($shadow);
+			
 		}
 	}
 	.right_col_bio {
-		width:80%;
+		width:70%;
 		float:right;
-		padding-left:4%;
+		padding-left:1%;
 		position: relative;
 	}
 
+}
+
+.back_to_bio_wrapper {
+	display: block;
 }
 
 .back_to_bio {
 	color:$purple;
 	text-transform: uppercase;
 	cursor: pointer;
+	display: inline-block;
 }
 
 .back_to_bio:hover {
 	text-decoration: underline;
 }
 
+
 .bio_close {
 	position: absolute;
 	top:0;
 	right:0px;
-	color:$purple;
-	cursor:pointer;
+
 }
 
+
 .bio_buttons {
-	a {
-		color:$purple;
-		text-transform: uppercase;
-		text-decoration: none;
-	}
-	a:hover {
-		text-decoration:underline;
-	}
+
 	.bio_back {
 		float:left;
 	}

@@ -437,18 +437,17 @@ h3#reply-title { margin: 18px 0; }
 .single_bio_wrapper { background: #fff; width: 100%; overflow: hidden; display: none; margin: 0px auto; }
 .single_bio_wrapper .left_col_bio { text-align: center; width: 100%; }
 .single_bio_wrapper .left_col_bio .team_profile { display: block; margin: 0 auto 15px; max-width: 175px; height: auto; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; border: 2px solid #fff; -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -ms-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); }
-.single_bio_wrapper .right_col_bio { width: 100%; position: relative; }
+.single_bio_wrapper .right_col_bio { width: 100%; position: relative; text-align: center; }
+.single_bio_wrapper .right_col_bio .bio_content { text-align: left; }
 
-.back_to_bio { color: #8c2555; text-transform: uppercase; cursor: pointer; }
+.back_to_bio_wrapper { display: none; }
 
-.back_to_bio:hover { text-decoration: underline; }
-
-.bio_close { position: absolute; top: 0; right: 0px; color: #8c2555; cursor: pointer; }
+.bio_close { display: inline-block; right: 0px; color: #8c2555; cursor: pointer; text-transform: uppercase; margin-bottom: 25px; }
 
 .bio_buttons a { color: #8c2555; text-transform: uppercase; text-decoration: none; }
 .bio_buttons a:hover { text-decoration: underline; }
-.bio_buttons .bio_back { float: left; }
-.bio_buttons .bio_next { float: right; }
+.bio_buttons .bio_back { display: inline-block; width: 100%; }
+.bio_buttons .bio_next { display: inline-block; width: 100%; }
 
 @media screen and (min-width: 660px) { .intro { overflow: hidden; background: url(images/intro_bg.jpg) repeat; }
   .intro .logo_wrapper { display: block; float: left; width: 18%; }
@@ -476,15 +475,14 @@ h3#reply-title { margin: 18px 0; }
   .content_container { -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -ms-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); width: 92%; margin: -36px auto 25px; }
   .content_container.no_banner { margin-top: 25px; width: 95%; }
   #content h1, #content h2, #content h3, #content h4, #content h5, #content h6 { text-align: left; }
-  .single_bio_wrapper { background: #fff; width: 95%; overflow: hidden; display: none; margin: 35px auto; }
-  .single_bio_wrapper .left_col_bio { text-align: center; width: 20%; float: left; }
-  .single_bio_wrapper .left_col_bio .team_profile { display: block; margin: 0 auto 15px; max-width: 175px; height: auto; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; border: 2px solid #fff; -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -ms-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); }
-  .single_bio_wrapper .right_col_bio { width: 80%; float: right; padding-left: 4%; position: relative; }
-  .back_to_bio { color: #8c2555; text-transform: uppercase; cursor: pointer; }
+  .single_bio_wrapper { width: 95%; margin: 35px auto; }
+  .single_bio_wrapper .left_col_bio { width: 30%; float: left; }
+  .single_bio_wrapper .left_col_bio .team_profile { margin: 0 auto 15px; max-width: 175px; height: auto; }
+  .single_bio_wrapper .right_col_bio { width: 70%; float: right; padding-left: 1%; position: relative; }
+  .back_to_bio_wrapper { display: block; }
+  .back_to_bio { color: #8c2555; text-transform: uppercase; cursor: pointer; display: inline-block; }
   .back_to_bio:hover { text-decoration: underline; }
-  .bio_close { position: absolute; top: 0; right: 0px; color: #8c2555; cursor: pointer; }
-  .bio_buttons a { color: #8c2555; text-transform: uppercase; text-decoration: none; }
-  .bio_buttons a:hover { text-decoration: underline; }
+  .bio_close { position: absolute; top: 0; right: 0px; }
   .bio_buttons .bio_back { float: left; }
   .bio_buttons .bio_next { float: right; } }
 @media screen and (min-width: 1040px) { body { background: url(images/bg.jpg) top center no-repeat; background-size: cover; }
