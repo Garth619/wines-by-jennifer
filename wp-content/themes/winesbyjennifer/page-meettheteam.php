@@ -15,7 +15,7 @@ get_header(); ?>
 	</div><!-- banner_overlay -->
 	
 </div><!-- inner_banner -->
-<a name="id3"></a><!-- http://jsfiddle.net/BjpWB/4/ -->
+<a id="myAnchor"></a>
 <div class="content_container">
 	
 	<div id="content">
@@ -81,11 +81,11 @@ get_header(); ?>
 			
 			<div class="single_team_member">
 				
-				<div class="team_profile_wrapper"></div><!-- team_profile_wrapper -->
-				<h2>Member Name</h2>
-				<p class="read_bio">Read Bio</p>
-				<div class="arrow-right-purple"></div>
-				<a id="link" href="#">click me to scroll to id3</a>
+				<div class="team_profile_wrapper"><a href="#myAnchor" id="anchor1"></a></div><!-- team_profile_wrapper -->
+				<h2><a href="#myAnchor" id="anchor1">Member Name</a></h2>
+				<a href="#myAnchor" id="anchor1" class="read_bio">Read Bio <div class="arrow-right-purple"></div></a>
+				
+				
 			
 			</div><!-- single_team_member -->			
 			

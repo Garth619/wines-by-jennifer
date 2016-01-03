@@ -65,19 +65,7 @@
 			
 		});
 		
-	// Scroll
-	
-	function scrollToAnchor(aid){
-    var aTag = jQuery("a[name='"+ aid +"']");
-    jQuery('html,body').animate({scrollTop: aTag.offset().top},'slow');
-	}
 
-	jQuery("#link").click(function() {
-   scrollToAnchor('id3');
-	
-	});
-
-// End of Scroll
 		
 	});
 
