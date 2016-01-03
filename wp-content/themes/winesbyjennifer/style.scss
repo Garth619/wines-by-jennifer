@@ -1078,6 +1078,20 @@ h3#reply-title {
 	
 }
 
+.arrow-right-purple-left {
+	width: 0; 
+	height: 0; 
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-right: 5px solid $purple;
+	display: inline-block;
+	margin-left:3px;
+	position: relative;
+	top:-1px;
+	
+}
+
+
 .arrow-right-yellow {
 	width: 0; 
 	height: 0; 
@@ -1235,11 +1249,12 @@ h3#reply-title {
 
 .single_bio_wrapper {
 	background:#fff;
-	width:100%;
-	height:1000px;
+	width:95%;
+	overflow: hidden;
 	display: none;
+	margin:35px auto;
 	.left_col_bio {
-		
+		text-align: center;
 		width:20%;
 		float:left;
 		.team_profile {
@@ -1257,14 +1272,46 @@ h3#reply-title {
 	.right_col_bio {
 		width:80%;
 		float:right;
+		padding-left:4%;
+		position: relative;
 	}
 
 }
 
-.single_bio_wrapper {
-
+.back_to_bio {
+	color:$purple;
+	text-transform: uppercase;
+	cursor: pointer;
 }
 
+.back_to_bio:hover {
+	text-decoration: underline;
+}
+
+.bio_close {
+	position: absolute;
+	top:0;
+	right:0px;
+	color:$purple;
+	cursor:pointer;
+}
+
+.bio_buttons {
+	a {
+		color:$purple;
+		text-transform: uppercase;
+		text-decoration: none;
+	}
+	a:hover {
+		text-decoration:underline;
+	}
+	.bio_back {
+		float:left;
+	}
+	.bio_next {
+		float:right;
+	}
+}
 
 @media screen and (min-width: 660px) {
 	

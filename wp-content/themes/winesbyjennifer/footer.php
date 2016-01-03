@@ -51,7 +51,14 @@
 			
 		});
 		
-	jQuery('.single_bio_wrapper').click(function(){
+	jQuery('.bio_close').click(function(){
+			
+			jQuery('.team_wrapper').show(200);
+			jQuery('.single_bio_wrapper').hide(200);
+			
+		});
+		
+	jQuery('.back_to_bio').click(function(){
 			
 			jQuery('.team_wrapper').show(200);
 			jQuery('.single_bio_wrapper').hide(200);
