@@ -409,7 +409,7 @@ h3#reply-title { margin: 18px 0; }
 .testimonials p { font-size: 15px; margin-bottom: 10px; display: inline-block; }
 .testimonials img.testimonial_img { width: 15%; }
 
-.footer { width: 92%; background: url(images/green-texture.png) top left repeat #163b2b; font-size: 15px; margin: 0 auto 25px; color: #fff; text-align: center; padding: 25px; }
+.footer { width: 92%; background: url(images/green-texture.png) top left repeat #163b2b; font-size: 15px; margin: 0 auto 25px; color: #fff; text-align: center; padding: 25px; -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -ms-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); }
 .footer ul { list-style: none; margin: 0; }
 .footer ul li { margin-bottom: 4px; text-transform: uppercase; }
 .footer ul li a { color: #fff; text-decoration: none; }
@@ -419,11 +419,11 @@ h3#reply-title { margin: 18px 0; }
 /* Inner Pages*/
 .inner_banner { background: url(images/inner-banner.jpg) top center no-repeat; background-size: cover; position: relative; }
 .inner_banner .banner_overlay { background: rgba(0, 0, 0, 0.45); width: 100%; }
-.inner_banner .banner_overlay h1 { padding: 52px 35px 65px; color: #fff; font-family: "Cinzel", serif; text-align: center; text-shadow: 0 1px 2px black; font-size: 43px; }
+.inner_banner .banner_overlay h1 { padding: 65px 35px; color: #fff; font-family: "Cinzel", serif; text-align: center; text-shadow: 0 1px 2px black; font-size: 38px; }
 
 .main.inner { padding: 0 0 0px; }
 
-.content_container { background: #fff; height: 1000px; margin: -36px auto 0; position: relative; width: 92%; -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -ms-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); }
+.content_container { position: relative; background: #fff; height: 1000px; }
 
 @media screen and (min-width: 660px) { .intro { overflow: hidden; background: url(images/intro_bg.jpg) repeat; }
   .intro .logo_wrapper { display: block; float: left; width: 18%; }
@@ -439,9 +439,13 @@ h3#reply-title { margin: 18px 0; }
   .box img { width: 100%; display: block; }
   .box .box_text_wrap h2 { font-size: 5.5vw; }
   .box .box_text_wrap h2 a { color: #fff; text-decoration: none; }
+  .box:nth-child(1), .box:nth-child(2) { border-top: 2px solid #fff; }
+  .box:nth-child(1) { border-right: 2px solid #fff; }
   .footer ul { overflow: hidden; }
   .footer ul.menu { margin-bottom: 15px; }
   .footer ul.menu li { display: inline-block; margin-left: 8px; margin-right: 8px; } }
+@media screen and (min-width: 860px) { .inner_banner .banner_overlay h1 { padding: 80px 35px 95px; font-size: 38px; }
+  .content_container { -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -ms-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); width: 92%; margin: -36px auto 25px; } }
 @media screen and (min-width: 1040px) { body { background: url(images/bg.jpg) top center no-repeat; background-size: cover; }
   .bg_bug { display: none; }
   .inner_page_hide_header { display: block; }
@@ -497,6 +501,7 @@ h3#reply-title { margin: 18px 0; }
   .green_bar a { color: #fff; text-decoration: none; }
   .desktop_single_event { padding: 8px; }
   .box_wrapper { overflow: hidden; }
+  .box_wrapper.inner { padding: 0 25px; }
   .box_row { float: left; width: 49%; }
   .box { width: 48%; float: left; -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); border: 2px solid #fff; }
   .box .box_text_wrap { transition: all .3s ease; }

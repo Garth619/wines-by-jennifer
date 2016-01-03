@@ -1118,6 +1118,7 @@ h3#reply-title {
 	color:#fff;
 	text-align: center;
 	padding:25px;
+	@include box-shadow($shadow);
 	ul {
 		list-style: none;
 		margin:0;
@@ -1154,12 +1155,12 @@ h3#reply-title {
 		width:100%;
 		
 		h1 {
-			padding: 52px 35px 65px;
+			padding: 65px 35px;
 			color:#fff;
 			font-family: $cinzel;
 			text-align: center;
 			text-shadow: 0 1px 2px black;
-			font-size:43px;
+			font-size:38px;
 		}
 	}
 }
@@ -1170,14 +1171,15 @@ h3#reply-title {
 }
 
 .content_container {
+	position: relative;
 	
 	background: #fff;
 	height:1000px;
-	margin: -36px auto 0;
-  position: relative;
-  width: 92%;
-	@include box-shadow($shadow);
+	
+  
 }
+
+
 
 
 
@@ -1283,6 +1285,14 @@ h3#reply-title {
 	}
 }
 
+.box:nth-child(1), .box:nth-child(2) {
+	border-top:2px solid #fff;
+}
+
+.box:nth-child(1) {
+	border-right:2px solid #fff;
+}
+
 
 .footer {
 	ul {
@@ -1299,6 +1309,36 @@ h3#reply-title {
 }
 	
 	
+	
+}
+
+
+@media screen and (min-width: 860px) {
+	
+	
+
+.inner_banner {
+	
+	.banner_overlay {
+	
+		
+		h1 {
+			padding: 80px 35px 95px;
+			font-size:38px;
+		}
+	}
+}
+
+
+
+
+
+.content_container {
+	@include box-shadow($shadow);
+  width: 92%;
+  margin: -36px auto 25px;
+	
+	}
 	
 }
 
@@ -1641,6 +1681,10 @@ h3#reply-title {
 
 .box_wrapper {
 	overflow: hidden;
+}
+
+.box_wrapper.inner {
+	padding:0 25px;
 }
 
 .box_row {

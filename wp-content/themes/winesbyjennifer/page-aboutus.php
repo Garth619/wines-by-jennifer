@@ -33,7 +33,7 @@ get_header(); ?>
 			
 			
 
-	<div class="box_wrapper">
+	<div class="box_wrapper inner">
 		<div class="box_row">
 			<div class="box">
 				<img src="<?php bloginfo('template_directory');?>/images/box1.jpg"/>
