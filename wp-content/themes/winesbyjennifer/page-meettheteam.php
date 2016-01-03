@@ -24,72 +24,90 @@ get_header(); ?>
 			
 			<div class="single_team_member">
 				
-				<img class="team_profile" src="<?php bloginfo('template_directory');?>/images/team-test.png"/>
+				<div class="team_profile_wrapper"></div><!-- team_profile_wrapper -->
 				<h2>Member Name</h2>
-				<p class="read_bio">Read Bio <div class="arrow-right-purple"></div></p>
+				<p class="read_bio">Read Bio</p>
+				<div class="arrow-right-purple"></div>
 			
 			</div><!-- single_team_member -->
 			
 			<div class="single_team_member">
 				
-				<img class="team_profile" src="<?php bloginfo('template_directory');?>/images/team-test.png"/>
+				<div class="team_profile_wrapper"></div><!-- team_profile_wrapper -->
 				<h2>Member Name</h2>
-				<p class="read_bio">Read Bio <div class="arrow-right-purple"></div></p>
+				<p class="read_bio">Read Bio</p>
+				<div class="arrow-right-purple"></div>
 			
 			</div><!-- single_team_member -->
 			
 			<div class="single_team_member">
 				
-				<img class="team_profile" src="<?php bloginfo('template_directory');?>/images/team-test.png"/>
+				<div class="team_profile_wrapper"></div><!-- team_profile_wrapper -->
 				<h2>Member Name</h2>
-				<p class="read_bio">Read Bio <div class="arrow-right-purple"></div></p>
+				<p class="read_bio">Read Bio</p>
+				<div class="arrow-right-purple"></div>
 			
 			</div><!-- single_team_member -->
 			
 			<div class="single_team_member">
 				
-				<img class="team_profile" src="<?php bloginfo('template_directory');?>/images/team-test.png"/>
+				<div class="team_profile_wrapper"></div><!-- team_profile_wrapper -->
 				<h2>Member Name</h2>
-				<p class="read_bio">Read Bio <div class="arrow-right-purple"></div></p>
+				<p class="read_bio">Read Bio</p>
+				<div class="arrow-right-purple"></div>
 			
 			</div><!-- single_team_member -->
 			
 			<div class="single_team_member">
 				
-				<img class="team_profile" src="<?php bloginfo('template_directory');?>/images/team-test.png"/>
+				<div class="team_profile_wrapper"></div><!-- team_profile_wrapper -->
 				<h2>Member Name</h2>
-				<p class="read_bio">Read Bio <div class="arrow-right-purple"></div></p>
+				<p class="read_bio">Read Bio</p>
+				<div class="arrow-right-purple"></div>
 			
 			</div><!-- single_team_member -->
 			
 			<div class="single_team_member">
 				
-				<img class="team_profile" src="<?php bloginfo('template_directory');?>/images/team-test.png"/>
+				<div class="team_profile_wrapper"></div><!-- team_profile_wrapper -->
 				<h2>Member Name</h2>
-				<p class="read_bio">Read Bio <div class="arrow-right-purple"></div></p>
+				<p class="read_bio">Read Bio</p>
+				<div class="arrow-right-purple"></div>
 			
 			</div><!-- single_team_member -->
 			
 			<div class="single_team_member">
 				
-				<img class="team_profile" src="<?php bloginfo('template_directory');?>/images/team-test.png"/>
+				<div class="team_profile_wrapper"></div><!-- team_profile_wrapper -->
 				<h2>Member Name</h2>
-				<p class="read_bio">Read Bio <div class="arrow-right-purple"></div></p>
+				<p class="read_bio">Read Bio</p>
+				<div class="arrow-right-purple"></div>
 			
-			</div><!-- single_team_member -->
+			</div><!-- single_team_member -->			
 			
-			<div class="single_team_member">
-				
-				<img class="team_profile" src="<?php bloginfo('template_directory');?>/images/team-test.png"/>
-				<h2>Member Name</h2>
-				<p class="read_bio">Read Bio <div class="arrow-right-purple"></div></p>
 			
-			</div><!-- single_team_member -->
-			
+						
+						
 			
 		</div><!-- team_wrapper -->
 		
-		
+		<div class="single_bio_wrapper">
+			
+			<div class="left_col_bio">
+				
+				<img class="team_profile" src="<?php bloginfo('template_directory');?>/images/homer.jpg"/>
+				
+			</div><!-- left_col_bio -->
+			
+			
+			<div class="right_col_bio">
+				
+				<h1>Sup</h1>
+				
+			</div><!-- right_col_bio -->
+			
+			
+		</div><!-- single_bio_wrapper -->
 	
 	</div><!-- content -->
 	

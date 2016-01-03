@@ -40,6 +40,26 @@
 <div class="mobile_shopping_cart">Cart | Login | Search</div><!-- mobile_shopping_cart -->
 	
 <?php wp_footer(); ?>
+<script type="text/javascript">
+	
+	jQuery(document).ready(function(){
+		
+		jQuery('.single_team_member').click(function(){
+			
+			jQuery('.team_wrapper').hide(200);
+			jQuery('.single_bio_wrapper').show(200);
+			
+		});
+		
+	jQuery('.single_bio_wrapper').click(function(){
+			
+			jQuery('.team_wrapper').show(200);
+			jQuery('.single_bio_wrapper').hide(200);
+			
+		});
+		
+	});
 
+</script>
 </body>
 </html>
