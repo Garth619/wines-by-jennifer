@@ -168,7 +168,7 @@ get_header(); ?>
 </div><!-- content_container -->
 		
 			
-	<div class="box_wrapper inner">
+	<div class="box_wrapper inner wow fadeIn" data-wow-delay="0.2s">
 		<div class="box_row">
 			<div class="box">
 				<img src="<?php bloginfo('template_directory');?>/images/box1.jpg"/>
