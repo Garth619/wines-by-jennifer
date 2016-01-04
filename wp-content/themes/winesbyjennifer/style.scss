@@ -1404,6 +1404,30 @@ h3#reply-title {
 		top:3px;
 		text-decoration: underline;
 	}
+	
+	/* FAQ */
+	
+	
+	#content p.question {
+		margin-bottom:12px;
+		color:$purple;
+		cursor: pointer;
+	}
+	
+	#content p.question:after {
+		content:"+ Expand";
+		display: inline;
+		margin-left:4px;
+	}
+	
+	#content p.question.open:after {
+		content:"-";
+	}
+	
+	#content p.answer {
+		display: none;
+	}
+	
 
 @media screen and (min-width: 660px) {
 	

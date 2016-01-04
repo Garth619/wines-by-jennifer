@@ -16,13 +16,13 @@
 <div class="footer">
 	<div class="footer_col1">
 		<ul class="desktop_copyright">
-			<li>c 2015 Wines By Jennifer r</li>
+			<li>c 2016 Wines By Jennifer r</li>
 		</ul><!-- desktop_copyright -->
 	</div><!-- footer_col1 -->
 	<div class="footer_col2">
 		<ul class="menu">
 			<li><a href="">Contact</a></li>
-			<li><a href="">FAQ</a></li>
+			<li><a href="<?php bloginfo('url');?>/faq">FAQ</a></li>
 			<li><a href="">Privacy</a></li>
 			<li><a href="">Please Drink Responsibly</a></li>
 		</ul>
@@ -46,6 +46,17 @@
 	jQuery(document).ready(function(){
 		
 
+		// Faq
+		
+		
+		jQuery('.question').click(function(){
+			
+			jQuery(this).next('.answer').slideToggle(200);
+			jQuery(this).toggleClass('open');
+			
+		});
+		
+		
 		jQuery('.single_team_member_one').click(function(){
 			
 			jQuery('.team_wrapper').hide(200);
