@@ -1428,6 +1428,25 @@ h3#reply-title {
 		display: none;
 	}
 	
+	/* In the News */
+	
+	
+	.wbj_post {
+		border-bottom:1px #cbcbcb dashed;
+		padding-bottom:20px;
+		padding-top:35px;
+	}
+	
+	.wbj_post:first-of-type {
+		padding-top:0px;
+	}
+	
+	.wbj_date {
+		text-align: center;
+	}
+
+
+	
 
 @media screen and (min-width: 660px) {
 	
@@ -1706,6 +1725,12 @@ h3#reply-title {
 .club_three {
 	margin-bottom:25px;
 }
+
+
+.wbj_date {
+		text-align: left;
+	}
+
 
 
 }

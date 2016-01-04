@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Meet the Team
+ * Template Name: WBJ Meet the Team
  *
  */
 

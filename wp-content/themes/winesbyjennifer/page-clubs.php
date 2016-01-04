@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Clubs
+ * Template Name: WBJ Clubs
  *
  */
 

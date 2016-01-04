@@ -478,6 +478,13 @@ h3#reply-title { margin: 18px 0; }
 
 #content p.answer { display: none; }
 
+/* In the News */
+.wbj_post { border-bottom: 1px #cbcbcb dashed; padding-bottom: 20px; padding-top: 35px; }
+
+.wbj_post:first-of-type { padding-top: 0px; }
+
+.wbj_date { text-align: center; }
+
 @media screen and (min-width: 660px) { .intro { overflow: hidden; background: url(images/intro_bg.jpg) repeat; }
   .intro .logo_wrapper { display: block; float: left; width: 18%; }
   .intro .logo_wrapper .logo { width: 100%; height: auto; display: block; }
@@ -519,7 +526,8 @@ h3#reply-title { margin: 18px 0; }
   .club_right_content, .club_left_content { width: 55%; padding: 30px 5% 0; }
   .club_right_content h1, .club_left_content h1 { font-size: 45px !important; }
   .club_right_image, .club_left_image { width: 45%; }
-  .club_three { margin-bottom: 25px; } }
+  .club_three { margin-bottom: 25px; }
+  .wbj_date { text-align: left; } }
 @media screen and (min-width: 1040px) { body { background: url(images/bg.jpg) top center no-repeat; background-size: cover; }
   .bg_bug { display: none; }
   .inner_page_hide_header { display: block; }
