@@ -494,6 +494,19 @@ h3#reply-title { margin: 18px 0; }
   .newsletter_signup .newsletter_text_wrap .newsletter_text img.gift_icon { width: 6%; }
   .newsletter_signup .newsletter_text_wrap .newsletter_text a.newsletter_title { font-size: 7vw; }
   .newsletter_signup .newsletter_text_wrap .newsletter_text a.newsletter_subtitle { font-size: 3vw; }
+  .list_grid_wrapper { padding-bottom: 100px; text-align: center; margin: 0 auto; }
+  .list_grid_wrapper .post_list { width: 45px; padding: 6px; background: rgba(0, 0, 0, 0.7); display: inline-block; vertical-align: top; cursor: pointer; }
+  .list_grid_wrapper .post_list .list_bar_wrapper { width: 100%; overflow: hidden; display: block; margin: 0 auto 4px; }
+  .list_grid_wrapper .post_list .list_bar_wrapper .list_bullet { width: 3px; height: 3px; background: #fff; margin-right: 4px; float: left; transition: all .2s ease; }
+  .list_grid_wrapper .post_list .list_bar_wrapper .list_line { height: 3px; background: #fff; width: 26px; float: left; transition: all .2s ease; }
+  .list_grid_wrapper .post_list .list_bar_wrapper:last-of-type { margin-bottom: 0; }
+  .list_grid_wrapper .post_grid { width: 45px; padding: 6px; background: rgba(0, 0, 0, 0.7); display: inline-block; cursor: pointer; }
+  .list_grid_wrapper .post_grid .grid_square_wrapper { width: 100%; overflow: hidden; display: block; margin-bottom: 5px; }
+  .list_grid_wrapper .post_grid .grid_square_wrapper .grid_single_square { width: 6px; height: 6px; background: #fff; float: left; margin-left: 4px; transition: all .2s ease; }
+  .list_grid_wrapper .post_grid .grid_square_wrapper:last-of-type { margin-bottom: 0; }
+  .post_list:hover .list_bar_wrapper .list_bullet { background: yellow; transition: all .2s ease; }
+  .post_list:hover .list_bar_wrapper .list_line { background: yellow; transition: all .2s ease; }
+  .post_grid:hover .grid_square_wrapper .grid_single_square { background: yellow; transition: all .2s ease; }
   .box_row { overflow: hidden; }
   .box { width: 50%; float: left; border: none; }
   .box img { width: 100%; display: block; }

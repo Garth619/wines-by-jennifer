@@ -10,7 +10,59 @@ get_header(); ?>
 <div class="inner_banner">
 	<div class="banner_overlay">
 	
-		<h1><img class="ribbon ribbon_left" src="<?php bloginfo('template_directory');?>/images/ribbon.png"/>In the News<img class="ribbon ribbon_right" src="<?php bloginfo('template_directory');?>/images/ribbon-right.png"/></h1>
+		<h1 style="padding-bottom:0;"><img class="ribbon ribbon_left" src="<?php bloginfo('template_directory');?>/images/ribbon.png"/>In the News<img class="ribbon ribbon_right" src="<?php bloginfo('template_directory');?>/images/ribbon-right.png"/></h1>
+		
+		<div class="list_grid_wrapper">
+			
+			<div class="post_list">
+				
+				<div class="list_bar_wrapper">
+					
+					<div class="list_bullet"></div><!-- list_bullet -->
+					<div class="list_line"></div><!-- list_bullet -->
+					
+				</div><!-- list_bar_wrapper -->
+				
+				<div class="list_bar_wrapper">
+					
+					<div class="list_bullet"></div><!-- list_bullet -->
+					<div class="list_line"></div><!-- list_bullet -->
+					
+				</div><!-- list_bar_wrapper -->
+				
+				<div class="list_bar_wrapper">
+					
+					<div class="list_bullet"></div><!-- list_bullet -->
+					<div class="list_line"></div><!-- list_bullet -->
+					
+				</div><!-- list_bar_wrapper -->
+			
+								
+			</div><!-- post_list -->
+			
+			<div class="post_grid">
+				
+				<div class="grid_square_wrapper">
+				
+					<div class="grid_single_square"></div><!-- grid_single_square -->
+					<div class="grid_single_square"></div><!-- grid_single_square -->
+					<div class="grid_single_square"></div><!-- grid_single_square -->
+				
+				</div><!-- grid_square_wrapper -->
+				
+				<div class="grid_square_wrapper">	
+					
+					<div class="grid_single_square"></div><!-- grid_single_square -->
+					<div class="grid_single_square"></div><!-- grid_single_square -->
+					<div class="grid_single_square"></div><!-- grid_single_square -->
+				
+				</div><!-- grid_square_wrapper -->
+				
+			
+				
+			</div><!-- post_grid -->
+			
+		</div><!-- list_grid_wrapper -->
 	
 	</div><!-- banner_overlay -->
 	
