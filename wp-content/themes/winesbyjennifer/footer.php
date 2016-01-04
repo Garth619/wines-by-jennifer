@@ -40,16 +40,38 @@
 <div class="mobile_shopping_cart">Cart | Login | Search</div><!-- mobile_shopping_cart -->
 	
 <?php wp_footer(); ?>
+<script type="text/javascript" src="<?php bloginfo('template_directory');?>/cycle2.js"></script>
 <script type="text/javascript">
 	
 	jQuery(document).ready(function(){
 		
-		jQuery('.single_team_member').click(function(){
+
+		jQuery('.single_team_member_one').click(function(){
 			
 			jQuery('.team_wrapper').hide(200);
-			jQuery('.single_bio_wrapper').show(200);
+			jQuery('.single_bio_wrapper_one').show(200);
 			
 		});
+		
+		
+		jQuery('.single_team_member_two').click(function(){
+			
+			jQuery('.team_wrapper').hide(200);
+			jQuery('.single_bio_wrapper_two').show(200);
+			
+		});
+		
+		
+		jQuery('.single_team_member_three').click(function(){
+			
+			jQuery('.team_wrapper').hide(200);
+			jQuery('.single_bio_wrapper_three').show(200);
+			
+		});
+
+		
+		
+		
 		
 	jQuery('.bio_close').click(function(){
 			
@@ -64,6 +86,41 @@
 			jQuery('.single_bio_wrapper').hide(200);
 			
 		});
+		
+
+		
+
+/*
+
+    jQuery(".single_bio_wrapper").each(function(e) {
+        if (e != 0)
+            jQuery(this).hide();
+    });
+*/
+
+// stackoverflow.com/questions/17064433/show-hide-divs-using-next-previous-button-using-jquery 
+    
+    jQuery("#next").click(function(){
+        if (jQuery(".single_bio_wrapper:visible").next().length != 0)
+            jQuery(".single_bio_wrapper:visible").next().show().prev().hide();
+        else {
+            jQuery(".single_bio_wrapper:visible").hide();
+            jQuery(".single_bio_wrapper:first").show();
+        }
+        return false;
+    });
+
+    jQuery("#prev").click(function(){
+        if (jQuery(".single_bio_wrapper:visible").prev().length != 0)
+            jQuery(".single_bio_wrapper:visible").prev().show().next().hide();
+        else {
+            jQuery(".single_bio_wrapper:visible").hide();
+            jQuery(".single_bio_wrapper:last").show();
+        }
+        return false;
+    });
+
+
 		
 
 		
