@@ -1356,9 +1356,12 @@ h3#reply-title {
 .clubs {
 	padding:35px 35px;
 	width:100%;
+	overflow: hidden;
 	img {
 		max-width:100%;
 		height:auto;
+		margin: 0 auto;
+		display: block;
 	}
 	
 }
@@ -1655,7 +1658,30 @@ h3#reply-title {
 }
 
 
+.club_left {
+	float:left;
+}
 
+.club_right {
+	float:right;
+}
+
+.club_right_content, .club_left_content {
+	width:55%;
+	padding:30px 5% 0;
+	h1 {
+		font-size:45px !important;
+	}
+	
+}
+
+.club_right_image, .club_left_image {
+	width:45%;
+}
+
+.club_three {
+	margin-bottom:25px;
+}
 
 
 }

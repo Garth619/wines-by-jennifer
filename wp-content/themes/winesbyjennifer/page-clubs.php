@@ -18,7 +18,7 @@ get_header(); ?>
 
 <div class="clubs club_one">
 	
-	<div class="club_right">
+	<div class="club_right club_right_content">
 		<div id="content">
 			<h1>Wine Club</h1>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla</p>
@@ -26,7 +26,7 @@ get_header(); ?>
 		</div><!-- content -->
 	</div><!-- club_right -->
 	
-	<div class="club_left">
+	<div class="club_left club_left_image">
 		<img src="<?php bloginfo('template_directory');?>/images/wine_bg.png"/>
 	</div><!-- club_left -->
 
@@ -35,7 +35,7 @@ get_header(); ?>
 
 <div class="clubs club_two">
 	
-	<div class="club_left">
+	<div class="club_left club_left_content">
 		<div id="content">
 			<h1>Cellar Club</h1>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla</p>
@@ -43,7 +43,7 @@ get_header(); ?>
 		</div><!-- content -->
 	</div><!-- club_left -->
 	
-	<div class="club_right">
+	<div class="club_right club_right_image">
 			<img src="<?php bloginfo('template_directory');?>/images/cellar-bg.png"/>
 	</div><!-- club_right -->
 
@@ -52,7 +52,7 @@ get_header(); ?>
 
 <div class="clubs club_three">
 	
-	<div class="club_right">
+	<div class="club_right club_right_content">
 		<div id="content">
 			<h1>Beer Club</h1>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla</p>
@@ -60,7 +60,7 @@ get_header(); ?>
 		</div><!-- content -->
 	</div><!-- club_left -->
 	
-	<div class="club_left">
+	<div class="club_left club_left_image">
 			<img src="<?php bloginfo('template_directory');?>/images/beer.jpg"/>
 	</div><!-- club_right -->
 

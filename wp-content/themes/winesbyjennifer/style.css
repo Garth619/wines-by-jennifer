@@ -456,8 +456,8 @@ h3#reply-title { margin: 18px 0; }
 .bio_buttons .bio_next { display: inline-block; width: 100%; }
 
 /* Clubs */
-.clubs { padding: 35px 35px; width: 100%; }
-.clubs img { max-width: 100%; height: auto; }
+.clubs { padding: 35px 35px; width: 100%; overflow: hidden; }
+.clubs img { max-width: 100%; height: auto; margin: 0 auto; display: block; }
 
 .club_one { background: url(images/wine_club_bg.jpg) top center; background-size: cover; }
 
@@ -504,7 +504,13 @@ h3#reply-title { margin: 18px 0; }
   .back_to_bio:hover { text-decoration: underline; }
   .bio_close { position: absolute; top: 0; right: 0px; }
   .bio_buttons .bio_back { float: left; width: auto; }
-  .bio_buttons .bio_next { float: right; width: auto; } }
+  .bio_buttons .bio_next { float: right; width: auto; }
+  .club_left { float: left; }
+  .club_right { float: right; }
+  .club_right_content, .club_left_content { width: 55%; padding: 30px 5% 0; }
+  .club_right_content h1, .club_left_content h1 { font-size: 45px !important; }
+  .club_right_image, .club_left_image { width: 45%; }
+  .club_three { margin-bottom: 25px; } }
 @media screen and (min-width: 1040px) { body { background: url(images/bg.jpg) top center no-repeat; background-size: cover; }
   .bg_bug { display: none; }
   .inner_page_hide_header { display: block; }
