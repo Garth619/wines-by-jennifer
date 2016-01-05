@@ -626,7 +626,8 @@ h3#reply-title { margin: 18px 0; }
   .post_list.active .list_bar_wrapper .list_line { background: yellow; transition: all .1s ease; }
   .post_grid:hover .grid_square_wrapper .grid_single_square { background: #8c2555; transition: all .1s ease; }
   .post_grid.active .grid_square_wrapper .grid_single_square { background: yellow; transition: all .1s ease; }
-  .content_container.grid_view { background: transparent; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; overflow: hidden; text-align: center; padding: 0 35px 35px; }
+  .content_container { transition: all .5s ease; }
+  .content_container.grid_view { background: transparent; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; overflow: hidden; text-align: center; padding: 0 35px 35px; transition: padding .5s ease; }
   .content_container.grid_view .wbj_post { border-bottom: none; background: #fff; -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -ms-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); width: 31%; margin: 0 1% 25px; display: inline-block; vertical-align: top; }
   .content_container.grid_view .wbj_post #content h1 { text-align: center; }
   .content_container.grid_view .wbj_post #content p { text-align: left; padding: 0 25px; }

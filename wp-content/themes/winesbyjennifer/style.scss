@@ -2362,6 +2362,8 @@ margin-right:4%;
 	}
 
 
+.content_container {transition:all .5s ease}
+
 .content_container.grid_view {
 	background:transparent;
 	-webkit-box-shadow: none;
@@ -2370,6 +2372,7 @@ margin-right:4%;
 	overflow: hidden;
 	text-align: center;
 	padding: 0 35px 35px;
+	transition:padding .5s ease;
 	.wbj_post {
 		border-bottom:none;
 		
