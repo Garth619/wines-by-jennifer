@@ -10,7 +10,7 @@ get_header(); ?>
 <div class="inner_banner">
 	<div class="banner_overlay">
 	
-		<h1 style="padding-bottom:0;"><img class="ribbon ribbon_left" src="<?php bloginfo('template_directory');?>/images/ribbon.png"/>In the News<img class="ribbon ribbon_right" src="<?php bloginfo('template_directory');?>/images/ribbon-right.png"/></h1>
+		<h1 class="inthenews_header"><img class="ribbon ribbon_left" src="<?php bloginfo('template_directory');?>/images/ribbon.png"/>In the News<img class="ribbon ribbon_right" src="<?php bloginfo('template_directory');?>/images/ribbon-right.png"/></h1>
 		
 		<div class="list_grid_wrapper">
 			
@@ -135,6 +135,86 @@ get_header(); ?>
 		
 		</div><!-- wbj_post -->
 		
+		<div class="wbj_post">
+	
+	
+		<div id="content">
+		
+			<h1>Title One</h1>
+			<p class="wbj_date"><strong>December 10, 2015</strong></p>
+			
+			<p>Lorem ipsum dolor sit amet, <a title="test link" href="#">test link</a> adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum. Avida vehicula, nisl. Praesent mattis, massa quis luctus ferm avida vehicula, nisl. Praesent mattis, massa quis luctus ferm...</p>
+		
+			<a href="" class="button">Read More <div class="arrow-right-white"></div></a>
+		
+			</div><!-- content -->
+		
+		</div><!-- wbj_post -->
+		
+		<div class="wbj_post">
+	
+	
+		<div id="content">
+		
+			<h1>Title One</h1>
+			<p class="wbj_date"><strong>December 10, 2015</strong></p>
+			
+			<p>Lorem ipsum dolor sit amet, <a title="test link" href="#">test link</a> adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum. Avida vehicula, nisl. Praesent mattis, massa quis luctus ferm avida vehicula, nisl. Praesent mattis, massa quis luctus ferm...</p>
+		
+			<a href="" class="button">Read More <div class="arrow-right-white"></div></a>
+		
+			</div><!-- content -->
+		
+		</div><!-- wbj_post -->
+		
+		<div class="wbj_post">
+	
+	
+		<div id="content">
+		
+			<h1>Title One</h1>
+			<p class="wbj_date"><strong>December 10, 2015</strong></p>
+			
+			<p>Lorem ipsum dolor sit amet, <a title="test link" href="#">test link</a> adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum. Avida vehicula, nisl. Praesent mattis, massa quis luctus ferm avida vehicula, nisl. Praesent mattis, massa quis luctus ferm...</p>
+		
+			<a href="" class="button">Read More <div class="arrow-right-white"></div></a>
+		
+			</div><!-- content -->
+		
+		</div><!-- wbj_post -->
+		
+		<div class="wbj_post">
+	
+	
+		<div id="content">
+		
+			<h1>Title One</h1>
+			<p class="wbj_date"><strong>December 10, 2015</strong></p>
+			
+			<p>Lorem ipsum dolor sit amet, <a title="test link" href="#">test link</a> adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum. Avida vehicula, nisl. Praesent mattis, massa quis luctus ferm avida vehicula, nisl. Praesent mattis, massa quis luctus ferm...</p>
+		
+			<a href="" class="button">Read More <div class="arrow-right-white"></div></a>
+		
+			</div><!-- content -->
+		
+		</div><!-- wbj_post -->
+		
+		<div class="wbj_post">
+	
+	
+		<div id="content">
+		
+			<h1>Title One</h1>
+			<p class="wbj_date"><strong>December 10, 2015</strong></p>
+			
+			<p>Lorem ipsum dolor sit amet, <a title="test link" href="#">test link</a> adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum. Avida vehicula, nisl. Praesent mattis, massa quis luctus ferm avida vehicula, nisl. Praesent mattis, massa quis luctus ferm...</p>
+		
+			<a href="" class="button">Read More <div class="arrow-right-white"></div></a>
+		
+			</div><!-- content -->
+		
+		</div><!-- wbj_post -->
+		
 		<div>Pagination</div>
 		
 	
@@ -144,6 +224,19 @@ get_header(); ?>
 	
 </div><!-- content_container -->
 		
+		
+		
+
+
+		
+			
+
+
+
+
+
+
+
 			
 	<div class="box_wrapper inner wow fadeIn" data-wow-delay="0.2s">
 		<div class="box_row">

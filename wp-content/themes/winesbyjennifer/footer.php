@@ -64,6 +64,29 @@
 		});
 		
 		
+		
+		// List View / Grid view
+		
+		
+		jQuery('.post_list').click(function(){
+			
+			jQuery('.content_container').removeClass('grid_view');
+			jQuery(this).addClass('active');
+			jQuery('.post_grid').removeClass('active');
+			
+		});
+		
+		jQuery('.post_grid').click(function(){
+			
+			jQuery('.content_container').addClass('grid_view');
+			jQuery(this).addClass('active');
+			jQuery('.post_list').removeClass('active');
+			
+		});
+		
+		//
+		
+		
 		jQuery('.single_team_member_one').click(function(){
 			
 			jQuery('.team_wrapper').hide(200);
