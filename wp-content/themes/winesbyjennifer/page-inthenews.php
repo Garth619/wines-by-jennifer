@@ -71,149 +71,41 @@ get_header(); ?>
 <div class="content_container">
 	
 	
-	<div class="wbj_post">
-	
-	
-		<div id="content">
-		
-			<h1>Title One</h1>
-			<p class="wbj_date"><strong>December 10, 2015</strong></p>
 			
-			<p>Lorem ipsum dolor sit amet, <a title="test link" href="#">test link</a> adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum. Avida vehicula, nisl. Praesent mattis, massa quis luctus ferm avida vehicula, nisl. Praesent mattis, massa quis luctus ferm...</p>
+			
+			
+		<?php $inthenews_query = new WP_Query( array( 'post_type' => 'inthenews','posts_per_page' => '12', 'order' => 'DSC' ) ); while($inthenews_query->have_posts()) : $inthenews_query->the_post(); ?>
+    
+    
+    <div class="wbj_post">
+	
+	
+			<div id="content">
+
+			<h1><a href="<?php the_permalink();?>"><?php the_title();?></a></h1>
+			<p class="wbj_date"><strong><?php the_date();?></strong></p>
+			
+			<?php the_excerpt();?>
 		
-			<a href="" class="button">Read More <div class="arrow-right-white"></div></a>
+			<a href="<?php the_permalink();?>" class="button">Read More <div class="arrow-right-white"></div></a>
 		
 			</div><!-- content -->
 		
 		</div><!-- wbj_post -->
-		
-		<div class="wbj_post">
-	
-	
-		<div id="content">
-		
-			<h1>Title One</h1>
-			<p class="wbj_date"><strong>December 10, 2015</strong></p>
+    
+    
+    
+    <?php endwhile; ?>
+    <?php wp_reset_postdata(); // reset the query ?>
+
 			
-			<p>Lorem ipsum dolor sit amet, <a title="test link" href="#">test link</a> adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum. Avida vehicula, nisl. Praesent mattis, massa quis luctus ferm avida vehicula, nisl. Praesent mattis, massa quis luctus ferm...</p>
-		
-			<a href="" class="button">Read More <div class="arrow-right-white"></div></a>
-		
-			</div><!-- content -->
-		
-		</div><!-- wbj_post -->
-		
-		<div class="wbj_post">
-	
-	
-		<div id="content">
-		
-			<h1>Title One</h1>
-			<p class="wbj_date"><strong>December 10, 2015</strong></p>
 			
-			<p>Lorem ipsum dolor sit amet, <a title="test link" href="#">test link</a> adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum. Avida vehicula, nisl. Praesent mattis, massa quis luctus ferm avida vehicula, nisl. Praesent mattis, massa quis luctus ferm...</p>
-		
-			<a href="" class="button">Read More <div class="arrow-right-white"></div></a>
-		
-			</div><!-- content -->
-		
-		</div><!-- wbj_post -->
-		
-		<div class="wbj_post">
-	
-	
-		<div id="content">
-		
-			<h1>Title One</h1>
-			<p class="wbj_date"><strong>December 10, 2015</strong></p>
 			
-			<p>Lorem ipsum dolor sit amet, <a title="test link" href="#">test link</a> adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum. Avida vehicula, nisl. Praesent mattis, massa quis luctus ferm avida vehicula, nisl. Praesent mattis, massa quis luctus ferm...</p>
-		
-			<a href="" class="button">Read More <div class="arrow-right-white"></div></a>
-		
-			</div><!-- content -->
-		
-		</div><!-- wbj_post -->
-		
-		<div class="wbj_post">
-	
-	
-		<div id="content">
-		
-			<h1>Title One</h1>
-			<p class="wbj_date"><strong>December 10, 2015</strong></p>
 			
-			<p>Lorem ipsum dolor sit amet, <a title="test link" href="#">test link</a> adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum. Avida vehicula, nisl. Praesent mattis, massa quis luctus ferm avida vehicula, nisl. Praesent mattis, massa quis luctus ferm...</p>
-		
-			<a href="" class="button">Read More <div class="arrow-right-white"></div></a>
-		
-			</div><!-- content -->
-		
-		</div><!-- wbj_post -->
-		
-		<div class="wbj_post">
-	
-	
-		<div id="content">
-		
-			<h1>Title One</h1>
-			<p class="wbj_date"><strong>December 10, 2015</strong></p>
 			
-			<p>Lorem ipsum dolor sit amet, <a title="test link" href="#">test link</a> adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum. Avida vehicula, nisl. Praesent mattis, massa quis luctus ferm avida vehicula, nisl. Praesent mattis, massa quis luctus ferm...</p>
-		
-			<a href="" class="button">Read More <div class="arrow-right-white"></div></a>
-		
-			</div><!-- content -->
-		
-		</div><!-- wbj_post -->
-		
-		<div class="wbj_post">
-	
-	
-		<div id="content">
-		
-			<h1>Title One</h1>
-			<p class="wbj_date"><strong>December 10, 2015</strong></p>
 			
-			<p>Lorem ipsum dolor sit amet, <a title="test link" href="#">test link</a> adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum. Avida vehicula, nisl. Praesent mattis, massa quis luctus ferm avida vehicula, nisl. Praesent mattis, massa quis luctus ferm...</p>
 		
-			<a href="" class="button">Read More <div class="arrow-right-white"></div></a>
 		
-			</div><!-- content -->
-		
-		</div><!-- wbj_post -->
-		
-		<div class="wbj_post">
-	
-	
-		<div id="content">
-		
-			<h1>Title One</h1>
-			<p class="wbj_date"><strong>December 10, 2015</strong></p>
-			
-			<p>Lorem ipsum dolor sit amet, <a title="test link" href="#">test link</a> adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum. Avida vehicula, nisl. Praesent mattis, massa quis luctus ferm avida vehicula, nisl. Praesent mattis, massa quis luctus ferm...</p>
-		
-			<a href="" class="button">Read More <div class="arrow-right-white"></div></a>
-		
-			</div><!-- content -->
-		
-		</div><!-- wbj_post -->
-		
-		<div class="wbj_post">
-	
-	
-		<div id="content">
-		
-			<h1>Title One</h1>
-			<p class="wbj_date"><strong>December 10, 2015</strong></p>
-			
-			<p>Lorem ipsum dolor sit amet, <a title="test link" href="#">test link</a> adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum. Avida vehicula, nisl. Praesent mattis, massa quis luctus ferm avida vehicula, nisl. Praesent mattis, massa quis luctus ferm...</p>
-		
-			<a href="" class="button">Read More <div class="arrow-right-white"></div></a>
-		
-			</div><!-- content -->
-		
-		</div><!-- wbj_post -->
 		
 		<div>Pagination</div>
 		

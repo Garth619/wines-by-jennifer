@@ -270,12 +270,33 @@ textarea {
 #content h1 {
 	font-family: $cinzel;
 	font-size:30px;
+	a {
+		text-decoration: none;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
 	 
 }
 
+
+
+
+
+
+
 #content a {
 	color:$purple;
+	text-decoration: none;
 }
+
+
+#content a:hover {
+	
+	text-decoration: underline;
+}
+
+
 
 #content table {
 	border: 1px solid #e7e7e7;

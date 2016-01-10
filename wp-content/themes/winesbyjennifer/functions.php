@@ -247,6 +247,28 @@ function my_jquery_enqueue() {
 }
 
 
+	// In the News
+    	
+    	add_action('init', 'inthenews');    
+   	 
+	function inthenews() {    
+    	$args = array(    
+        	'label' => __('In the News'),    
+        	'singular_label' => __('In the News'),    
+        	'public' => true,    
+        	'show_ui' => true,
+        	'has_archive' => true,	 
+        	'capability_type' => 'post',    
+        	'hierarchical' => false,    
+        	'rewrite' => true,    
+        	'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )    
+       	);    
+   	 
+    	register_post_type( 'inthenews' , $args );    
+	}    
+	register_taxonomy("inthenews-category", array("inthenews"), array("hierarchical" => true, "label" => "In the News Category", "singular_label" => "In the News", "rewrite" => true));  
+
+
 
 /*
  	// In the News

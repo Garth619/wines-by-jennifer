@@ -100,8 +100,12 @@ input[type="text"], input[type="password"], input[type="email"], input[type="url
 #content h1, #content h2, #content h3, #content h4, #content h5, #content h6 { color: #8d2656; line-height: 1.1; margin: 0 0 16px 0; text-align: center; }
 
 #content h1 { font-family: "Cinzel", serif; font-size: 30px; }
+#content h1 a { text-decoration: none; }
+#content h1 a:hover { text-decoration: underline; }
 
-#content a { color: #8c2555; }
+#content a { color: #8c2555; text-decoration: none; }
+
+#content a:hover { text-decoration: underline; }
 
 #content table { border: 1px solid #e7e7e7; margin: 0 -1px 24px 0; text-align: left; width: 100%; }
 
