@@ -97,7 +97,7 @@ input[type="text"], input[type="password"], input[type="email"], input[type="url
 
 #content dt, #content th { color: #000; }
 
-#content h1, #content h2, #content h3, #content h4, #content h5, #content h6 { color: #8d2656; line-height: 1.1; margin: 0 0 16px 0; text-align: center; }
+#content h1, #content h2, #content h3, #content h4, #content h5, #content h6 { color: #8d2656; line-height: 1.1; margin: 0 0 16px 0; text-align: left; }
 
 #content h1 { font-family: "Cinzel", serif; font-size: 30px; }
 #content h1 a { text-decoration: none; }
@@ -121,7 +121,7 @@ input[type="text"], input[type="password"], input[type="email"], input[type="url
 
 .single .hentry { margin: 0 0 36px 0; }
 
-.entry-meta { color: #777; font-size: 12px; }
+.entry-meta { color: #777; font-size: 12px; margin-bottom: 15px; }
 
 .entry-meta abbr, .entry-utility abbr { border: none; }
 
@@ -514,7 +514,6 @@ h3#reply-title { margin: 18px 0; }
   .ribbon_right { margin-left: 15px; }
   .content_container { -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -ms-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); width: 92%; margin: -36px auto 25px; }
   .content_container.no_banner { margin-top: 25px; width: 95%; }
-  #content h1, #content h2, #content h3, #content h4, #content h5, #content h6 { text-align: left; }
   .single_bio_wrapper { width: 95%; margin: 35px auto; }
   .single_bio_wrapper .left_col_bio { width: 30%; float: left; }
   .single_bio_wrapper .left_col_bio .team_profile { margin: 0 auto 15px; max-width: 175px; height: auto; }

@@ -74,16 +74,24 @@ get_header(); ?>
 			
 			
 			
-		<?php $inthenews_query = new WP_Query( array( 'post_type' => 'inthenews','posts_per_page' => '12', 'order' => 'DSC' ) ); while($inthenews_query->have_posts()) : $inthenews_query->the_post(); ?>
-    
-    
-    <div class="wbj_post">
+<?php 
+  $temp = $wp_query; 
+  $wp_query = null; 
+  $wp_query = new WP_Query(); 
+  $wp_query->query('showposts=6&post_type=inthenews'.'&paged='.$paged); 
+
+  while ($wp_query->have_posts()) : $wp_query->the_post(); 
+?>
+
+  <div class="wbj_post">
 	
 	
 			<div id="content">
 
 			<h1><a href="<?php the_permalink();?>"><?php the_title();?></a></h1>
-			<p class="wbj_date"><strong><?php the_date();?></strong></p>
+			<div class="entry-meta">
+				<?php twentyten_posted_on(); ?>
+			</div><!-- .entry-meta -->
 			
 			<?php the_excerpt();?>
 		
@@ -92,22 +100,21 @@ get_header(); ?>
 			</div><!-- content -->
 		
 		</div><!-- wbj_post -->
-    
-    
-    
-    <?php endwhile; ?>
-    <?php wp_reset_postdata(); // reset the query ?>
+
+
+<?php endwhile; ?>
+
+<nav>
+    <?php previous_posts_link('&laquo; Newer') ?>
+    <?php next_posts_link('Older &raquo;') ?>
+</nav>
+
+<?php 
+  $wp_query = null; 
+  $wp_query = $temp;  // Reset
+?>
 
 			
-			
-			
-			
-			
-			
-		
-		
-		
-		<div>Pagination</div>
 		
 	
 

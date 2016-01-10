@@ -264,7 +264,7 @@ textarea {
 	color: #8d2656;
 	line-height: 1.1;
 	margin: 0 0 16px 0;
-	text-align:center;
+	text-align:left;
 }
 
 #content h1 {
@@ -338,6 +338,7 @@ textarea {
 .entry-meta {
 	color: #777;
 	font-size: 12px;
+	margin-bottom: 15px;
 }
 .entry-meta abbr,
 .entry-utility abbr {
@@ -1657,7 +1658,7 @@ h3#reply-title {
 #content h4,
 #content h5,
 #content h6 {
-	text-align:left;
+// 	text-align:left;
 }
 
 
