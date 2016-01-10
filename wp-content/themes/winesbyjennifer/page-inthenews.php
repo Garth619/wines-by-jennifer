@@ -12,7 +12,12 @@ get_header(); ?>
 	
 		<h1 class="inthenews_header"><img class="ribbon ribbon_left" src="<?php bloginfo('template_directory');?>/images/ribbon.png"/>In the News<img class="ribbon ribbon_right" src="<?php bloginfo('template_directory');?>/images/ribbon-right.png"/></h1>
 		
+	
+	
+	
 		<div class="list_grid_wrapper">
+			
+			<div class="list_wrapper_with_titles">
 			
 			<div class="post_list">
 				
@@ -37,10 +42,19 @@ get_header(); ?>
 					
 				</div><!-- list_bar_wrapper -->
 			
+			
 								
 			</div><!-- post_list -->
 			
+			<span class="list_grid_title">List View</span>
+			
+			</div><!-- list_wrapper_with_titles -->
+			
+			<div class="grid_wrapper_with_titles">
+			
 			<div class="post_grid">
+				
+				
 				
 				<div class="grid_square_wrapper">
 				
@@ -58,11 +72,18 @@ get_header(); ?>
 				
 				</div><!-- grid_square_wrapper -->
 				
-			
+				
+				
+				
 				
 			</div><!-- post_grid -->
+			<span class="list_grid_title">Grid View</span>
+			
+			</div><!-- grid_wrapper_with_titles -->
 			
 		</div><!-- list_grid_wrapper -->
+		
+
 	
 	</div><!-- banner_overlay -->
 	
