@@ -42,6 +42,9 @@
 <?php wp_footer(); ?>
 <script type="text/javascript" src="<?php bloginfo('template_directory');?>/cycle2.js"></script>
 <script src="<?php bloginfo('template_directory');?>/wow/dist/wow.min.js"></script>
+
+
+
 <script>
   new WOW().init({
 	  mobile:       false
@@ -84,6 +87,35 @@
 			
 			
 		});
+		
+		
+		
+		
+		<?php if(basename($_SERVER['REQUEST_URI']) == '?display=list') :?>
+    
+			jQuery('.content_container').removeClass('grid_view');
+			jQuery('.post_list').addClass('active');
+			jQuery('.post_grid').removeClass('active');
+    
+		<?php endif;?>
+		
+
+		
+		<?php if(basename($_SERVER['REQUEST_URI']) == '?display=grid') :?>
+    
+			jQuery('.content_container').addClass('grid_view');
+			jQuery('.post_grid').addClass('active');
+			jQuery('.post_list').removeClass('active');
+    
+		<?php endif;?>
+
+		
+		
+		
+		
+		
+		
+		
 		
 		//
 		
@@ -169,5 +201,8 @@
 	});
 
 </script>
+
+
+
 </body>
 </html>

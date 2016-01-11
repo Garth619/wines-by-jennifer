@@ -1453,6 +1453,10 @@ h3#reply-title {
 	/* In the News */
 	
 	
+	.list_grid_wrapper {
+		display: none;
+	}
+	
 	.wbj_post {
 		border-bottom:1px #cbcbcb dashed;
 		padding-bottom:20px;
@@ -1944,6 +1948,9 @@ h3#reply-title {
 				text-decoration: none;
 				text-shadow: 0 1px 2px black;
 			}
+			a:hover {
+// 				color:yellow;
+			}
 		}
 		li:nth-child(1) {
 			border-right:none;
@@ -2260,6 +2267,7 @@ margin-right:4%;
 	padding-bottom:100px;
 	text-align: center;
 	margin:0 auto;
+	display: block;
 	
 	
 .list_wrapper_with_titles {
@@ -2445,9 +2453,9 @@ margin-right:4%;
 	-webkit-columns: 150px 3;
    -moz-columns: 150px 3;
     columns: 150px 3;
-  -webkit-column-gap:25px;
-   -moz-column-gap:25px;
-  column-gap:25px;
+  -webkit-column-gap:20px;
+   -moz-column-gap:20px;
+  column-gap:20px;
   -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
    page-break-inside: avoid; /* Firefox */
    break-inside: avoid; /* IE 10+ */

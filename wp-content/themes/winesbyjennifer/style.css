@@ -483,6 +483,8 @@ h3#reply-title { margin: 18px 0; }
 #content p.answer { display: none; }
 
 /* In the News */
+.list_grid_wrapper { display: none; }
+
 .wbj_post { border-bottom: 1px #cbcbcb dashed; padding-bottom: 20px; padding-top: 35px; }
 
 .wbj_post:first-of-type { padding-top: 0px; }
@@ -615,7 +617,7 @@ h3#reply-title { margin: 18px 0; }
   .footer_col1, .footer_col3 { width: 25%; float: left; }
   .footer_col2 { width: 50%; float: left; }
   /* In the News */
-  .list_grid_wrapper { padding-bottom: 100px; text-align: center; margin: 0 auto; }
+  .list_grid_wrapper { padding-bottom: 100px; text-align: center; margin: 0 auto; display: block; }
   .list_grid_wrapper .list_wrapper_with_titles { width: 45px; display: inline-block; vertical-align: top; }
   .list_grid_wrapper .list_wrapper_with_titles .post_list { width: 45px; padding: 6px; background: rgba(0, 0, 0, 0.7); display: inline-block; vertical-align: top; cursor: pointer; margin-right: 3px; }
   .list_grid_wrapper .list_wrapper_with_titles .post_list .list_bar_wrapper { width: 100%; overflow: hidden; display: block; margin: 0 auto 4px; }
@@ -635,7 +637,7 @@ h3#reply-title { margin: 18px 0; }
   .grid_wrapper_with_titles .post_grid:hover .grid_square_wrapper .grid_single_square { background: #8c2555; transition: all .1s ease; }
   .grid_wrapper_with_titles .post_grid.active .grid_square_wrapper .grid_single_square { background: yellow; transition: all .1s ease; }
   .content_container { transition: all .5s ease; }
-  .content_container.grid_view { background: transparent; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; overflow: hidden; text-align: center; padding: 0 35px 35px; transition: padding .5s ease; width: 100%; -webkit-columns: 150px 3; -moz-columns: 150px 3; columns: 150px 3; -webkit-column-gap: 25px; -moz-column-gap: 25px; column-gap: 25px; -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */ page-break-inside: avoid; /* Firefox */ break-inside: avoid; /* IE 10+ */ }
+  .content_container.grid_view { background: transparent; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; overflow: hidden; text-align: center; padding: 0 35px 35px; transition: padding .5s ease; width: 100%; -webkit-columns: 150px 3; -moz-columns: 150px 3; columns: 150px 3; -webkit-column-gap: 20px; -moz-column-gap: 20px; column-gap: 20px; -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */ page-break-inside: avoid; /* Firefox */ break-inside: avoid; /* IE 10+ */ }
   .content_container.grid_view .wbj_post { border-bottom: none; background: #fff; -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -ms-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); margin: 0 0 25px; display: inline-block; vertical-align: top; }
   .content_container.grid_view .wbj_post img { width: 100%; height: auto; display: inline-block; text-align: center; }
   .content_container.grid_view .wbj_post #content { padding: 0 10px; }

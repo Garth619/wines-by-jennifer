@@ -7,19 +7,37 @@
 get_header(); ?>
 
 
+<?php
+session_start();
+ 
+if(!empty($_GET['display'])){
+$_SESSION['display'] = htmlspecialchars($_GET['display']);
+}
+ 
+//If there's a session and it has a value for "campaign" but it's not in the
+//url, then this must be a successive page visit, so direct the user on to
+//the same page but with the url variable attached:
+ 
+if(!empty($_SESSION['display']) && empty($_GET['display'])){
+header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display']);
+}
+
+ 
+?>
+
 <div class="inner_banner">
 	<div class="banner_overlay">
 	
 		<h1 class="inthenews_header"><img class="ribbon ribbon_left" src="<?php bloginfo('template_directory');?>/images/ribbon.png"/>In the News<img class="ribbon ribbon_right" src="<?php bloginfo('template_directory');?>/images/ribbon-right.png"/></h1>
 		
-	
+
 	
 	
 		<div class="list_grid_wrapper">
 			
 			<div class="list_wrapper_with_titles">
 			
-			<div class="post_list active">
+			<div class="post_list active" onclick="javascript:History.pushState({state:1,rand:Math.random()}, "State 1", "?display=list"); // logs {state:1,rand:"some random value"}, "State 1", "?state=1"">
 				
 				<div class="list_bar_wrapper">
 					
@@ -52,7 +70,7 @@ get_header(); ?>
 			
 			<div class="grid_wrapper_with_titles">
 			
-			<div class="post_grid">
+			<div class="post_grid" onclick="javascript:History.pushState({state:2,rand:Math.random()}, "State 2", "?display=grid"); // logs {state:2,rand:"some random value"}, "State 2", "?state=2"">
 				
 				
 				
@@ -137,8 +155,14 @@ get_header(); ?>
 <?php endwhile; ?>
 
 <nav>
+<!--
     <?php previous_posts_link('&laquo; Newer') ?>
     <?php next_posts_link('Older &raquo;') ?>
+-->
+    
+<?php echo paginate_links( $args ); ?>
+
+
 </nav>
 
 <?php 

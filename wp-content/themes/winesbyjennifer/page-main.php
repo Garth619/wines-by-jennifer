@@ -60,7 +60,31 @@ get_header(); ?>
 			
 		</div><!-- slideshow -->
 		
-		<div class="desktop_events">
+		
+    <div class="desktop_events">
+		
+		<?php $mymain_query = new WP_Query( array( 'post_type' => 'inthenews', 'order' => 'DSC' ) ); while($mymain_query->have_posts()) : $mymain_query->the_post(); ?>
+    
+    
+			
+			<div class="desktop_single_event">
+				<h1><a href="<?php the_permalink();?>"><?php the_title();?></a></h1>
+				<div class="desktop_events_content">
+					<p>	<?php the_excerpt();?></p>
+					<a href="<?php the_permalink();?>">Read More <div class="arrow-right"></div></a>
+				</div><!-- events_content -->
+			</div><!-- desktop_single_event -->
+			<div class="divider"></div><!-- divider -->
+    
+    
+    
+    
+    <?php endwhile; ?>
+   <?php wp_reset_postdata(); // reset the query ?>
+		
+		
+		
+	
 			
 			<div class="desktop_single_event">
 				<div class="desktop_social_icon">
