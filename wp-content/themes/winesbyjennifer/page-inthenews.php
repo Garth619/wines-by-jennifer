@@ -8,6 +8,7 @@ get_header(); ?>
 
 
 
+
 <div class="inner_banner">
 	<div class="banner_overlay">
 	

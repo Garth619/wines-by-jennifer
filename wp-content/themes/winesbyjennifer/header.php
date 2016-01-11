@@ -1,3 +1,26 @@
+<?php if(is_page_template('page-inthenews.php')):?>
+
+<?php
+session_start();
+ 
+if(!empty($_GET['display'])){
+$_SESSION['display'] = htmlspecialchars($_GET['display']);
+}
+ 
+//If there's a session and it has a value for "campaign" but it's not in the
+//url, then this must be a successive page visit, so direct the user on to
+//the same page but with the url variable attached:
+ 
+if(!empty($_SESSION['display']) && empty($_GET['display'])){
+header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display']);
+}
+
+ 
+?>
+
+
+<?php endif;?>
+
 <?php
 /**
  * Header template for our theme
