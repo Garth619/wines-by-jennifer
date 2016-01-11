@@ -82,6 +82,7 @@
 			jQuery(this).addClass('active');
 			jQuery('.post_list').removeClass('active');
 			
+			
 		});
 		
 		//

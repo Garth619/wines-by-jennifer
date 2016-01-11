@@ -19,7 +19,7 @@ get_header(); ?>
 			
 			<div class="list_wrapper_with_titles">
 			
-			<div class="post_list">
+			<div class="post_list active">
 				
 				<div class="list_bar_wrapper">
 					
@@ -99,12 +99,12 @@ get_header(); ?>
   $temp = $wp_query; 
   $wp_query = null; 
   $wp_query = new WP_Query(); 
-  $wp_query->query('showposts=6&post_type=inthenews'.'&paged='.$paged); 
+  $wp_query->query('showposts=9&post_type=inthenews'.'&paged='.$paged); 
 
   while ($wp_query->have_posts()) : $wp_query->the_post(); 
 ?>
 
-  <div class="wbj_post">
+  <div class="wbj_post wow fadeIn" data-wow-delay="0.2s">
 	
 	
 			<div id="content">
@@ -114,10 +114,21 @@ get_header(); ?>
 				<?php twentyten_posted_on(); ?>
 			</div><!-- .entry-meta -->
 			
+			
+			<?php if(get_field('excerpt_image')):?>
+			
+			<?php $imageID = get_field('excerpt_image'); ?>
+				<?php $alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true); ?>
+				<?php $blog_one = wp_get_attachment_image_src(get_field('excerpt_image'), 'full'); ?>
+				<img class="main_feed_img" alt="<?php echo $alt_text; ?>" src="<?php echo $blog_one[0]; ?>"/>
+			
+			<?php endif;?>
+			
+			
 			<?php the_excerpt();?>
 		
 			<a href="<?php the_permalink();?>" class="button">Read More <div class="arrow-right-white"></div></a>
-		
+			<?php edit_post_link( __( 'Edit', 'twentyten' ), '<span class="edit-link">', '</span>' ); ?>
 			</div><!-- content -->
 		
 		</div><!-- wbj_post -->
