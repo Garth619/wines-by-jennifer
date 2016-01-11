@@ -1,4 +1,4 @@
-<?php // if(is_page_template('page-inthenews.php')):?>
+<?php if(is_page_template('page-inthenews.php')):?>
 
 <?php
 session_start();
@@ -19,7 +19,7 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 ?>
 
 
-<?php // endif;?>
+<?php endif;?>
 
 <?php
 /**
