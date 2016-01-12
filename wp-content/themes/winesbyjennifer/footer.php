@@ -219,12 +219,15 @@ function stickIt() {
     widthOrgElement = orgElement.css('width');
     jQuery('.cloned').css('left',leftOrgElement+'px').css('top',0).css('width',widthOrgElement).show();
     jQuery('.original').css('visibility','hidden');
-    jQuery('.logotest').show(200);
+    //jQuery('.logotest').show(100);
+    jQuery('.mobile_shopping_cart').show(150);
+    
   } else {
     // not scrolled past the menu; only show the original menu.
     jQuery('.cloned').hide();
     jQuery('.original').css('visibility','visible');
-    jQuery('.logotest').hide(200);
+    //jQuery('.logotest').hide(100);
+    jQuery('.mobile_shopping_cart').hide(150);
   }
 }
 
