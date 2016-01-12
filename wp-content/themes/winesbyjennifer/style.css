@@ -535,7 +535,8 @@ h3#reply-title { margin: 18px 0; }
   .club_right_image, .club_left_image { width: 45%; }
   .club_three { margin-bottom: 25px; }
   .wbj_date { text-align: left; } }
-@media screen and (min-width: 1040px) { body { background: url(images/bg.jpg) top center no-repeat; background-size: cover; }
+@media screen and (min-width: 1040px) { .logotest { display: none; }
+  body { background: url(images/bg.jpg) top center no-repeat; background-size: cover; }
   .bg_bug { display: none; }
   .inner_page_hide_header { display: block; }
   .wrapper { max-width: 1175px; margin: 35px auto 0; }

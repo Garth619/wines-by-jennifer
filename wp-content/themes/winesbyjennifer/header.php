@@ -153,7 +153,8 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 				
 		</div><!-- header -->		
 				
-				<div class="nav">
+				<div class="nav mymenu">
+					<h1 class="logotest">Wines by Jennifer</h1>
 					<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
 					<div class="social_icons_wrapper">
 						<ul class="social_icons">
