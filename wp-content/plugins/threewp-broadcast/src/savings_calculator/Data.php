@@ -3,12 +3,9 @@
 namespace threewp_broadcast\savings_calculator;
 
 class Data
-	extends \plainview\sdk_broadcast\wordpress\Options_Object
+	extends \threewp_broadcast\collection
 {
-	public static function container()
-	{
-		return ThreeWP_Broadcast();
-	}
+	use \plainview\sdk_broadcast\wordpress\object_stores\Site_Option;
 
 	/**
 		@brief		Return an array of default values.
@@ -22,11 +19,6 @@ class Data
 			'updated_post_discount' => '10',
 			'hourly_wage' => '10',
 		];
-	}
-
-	public static function get_option_name()
-	{
-		return 'savings_calculator_data';
 	}
 
 	/**
@@ -45,7 +37,7 @@ class Data
 	**/
 	public function get_savings_table()
 	{
-		$table = $this->container()->table();
+		$table = static::store_container()->table();
 
 		$row = $table->body()->row();
 		$row->th()->text( 'Monitoring since' );
@@ -103,4 +95,15 @@ class Data
 
 		$this->save();
 	}
+
+	public static function store_container()
+	{
+		return ThreeWP_Broadcast();
+	}
+
+	public static function store_key()
+	{
+		return 'savings_calculator_data';
+	}
+
 }

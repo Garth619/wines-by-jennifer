@@ -53,7 +53,7 @@ trait broadcasting
 
 		$this->debug( 'The POST is <pre>%s</pre>', $bcd->_POST );
 
-		// For nested broadcasts. Just in case.
+		// See: For nested broadcasts. Just in case.
 		switch_to_blog( $bcd->parent_blog_id );
 
 		if ( $bcd->link )
@@ -245,6 +245,7 @@ trait broadcasting
 		$action = new actions\maybe_clear_post;
 		$action->post = $_POST;
 		$action->execute();
+		// This is for any other plugins that might be interested in the _POST.
 		$_POST = $action->post;
 
 		// This is a stupid exception: edit_post() checks the _POST for the sticky checkbox.
@@ -663,7 +664,7 @@ trait broadcasting
 			$child_blog->switch_from();
 		}
 
-		// For nested broadcasts. Just in case.
+		// SEE: For nested broadcasts. Just in case.
 		restore_current_blog();
 
 		$action = new actions\broadcasting_finished;
@@ -751,26 +752,26 @@ trait broadcasting
 		$action = new actions\get_post_types;
 		$action->execute();
 		if ( ! in_array( $post->post_type, $action->post_types ) )
-		{
-			$this->debug( 'We do not care about the %s post type.', $post->post_type );
-			return;
-		}
+			return $this->debug( 'We do not care about the %s post type.', $post->post_type );
 
 		// No post?
 		if ( count( $_POST ) < 1 )
-			return;
+			return $this->debug( 'No _POST available. Not broadcasting.' );
+
+		// Does this post_id match up with the one in the post?
+		$_post_id = $_POST[ 'ID' ];
+		if ( isset( $_post_id ) )
+			if ( $_post_id != $post_id )
+				return $this->debug( 'Post ID %s does not match up with ID in POST %s.', $post_id, $_post_id );
 
 		// Is this post a child?
 		$broadcast_data = $this->get_post_broadcast_data( get_current_blog_id(), $post_id );
 		if ( $broadcast_data->get_linked_parent() !== false )
-			return;
+			return $this->debug( 'Post is a child. Not broadcasting.' );
 
 		// No permission.
 		if ( ! static::user_has_roles( $this->get_site_option( 'role_broadcast' ) ) )
-		{
-			$this->debug( 'User does not have permission to use Broadcast.' );
-			return;
-		}
+			return $this->debug( 'User does not have permission to use Broadcast. Not broadcasting.' );
 
 		// Save the user's last settings.
 		if ( isset( $_POST[ 'broadcast' ] ) )
@@ -789,14 +790,12 @@ trait broadcasting
 		$action->broadcasting_data = $broadcasting_data;
 		$action->execute();
 
-		$this->debug( 'Prepared.' );
+		$this->debug( 'Broadcasting data prepared.' );
 
 		if ( $broadcasting_data->has_blogs() )
 			$this->filters( 'threewp_broadcast_broadcast_post', $broadcasting_data );
 		else
-		{
-			$this->debug( 'No blogs are selected. Not broadcasting anything.' );
-		}
+			$this->debug( 'No blogs are selected. Not broadcasting.' );
 	}
 
 	/**

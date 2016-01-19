@@ -123,14 +123,14 @@ trait debug
 
 		$plugin = self::instance();
 
-		if ( $plugin->get_site_option( 'debug_to_browser', false ) )
+		if ( $this->debugging_to_browser() )
 		{
 			echo $text;
 			if ( ob_get_contents() )
 				ob_flush();
 		}
 
-		if ( $plugin->get_site_option( 'debug_to_file', false ) )
+		if ( $this->debugging_to_file() )
 		{
 			$filename = $this->get_debug_filename();
 			file_put_contents( $filename, $text, FILE_APPEND );

@@ -37,12 +37,47 @@
 
 
 
-<div class="mobile_shopping_cart">Cart | Login | Search</div><!-- mobile_shopping_cart -->
+<div class="mobile_shopping_cart">
+	
+	<?php if( get_post_type() == 'inthenews' || is_page_template('page-inthenews.php') ) : ?>
+	
+	See Categories | List View | Grid View
+	
+	<?php endif;?>
+Cart | Login | Search</div><!-- mobile_shopping_cart -->
 	
 <?php wp_footer(); ?>
 <script type="text/javascript" src="<?php bloginfo('template_directory');?>/cycle2.js"></script>
 <script src="<?php bloginfo('template_directory');?>/wow/dist/wow.min.js"></script>
+<script src="<?php bloginfo('template_directory');?>/modernizr-custom.js"></script>
 
+	
+<script type="text/javascript">
+var mod = function(){
+if (Modernizr.mq('(min-width: 1040px)')) {
+  
+jQuery('.modernizr_wrapper').show();
+	
+        
+  } else {
+  
+
+jQuery('.modernizr_wrapper').hide();
+ 
+  
+
+}
+}
+
+// Shortcut for $(document).ready()
+jQuery(function() {
+    // Call on every window resize
+    jQuery(window).resize(mod);
+    // Call once on initial load
+    mod();
+});
+</script>
+	
 
 
 <script>
@@ -91,6 +126,7 @@
 		
 		
 		
+/*
 		<?php if(basename($_SERVER['REQUEST_URI']) == '?display=list') :?>
     
 			jQuery('.content_container').removeClass('grid_view');
@@ -108,6 +144,7 @@
 			jQuery('.post_list').removeClass('active');
     
 		<?php endif;?>
+*/
 
 		
 		

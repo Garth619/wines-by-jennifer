@@ -113,7 +113,6 @@ class ThreeWP_Broadcast
 		// Don't want to break anyone's plugins.
 		$this->add_action( 'threewp_broadcast_broadcast_post' );
 
-		$this->add_action( 'threewp_broadcast_copy_attachment', 100 );
 		$this->add_action( 'threewp_broadcast_each_linked_post' );
 		$this->add_action( 'threewp_broadcast_get_user_writable_blogs', 100 );		// Allow other plugins to do this first.
 		$this->add_filter( 'threewp_broadcast_get_post_types', 5 );					// Add our custom post types to the array of broadcastable post types.
@@ -143,6 +142,15 @@ class ThreeWP_Broadcast
 
 		$db_ver = $this->get_site_option( 'database_version', 0 );
 
+		// 2016-01-05 Always run the create if not exists.
+		$this->query("CREATE TABLE IF NOT EXISTS `". $this->broadcast_data_table() . "` (
+		  `blog_id` int(11) NOT NULL COMMENT 'Blog ID',
+		  `post_id` int(11) NOT NULL COMMENT 'Post ID',
+		  `data` longtext NOT NULL COMMENT 'Serialized BroadcastData',
+		  KEY `blog_id` (`blog_id`,`post_id`)
+		) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+		");
+
 		if ( $db_ver < 1 )
 		{
 			// Remove old options
@@ -152,14 +160,6 @@ class ThreeWP_Broadcast
 			$this->delete_site_option( 'activity_monitor_broadcasts' );
 			$this->delete_site_option( 'activity_monitor_group_changes' );
 			$this->delete_site_option( 'activity_monitor_unlinks' );
-
-			$this->query("CREATE TABLE IF NOT EXISTS `". $this->broadcast_data_table() . "` (
-			  `blog_id` int(11) NOT NULL COMMENT 'Blog ID',
-			  `post_id` int(11) NOT NULL COMMENT 'Post ID',
-			  `data` longtext NOT NULL COMMENT 'Serialized BroadcastData',
-			  KEY `blog_id` (`blog_id`,`post_id`)
-			) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-			");
 
 			// Cats and tags replaced by taxonomy support. Version 1.5
 			$this->delete_site_option( 'role_categories' );
@@ -203,11 +203,8 @@ class ThreeWP_Broadcast
 			$db_ver = 4;
 		}
 
-		if ( $db_ver < 5 )
-		{
-			$this->create_broadcast_data_id_column();
-			$db_ver = 5;
-		}
+		// 2016-01-05 This used to be v5, but is now always run.
+		$this->create_broadcast_data_id_column();
 
 		if ( $db_ver < 6 )
 		{

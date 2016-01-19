@@ -13,6 +13,7 @@ trait attachments
 	public function attachments_init()
 	{
 		$this->add_action( 'threewp_broadcast_apply_existing_attachment_action', 100 );
+		$this->add_action( 'threewp_broadcast_copy_attachment', 100 );
 		$this->add_action( 'threewp_broadcast_get_existing_attachment_actions', 5 );
 	}
 

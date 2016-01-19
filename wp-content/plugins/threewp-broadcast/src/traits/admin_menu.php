@@ -20,6 +20,7 @@ trait admin_menu
 
 		$action = new actions\menu;
 		$action->broadcast = $this;
+		$action->menu_page = $this->menu_page();
 		$action->execute();
 
 		// Hook into save_post, no matter is the meta box is displayed or not.
@@ -299,7 +300,7 @@ trait admin_menu
 
 			$this->save_debug_settings_from_form( $form );
 
-			$this->message( 'Options saved!' );
+			echo $this->info_message_box()->_( 'Options saved!' );
 
 			$_POST = [];
 			echo $this->admin_menu_settings();
@@ -384,13 +385,26 @@ trait admin_menu
 		$this->load_language();
 
 		$tabs = $this->tabs();
-		$tabs->tab( 'settings' )		->callback_this( 'admin_menu_settings' )		->name_( 'Settings' );
-		$tabs->tab( 'maintenance' )		->callback_this( 'admin_menu_maintenance' )		->name_( 'Maintenance' );
-		$tabs->tab( 'system_info' )		->callback_this( 'admin_menu_system_info' )		->name_( 'System info' );
+
+		$tabs->tab( 'settings' )
+			->callback_this( 'admin_menu_settings' )
+			->name_( 'Settings' )
+			->sort_order( 25 );		// Always first.
+
+		$tabs->tab( 'maintenance' )
+			->callback_this( 'admin_menu_maintenance' )
+			->name_( 'Maintenance' );
+
+		$tabs->tab( 'system_info' )
+			->callback_this( 'admin_menu_system_info' )
+			->name_( 'System info' );
 
 		$this->savings_calculator_tabs( $tabs );
 
-		$tabs->tab( 'uninstall' )		->callback_this( 'admin_uninstall' )			->name_( 'Uninstall' );
+		$tabs->tab( 'uninstall' )
+			->callback_this( 'admin_uninstall' )
+			->name_( 'Uninstall' )
+			->sort_order( 90 );		// Always last.
 
 		echo $tabs;
 	}
@@ -477,7 +491,7 @@ trait admin_menu
 	public function threewp_broadcast_menu( $action )
 	{
 		if ( $this->display_premium_pack_info && is_super_admin() )
-			$this->add_submenu_page(
+		$this->add_submenu_page(
 				'threewp_broadcast',
 				$this->_( 'Plugin packs info' ),
 				$this->_( 'Plugin packs' ),
@@ -505,16 +519,16 @@ trait admin_menu
 		else
 			$target = 'broadcast_menu_tabs';
 
-		add_menu_page(
-			$this->_( 'ThreeWP Broadcast' ),
-			$this->_( 'Broadcast' ),
-			'edit_posts',
-			'threewp_broadcast',
-			[ &$this, $target ],
-			'dashicons-rss'
-		);
+		$this->menu_page()
+			->callback_this( $target )
+			->capability( 'edit_posts' )
+			->menu_slug( 'threewp_broadcast' )
+			->menu_title( $this->_( 'Broadcast' ) )
+			->page_title( $this->_( 'ThreeWP Broadcast' ) )
+			->icon_url( 'dashicons-rss' );
 
-		$this->add_submenu_pages();
+		$this->menu_page()
+			->add_all();
 	}
 
 }

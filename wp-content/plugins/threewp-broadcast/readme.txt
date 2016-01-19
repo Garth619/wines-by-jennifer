@@ -4,7 +4,7 @@ License: GPLv3
 Requires at least: 3.9
 Stable tag: trunk
 Tags: broadcast, multipost, sharing, share content, duplicate, posts, syndicate, syndication, marketing, threewp, linking, woocommerce, acf, syndicator, aggregator, aggregation, autoblogging, news, content hub, push, pull, publishing
-Tested up to: 4.4
+Tested up to: 4.4.1
 
 Network Content Syndication Made Easy! Automatically share content by multiposting between multisite blogs.
 
@@ -52,6 +52,7 @@ There are several <a href="https://plainviewplugins.com/threewp-broadcast-premiu
 * <a title="Advanced Custom Fields Broadcast plugin" href="https://plainviewplugins.com/threewp-broadcast-premium-pack/advanced-custom-fields-broadcast-plugin/">Advanced Custom Fields</a> adds support for correctly broadcasting various field types using Elliot Condon’s <a href="http://www.advancedcustomfields.com/">Advanced Custom Fields plugin</a>.
 * <a title="All In One Calendar Broadcast plugin" href="https://plainviewplugins.com/threewp-broadcast-premium-pack/all-in-one-calendar-broadcast-plugin/">All In One Calendar</a> adds support for <a href="http://www.wordpress.org/plugins/all-in-one-event-calendar/">Timely’s All In One Calendar</a> plugin.
 * <a href="https://plainviewplugins.com/threewp-broadcast-premium-pack/bbpress-broadcast-plugin/">bbPress</a> adds support for <a href="https://wordpress.org/plugins/bbpress/">BBPress</a> forums, topics and replies.
+* <a href="https://plainviewplugins.com/threewp-broadcast-premium-pack/eventon-broadcast-plugin/">EventOn</a> adds support for Ashan Jay's <a href="http://www.myeventon.com/">EventON</a> plugin with tickets.
 * <a title="Event Organiser Broadcast plugin" href="https://plainviewplugins.com/threewp-broadcast-premium-pack/event-organiser-broadcast-plugin/">Event Organiser</a> adds support for Stephen Harris’ <a href="http://wordpress.org/plugins/event-organiser/">Event Organiser plugin</a>, with events and venues.
 * <a href="https://plainviewplugins.com/threewp-broadcast-premium-pack/foogallery-broadcast-plugin/">FooGallery</a> adds support for <a href="https://wordpress.org/plugins/foogallery/">FooPlugins&#8217; FooGallery</a> plugin.
 * <a href="https://plainviewplugins.com/threewp-broadcast-premium-pack/geo-my-wp-broadcast-plugin/">GEO my WordPress</a> adds support for Eyal Fitoussi&#8217;s <a href="https://wordpress.org/plugins/geo-my-wp/">GEO my WordPress</a> geolocation plugin.
@@ -263,6 +264,11 @@ Xcache v2 does not support PHP namespaces, which is a PHP 5.3 feature. Trying to
 Xcache v3, which does support namespaces, has not yet been tested. Anyone with Xcache v3 experience is welcome to contact me with info.
 
 == Changelog ==
+
+= 28 20160118 =
+
+* Fix: Always run database table creation code upon activation.
+* New Plugin Pack Plugin: <a href="https://plainviewplugins.com/threewp-broadcast-premium-pack/eventon-broadcast-plugin/">EventOn</a> - Adds support for Ashan Jay's <a href="http://www.myeventon.com/">EventON</a> plugin with tickets.
 
 = 27.2 20151215 =
 

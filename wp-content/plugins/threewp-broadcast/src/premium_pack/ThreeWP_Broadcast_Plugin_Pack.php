@@ -59,7 +59,8 @@ class ThreeWP_Broadcast_Plugin_Pack
 
 		$tabs->tab( 'plugins' )
 			->callback_this( 'admin_menu_plugins' )
-			->name_( 'Available plugins' );
+			->name_( 'Available plugins' )
+			->sort_order( 25 );
 
 		$action = new actions\plugin_pack_tabs();
 		$action->tabs = $tabs;
@@ -67,7 +68,8 @@ class ThreeWP_Broadcast_Plugin_Pack
 
 		$tabs->tab( 'uninstall' )
 			->callback_this( 'admin_uninstall' )
-			->name_( 'Uninstall' );
+			->name_( 'Uninstall' )
+			->sort_order( 75 );
 
 		echo $tabs;
 	}
@@ -141,14 +143,14 @@ class ThreeWP_Broadcast_Plugin_Pack
 		if ( ! is_super_admin() )
 			return;
 
-		ThreeWP_Broadcast()->add_submenu_page(
-			'threewp_broadcast',
-			$this->_( 'Plugin packs' ),
-			$this->_( 'Plugin packs' ),
-			'edit_posts',
-			'bc_pp',
-			[ &$this, 'admin_menu_tabs' ]
-		);
+		$action->menu_page
+			->submenu( 'bc_pp' )
+			->callback_this( 'admin_menu_tabs' )
+			// Menu item for menu
+			->menu_title( $this->_( 'Plugin packs' ) )
+			// Page title for menu
+			->page_title( $this->_( 'Plugin packs' ) )
+			->sort_order( 25 );
 	}
 
 	// --------------------------------------------------------------------------------------------
@@ -207,7 +209,7 @@ class ThreeWP_Broadcast_Plugin_Pack
 
 	public function remove_premium_pack_info_menu()
 	{
-		ThreeWP_Broadcast()->submenu_pages->forget( 'threewp_broadcast_premium_pack_info' );
+		ThreeWP_Broadcast()->menu_page()->forget( 'threewp_broadcast_premium_pack_info' );
 	}
 
 	public function site_options()

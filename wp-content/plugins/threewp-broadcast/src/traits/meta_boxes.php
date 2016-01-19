@@ -26,7 +26,7 @@ trait meta_boxes
 			$action = new actions\get_post_types;
 			$action->execute();
 			foreach( $action->post_types as $post_type )
-				add_meta_box( 'threewp_broadcast', $this->_( 'Broadcast' ), array( &$this, 'threewp_broadcast_add_meta_box' ), $post_type, 'side', 'low' );
+				add_meta_box( 'threewp_broadcast', $this->_( 'Broadcast' ), [ $this, 'threewp_broadcast_add_meta_box' ], $post_type, 'side', 'low' );
 			return;
 		}
 

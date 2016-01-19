@@ -893,6 +893,7 @@ h3#reply-title {
 	bottom:0;
 	right:0px;
 	z-index:500;
+	color:#fff;
 }
 
 .desktop_store_wrap {
@@ -990,7 +991,18 @@ h3#reply-title {
 			border-bottom:2px solid #fff;
 		}
 	}
-}		
+}	
+
+
+
+/*
+
+.nav.mymenu.cloned {
+	opacity: 0 !important;
+	visibility: hidden !important;
+	display: none !important; 
+}	
+*/
 
 .social_icons_wrapper {
 	display: none;
@@ -1457,15 +1469,23 @@ h3#reply-title {
 		display: none;
 	}
 	
+/*
+	.alm-reveal {
+		padding-top:35px;
+	}
+*/
+	
 	.wbj_post {
 		border-bottom:1px #cbcbcb dashed;
 		padding-bottom:20px;
 		padding-top:35px;
 	}
 	
+/*
 	.wbj_post:first-of-type {
 		padding-top:0px;
 	}
+*/
 	
 	.wbj_date {
 		text-align: center;
@@ -1919,6 +1939,8 @@ h3#reply-title {
 .nav {
 	overflow: hidden;
 }
+
+
 	
 	
 .menu-header {

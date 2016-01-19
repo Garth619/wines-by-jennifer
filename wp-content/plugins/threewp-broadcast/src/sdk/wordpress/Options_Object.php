@@ -19,7 +19,7 @@ class Options_Object
 	**/
 	public static function container()
 	{
-		throw new Exception( 'Plase override the container method.' );
+		throw new Exception( 'Please override the container method.' );
 	}
 
 	/**
@@ -37,7 +37,7 @@ class Options_Object
 	**/
 	public static function get_option_name()
 	{
-		throw new Exception( 'Plase override the get_option_name method.' );
+		throw new Exception( 'Please override the get_option_name method.' );
 	}
 
 	/**
@@ -56,10 +56,17 @@ class Options_Object
 
 		// Try to load the object from the database.
 		$r = $container->get_site_option( $option, '' );
-		$r = base64_decode( $r );
-		$r = @ unserialize( $r );
+
+		$r = maybe_unserialize( $r );
 		if ( ! is_object( $r ) )
-			$r = new static();
+		{
+			// Maybe it is base64 encoded?
+			$r = @ base64_decode( $r );
+			$r = maybe_unserialize( $r );
+
+			if ( ! is_object( $r ) )
+				$r = new static();
+		}
 
 		// Save to the cache.
 		$container->$__option = $r;
@@ -74,7 +81,6 @@ class Options_Object
 	public function save()
 	{
 		$data = serialize( $this );
-		$data = base64_encode( $data );
 		$this->container()->update_site_option( $this->get_option_name(), $data );
 	}
 }
