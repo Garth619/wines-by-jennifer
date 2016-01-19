@@ -378,6 +378,8 @@ h3#reply-title { margin: 18px 0; }
 .menu-header ul li:nth-child(3) { border-right: 2px solid #fff; border-bottom: 2px solid #fff; }
 .menu-header ul li:nth-child(4) { border-bottom: 2px solid #fff; }
 
+.sub-menu { display: none; }
+
 /*
 
 .nav.mymenu.cloned {
@@ -509,6 +511,8 @@ h3#reply-title { margin: 18px 0; }
 
 .main_feed_img { max-width: 100%; height: auto; margin-bottom: 20px; display: block; border: 2px solid #fff; -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); }
 
+.modernizr_wrapper { display: none; }
+
 @media screen and (min-width: 660px) { .intro { overflow: hidden; background: url(images/intro_bg.jpg) repeat; }
   .intro .logo_wrapper { display: block; float: left; width: 18%; }
   .intro .logo_wrapper .logo { width: 100%; height: auto; display: block; }
@@ -551,12 +555,14 @@ h3#reply-title { margin: 18px 0; }
   .club_right_image, .club_left_image { width: 45%; }
   .club_three { margin-bottom: 25px; }
   .wbj_date { text-align: left; } }
-@media screen and (min-width: 1040px) { .logotest { display: none; }
+@media screen and (min-width: 1040px) { .modernizr_wrapper { display: block; }
+  .logotest { display: none; }
   body { background: url(images/bg.jpg) top center no-repeat; background-size: cover; }
   .bg_bug { display: none; }
   .inner_page_hide_header { display: block; }
   .wrapper { max-width: 1175px; margin: 35px auto 0; }
   .header { overflow: hidden; width: 100%; padding: 25px; }
+  .sub-menu { display: block; }
   .main { padding: 25px; }
   .main.inner { padding: 0 0 25px; }
   .content_container { width: 86%; }

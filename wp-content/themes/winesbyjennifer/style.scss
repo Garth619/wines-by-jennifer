@@ -993,6 +993,10 @@ h3#reply-title {
 	}
 }	
 
+.sub-menu {
+	display: none;
+}
+
 
 
 /*
@@ -1502,7 +1506,10 @@ h3#reply-title {
 	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
 }
 
-
+	.modernizr_wrapper {
+		display: none;
+	}
+	
 	
 
 @media screen and (min-width: 660px) {
@@ -1802,6 +1809,9 @@ h3#reply-title {
 
 @media screen and (min-width: 1040px) {
 	
+	.modernizr_wrapper {
+		display: block;
+	}
 	
 	.logotest {
 		display:none;
@@ -1833,6 +1843,14 @@ h3#reply-title {
 		width:100%;
 		padding: 25px;
 	}
+	
+	
+	
+	.sub-menu {
+		display: block;
+	}
+	
+	
 	
 	.main {
 		padding:25px;
