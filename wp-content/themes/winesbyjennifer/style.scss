@@ -957,6 +957,7 @@ h3#reply-title {
 	ul {
 		list-style: none;
 		margin:0;
+		overflow: hidden;
 		li {
 			width:50%;
 			height:15vh;
@@ -990,12 +991,16 @@ h3#reply-title {
 		li:nth-child(4) {
 			border-bottom:2px solid #fff;
 		}
+		
 	}
 }	
 
-.sub-menu {
-	display: none;
-}
+
+ul.sub-menu {
+			
+				display: none;
+			
+		}
 
 
 
@@ -1846,14 +1851,12 @@ h3#reply-title {
 	
 	
 	
-	.sub-menu {
-		display: block;
-	}
-	
+
 	
 	
 	.main {
 		padding:25px;
+		overflow: hidden; /* maybe */
 	}
 	
 	.main.inner {
@@ -1955,30 +1958,30 @@ h3#reply-title {
 
 
 .nav {
-	overflow: hidden;
+// 	overflow:none;
 }
 
 
 	
 	
 .menu-header {
-	background:url(images/nav-bg.jpg) top left repeat;
+	background:url(images/nav-bg.jpg) top left repeat-x;
 	width:75%;
 	float:left;
+	overflow:visible;
 	ul {
 		list-style: none;
 		margin:0;
-// 		width:75%;
-		overflow: hidden;
+		overflow:visible;
 		li {
 			width:25%;
 			height:auto;
 			background:none;
 			float:left;
 			border:none;
-			
-// 			margin:0 30px;
+			position:relative;
 			padding:4px 0;
+			z-index:1000;
 			a {
 				position:relative;
 				top: 0;
@@ -2013,6 +2016,29 @@ h3#reply-title {
 		}
 	}
 }	
+
+
+	ul.sub-menu {
+		display: block;
+		background: $purple;
+		width:90%;
+		position: absolute;
+		top:26px;
+		left:35px;
+		li {
+			float:none;
+			width:100%;
+			padding:0 10px;
+			
+			a {
+				font-family:$lato;
+				font-size:16px;
+				text-align: left;
+				padding:10px 0 0;
+			}
+		}
+	}
+	
 
 
 .social_icons_wrapper {

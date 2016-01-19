@@ -370,7 +370,7 @@ h3#reply-title { margin: 18px 0; }
 .newsletter_signup .newsletter_text_wrap .newsletter_text a.newsletter_subtitle { display: block; color: #fff; font-size: 4vw; font-family: "Lato", sans-serif; text-shadow: 0px 1px 2px black; text-decoration: none; }
 
 .menu-header { background: #fff; overflow: hidden; }
-.menu-header ul { list-style: none; margin: 0; }
+.menu-header ul { list-style: none; margin: 0; overflow: hidden; }
 .menu-header ul li { width: 50%; height: 15vh; background: url(images/green-texture.png) top left repeat #163b2b; float: left; }
 .menu-header ul li a { position: relative; top: 50%; transform: translateY(-50%); -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); color: #fff; text-align: center; font-size: 5.5vw; font-family: "Cinzel", serif; display: block; text-decoration: none; }
 .menu-header ul li:nth-child(1) { border-right: 2px solid #fff; border-bottom: 2px solid #fff; }
@@ -378,7 +378,7 @@ h3#reply-title { margin: 18px 0; }
 .menu-header ul li:nth-child(3) { border-right: 2px solid #fff; border-bottom: 2px solid #fff; }
 .menu-header ul li:nth-child(4) { border-bottom: 2px solid #fff; }
 
-.sub-menu { display: none; }
+ul.sub-menu { display: none; }
 
 /*
 
@@ -562,8 +562,7 @@ h3#reply-title { margin: 18px 0; }
   .inner_page_hide_header { display: block; }
   .wrapper { max-width: 1175px; margin: 35px auto 0; }
   .header { overflow: hidden; width: 100%; padding: 25px; }
-  .sub-menu { display: block; }
-  .main { padding: 25px; }
+  .main { padding: 25px; overflow: hidden; /* maybe */ }
   .main.inner { padding: 0 0 25px; }
   .content_container { width: 86%; }
   .mobile_header { display: none; }
@@ -580,15 +579,17 @@ h3#reply-title { margin: 18px 0; }
   .newsletter_signup .newsletter_text_wrap .newsletter_text a.newsletter_title { font-size: 21px; }
   .newsletter_signup .newsletter_text_wrap .newsletter_text a.newsletter_subtitle { font-size: 16px; }
   .newsletter_signup .newsletter_text_wrap:hover { background: transparent; transition: all .3s ease; }
-  .nav { overflow: hidden; }
-  .menu-header { background: url(images/nav-bg.jpg) top left repeat; width: 75%; float: left; }
-  .menu-header ul { list-style: none; margin: 0; overflow: hidden; }
-  .menu-header ul li { width: 25%; height: auto; background: none; float: left; border: none; padding: 4px 0; }
+  .menu-header { background: url(images/nav-bg.jpg) top left repeat-x; width: 75%; float: left; overflow: visible; }
+  .menu-header ul { list-style: none; margin: 0; overflow: visible; }
+  .menu-header ul li { width: 25%; height: auto; background: none; float: left; border: none; position: relative; padding: 4px 0; z-index: 1000; }
   .menu-header ul li a { position: relative; top: 0; transform: none; -webkit-transform: none; -ms-transform: none; color: #fff; text-align: center; font-size: 22px; font-family: "Cinzel", serif; display: block; text-decoration: none; text-shadow: 0 1px 2px black; }
   .menu-header ul li:nth-child(1) { border-right: none; border-bottom: none; }
   .menu-header ul li:nth-child(2) { border-bottom: none; }
   .menu-header ul li:nth-child(3) { border-right: none; border-bottom: none; }
   .menu-header ul li:nth-child(4) { border-bottom: none; }
+  ul.sub-menu { display: block; background: #8c2555; width: 90%; position: absolute; top: 26px; left: 35px; }
+  ul.sub-menu li { float: none; width: 100%; padding: 0 10px; }
+  ul.sub-menu li a { font-family: "Lato", sans-serif; font-size: 16px; text-align: left; padding: 10px 0 0; }
   .social_icons_wrapper { background: url(images/nav-bg.jpg) top left repeat; width: 25%; float: left; text-align: center; display: block; }
   .social_icons_wrapper .social_icons { list-style: none; margin: 0; overflow: hidden; height: 30px; }
   .social_icons_wrapper .social_icons li { display: inline-block; margin-right: 8px; }
