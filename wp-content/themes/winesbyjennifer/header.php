@@ -153,6 +153,26 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 				
 		</div><!-- header -->		
 				
+			<?php if(is_handheld()): ?>
+			
+				<div class="nav">
+					
+					<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
+					<div class="social_icons_wrapper">
+						<ul class="social_icons">
+							<li><a href="" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/facebook.png"/></a></li>
+							<li><a href="" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/google-plus.png"/></a></li>
+							<li><a href="" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/twitter.png"/></a></li>
+							<li><a href="" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/instagram.png"/></a></li>
+							<li><a href="" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/youtube.png"/></a></li>
+						</ul>
+					</div><!-- social_icons_wrapper -->
+				</div><!-- nav -->
+			
+			<?php endif;?>
+			
+			<?php if(! is_handheld()): ?>
+			
 			<div class="modernizr_wrapper">
 				<div class="nav mymenu">
 					<h1 class="logotest">Wines by Jennifer</h1>
@@ -168,6 +188,8 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 					</div><!-- social_icons_wrapper -->
 				</div><!-- nav -->
 			</div><!-- modernizr_wrapper -->
+			
+			<?php endif;?>
 		
 		<?php if(!is_page_template('page-main.php')) : ?>
 			
