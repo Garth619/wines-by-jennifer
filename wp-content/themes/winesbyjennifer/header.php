@@ -171,7 +171,7 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 			
 			<?php endif;?>
 			
-			<?php if(! is_handheld()): ?>
+			<?php if(!is_handheld()): ?>
 			
 			<div class="modernizr_wrapper">
 				<div class="nav mymenu">

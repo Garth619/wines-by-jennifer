@@ -49,39 +49,6 @@ Cart | Login | Search</div><!-- mobile_shopping_cart -->
 <?php wp_footer(); ?>
 <script type="text/javascript" src="<?php bloginfo('template_directory');?>/cycle2.js"></script>
 <script src="<?php bloginfo('template_directory');?>/wow/dist/wow.min.js"></script>
-<!-- <script src="<?php bloginfo('template_directory');?>/modernizr-custom.js"></script> -->
-
-	
-<!--
-<script type="text/javascript">
-var mod = function(){
-if (Modernizr.mq('(min-width: 1040px)')) {
-  
-
-	
-        
-  } else {
-  
-
-
- 
-  
-
-}
-}
-
-// Shortcut for $(document).ready()
-jQuery(function() {
-    // Call on every window resize
-    jQuery(window).resize(mod);
-    // Call once on initial load
-    mod();
-});
-
-
-</script>
--->
-	
 
 
 <script>
