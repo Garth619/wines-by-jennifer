@@ -1989,12 +1989,13 @@ ul.sub-menu {
 				-webkit-transform: none;
 				-ms-transform: none;
 				color:#fff;
-				text-align: center;
+				text-align: left;
 				font-size:22px;
 				font-family:$cinzel;
 				display: block;
 				text-decoration: none;
 				text-shadow: 0 1px 2px black;
+				padding-left:30%;
 			}
 			a:hover {
 // 				color:yellow;
@@ -2023,22 +2024,36 @@ ul.sub-menu {
 		background: $purple;
 		width:90%;
 		position: absolute;
-		top:26px;
-		left:35px;
+		top:0px;
+		left:55px;
+		opacity: 0;
+		visibility: hidden;
+		transition:all .2s ease;
 		li {
 			float:none;
 			width:100%;
 			padding:0 10px;
 			border-bottom:1px solid #fff !important;
 			
+			
 			a {
 				font-family:$lato;
 				font-size:16px;
 				text-align: left;
-				padding:5px 0;
+				padding:8px 0;
 			}
 			
 		}
+		li:last-child {
+			border-bottom:none !important; 
+		}
+	}
+	
+	li:hover ul.sub-menu {
+		opacity: 1;
+		visibility: visible;
+		top:26px;
+		transition:all .2s ease;
 	}
 	
 
