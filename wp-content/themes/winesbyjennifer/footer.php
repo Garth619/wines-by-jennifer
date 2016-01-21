@@ -51,7 +51,7 @@ Cart | Login | Search
 <div class="overlay">
 	
 	<div class="overlay_inner">
-		
+		<span class="overlay_close">Close X</span>
 		<img src="<?php bloginfo('template_directory');?>/images/gift.png"/>
 		<h1>Free Gift!</h1>
 		<p>Five Days to Expert Wine</p>
@@ -86,6 +86,23 @@ Cart | Login | Search
 	jQuery(document).ready(function(){
 		
 
+		
+		//Overlay
+		
+		jQuery('.newsletter_signup').click(function(){
+			
+			jQuery('.overlay').addClass('open');
+			
+		});
+		
+		
+		jQuery('.overlay_close').click(function(){
+			
+			jQuery('.overlay').removeClass('open');
+			
+		});
+		
+		
 		// Faq
 		
 		

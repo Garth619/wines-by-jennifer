@@ -20,6 +20,7 @@ $lato:'Lato', sans-serif;
 $purple: #8c2555;
 $shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);	
 $grey:#363636;
+$yellow: #E5C854;
 	
 @mixin box-shadow($shadow) {
   -webkit-box-shadow: $shadow;
@@ -1520,7 +1521,9 @@ ul.sub-menu {
 		z-index:20000;
 		top:0;
 		overflow-y: scroll;
-// display: none;
+		opacity: 0;
+		visibility: hidden;
+		transition:all .5s ease;
 		.overlay_inner {
 			width:95%;
 			margin:30px auto;
@@ -1530,6 +1533,14 @@ ul.sub-menu {
 			padding:45px;
 			text-align: center;
 			color:#fff;
+			position: relative;
+			span.overlay_close {
+				position: absolute;
+				right:8px;
+				top:8px;
+				color:$yellow;
+				cursor: pointer;
+			}
 			h1 {
 				font-family: $cinzel;
 				font-size:42px;
@@ -1585,7 +1596,11 @@ ul.sub-menu {
 		}
 	}
 	
-		
+		.overlay.open {
+			opacity: 1;
+			visibility: visible;
+			transition:all .5s ease;
+		}
 	
 
 @media screen and (min-width: 660px) {
