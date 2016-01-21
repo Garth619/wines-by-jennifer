@@ -505,6 +505,19 @@ ul.sub-menu { display: none; }
 
 .modernizr_wrapper { display: none; }
 
+/* overlay */
+.overlay { width: 100%; height: 100vh; background: rgba(0, 0, 0, 0.7); position: fixed; z-index: 20000; top: 0; overflow-y: scroll; }
+.overlay .overlay_inner { width: 95%; margin: 30px auto; background: url(images/gift_bg.png) top center no-repeat; background-size: cover; max-width: 500px; padding: 45px; text-align: center; color: #fff; }
+.overlay .overlay_inner h1 { font-family: "Cinzel", serif; font-size: 42px; }
+.overlay .overlay_inner p { font-size: 19px; }
+.overlay .overlay_inner .cover { position: relative; max-width: 250px; margin: 15px auto 0; cursor: pointer; }
+.overlay .overlay_inner .cover .newsletter_button_wrapper { position: absolute; top: 0; z-index: 500; width: 100%; height: 100%; }
+.overlay .overlay_inner .cover .newsletter_button_wrapper img.newsletter_img { max-width: 100%; height: auto; }
+
+.cover span.button { background: #8c2555; color: #fff; text-transform: uppercase; text-decoration: none; padding: 2px 11px; font-size: 14px; margin-bottom: 20px; display: inline-block; position: relative; transition: all .2s ease; top: 50%; transform: translateY(-50%); -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); text-align: center; }
+
+.cover span.button:hover { text-decoration: underline; }
+
 @media screen and (min-width: 660px) { .intro { overflow: hidden; background: url(images/intro_bg.jpg) repeat; }
   .intro .logo_wrapper { display: block; float: left; width: 18%; }
   .intro .logo_wrapper .logo { width: 100%; height: auto; display: block; }

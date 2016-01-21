@@ -44,7 +44,31 @@
 	See Categories | List View | Grid View
 	
 	<?php endif;?>
-Cart | Login | Search</div><!-- mobile_shopping_cart -->
+Cart | Login | Search
+
+</div><!-- mobile_shopping_cart -->
+
+<div class="overlay">
+	
+	<div class="overlay_inner">
+		
+		<img src="<?php bloginfo('template_directory');?>/images/gift.png"/>
+		<h1>Free Gift!</h1>
+		<p>Five Days to Expert Wine</p>
+		<div class="cover">
+			
+			<img class="newsletter_img" src="<?php bloginfo('template_directory');?>/images/test-bg.png"/>
+			
+			<div class="newsletter_button_wrapper">
+				<span class="button">
+					Receive Your Gift!
+					</span><!-- button -->
+			</div><!-- newsletter_button_wrapper -->
+		</div><!-- cover -->
+	</div>
+	
+	
+</div><!-- overlay -->
 	
 <?php wp_footer(); ?>
 <script type="text/javascript" src="<?php bloginfo('template_directory');?>/cycle2.js"></script>
@@ -94,38 +118,7 @@ Cart | Login | Search</div><!-- mobile_shopping_cart -->
 			
 		});
 		
-		
-		
-		
-/*
-		<?php if(basename($_SERVER['REQUEST_URI']) == '?display=list') :?>
-    
-			jQuery('.content_container').removeClass('grid_view');
-			jQuery('.post_list').addClass('active');
-			jQuery('.post_grid').removeClass('active');
-    
-		<?php endif;?>
-		
 
-		
-		<?php if(basename($_SERVER['REQUEST_URI']) == '?display=grid') :?>
-    
-			jQuery('.content_container').addClass('grid_view');
-			jQuery('.post_grid').addClass('active');
-			jQuery('.post_list').removeClass('active');
-    
-		<?php endif;?>
-*/
-
-		
-		
-		
-		
-		
-		
-		
-		
-		//
 		
 		
 		jQuery('.single_team_member_one').click(function(){
