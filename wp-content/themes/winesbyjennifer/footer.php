@@ -23,7 +23,7 @@
 		<ul class="menu">
 			<li><a href="">Contact</a></li>
 			<li><a href="<?php bloginfo('url');?>/faq">FAQ</a></li>
-			<li><a href="">Privacy</a></li>
+			<li class="privacy">Privacy</li>
 			<li><a href="">Please Drink Responsibly</a></li>
 		</ul>
 	</div><!-- footer_col2 -->
@@ -52,6 +52,9 @@ Cart | Login | Search
 	
 	<div class="overlay_inner">
 		<span class="overlay_close">Close X</span>
+		
+		
+	<div class="newsletter_overlay_content">	
 		<img src="<?php bloginfo('template_directory');?>/images/gift.png"/>
 		<h1>Free Gift!</h1>
 		<p>Five Days to Expert Wine</p>
@@ -65,7 +68,16 @@ Cart | Login | Search
 					</span><!-- button -->
 			</div><!-- newsletter_button_wrapper -->
 		</div><!-- cover -->
-	</div>
+	</div><!-- newsletter_overlay_content -->
+	
+	
+	<div class="privacy_overlay_content">
+		wassgood
+	
+	</div><!-- privacy_overlay_content -->
+	
+	
+	</div><!-- overlay_inner -->
 	
 	
 </div><!-- overlay -->
@@ -89,18 +101,38 @@ Cart | Login | Search
 		
 		//Overlay
 		
-		jQuery('.newsletter_signup').click(function(){
-			
-			jQuery('.overlay').addClass('open');
-			
-		});
+			jQuery('.newsletter_overlay_content, .privacy_overlay_content').hide();
 		
 		
-		jQuery('.overlay_close').click(function(){
+			// Newsletter
+		
+		
+			jQuery('.newsletter_signup').click(function(){
+				
+				jQuery('.overlay').addClass('open');
+				jQuery('.newsletter_overlay_content').fadeIn(50);
+				
+			});
 			
-			jQuery('.overlay').removeClass('open');
 			
-		});
+			// Privacy
+			
+			jQuery('li.privacy').click(function(){
+				
+				jQuery('.overlay').addClass('open');
+				jQuery('.privacy_overlay_content').fadeIn(50);
+				
+			});
+			
+			
+			//
+			
+			jQuery('.overlay_close').click(function(){
+				
+				jQuery('.overlay').removeClass('open');
+				jQuery('.newsletter_overlay_content, .privacy_overlay_content').fadeOut(400);
+				
+			});
 		
 		
 		// Faq
