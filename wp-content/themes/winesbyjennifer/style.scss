@@ -1551,12 +1551,13 @@ ul.sub-menu {
 					height:100%;
 					background: rgba(0, 0, 0, 0.5);
 					transition:all .2s ease;
-					img.newsletter_img {
+					
+				}
+				img.newsletter_img {
 						max-width:100%;
 						height:auto;
-						display: block;
+						
 					}
-				}
 				
 				span.button {
 					background: $purple;
