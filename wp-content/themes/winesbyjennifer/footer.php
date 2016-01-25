@@ -31,6 +31,7 @@
 		<ul class="language" style="clear:both;">
 			<li>View In: Eng ESp</li>
 			<li>c 2015 Wines By Jennifer r</li>
+			<li class="backtotop" style="color:#E5C854">Back to Top</li>
 		</ul>
 	</div><!-- footer_col3 -->
 </div><!-- footer -->
@@ -138,6 +139,8 @@ Cart | Login | Search
 				jQuery('.overlay').addClass('open');
 				jQuery('.privacy_overlay_content').fadeIn(50);
 				
+				jQuery('html, body').animate({ scrollTop: 0 }, 'slow');
+				
 			});
 			
 			
@@ -163,6 +166,16 @@ Cart | Login | Search
 			jQuery(this).next('.answer').slideToggle(200);
 			jQuery(this).toggleClass('open');
 			
+		});
+		
+		
+		// Back to Top
+		
+		
+		jQuery('.backtotop').click(function(){
+				
+			jQuery('html, body').animate({ scrollTop: 0 }, 'slow');
+				
 		});
 		
 		
