@@ -609,8 +609,12 @@ ul.sub-menu { display: none; }
   .main_top .desktop_testimomials, .main_top .desktop_events { width: 22%; background: #FBFAF6; float: left; height: 350px; }
   .main_top .desktop_testimomials { position: relative; }
   .main_top .desktop_events { overflow-x: hidden; overflow-y: scroll; }
-  .main_top .slideshow { width: 56%; float: left; height: 350px; }
-  .main_top .slideshow img.slide { width: 100%; }
+  .main_top .slideshow { width: 56%; float: left; height: 350px; text-align: center; }
+  .main_top .slideshow .slide { width: 100%; height: 100%; }
+  .main_top .slideshow .cycle-pager { position: relative; bottom: 25px; z-index: 10000; }
+  .main_top .slideshow .cycle-prev, .main_top .slideshow .cycle-next { position: absolute; top: 20%; z-index: 10000; }
+  .main_top .slideshow .cycle-prev { left: 3%; }
+  .main_top .slideshow .cycle-next { right: 3%; }
   .testimonial_top_half { padding: 8px; }
   .testimonial_bottom_half { position: absolute; bottom: 0; width: 100%; }
   .divider { width: 100%; height: 14px; background: url(images/divider.jpg) top left repeat-x; overflow: hidden; }

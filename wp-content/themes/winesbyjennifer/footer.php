@@ -22,7 +22,7 @@
 	<div class="footer_col2">
 		<ul class="menu">
 			<li><a href="">Contact</a></li>
-			<li><a href="<?php bloginfo('url');?>/faq">FAQ</a></li>
+			<li><a href="<?php bloginfo('url');?>/about-us/faq">FAQ</a></li>
 			<li class="privacy">Privacy</li>
 			<li><a href="">Please Drink Responsibly</a></li>
 		</ul>
@@ -79,7 +79,8 @@ Cart | Login | Search
 	
 	
 	<div class="privacy_overlay_content">
-		wassgood
+		<h2>Private Policy</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 	
 	</div><!-- privacy_overlay_content -->
 	
@@ -139,7 +140,7 @@ Cart | Login | Search
 				jQuery('.overlay').addClass('open');
 				jQuery('.privacy_overlay_content').fadeIn(50);
 				
-				jQuery('html, body').animate({ scrollTop: 0 }, 'slow');
+				
 				
 			});
 			

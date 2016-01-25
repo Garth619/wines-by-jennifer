@@ -54,11 +54,35 @@ get_header(); ?>
 			
 		</div><!-- desktop_testimomials -->
 		
-		<div class="slideshow">
+		<?php if(is_handheld()): ?>
+		
+			<div class="slideshow">
 			
-			<img class="slide" src="<?php bloginfo('template_directory');?>/images/slide1.jpg"/>
+				<div class="slide" style="background:url(<?php bloginfo('template_directory');?>/images/slide2.jpg) top center no-repeat;background-size:cover;"></div><!-- slide -->
+			
+			</div><!-- slideshow -->
+		
+		<?php endif;?>
+		
+		<?php if(!is_handheld()): ?>
+		
+			<div class="slideshow cycle-slideshow" data-cycle-slides="> .slide">
+				
+				
+			
+				<div class="slide" style="background:url(<?php bloginfo('template_directory');?>/images/slide2.jpg) top center no-repeat;background-size:cover;"></div><!-- slide -->
+		
+				<div class="slide" style="background:url(<?php bloginfo('template_directory');?>/images/slide2.jpg) top center no-repeat;background-size:cover;"></div><!-- slide -->
+		
+				<div class="slide" style="background:url(<?php bloginfo('template_directory');?>/images/slide2.jpg) top center no-repeat;background-size:cover;"></div><!-- slide -->
+				
+				<div class="cycle-pager"></div>
+				<div class="cycle-prev">Back</div>
+				<div class="cycle-next">Next</div>
 			
 		</div><!-- slideshow -->
+		
+		<?php endif;?>
 		
 		
     <div class="desktop_events">
