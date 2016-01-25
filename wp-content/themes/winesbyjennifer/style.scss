@@ -918,6 +918,7 @@ h3#reply-title {
     z-index: 50;
     background: transparent;
     background: rgba(0, 0, 0, 0.3);
+    cursor:pointer;
 		.newsletter_text {
 			position: relative;
 			top: 50%;
@@ -929,7 +930,7 @@ h3#reply-title {
 				width:8%;
 			}
 			
-			a.newsletter_title {
+			.newsletter_title {
 			display: block;
 			color:#fff;
 			font-size:10vw;
@@ -938,7 +939,7 @@ h3#reply-title {
 			text-decoration: none;
 			
 			}
-			a.newsletter_subtitle {
+			.newsletter_subtitle {
 				display: block;
 				color:#fff;
 				font-size:4vw;
@@ -1653,13 +1654,13 @@ ul.sub-menu {
 				width:6%;
 			}
 			
-			a.newsletter_title {
+			.newsletter_title {
 			
 			font-size:7vw;
 			
 			
 			}
-			a.newsletter_subtitle {
+			.newsletter_subtitle {
 				
 				font-size:3vw;
 				
@@ -2022,13 +2023,13 @@ ul.sub-menu {
 				width:6%;
 			}
 			
-			a.newsletter_title {
+			.newsletter_title {
 			
 			font-size:21px;
 			
 			
 			}
-			a.newsletter_subtitle {
+			.newsletter_subtitle {
 				
 				font-size:16px;
 				

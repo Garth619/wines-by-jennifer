@@ -140,9 +140,9 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 						<img class="newsletter_bg" src="<?php bloginfo('template_directory');?>/images/newsletter.png"/>
 						<div class="newsletter_text_wrap">
 							<div class="newsletter_text">
-							<a href="" class="newsletter_title"><img class="gift_icon" src="<?php bloginfo('template_directory');?>/images/gift.png"/>Free Gift!</a>
+							<span class="newsletter_title"><img class="gift_icon" src="<?php bloginfo('template_directory');?>/images/gift.png"/>Free Gift!</span>
 							
-								<a href="" class="newsletter_subtitle">“5 DAYS TO EXPERT WINE TASTING”r <div class="arrow-right-yellow"></div> </a>
+								<span class="newsletter_subtitle">“5 DAYS TO EXPERT WINE&nbsp;TASTING”r <div class="arrow-right-yellow"></div> </span>
 							</div><!-- newsletter_text -->
 						</div><!-- newsletter_text_wrap -->
 						

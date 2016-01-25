@@ -57,7 +57,7 @@ Cart | Login | Search
 	<div class="newsletter_overlay_content">	
 		<img src="<?php bloginfo('template_directory');?>/images/gift.png"/>
 		<h1>Free Gift!</h1>
-		<p>Five Days to Expert Wine</p>
+		<p><em>"Five Days to Expert&nbsp;Wine"</em></p>
 		<div class="cover">
 			
 			<img class="newsletter_img" src="<?php bloginfo('template_directory');?>/images/test-bg.png"/>
