@@ -122,8 +122,8 @@ Cart | Login | Search
 			
 			jQuery('.newsletter_button_wrapper').click(function(){
 			
-			jQuery('.cover').fadeOut(500);
-			jQuery('.newsletter_form').delay(1000).fadeIn(500);
+			//jQuery('.cover').fadeOut(500);
+			//jQuery('.newsletter_form').delay(1000).fadeIn(500);
 			
 			});
 			
