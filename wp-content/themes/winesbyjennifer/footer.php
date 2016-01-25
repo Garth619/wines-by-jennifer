@@ -58,6 +58,8 @@ Cart | Login | Search
 		<img src="<?php bloginfo('template_directory');?>/images/gift.png"/>
 		<h1>Free Gift!</h1>
 		<p><em>"Five Days to Expert&nbsp;Wine"</em></p>
+	
+	<div class="newsletter_cover_form_wrapper">
 		<div class="cover">
 			
 			<img class="newsletter_img" src="<?php bloginfo('template_directory');?>/images/test-bg.png"/>
@@ -71,6 +73,7 @@ Cart | Login | Search
 		<div class="newsletter_form">
 			<?php gravity_form(1, false, false, false, '', true, 12); ?>
 		</div><!-- newsletter_form -->
+	</div><!-- newsletter_cover_form_wrapper -->
 	</div><!-- newsletter_overlay_content -->
 	
 	
@@ -122,8 +125,8 @@ Cart | Login | Search
 			
 			jQuery('.newsletter_button_wrapper').click(function(){
 			
-			//jQuery('.cover').fadeOut(500);
-			//jQuery('.newsletter_form').delay(1000).fadeIn(500);
+			jQuery('.cover').fadeOut(500);
+			jQuery('.newsletter_form').delay(1000).fadeIn(500);
 			
 			});
 			

@@ -901,6 +901,8 @@ h3#reply-title {
 	display:none;
 }
 
+
+
 .newsletter_signup {
 	position: relative;
 	border-top:2px #fff solid;
@@ -1552,7 +1554,7 @@ ul.sub-menu {
 			.cover {
 				position: relative;
 				max-width:250px;
-				margin:15px auto 0;
+				margin:0px auto 0;
 				cursor:pointer;
 				
 				.newsletter_button_wrapper {
@@ -1601,6 +1603,11 @@ ul.sub-menu {
 			opacity: 1;
 			visibility: visible;
 			transition:all .5s ease;
+		}
+		
+		.newsletter_cover_form_wrapper {
+			height:360px;
+			margin-top:15px;
 		}
 	
 
