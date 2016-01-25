@@ -68,6 +68,9 @@ Cart | Login | Search
 					</span><!-- button -->
 			</div><!-- newsletter_button_wrapper -->
 		</div><!-- cover -->
+		<div class="newsletter_form">
+			<?php gravity_form(1, false, false, false, '', true, 12); ?>
+		</div><!-- newsletter_form -->
 	</div><!-- newsletter_overlay_content -->
 	
 	
@@ -102,6 +105,8 @@ Cart | Login | Search
 		//Overlay
 		
 			jQuery('.newsletter_overlay_content, .privacy_overlay_content').hide();
+			
+			jQuery('.newsletter_form').hide();
 		
 		
 			// Newsletter
@@ -112,6 +117,14 @@ Cart | Login | Search
 				jQuery('.overlay').addClass('open');
 				jQuery('.newsletter_overlay_content').fadeIn(50);
 				
+			});
+			
+			
+			jQuery('.newsletter_button_wrapper').click(function(){
+			
+			jQuery('.cover').fadeOut(500);
+			jQuery('.newsletter_form').delay(1000).fadeIn(500);
+			
 			});
 			
 			
@@ -131,6 +144,10 @@ Cart | Login | Search
 				
 				jQuery('.overlay').removeClass('open');
 				jQuery('.newsletter_overlay_content, .privacy_overlay_content').fadeOut(400);
+				
+			
+				jQuery('.newsletter_form').fadeOut(500);
+				jQuery('.cover').delay(1000).fadeIn(500);
 				
 			});
 		
