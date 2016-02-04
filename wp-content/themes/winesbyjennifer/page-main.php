@@ -19,12 +19,45 @@ get_header(); ?>
 		
 		<div class="desktop_testimomials">
 			<div class="testimonial_top_half">
-				<span class="testimonial_quote purple_quote">"</span><p class="tesimonial_content">Thank you for helping make our wedding and reception absolutely perfect! We were able to relax, enjoy the evening with loved ones, as well as enjoy the outstanding food and drink. It was truly a surreal and  magical&nbsp;evening.<span class="purple_quote">"</p>
-				<img class="testimonial_img" src="<?php bloginfo('template_directory');?>/images/circle.png"/>
-				<div class="testimonial_name">
-					<p>Sasha & Ryan Kalis</p>
-					<p>Parkville, Missouri</p>
-				</div><!-- testimonial_name -->
+		
+				<div style="width:100%;" class="cycle-slideshow" data-cycle-slides="> .test_wrapper"  data-cycle-timeout=0  data-cycle-prev=".test-prev"
+        data-cycle-next=".test-next">
+			
+				<div class="test_wrapper">
+					<span class="testimonial_quote purple_quote">"</span><p class="tesimonial_content">Thank you for helping make our wedding and reception absolutely perfect! We were able to relax, enjoy the evening with loved ones, as well as enjoy the outstanding food and drink. It was truly a surreal and  magical&nbsp;evening.<span class="purple_quote">"</span></p>
+					<img class="testimonial_img" src="<?php bloginfo('template_directory');?>/images/circle.png"/>
+					<div class="testimonial_name">
+						<p>Sasha & Ryan Kalis</p>
+						<p>Parkville, Missouri</p>
+					</div><!-- testimonial_name -->
+				</div><!-- test_wrapper -->
+				
+				
+				<div class="test_wrapper">
+					<span class="testimonial_quote purple_quote">"</span><p class="tesimonial_content">Thank you for helping make our wedding and reception absolutely perfect! We were able to relax, enjoy the evening with loved ones, as well as enjoy the outstanding food and drink. It was truly a surreal and  magical&nbsp;evening.<span class="purple_quote">"</span></p>
+					<img class="testimonial_img" src="<?php bloginfo('template_directory');?>/images/circle.png"/>
+					<div class="testimonial_name">
+						<p>yoo & Ryan Kalis</p>
+						<p>Parkville, Missouri</p>
+					</div><!-- testimonial_name -->
+				</div><!-- test_wrapper -->
+				
+				
+				<div class="test_wrapper">
+					<span class="testimonial_quote purple_quote">"</span><p class="tesimonial_content">Thank you for helping make our wedding and reception absolutely perfect! We were able to relax, enjoy the evening with loved ones, as well as enjoy the outstanding food and drink. It was truly a surreal and  magical&nbsp;evening.<span class="purple_quote">"</span></p>
+					<img class="testimonial_img" src="<?php bloginfo('template_directory');?>/images/circle.png"/>
+					<div class="testimonial_name">
+						<p>Sasha & Ryan Kalis</p>
+						<p>Parkville, Missouri</p>
+					</div><!-- testimonial_name -->
+					
+	
+				</div><!-- cycle-slideshow -->
+				
+				<div class="test-prev">prev</div>
+				<div class="test-next">next</div>
+					
+				</div><!-- test_wrapper -->
 			</div><!-- testimonial_top_half -->
 			<div class="testimonial_bottom_half">
 			<div class="divider"></div><!-- divider -->
