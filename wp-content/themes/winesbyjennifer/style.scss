@@ -1156,6 +1156,37 @@ ul.sub-menu {
 	top:1px;
 }
 
+
+/* testimonial buttons */
+
+
+.arrow-right-purple-test {
+	width: 0; 
+	height: 0; 
+	border-top: 7px solid transparent;
+	border-bottom: 7px solid transparent;
+	border-left: 7px solid $purple;
+	display: inline-block;
+	margin-left:3px;
+	position: relative;
+	top:-1px;
+	cursor: pointer;
+}
+
+.arrow-left-purple-test {
+	width: 0; 
+	height: 0; 
+	border-top: 7px solid transparent;
+	border-bottom: 7px solid transparent;
+	border-right: 7px solid $purple;
+	display: inline-block;
+	margin-left:3px;
+	position: relative;
+	top:-1px;
+	cursor: pointer;
+	
+}
+
 .testimonials {
 	background:#fbf9f6;
 	padding:15px;
@@ -2275,7 +2306,7 @@ ul.sub-menu {
 	}
 	
 	.testimonial_top_half {
-		padding:8px;
+		padding:13px 8px 8px;
 		overflow: hidden;
 		width:100%;
 	}
@@ -2312,7 +2343,7 @@ ul.sub-menu {
 		font-size:15px;
 		font-style: italic;
 		line-height:1.2;
-		margin-bottom: 18px;
+		margin-bottom: 7px;
 		
 		
 	}
@@ -2356,19 +2387,29 @@ ul.sub-menu {
 .green_bar {
 	width:100%;
 	background:url(images/green-texture.png) top left repeat;
-	height:25px;
+	height:33px;
 	clear: both;
 	text-align: center;
+	padding-top: 6px;
 
 	a {
 		color:#fff;
 		text-decoration: none;
+		padding-top:5px;
 	}
 }
 
 
 .desktop_single_event {
 	padding:8px;
+	h1 {
+		font-size:16px;
+		margin-bottom:10px;
+		a {
+			color:$purple;
+			text-decoration: none;
+		}
+	}
 }
 
 
