@@ -2230,18 +2230,46 @@ ul.sub-menu {
 				position: relative;
 				bottom:25px;
 				z-index:10000;
+				span {
+					height:20px;
+					width:20px;
+					color:#fff;
+					cursor:pointer;
+				}
+				span.cycle-pager-active {
+					color: #fcd039;
+					
+				}
 			}
 			.cycle-prev, .cycle-next {
 				position: absolute;
-				top:20%;
+
 				z-index:10000;
+				padding-top:28%;
+				cursor: pointer;
+				top:0;
+				background:transparent;
+				transition:all .3s ease;
 				
 			}
 			.cycle-prev {
-				left:3%;
+				left:0%;
+				
+				height:100%;
+				padding-left:3%;
+				padding-right:2%;
+				transition:all .3s ease;
+			}
+			.cycle-prev:hover,.cycle-next:hover {
+				background:rgba(255, 255, 255, 0.25);
+				transition:all .3s ease;
 			}
 			.cycle-next {
-				right:3%;
+				padding-right:3%;
+				padding-left:3%;
+				right:0%;
+				height:100%;
+				transition:all .3s ease;
 			}
 		}
 	}

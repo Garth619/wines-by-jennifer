@@ -59,6 +59,7 @@ get_header(); ?>
 			<div class="slideshow">
 			
 				<div class="slide" style="background:url(<?php bloginfo('template_directory');?>/images/slide2.jpg) top center no-repeat;background-size:cover;"></div><!-- slide -->
+				
 			
 			</div><!-- slideshow -->
 		
@@ -72,13 +73,11 @@ get_header(); ?>
 			
 				<div class="slide" style="background:url(<?php bloginfo('template_directory');?>/images/slide2.jpg) top center no-repeat;background-size:cover;"></div><!-- slide -->
 		
-				<div class="slide" style="background:url(<?php bloginfo('template_directory');?>/images/slide2.jpg) top center no-repeat;background-size:cover;"></div><!-- slide -->
-		
-				<div class="slide" style="background:url(<?php bloginfo('template_directory');?>/images/slide2.jpg) top center no-repeat;background-size:cover;"></div><!-- slide -->
+				<div class="slide" style="background:url(<?php bloginfo('template_directory');?>/images/slide-test.jpg) top center no-repeat;background-size:cover;"></div><!-- slide -->
 				
 				<div class="cycle-pager"></div>
-				<div class="cycle-prev">Back</div>
-				<div class="cycle-next">Next</div>
+				<div class="cycle-prev"><img src="<?php bloginfo('template_directory');?>/images/left.png"/></div>
+				<div class="cycle-next"><img src="<?php bloginfo('template_directory');?>/images/right.png"/></div>
 			
 		</div><!-- slideshow -->
 		
