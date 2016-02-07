@@ -267,18 +267,16 @@ function my_jquery_enqueue() {
     	register_post_type( 'inthenews' , $args );    
 	}    
 	register_taxonomy("inthenews-category", array("inthenews"), array("hierarchical" => true, "label" => "In the News Category", "singular_label" => "In the News", "rewrite" => true));  
-
-
-
-/*
- 	// In the News
+	
+	
+		// WBJ Blog
     	
-    	add_action('init', 'inthenews');    
+    	add_action('init', 'wbjblog');    
    	 
-	function inthenews() {    
+	function wbjblog() {    
     	$args = array(    
-        	'label' => __('In the News'),    
-        	'singular_label' => __('Project'),    
+        	'label' => __('WBJ Blog'),    
+        	'singular_label' => __('WBJ Blog Post'),    
         	'public' => true,    
         	'show_ui' => true,
         	'has_archive' => true,	 
@@ -288,10 +286,13 @@ function my_jquery_enqueue() {
         	'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )    
        	);    
    	 
-    	register_post_type( 'portfolio' , $args );    
+    	register_post_type( 'wbjblog' , $args );    
 	}    
-	register_taxonomy("project-type", array("portfolio"), array("hierarchical" => true, "label" => "Project Types", "singular_label" => "Project Type", "rewrite" => true));
-*/
+	register_taxonomy("wbjblog-category", array("wbjblog"), array("hierarchical" => true, "label" => "WBJ Blog Category", "singular_label" => "WBJ Blog Post", "rewrite" => true));  
+
+
+
+
 
 
 

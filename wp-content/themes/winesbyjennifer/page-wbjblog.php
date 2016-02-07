@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: WBJ In the News
+ * Template Name: WBJ Blog
  *
  */
 
@@ -12,7 +12,7 @@ get_header(); ?>
 <div class="inner_banner">
 	<div class="banner_overlay">
 	
-		<h1 class="inthenews_header"><img class="ribbon ribbon_left" src="<?php bloginfo('template_directory');?>/images/ribbon.png"/>In the News<img class="ribbon ribbon_right" src="<?php bloginfo('template_directory');?>/images/ribbon-right.png"/></h1>
+		<h1 class="inthenews_header"><img class="ribbon ribbon_left" src="<?php bloginfo('template_directory');?>/images/ribbon.png"/>WBJ Blog<img class="ribbon ribbon_right" src="<?php bloginfo('template_directory');?>/images/ribbon-right.png"/></h1>
 		
 
 	
@@ -104,19 +104,6 @@ get_header(); ?>
 </div><!-- content_container -->
 		
 		
-		
-
-
-		
-			
-
-
-
-
-
-
-
-			
 	<div class="box_wrapper inner wow fadeIn" data-wow-delay="0.2s">
 		<div class="box_row">
 			<div class="box">
@@ -146,7 +133,6 @@ get_header(); ?>
 				</div><!-- box_text_wrap -->
 			</div><!-- box -->
 		</div><!-- box_row -->
-
 
 	</div><!-- box_wrapper -->
 	

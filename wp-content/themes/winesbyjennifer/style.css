@@ -115,8 +115,6 @@ input[type="text"], input[type="password"], input[type="email"], input[type="url
 
 #content tr.odd td { background: #f2f7fc; }
 
-.hentry { margin: 0 0 48px 0; }
-
 .home .sticky { background: #f2f7fc; border-top: 4px solid #000; margin-left: -20px; margin-right: -20px; padding: 18px 20px; }
 
 .single .hentry { margin: 0 0 36px 0; }
@@ -635,7 +633,7 @@ ul.sub-menu { display: none; }
   .review_icons { padding: 0 8px; }
   .review_icons .review_single_icon { width: 33.3333333%; float: left; padding: 0 1%; }
   .review_icons .review_single_icon img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
-  .green_bar { width: 100%; background: url(images/green-texture.png) top left repeat; height: 33px; clear: both; text-align: center; padding-top: 6px; }
+  .green_bar { width: 100%; background: url(images/green-texture.png) top left repeat; height: 33px; clear: both; text-align: center; padding-top: 6px; color: #fff; }
   .green_bar a { color: #fff; text-decoration: none; padding-top: 5px; }
   .desktop_single_event { padding: 8px; }
   .desktop_single_event h1 { font-size: 16px; margin-bottom: 10px; }

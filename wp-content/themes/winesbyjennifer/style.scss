@@ -50,7 +50,6 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 }
 body {
 	line-height: 1;
-	
 	font-family: $lato;
 	color:$grey;
 	
@@ -321,7 +320,7 @@ textarea {
 	background: #f2f7fc;
 }
 .hentry {
-	margin: 0 0 48px 0;
+
 }
 .home .sticky {
 	background: #f2f7fc;
@@ -2391,7 +2390,7 @@ ul.sub-menu {
 	clear: both;
 	text-align: center;
 	padding-top: 6px;
-
+	color:#fff;
 	a {
 		color:#fff;
 		text-decoration: none;

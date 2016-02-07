@@ -5973,6 +5973,60 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/wp-content\/plugins\/ajax-load-more-repeaters-v2\/ajax-load-more-repeaters-v2.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/wp-content\/plugins\/ajax-load-more-repeaters-v2\/ajax-load-more-repeaters-v2.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/wp-content\/plugins\/ajax-load-more-repeaters-v2\/includes\/template.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/wp-content\/plugins\/ajax-load-more-repeaters-v2\/includes\/template.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/wp-content\/plugins\/ajax-load-more-repeaters-v2\/index.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/wp-content\/plugins\/ajax-load-more-repeaters-v2\/index.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/wp-content\/plugins\/ajax-load-more-repeaters-v2\/repeaters\/_is_writeable.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/wp-content\/plugins\/ajax-load-more-repeaters-v2\/repeaters\/_is_writeable.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/wp-content\/plugins\/ajax-load-more-repeaters-v2\/repeaters\/template_1.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/wp-content\/plugins\/ajax-load-more-repeaters-v2\/repeaters\/template_1.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/wp-content\/plugins\/ajax-load-more-repeaters-v2\/vendor\/EDD_SL_Plugin_Updater.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/wp-content\/plugins\/ajax-load-more-repeaters-v2\/vendor\/EDD_SL_Plugin_Updater.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/wp-content\/plugins\/ajax-load-more\/admin\/admin.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -7312,15 +7366,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/wp-content\/plugins\/better-wp-security\/core\/content\/status.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/wp-content\/plugins\/better-wp-security\/core\/content\/status.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/wp-content\/plugins\/better-wp-security\/core\/content\/system.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -8271,26 +8316,6 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/wp-content\/plugins\/better-wp-security\/core\/modules\/content-directory\/init.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/wp-content\/plugins\/better-wp-security\/core\/modules\/content-directory\/js\/admin-content_directory.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/wp-content\/plugins\/better-wp-security\/core\/modules\/content-directory\/js\/admin-content_directory.js",
-		"outputAbbreviatedPath": "\/wp-content\/plugins\/better-wp-security\/core\/modules\/content-directory\/js\/min\/admin-content_directory-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/wp-content\/plugins\/better-wp-security\/core\/modules\/content-directory\/js\/index.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/wp-content\/plugins\/better-wp-security\/core\/modules\/content-directory\/js\/index.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -25678,6 +25703,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/wp-content\/themes\/winesbyjennifer\/page-wbjblog.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/winesbyjennifer\/page-wbjblog.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/wp-content\/themes\/winesbyjennifer\/page.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -25728,6 +25762,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/wp-content\/themes\/winesbyjennifer\/single-inthenews.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/wp-content\/themes\/winesbyjennifer\/single-wbjblog.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/winesbyjennifer\/single-wbjblog.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -26156,6 +26199,94 @@
 		"initialSize": 392045,
 		"inputAbbreviatedPath": "\/wp-content\/uploads\/2016\/01\/Screen-Shot-2016-01-10-at-4.10.54-PM.jpg",
 		"outputAbbreviatedPath": "\/wp-content\/uploads\/2016\/01\/Screen-Shot-2016-01-10-at-4.10.54-PM.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-150x150.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5710,
+		"inputAbbreviatedPath": "\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-150x150.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-150x150.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-180x180.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7454,
+		"inputAbbreviatedPath": "\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-180x180.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-180x180.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-300x195.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 11966,
+		"inputAbbreviatedPath": "\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-300x195.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-300x195.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-300x300.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 15462,
+		"inputAbbreviatedPath": "\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-300x300.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-300x300.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-600x600.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 43427,
+		"inputAbbreviatedPath": "\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-600x600.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-600x600.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-768x500.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 48276,
+		"inputAbbreviatedPath": "\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-768x500.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-768x500.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-940x198.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 30142,
+		"inputAbbreviatedPath": "\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-940x198.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-940x198.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 113479,
+		"inputAbbreviatedPath": "\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

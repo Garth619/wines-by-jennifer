@@ -70,9 +70,9 @@ get_header(); ?>
 				</div><!-- review_icons -->
 			
 			<div class="green_bar">
-				<a href="">
-					<img src="<?php bloginfo('template_directory');?>/images/stars.png"/>LEAVE A REVIEW<img src="<?php bloginfo('template_directory');?>/images/stars.png"/>
-				</a>
+				
+					<img style="margin-right:3px;" src="<?php bloginfo('template_directory');?>/images/stars.png"/>LEAVE A REVIEW<img style="margin-left:3px;" src="<?php bloginfo('template_directory');?>/images/stars.png"/>
+			
 			</div><!-- green_bar -->
 			
 		</div><!-- testimonial_bottom_half -->
@@ -112,7 +112,7 @@ get_header(); ?>
 		
     <div class="desktop_events">
 		
-		<?php $mymain_query = new WP_Query( array( 'post_type' => 'inthenews', 'order' => 'DSC' ) ); while($mymain_query->have_posts()) : $mymain_query->the_post(); ?>
+		<?php $mymain_query = new WP_Query( array( 'post_type' => array ( 'inthenews', 'wbjblog' ), 'order' => 'DSC' ) ); while($mymain_query->have_posts()) : $mymain_query->the_post(); ?>
     
     
 			
@@ -201,13 +201,13 @@ get_header(); ?>
 			<div class="box">
 				<img src="<?php bloginfo('template_directory');?>/images/box1.jpg"/>
 				<div class="box_text_wrap">
-					<h2><a href="">Join the Club</a></h2>
+					<h2><a href="<?php bloginfo('url');?>/join-the-club/">Join the Club</a></h2>
 				</div><!-- box_text_wrap -->
 			</div><!-- box -->
 			<div class="box">
 				<img src="<?php bloginfo('template_directory');?>/images/box2.jpg"/>
 				<div class="box_text_wrap">
-					<h2><a href="">Become an Ambassador</a></h2>
+					<h2><a href="<?php bloginfo('url');?>/become-an-ambassador/">Become an Ambassador</a></h2>
 				</div><!-- box_text_wrap -->
 			</div><!-- box -->
 		</div><!-- box_row -->
@@ -215,13 +215,13 @@ get_header(); ?>
 			<div class="box">
 				<img src="<?php bloginfo('template_directory');?>/images/box3.jpg"/>
 				<div class="box_text_wrap">
-					<h2><a href="">Own a<br/>Franchise</a></h2>
+					<h2><a href="<?php bloginfo('url');?>/own-a-franchise/">Own a<br/>Franchise</a></h2>
 				</div><!-- box_text_wrap -->
 			</div><!-- box -->
 			<div class="box">
 				<img src="<?php bloginfo('template_directory');?>/images/box4.jpg"/>
 				<div class="box_text_wrap">
-					<h2><a href="">WBJr Blog</a></h2>
+					<h2><a href="<?php bloginfo('url');?>/wines-by-jennifer-blog/">WBJr Blog</a></h2>
 				</div><!-- box_text_wrap -->
 			</div><!-- box -->
 		</div><!-- box_row -->

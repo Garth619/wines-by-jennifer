@@ -23,8 +23,8 @@
 		<ul class="menu">
 			<li><a href="">Contact</a></li>
 			<li><a href="<?php bloginfo('url');?>/about-us/faq">FAQ</a></li>
-			<li class="privacy">Privacy</li>
-			<li><a href="">Please Drink Responsibly</a></li>
+			<li class="privacy" style="cursor:pointer">Privacy</li>
+			<li><a href="<?php bloginfo('url');?>/drink-responsibly/">Please Drink Responsibly</a></li>
 		</ul>
 	</div><!-- footer_col2 -->
 	<div class="footer_col3">
@@ -45,6 +45,14 @@
 	See Categories | List View | Grid View
 	
 	<?php endif;?>
+	
+	<?php if( get_post_type() == 'wbjblog' || is_page_template('page-wbjblog.php') ) : ?>
+	
+	See Categories | List View | Grid View
+	
+	<?php endif;?>
+	
+	
 Cart | Login | Search
 
 </div><!-- mobile_shopping_cart -->
@@ -106,6 +114,7 @@ Cart | Login | Search
 	jQuery(document).ready(function(){
 		
 
+		
 		
 		//Overlay
 		
