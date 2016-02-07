@@ -347,6 +347,7 @@ jQuery('.slider-for').slick({
   lazyLoad: 'ondemand',
   arrows: true,
   fade: true,
+  swipe: true,
   asNavFor: '.slider-nav'
 });
 jQuery('.slider-nav').slick({
