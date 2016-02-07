@@ -1275,7 +1275,7 @@ ul.sub-menu {
 
 .slider-nav {
 	
-	border-bottom: 2px solid #fff;
+// 	border-bottom: 2px solid #fff;
 }
 
 .slick-prev {
@@ -1286,6 +1286,10 @@ ul.sub-menu {
 .slick-next {
     right: 0px !important;
      z-index: 1 !important;
+}
+
+.slick-slider {
+    margin-bottom: 0px !important;
 }
 
 /* Meet the team */

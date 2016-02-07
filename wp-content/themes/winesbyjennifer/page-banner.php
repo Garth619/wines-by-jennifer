@@ -62,12 +62,12 @@ get_header(); ?>
 	
 	
 <div class="slider-nav">
-  <div><img data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz1.png"/></div>
-  <div><img data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz2.png"/></div>
-  <div><img data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz3.png"/></div>
-  <div><img data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz4.png"/></div>
-  <div><img data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz5.png"/></div>
-  <div><img data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz6.png"/></div>
+  <div><img class="car_img" data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz1.png"/></div>
+  <div><img class="car_img" data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz2.png"/></div>
+  <div><img class="car_img" data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz3.png"/></div>
+  <div><img class="car_img" data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz4.png"/></div>
+  <div><img class="car_img" data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz5.png"/></div>
+  <div><img class="car_img" data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz6.png"/></div>
  </div>
 
 <?php get_footer(); ?>

@@ -400,7 +400,16 @@ jQuery('.slider-nav').slick({
 });
  
 
+// Slick Overlay
 
+jQuery('.slider-nav img.car_img').click(function(){
+				
+				jQuery('.overlay').addClass('open');
+				jQuery('.privacy_overlay_content').fadeIn(50);
+				
+				
+				
+			});
 
 
 
