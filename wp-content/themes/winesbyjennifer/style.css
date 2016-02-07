@@ -544,7 +544,7 @@ ul.sub-menu { display: none; }
 
 .regsitered { font-size: 3vw; }
 
-.mobile_menu_overlay { background: #8c2555; width: 100%; position: fixed; height: 100vh; top: 0; z-index: 9999; display: none; }
+.mobile_menu_overlay { background: #8c2555; width: 100%; position: fixed; height: 100%; top: 0; z-index: 9999; display: none; }
 
 span.overlay_close_mobile_menu { color: #fff; display: none; position: absolute; right: 8px; top: 9px; cursor: pointer; }
 
