@@ -108,14 +108,14 @@ Cart | Login | Search
 	<div class="carousel_content">
 		
 		<div class="slider-for">
-			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p1.jpg"/>This is a caption1</div>
-			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p2.jpg"/>This is a caption2</div>
-			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p3.jpg"/>This is a caption3</div>
-			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p4.jpg"/>This is a caption4</div>
-			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p5.jpg"/>This is a caption5</div>
-			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p6.jpg"/>This is a caption6</div>
-			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p7.jpg"/>This is a caption7</div>
-			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p8.jpg"/>This is a caption8</div>
+			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p1.jpg"/></div>
+			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p2.jpg"/></div>
+			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p3.jpg"/></div>
+			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p4.jpg"/></div>
+			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p5.jpg"/></div>
+			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p6.jpg"/></div>
+			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p7.jpg"/></div>
+			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p8.jpg"/></div>
  		</div>
 		
 		
