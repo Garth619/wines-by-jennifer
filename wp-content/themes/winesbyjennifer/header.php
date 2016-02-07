@@ -163,11 +163,11 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 					<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
 					<div class="social_icons_wrapper">
 						<ul class="social_icons">
-							<li><a href="" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/facebook.png"/></a></li>
+							<li><a href="https://www.facebook.com/WinesByJennifer" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/facebook.png"/></a></li>
 							<li><a href="" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/google-plus.png"/></a></li>
-							<li><a href="" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/twitter.png"/></a></li>
+							<li><a href="https://twitter.com/WinesByJennifer" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/twitter.png"/></a></li>
 							<li><a href="" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/instagram.png"/></a></li>
-							<li><a href="" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/youtube.png"/></a></li>
+							<li><a href="http://www.youtube.com/user/WinesByJennifer" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/youtube.png"/></a></li>
 						</ul>
 					</div><!-- social_icons_wrapper -->
 				</div><!-- nav -->
