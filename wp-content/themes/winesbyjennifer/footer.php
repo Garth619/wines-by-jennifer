@@ -16,21 +16,22 @@
 <div class="footer">
 	<div class="footer_col1">
 		<ul class="desktop_copyright">
-			<li>c 2016 Wines By Jennifer r</li>
+			<li>&copy; 2016 Wines By Jennifer<sup>&reg;</sup></li>
 		</ul><!-- desktop_copyright -->
 	</div><!-- footer_col1 -->
 	<div class="footer_col2">
 		<ul class="menu">
-			<li><a href="">Contact</a></li>
+			<li><a href="<?php bloginfo('url');?>/contact-us">Contact</a></li>
 			<li><a href="<?php bloginfo('url');?>/about-us/faq">FAQ</a></li>
 			<li class="privacy" style="cursor:pointer">Privacy</li>
 			<li><a href="<?php bloginfo('url');?>/drink-responsibly/">Please Drink Responsibly</a></li>
+			
 		</ul>
 	</div><!-- footer_col2 -->
 	<div class="footer_col3">
 		<ul class="language" style="clear:both;">
 			<li>View In: Eng ESp</li>
-			<li>c 2015 Wines By Jennifer r</li>
+			<li>&copy; 2016 Wines By Jennifer<sup>&reg;</sup></li>
 			<li class="backtotop">Back to Top</li>
 		</ul>
 	</div><!-- footer_col3 -->
@@ -42,18 +43,18 @@
 	
 	<?php if( get_post_type() == 'inthenews' || is_page_template('page-inthenews.php') ) : ?>
 	
-	 Categories pop up here?? |
+	 In the News Categories |
 	
 	<?php endif;?>
 	
 	<?php if( get_post_type() == 'wbjblog' || is_page_template('page-wbjblog.php') ) : ?>
 	
-	Categories pop up here?? |
+	WBJ Blog<sup>&reg;</sup> Categories  |
 	
 	<?php endif;?>
 	
 	
-Cart | Login | Search
+Cart (0) | Search
 
 </div><!-- mobile_shopping_cart -->
 

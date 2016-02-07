@@ -22,7 +22,7 @@ get_header(); ?>
 		<div id="content">
 			<h1>Wine Club</h1>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla</p>
-			<a href="" class="button">Learn More <div class="arrow-right-white"></div></a>
+			<a href="<?php bloginfo('url');?>/clubs/wine-club" class="button">Learn More <div class="arrow-right-white"></div></a>
 		</div><!-- content -->
 	</div><!-- club_right -->
 	
@@ -39,7 +39,7 @@ get_header(); ?>
 		<div id="content">
 			<h1>Cellar Club</h1>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla</p>
-			<a href="" class="button">Learn More <div class="arrow-right-white"></div></a>
+			<a href="<?php bloginfo('url');?>/clubs/cellar-club" class="button">Learn More <div class="arrow-right-white"></div></a>
 		</div><!-- content -->
 	</div><!-- club_left -->
 	
@@ -56,7 +56,7 @@ get_header(); ?>
 		<div id="content">
 			<h1>Beer Club</h1>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla</p>
-			<a href="" class="button">Learn More <div class="arrow-right-white"></div></a>
+			<a href="<?php bloginfo('url');?>/clubs/beer-club" class="button">Learn More <div class="arrow-right-white"></div></a>
 		</div><!-- content -->
 	</div><!-- club_left -->
 	
@@ -73,34 +73,8 @@ get_header(); ?>
 		
 			
 	<div class="box_wrapper inner wow fadeIn" data-wow-delay="0.2s">
-		<div class="box_row">
-			<div class="box">
-				<img src="<?php bloginfo('template_directory');?>/images/box1.jpg"/>
-				<div class="box_text_wrap">
-					<h2><a href="<?php bloginfo('url');?>/join-the-club/">Join the Club</a></h2>
-				</div><!-- box_text_wrap -->
-			</div><!-- box -->
-			<div class="box">
-				<img src="<?php bloginfo('template_directory');?>/images/box2.jpg"/>
-				<div class="box_text_wrap">
-					<h2><a href="<?php bloginfo('url');?>/become-an-ambassador/">Become an Ambassador</a></h2>
-				</div><!-- box_text_wrap -->
-			</div><!-- box -->
-		</div><!-- box_row -->
-		<div class="box_row">
-			<div class="box">
-				<img src="<?php bloginfo('template_directory');?>/images/box3.jpg"/>
-				<div class="box_text_wrap">
-					<h2><a href="<?php bloginfo('url');?>/own-a-franchise/">Own a<br/>Franchise</a></h2>
-				</div><!-- box_text_wrap -->
-			</div><!-- box -->
-			<div class="box">
-				<img src="<?php bloginfo('template_directory');?>/images/box4.jpg"/>
-				<div class="box_text_wrap">
-					<h2><a href="<?php bloginfo('url');?>/wines-by-jennifer-blog/">WBJr Blog</a></h2>
-				</div><!-- box_text_wrap -->
-			</div><!-- box -->
-		</div><!-- box_row -->
+		
+		<?php include('boxes.php');?>
 
 	</div><!-- box_wrapper -->
 	

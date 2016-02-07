@@ -89,7 +89,7 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 		
 		<div class="mobile_header">
 			
-			<h1><a href="<?php bloginfo('url');?>">Wines by Jennifer r</a></h1>
+			<h1><a href="<?php bloginfo('url');?>">Wines by Jennifer&reg;</a></h1>
 			
 			<div class="mobile_menu">
 				<div class="white_bar"></div>
@@ -129,7 +129,7 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 						<a href="<?php bloginfo('url');?>"><img class="logo" src="<?php bloginfo('template_directory');?>/images/logo.jpg"/></a>
 					</div><!-- logo_wrapper -->
 					<div class="intro_content">
-						<p><span class="purple">Wines by Jennifer R</span> is a unique luxury entertainment destination that has been helping people enjoy an authentic global wine country experience since&nbsp;2003.</p>
+						<p><span class="purple">Wines by Jennifer <sup style="font-size:10px;">&reg;</sup></span> is a unique luxury entertainment destination that has been helping people enjoy an authentic global wine country experience since&nbsp;2003.</p>
 					</div><!-- intro_content -->
 				</div><!-- intro -->
 				
@@ -145,7 +145,7 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 							<div class="newsletter_text">
 							<span class="newsletter_title"><img class="gift_icon" src="<?php bloginfo('template_directory');?>/images/gift.png"/>Free Gift!</span>
 							
-								<span class="newsletter_subtitle">“5 DAYS TO EXPERT<br/>&nbsp;&nbsp;WINE&nbsp;TASTING”r <div class="arrow-right-yellow"></div> </span>
+								<span class="newsletter_subtitle">“5 DAYS TO EXPERT<br/>&nbsp;&nbsp;WINE&nbsp;TASTING” <sup class="regsitered">&reg;</sup> <div class="arrow-right-yellow"></div> </span>
 							</div><!-- newsletter_text -->
 						</div><!-- newsletter_text_wrap -->
 						
