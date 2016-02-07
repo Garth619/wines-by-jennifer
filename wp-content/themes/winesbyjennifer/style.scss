@@ -1278,9 +1278,10 @@ ul.sub-menu {
 // 	border-bottom: 2px solid #fff;
 }
 
-.slider-nav img {
+.slider-nav img.car_img {
 	width:175px;
 	border-right:1px #fff solid !important;
+
 }
 
 .slick-prev {
@@ -1685,7 +1686,7 @@ ul.sub-menu {
 			display:block;
 			max-width: 500px;
 			width:95%;
-			padding: 6px 6px 88px;
+			padding: 6px 6px 30px;
 			background: #fff;
 			span.overlay_close {
 				position: absolute;
@@ -1699,6 +1700,7 @@ ul.sub-menu {
 				max-width:100%;
 				height:auto;
 				background: #fff;
+				margin-bottom:5px;
 			}
 		}
 	}
@@ -2866,6 +2868,13 @@ margin-right:4%;
 	}
 
 
+}
+
+
+.slider-nav {
+	border-top: 2px solid #fff;
+	border-bottom: 2px solid #fff;
+	margin:25px 0 0 !important;
 }
 	
 
