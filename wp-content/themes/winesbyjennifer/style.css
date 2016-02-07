@@ -397,7 +397,7 @@ ul.sub-menu { display: none; }
 .events .events_content p { font-size: 15px; margin-bottom: 10px; display: inline-block; }
 .events .events_content a { color: #363636; text-decoration: none; }
 
-.arrow-right { width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 5px solid #5871a8; display: inline-block; margin-left: 0px; position: relative; top: 1px; }
+.arrow-right { width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 5px solid #8c2555; display: inline-block; margin-left: 0px; position: relative; top: 0px; }
 
 .arrow-right-purple { width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 5px solid #8c2555; display: inline-block; margin-left: 3px; position: relative; top: -1px; }
 
@@ -425,7 +425,7 @@ ul.sub-menu { display: none; }
 
 /* Inner Pages*/
 .inner_banner { background: url(images/inner-banner.jpg) top center no-repeat; background-size: cover; position: relative; }
-.inner_banner .banner_overlay { background: rgba(0, 0, 0, 0.45); width: 100%; }
+.inner_banner .banner_overlay { background: rgba(0, 0, 0, 0.45); width: 100%; text-align: center; }
 .inner_banner .banner_overlay h1 { padding: 65px 35px; color: #fff; font-family: "Cinzel", serif; text-align: center; text-shadow: 0 1px 2px black; font-size: 38px; }
 
 .ribbon { display: none; }
@@ -546,7 +546,15 @@ ul.sub-menu { display: none; }
 
 .mobile_menu_overlay { background: #8c2555; width: 100%; position: fixed; height: 100%; top: 0; z-index: 9999; display: none; }
 
-span.overlay_close_mobile_menu { color: #fff; display: none; position: absolute; right: 8px; top: 9px; cursor: pointer; }
+span.overlay_close_mobile_menu { color: #fff; display: none; position: absolute; right: 8px; top: 11px; cursor: pointer; }
+
+.read_more_main { color: #8c2555; text-decoration: none; margin-top: 6px; display: block; }
+
+body.single .inner_banner .banner_overlay h1 { padding: 80px 35px 0px; text-align: center; }
+
+body.single .inner_banner .banner_overlay a { color: #fff; text-align: center; display: inline-block; font-family: "Lato", sans-serif; margin-bottom: 80px; text-shadow: 0 1px 2px black; text-decoration: none; margin-top: 9px; }
+
+body.single .inner_banner .banner_overlay a:hover { color: #E5C854; }
 
 @media screen and (min-width: 660px) { .intro { overflow: hidden; background: url(images/intro_bg.jpg) repeat; }
   .intro .logo_wrapper { display: block; float: left; width: 18%; }
@@ -568,6 +576,7 @@ span.overlay_close_mobile_menu { color: #fff; display: none; position: absolute;
   .footer ul.menu { margin-bottom: 15px; }
   .footer ul.menu li { display: inline-block; margin-left: 8px; margin-right: 8px; } }
 @media screen and (min-width: 860px) { .inner_banner .banner_overlay h1 { padding: 80px 35px 95px; font-size: 42px; }
+  body.single .inner_banner .banner_overlay a { margin-bottom: 95px; }
   .ribbon { display: inline-block; }
   .ribbon_left { margin-right: 15px; }
   .ribbon_right { margin-left: 15px; }

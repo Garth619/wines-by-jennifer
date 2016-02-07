@@ -16,7 +16,9 @@ get_header(); ?>
 	
 	<div class="banner_overlay">
 	
-		<h1><img class="ribbon ribbon_left" src="<?php bloginfo('template_directory');?>/images/ribbon.png"/>WBJr Blog<img class="ribbon ribbon_right" src="<?php bloginfo('template_directory');?>/images/ribbon-right.png"/></h1>
+		<h1><img class="ribbon ribbon_left" src="<?php bloginfo('template_directory');?>/images/ribbon.png"/>WBJ&reg; Blog<img class="ribbon ribbon_right" src="<?php bloginfo('template_directory');?>/images/ribbon-right.png"/></h1>
+		
+		<a href="<?php bloginfo('url');?>/wines-by-jennifer-blog/" class="back_to_blog">Return To WBJ Blog Feed</a>
 	
 	</div><!-- banner_overlay -->
 	

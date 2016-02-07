@@ -1101,11 +1101,11 @@ ul.sub-menu {
 	height: 0; 
 	border-top: 5px solid transparent;
 	border-bottom: 5px solid transparent;
-	border-left: 5px solid #5871a8;
+	border-left: 5px solid $purple;
 	display: inline-block;
 	margin-left:0px;
 	position: relative;
-	top:1px;
+	top:0px;
 	
 }
 
@@ -1247,7 +1247,7 @@ ul.sub-menu {
 	.banner_overlay {
 		background: rgba(0, 0, 0, 0.45);
 		width:100%;
-		
+		 text-align: center;
 		h1 {
 			padding: 65px 35px;
 			color:#fff;
@@ -1747,9 +1747,41 @@ ul.sub-menu {
 			display:none;
 			position: absolute;
 			right: 8px;
-			top: 9px;
+			top: 11px;
 			cursor: pointer;
 		}
+		
+		.read_more_main {
+			color:$purple;
+			text-decoration: none;
+			margin-top:6px;
+			display: block;
+		}
+		
+		.back_to_blog {
+			
+		}
+		
+		
+body.single .inner_banner .banner_overlay h1 {
+	padding: 80px 35px 0px;
+	text-align: center;
+}
+
+body.single .inner_banner .banner_overlay a {
+	color:#fff;
+	text-align: center;
+	display: inline-block;
+	font-family: $lato;
+	margin-bottom: 80px;
+	text-shadow: 0 1px 2px black;
+	text-decoration: none;
+	margin-top:9px;
+}
+
+body.single .inner_banner .banner_overlay a:hover {
+	color:$yellow;
+}
 	
 
 @media screen and (min-width: 660px) {
@@ -1902,7 +1934,15 @@ ul.sub-menu {
 			
 		}
 	}
+	
 }
+
+
+body.single .inner_banner .banner_overlay a {
+	margin-bottom: 95px;
+}
+
+
 
 
 .ribbon {

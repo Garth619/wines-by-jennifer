@@ -148,8 +148,9 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 				
 				<div class="right_header">
 					<div class="desktop_store_wrap">
-						shopping cart will go here
-						<?php get_search_form();?>
+						shopping cart will go here<br/>
+						search will go here
+						<?php //get_search_form();?>
 					</div><!-- desktop_store_wrap -->
 					<div class="newsletter_signup">
 						<img class="newsletter_bg" src="<?php bloginfo('template_directory');?>/images/newsletter.png"/>

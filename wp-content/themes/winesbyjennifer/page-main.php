@@ -120,7 +120,7 @@ get_header(); ?>
 				<h1><a href="<?php the_permalink();?>"><?php the_title();?></a></h1>
 				<div class="desktop_events_content">
 					<p>	<?php the_excerpt();?></p>
-					<a href="<?php the_permalink();?>">Read More <div class="arrow-right"></div></a>
+					<a class="read_more_main" href="<?php the_permalink();?>">Read More <div class="arrow-right"></div></a>
 				</div><!-- events_content -->
 			</div><!-- desktop_single_event -->
 			<div class="divider"></div><!-- divider -->
@@ -141,7 +141,7 @@ get_header(); ?>
 				</div><!-- social_icon -->
 				<div class="desktop_events_content">
 					<p>Lorem ipsum dolor sit amet, cons ectet ur adipi sicing elit, sed do eiusmod tem por inc idid unt ut labore et dolore magnrem ipsum dolor sit amet, cons ectet ur adipi sicing...</p>
-					<a href="">Read More <div class="arrow-right"></div></a>
+					<a class="read_more_main" href="">Read More <div class="arrow-right"></div></a>
 				</div><!-- events_content -->
 			</div><!-- desktop_single_event -->
 			<div class="divider"></div><!-- divider -->
@@ -152,7 +152,7 @@ get_header(); ?>
 				</div><!-- social_icon -->
 				<div class="desktop_events_content">
 					<p>Lorem ipsum dolor sit amet, cons ectet ur adipi sicing elit, sed do eiusmod tem por inc idid unt ut labore et dolore magnrem ipsum dolor sit amet, cons ectet ur adipi sicing...</p>
-					<a href="">Read More <div class="arrow-right"></div></a>
+					<a class="read_more_main" href="">Read More <div class="arrow-right"></div></a>
 				</div><!-- events_content -->
 			</div><!-- desktop_single_event -->
 			<div class="divider"></div><!-- divider -->
@@ -163,7 +163,7 @@ get_header(); ?>
 				</div><!-- social_icon -->
 				<div class="desktop_events_content">
 					<p>Lorem ipsum dolor sit amet, cons ectet ur adipi sicing elit, sed do eiusmod tem por inc idid unt ut labore et dolore magnrem ipsum dolor sit amet, cons ectet ur adipi sicing...</p>
-					<a href="">Read More <div class="arrow-right"></div></a>
+					<a class="read_more_main" href="">Read More <div class="arrow-right"></div></a>
 				</div><!-- events_content -->
 			</div><!-- desktop_single_event -->
 			<div class="divider"></div><!-- divider -->
@@ -174,7 +174,7 @@ get_header(); ?>
 				</div><!-- social_icon -->
 				<div class="desktop_events_content">
 					<p>Lorem ipsum dolor sit amet, cons ectet ur adipi sicing elit, sed do eiusmod tem por inc idid unt ut labore et dolore magnrem ipsum dolor sit amet, cons ectet ur adipi sicing...</p>
-					<a href="">Read More <div class="arrow-right"></div></a>
+					<a class="read_more_main" href="">Read More <div class="arrow-right"></div></a>
 				</div><!-- events_content -->
 			</div><!-- desktop_single_event -->
 			<div class="divider"></div><!-- divider -->
@@ -185,7 +185,7 @@ get_header(); ?>
 				</div><!-- social_icon -->
 				<div class="desktop_events_content">
 					<p>Lorem ipsum dolor sit amet, cons ectet ur adipi sicing elit, sed do eiusmod tem por inc idid unt ut labore et dolore magnrem ipsum dolor sit amet, cons ectet ur adipi sicing...</p>
-					<a href="">Read More <div class="arrow-right"></div></a>
+					<a class="read_more_main" href="">Read More <div class="arrow-right"></div></a>
 				</div><!-- events_content -->
 			</div><!-- desktop_single_event -->
 			<div class="divider"></div><!-- divider -->
@@ -205,7 +205,7 @@ get_header(); ?>
 		</div><!-- social_icon -->
 		<div class="events_content">
 			<p>Lorem ipsum dolor sit amet, cons ectet ur adipi sicing elit, sed do eiusmod tem por inc idid unt ut labore et dolore magnrem ipsum dolor sit amet, cons ectet ur adipi sicing...</p>
-			<a href="">Read More <div class="arrow-right"></div></a>
+			<a class="read_more_main" href="">Read More <div class="arrow-right"></div></a>
 		</div><!-- events_content -->
 	</div><!-- events -->
 	<div class="testimonials">
