@@ -446,9 +446,9 @@ ul.sub-menu { display: none; }
 .team_wrapper { width: 100%; margin: 20px auto 0; text-align: center; background: #fff; }
 
 #content .single_team_member { text-align: center; margin: 0px 5% 20px; display: inline-block; vertical-align: top; max-width: 240px; cursor: pointer; }
-#content .single_team_member .team_profile_wrapper { width: 175px; height: 175px; display: block; margin: 0 auto 15px; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; border: 2px solid #fff; -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -ms-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); background: url(images/homer.jpg) center center no-repeat; background-size: 100%; transition: all .2s ease; }
+#content .single_team_member .team_profile_wrapper { width: 175px; height: 175px; display: block; margin: 0 auto 15px; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; border: 2px solid #fff; -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -ms-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); background: url(images/blank-profile-hi.png) center center no-repeat; background-size: 100%; transition: all .2s ease; }
 #content .single_team_member .team_profile_wrapper a { display: block; width: 175px; height: 175px; }
-#content .single_team_member .team_profile_wrapper:hover { background: url(images/homer.jpg) center center no-repeat; background-position: center center; background-size: 110%; transition: all .2s ease; }
+#content .single_team_member .team_profile_wrapper:hover { background: url(images/blank-profile-hi.png) center center no-repeat; background-position: center center; background-size: 110%; transition: all .2s ease; }
 #content .single_team_member h2 { text-transform: uppercase; margin-bottom: 2px; text-align: center; font-size: 20px; }
 #content .single_team_member h2 a { text-decoration: none; }
 #content .single_team_member .read_bio { text-transform: uppercase; margin-bottom: 0px; display: inline-block; color: #363636; text-decoration: none; }
