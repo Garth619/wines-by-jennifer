@@ -71,5 +71,6 @@ get_header(); ?>
   <div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p7.jpg"/></div>
   <div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p8.jpg"/></div>
  </div>
+ 
 
 <?php get_footer(); ?>

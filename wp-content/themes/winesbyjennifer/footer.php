@@ -191,7 +191,7 @@ Cart | Login | Search
 			jQuery('.slider-nav img.car_img').click(function(){
 				
 				jQuery('.overlay_carousel').addClass('open');
-				jQuery('.carousel_content').fadeIn(50);
+				jQuery('.carousel_content').show(50);
 				
 			});
 			
@@ -379,12 +379,13 @@ jQuery('.slider-for').slick({
   slidesToScroll: 1,
   lazyLoad: 'ondemand',
   arrows: true,
-  fade: true,
+  fade: false,
   swipe: true,
   asNavFor: '.slider-nav'
 });
 jQuery('.slider-nav').slick({
-  
+   slidesToShow: 7,
+        slidesToScroll: 7,
   lazyLoad: 'ondemand',
   asNavFor: '.slider-for',
   swipe: true,
@@ -392,6 +393,15 @@ jQuery('.slider-nav').slick({
   //centerMode: true,
   focusOnSelect: true,
   responsive: [
+     {
+      breakpoint: 2224,
+      settings: {
+        slidesToShow: 7,
+        slidesToScroll: 7,
+     }
+    },
+    
+    
     {
       breakpoint: 1224,
       settings: {
