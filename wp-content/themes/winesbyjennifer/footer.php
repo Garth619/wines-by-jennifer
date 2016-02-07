@@ -88,6 +88,15 @@ Cart | Login | Search
 	
 	<div class="privacy_overlay_content">
 		<h2>Private Policy</h2>
+			
+<div class="slider-for">
+  <div><img data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz1.png"/></div>
+  <div><img data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz2.png"/></div>
+  <div><img data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz3.png"/></div>
+  <div><img data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz4.png"/></div>
+  <div><img data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz5.png"/></div>
+  <div><img data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz6.png"/></div>
+ </div>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 	
 	</div><!-- privacy_overlay_content -->
@@ -101,6 +110,8 @@ Cart | Login | Search
 <?php wp_footer(); ?>
 <script type="text/javascript" src="<?php bloginfo('template_directory');?>/cycle2.js"></script>
 <script src="<?php bloginfo('template_directory');?>/wow/dist/wow.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_directory');?>/slick/slick/slick.min.js"></script>
 
 
 <script>
@@ -323,6 +334,59 @@ function stickIt() {
     jQuery('.mobile_shopping_cart').hide(150);
   }
 }
+
+
+
+// Slick
+
+
+    
+jQuery('.slider-for').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  lazyLoad: 'ondemand',
+  arrows: true,
+  fade: true,
+  asNavFor: '.slider-nav'
+});
+jQuery('.slider-nav').slick({
+  slidesToShow: 6,
+  slidesToScroll: 6,
+  lazyLoad: 'ondemand',
+  asNavFor: '.slider-for',
+  //dots: true,
+  //centerMode: true,
+  focusOnSelect: true,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 6,
+        slidesToScroll: 6,
+     }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 4
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    }
+ 
+  ]
+});
+ 
+
+
+
+
 
 		
 	});

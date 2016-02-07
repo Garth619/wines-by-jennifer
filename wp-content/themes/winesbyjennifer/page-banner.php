@@ -60,4 +60,40 @@ get_header(); ?>
 		</div><!-- box_row -->
 	</div><!-- box_wrapper -->
 	
+	
+	
+	
+<!--
+	
+<div style="clear:both;" class="your-class" style="">
+  <div><img data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz1.png"/></div>
+  <div><img data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz2.png"/></div>
+  <div><img data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz3.png"/></div>
+  <div><img data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz4.png"/></div>
+  <div><img data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz5.png"/></div>
+  <div><img data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz6.png"/></div>
+  
+</div>
+-->
+
+
+
+ 
+
+
+<div class="slider-nav">
+  <div><img data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz1.png"/></div>
+  <div><img data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz2.png"/></div>
+  <div><img data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz3.png"/></div>
+  <div><img data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz4.png"/></div>
+  <div><img data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz5.png"/></div>
+  <div><img data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz6.png"/></div>
+ </div>
+
+
+
+	
+	
+	
+	
 <?php get_footer(); ?>
