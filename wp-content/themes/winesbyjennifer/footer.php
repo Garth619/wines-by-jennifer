@@ -354,6 +354,7 @@ jQuery('.slider-nav').slick({
   slidesToScroll: 6,
   lazyLoad: 'ondemand',
   asNavFor: '.slider-for',
+  swipe: true,
   //dots: true,
   //centerMode: true,
   focusOnSelect: true,
