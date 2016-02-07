@@ -25395,6 +25395,105 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/wp-content\/themes\/winesbyjennifer\/images\/p1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5195,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/winesbyjennifer\/images\/p1.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/winesbyjennifer\/images\/p1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/winesbyjennifer\/images\/p2.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5364,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/winesbyjennifer\/images\/p2.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/winesbyjennifer\/images\/p2.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/winesbyjennifer\/images\/p3.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5364,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/winesbyjennifer\/images\/p3.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/winesbyjennifer\/images\/p3.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/winesbyjennifer\/images\/p4.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5270,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/winesbyjennifer\/images\/p4.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/winesbyjennifer\/images\/p4.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/winesbyjennifer\/images\/p5.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5385,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/winesbyjennifer\/images\/p5.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/winesbyjennifer\/images\/p5.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/winesbyjennifer\/images\/p6.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5396,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/winesbyjennifer\/images\/p6.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/winesbyjennifer\/images\/p6.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/winesbyjennifer\/images\/p7.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5247,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/winesbyjennifer\/images\/p7.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/winesbyjennifer\/images\/p7.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/winesbyjennifer\/images\/p8.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5395,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/winesbyjennifer\/images\/p8.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/winesbyjennifer\/images\/p8.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/winesbyjennifer\/images\/pic4.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5516,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/winesbyjennifer\/images\/pic4.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/winesbyjennifer\/images\/pic4.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/wp-content\/themes\/winesbyjennifer\/images\/ribbon-right.png": {
 		"fileType": 32768,
 		"ignore": 0,

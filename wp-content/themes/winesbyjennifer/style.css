@@ -434,9 +434,11 @@ ul.sub-menu { display: none; }
 
 .content_container { position: relative; padding: 35px; background: #fff; }
 
-.slick-prev { left: 0px !important; z-index: 1 !important; }
+.slider-nav img { width: 200px; border-right: 1px #fff solid !important; }
 
-.slick-next { right: 0px !important; z-index: 1 !important; }
+.slick-prev { left: 5px !important; z-index: 1 !important; }
+
+.slick-next { right: 5px !important; z-index: 1 !important; }
 
 .slick-slider { margin-bottom: 0px !important; }
 
@@ -529,6 +531,13 @@ ul.sub-menu { display: none; }
 .overlay.open { opacity: 1; visibility: visible; transition: all .5s ease; }
 
 .newsletter_cover_form_wrapper { height: 360px; margin-top: 15px; }
+
+.overlay_carousel { width: 100%; height: 100vh; background: rgba(0, 0, 0, 0.7); position: fixed; z-index: 20000; top: 0; overflow-y: scroll; opacity: 0; visibility: hidden; transition: all .5s ease; }
+.overlay_carousel .overlay_inner { margin: 50px auto 30px; text-align: center; position: relative; display: block; max-width: 500px; padding: 10px 10px 88px; background: #fff; }
+.overlay_carousel .overlay_inner span.overlay_close { position: absolute; right: 8px; top: -21px; color: #E5C854; cursor: pointer; z-index: 10; }
+.overlay_carousel .overlay_inner img.car_img { background: #fff; }
+
+.overlay_carousel.open { opacity: 1; visibility: visible; transition: all .5s ease; }
 
 @media screen and (min-width: 660px) { .intro { overflow: hidden; background: url(images/intro_bg.jpg) repeat; }
   .intro .logo_wrapper { display: block; float: left; width: 18%; }

@@ -89,23 +89,43 @@ Cart | Login | Search
 	<div class="privacy_overlay_content">
 		<h2>Private Policy</h2>
 			
-<div class="slider-for">
-  <div><img data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz1.png"/></div>
-  <div><img data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz2.png"/></div>
-  <div><img data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz3.png"/></div>
-  <div><img data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz4.png"/></div>
-  <div><img data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz5.png"/></div>
-  <div><img data-lazy="http://kenwheeler.github.io/slick/img/lazyfonz6.png"/></div>
- </div>
+
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 	
 	</div><!-- privacy_overlay_content -->
 	
 	
-	</div><!-- overlay_inner -->
+</div><!-- overlay_inner -->
 	
 	
 </div><!-- overlay -->
+
+<div class="overlay_carousel">
+
+<div class="overlay_inner">
+	
+	<span class="overlay_close">Close X</span>
+	<div class="carousel_content">
+		
+		<div class="slider-for">
+			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p1.jpg"/></div>
+			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p2.jpg"/></div>
+			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p3.jpg"/></div>
+			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p4.jpg"/></div>
+			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p5.jpg"/></div>
+			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p6.jpg"/></div>
+			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p7.jpg"/></div>
+			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p8.jpg"/></div>
+ 		</div>
+		
+		
+		</div><!-- carousel_content -->
+		
+</div><!-- overlay_inner -->
+	
+</div><!-- overlay_carousel -->
+
+
 	
 <?php wp_footer(); ?>
 <script type="text/javascript" src="<?php bloginfo('template_directory');?>/cycle2.js"></script>
@@ -129,7 +149,7 @@ Cart | Login | Search
 		
 		//Overlay
 		
-			jQuery('.newsletter_overlay_content, .privacy_overlay_content').hide();
+			jQuery('.newsletter_overlay_content, .privacy_overlay_content, .carousel_content').hide();
 			
 			jQuery('.newsletter_form').hide();
 		
@@ -165,12 +185,25 @@ Cart | Login | Search
 			});
 			
 			
+			// Carousel
+			
+			
+			jQuery('.slider-nav img.car_img').click(function(){
+				
+				jQuery('.overlay_carousel').addClass('open');
+				jQuery('.carousel_content').fadeIn(50);
+				
+			});
+			
+			
+			
 			//
 			
 			jQuery('.overlay_close').click(function(){
 				
 				jQuery('.overlay').removeClass('open');
-				jQuery('.newsletter_overlay_content, .privacy_overlay_content').fadeOut(400);
+				jQuery('.overlay_carousel').removeClass('open');
+				jQuery('.newsletter_overlay_content, .privacy_overlay_content, .carousel_content').fadeOut(400);
 				
 			
 				jQuery('.newsletter_form').fadeOut(500);
@@ -351,8 +384,7 @@ jQuery('.slider-for').slick({
   asNavFor: '.slider-nav'
 });
 jQuery('.slider-nav').slick({
-  slidesToShow: 6,
-  slidesToScroll: 6,
+  
   lazyLoad: 'ondemand',
   asNavFor: '.slider-for',
   swipe: true,
@@ -400,16 +432,8 @@ jQuery('.slider-nav').slick({
 });
  
 
-// Slick Overlay
 
-jQuery('.slider-nav img.car_img').click(function(){
-				
-				jQuery('.overlay').addClass('open');
-				jQuery('.privacy_overlay_content').fadeIn(50);
-				
-				
-				
-			});
+
 
 
 
