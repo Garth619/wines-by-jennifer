@@ -844,7 +844,7 @@ h3#reply-title {
 	background:url(images/texture.png) top left repeat $purple;
 	position: fixed;
 	top:0;
-	z-index:100;
+	z-index:10000;
 	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
 	h1 {
 		color:#fff;
@@ -862,6 +862,7 @@ h3#reply-title {
 .mobile_menu {
 	float:right;
 	padding:9px 12px 0 0;
+	cursor: pointer;
 	.white_bar {
 		width:35px;
 		height:4px;
@@ -892,7 +893,7 @@ h3#reply-title {
 	position: fixed;
 	bottom:0;
 	right:0px;
-	z-index:500;
+	z-index:10000;
 	color:#fff;
 	text-transform: uppercase;
 	font-size:15px;
@@ -1728,6 +1729,27 @@ ul.sub-menu {
 		.regsitered {
 			font-size:3vw;
 		}
+		
+		
+		.mobile_menu_overlay {
+			background: $purple;
+			width:100%;
+			position: fixed;
+			height:100vh;
+			top:0;
+			z-index:9999;
+		
+			display: none;
+		}
+		
+		span.overlay_close_mobile_menu {
+			color:#fff;
+			display:none;
+			position: absolute;
+			right: 8px;
+			top: 9px;
+			cursor: pointer;
+		}
 	
 
 @media screen and (min-width: 660px) {
@@ -1835,6 +1857,8 @@ ul.sub-menu {
 .box:nth-child(1), .box:nth-child(2) {
 	border-top:2px solid #fff;
 }
+
+
 
 .box:nth-child(1) {
 	border-right:2px solid #fff;

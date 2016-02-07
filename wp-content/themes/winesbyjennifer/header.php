@@ -87,9 +87,15 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 
 				
 		
+	
+		
 		<div class="mobile_header">
 			
 			<h1><a href="<?php bloginfo('url');?>">Wines by Jennifer&reg;</a></h1>
+			
+			<?php if(is_handheld()): ?>	
+		
+			<span class="overlay_close_mobile_menu">Close X</span>
 			
 			<div class="mobile_menu">
 				<div class="white_bar"></div>
@@ -97,7 +103,13 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 				<div class="white_bar"></div>
 			</div><!-- mobile menu -->
 			
+			
+			
+			<?php endif; ?>
+		
 		</div><!-- mobile_header --> 
+		
+	
 		
 		<div class="bg_bug"></div><!-- bg_bug -->
 		

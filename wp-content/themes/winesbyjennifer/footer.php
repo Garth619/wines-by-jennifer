@@ -16,7 +16,7 @@
 <div class="footer">
 	<div class="footer_col1">
 		<ul class="desktop_copyright">
-			<li>&copy; 2016 Wines By Jennifer<sup>&reg;</sup></li>
+			<li>&copy; 2016 Wines By Jennifer <sup>&reg;</sup></li>
 		</ul><!-- desktop_copyright -->
 	</div><!-- footer_col1 -->
 	<div class="footer_col2">
@@ -31,7 +31,7 @@
 	<div class="footer_col3">
 		<ul class="language" style="clear:both;">
 			<li>View In: Eng ESp</li>
-			<li>&copy; 2016 Wines By Jennifer<sup>&reg;</sup></li>
+			<li>&copy; 2016 Wines By Jennifer <sup>&reg;</sup></li>
 			<li class="backtotop">Back to Top</li>
 		</ul>
 	</div><!-- footer_col3 -->
@@ -140,6 +140,19 @@ Cart (0) | Search
 	
 </div><!-- overlay_carousel -->
 
+<?php if(is_handheld()): ?>
+
+<div class="mobile_menu_overlay">
+	
+	<div class="overlay_inner">
+		
+		<span style="color:#fff;margin-top:50px;margin-left:20px;display: block;">Mobile Menu Will Go Here</span>
+		
+	</div><!-- overlay_inner -->
+	
+</div><!-- mobile_menu_overlay -->
+
+<?php endif;?>
 
 	
 <?php wp_footer(); ?>
@@ -199,6 +212,20 @@ Cart (0) | Search
 				
 			});
 			
+			// Mobile Menu
+			
+			
+			
+			jQuery('.mobile_menu').click(function(){
+				
+				jQuery('.mobile_menu_overlay').fadeIn();
+				jQuery('.mobile_menu').fadeOut();
+				jQuery('.overlay_close_mobile_menu').fadeIn();
+				
+				
+			});
+			
+			
 			
 			// Leave a Review
 			
@@ -223,7 +250,6 @@ Cart (0) | Search
 			});
 			
 			
-			
 			//
 			
 			jQuery('.overlay_close').click(function(){
@@ -232,12 +258,22 @@ Cart (0) | Search
 				jQuery('.overlay_carousel').removeClass('open');
 				jQuery('.newsletter_overlay_content, .privacy_overlay_content, .carousel_content, .review_content').fadeOut(400);
 				
-			
+				
 				jQuery('.newsletter_form').fadeOut(500);
 				jQuery('.cover').delay(1000).fadeIn(500);
 				
 			});
+			
+			
+		// Mobile CLose 
 		
+		
+		jQuery('.overlay_close_mobile_menu').click(function(){
+		
+			jQuery('.mobile_menu').fadeIn();
+			jQuery('.overlay_close_mobile_menu, .mobile_menu_overlay').fadeOut();
+		
+		});
 		
 		// Faq
 		
@@ -458,7 +494,7 @@ jQuery('.slider-nav').slick({
       }
     },
     {
-      breakpoint: 480,
+      breakpoint: 380,
       settings: {
         slidesToShow: 2,
         slidesToScroll: 2
