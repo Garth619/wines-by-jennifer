@@ -434,6 +434,12 @@ ul.sub-menu { display: none; }
 
 .content_container { position: relative; padding: 35px; background: #fff; }
 
+.slider-nav { border-bottom: 2px solid #fff; }
+
+.slick-prev { left: 0px !important; z-index: 1 !important; }
+
+.slick-next { right: 0px !important; z-index: 1 !important; }
+
 /* Meet the team */
 .team_wrapper { width: 100%; margin: 20px auto 0; text-align: center; background: #fff; }
 

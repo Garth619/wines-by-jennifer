@@ -1272,6 +1272,22 @@ ul.sub-menu {
   
 }
 
+
+.slider-nav {
+	
+	border-bottom: 2px solid #fff;
+}
+
+.slick-prev {
+    left: 0px !important;
+    z-index: 1 !important;
+}
+
+.slick-next {
+    right: 0px !important;
+     z-index: 1 !important;
+}
+
 /* Meet the team */
 
 
