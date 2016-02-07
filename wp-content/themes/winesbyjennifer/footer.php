@@ -31,7 +31,7 @@
 		<ul class="language" style="clear:both;">
 			<li>View In: Eng ESp</li>
 			<li>c 2015 Wines By Jennifer r</li>
-			<li class="backtotop" style="color:#E5C854">Back to Top</li>
+			<li class="backtotop">Back to Top</li>
 		</ul>
 	</div><!-- footer_col3 -->
 </div><!-- footer -->
@@ -42,13 +42,13 @@
 	
 	<?php if( get_post_type() == 'inthenews' || is_page_template('page-inthenews.php') ) : ?>
 	
-	See Categories | List View | Grid View
+	 Categories pop up here?? |
 	
 	<?php endif;?>
 	
 	<?php if( get_post_type() == 'wbjblog' || is_page_template('page-wbjblog.php') ) : ?>
 	
-	See Categories | List View | Grid View
+	Categories pop up here?? |
 	
 	<?php endif;?>
 	
@@ -93,6 +93,20 @@ Cart | Login | Search
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 	
 	</div><!-- privacy_overlay_content -->
+	
+	
+	
+	
+	<div class="review_content">
+		<h2>Leave A Review</h2>
+			
+
+		<p>Five Star Rating Will Go Here</p>
+	
+	</div><!-- review_content -->
+	
+	
+	
 	
 	
 </div><!-- overlay_inner -->
@@ -149,7 +163,7 @@ Cart | Login | Search
 		
 		//Overlay
 		
-			jQuery('.newsletter_overlay_content, .privacy_overlay_content, .carousel_content').hide();
+			jQuery('.newsletter_overlay_content, .privacy_overlay_content, .carousel_content, .review_content').hide();
 			
 			jQuery('.newsletter_form').hide();
 		
@@ -185,6 +199,18 @@ Cart | Login | Search
 			});
 			
 			
+			// Leave a Review
+			
+			jQuery('.green_bar, .review_icons').click(function(){
+				
+				jQuery('.overlay').addClass('open');
+				jQuery('.review_content').fadeIn(50);
+				
+				
+				
+			});
+			
+			
 			// Carousel
 			
 			
@@ -203,7 +229,7 @@ Cart | Login | Search
 				
 				jQuery('.overlay').removeClass('open');
 				jQuery('.overlay_carousel').removeClass('open');
-				jQuery('.newsletter_overlay_content, .privacy_overlay_content, .carousel_content').fadeOut(400);
+				jQuery('.newsletter_overlay_content, .privacy_overlay_content, .carousel_content, .review_content').fadeOut(400);
 				
 			
 				jQuery('.newsletter_form').fadeOut(500);

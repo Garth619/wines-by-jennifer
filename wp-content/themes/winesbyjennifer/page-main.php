@@ -58,13 +58,13 @@ get_header(); ?>
 				<div class="review_icons">
 						
 						<div class="review_single_icon">
-							<a href=""><img src="<?php bloginfo('template_directory');?>/images/yelp.jpg"/></a>
+							<img src="<?php bloginfo('template_directory');?>/images/yelp.jpg"/>
 						</div><!-- review_single_icon -->
 						<div class="review_single_icon">
-							<a href=""><img src="<?php bloginfo('template_directory');?>/images/trip-advisor.png"/></a>
+							<img src="<?php bloginfo('template_directory');?>/images/trip-advisor.png"/>
 						</div><!-- review_single_icon -->
 						<div class="review_single_icon">
-							<a href=""><img src="<?php bloginfo('template_directory');?>/images/google.png"/></a>
+							<img src="<?php bloginfo('template_directory');?>/images/google.png"/>
 						</div><!-- review_single_icon -->
 						
 				</div><!-- review_icons -->

@@ -904,9 +904,11 @@ h3#reply-title {
 
 .newsletter_signup {
 	position: relative;
-	border-top:2px #fff solid;
+	border-top: 2px solid #fff;
+	border-bottom: 2px solid #fff;
 	img.newsletter_bg {
 	width:100%;
+	display: block;
 	}
 	img.flyer {
 		display: none;
@@ -943,7 +945,7 @@ h3#reply-title {
 			.newsletter_subtitle {
 				display: block;
 				color:#fff;
-				font-size:4vw;
+				font-size:5vw;
 				font-family:$lato;
 				text-shadow: 0px 1px 2px rgba(0, 0, 0, 1);
 				text-decoration: none;
@@ -1604,8 +1606,11 @@ ul.sub-menu {
 				font-family: $cinzel;
 				font-size:42px;
 			}
+			h2 {
+				margin-bottom:15px;
+			}
 			p {
-				font-size:19px;
+				font-size:17px;
 			}
 			.cover {
 				position: relative;
@@ -1712,7 +1717,10 @@ ul.sub-menu {
 			transition:all .5s ease;
 		}
 		
-		
+		.backtotop {
+			cursor: pointer;
+			color:#E5C854;
+		}
 		
 		
 		
@@ -1750,7 +1758,7 @@ ul.sub-menu {
 
 
 .newsletter_signup {
-	
+	border-bottom: none;
 	img.flyer {
 		position: absolute;
     right: 5%;
@@ -1763,7 +1771,7 @@ ul.sub-menu {
 		
 		.newsletter_text {
 			text-align: left;
-			margin-left:4%;
+			margin-left:6%;
 			img.gift_icon {
 				width:6%;
 			}
@@ -1776,7 +1784,7 @@ ul.sub-menu {
 			}
 			.newsletter_subtitle {
 				
-				font-size:3vw;
+				font-size:4vw;
 				
 			}
 		}
@@ -2117,11 +2125,12 @@ ul.sub-menu {
 	display:block;
 	width:100%;
 	height:52px;
-	background: #363636;
+	
 }
 
 .newsletter_signup {
-	
+	@include box-shadow($shadow);
+	border: 2px solid #fff;
 	img.flyer {
 		
     right: 2%;
@@ -2156,6 +2165,51 @@ ul.sub-menu {
 	}
 
 	
+}
+
+
+.newsletter_form {
+	.gform_wrapper {
+		max-width:250px;
+		margin: 15px auto 0;
+		ul {
+			list-style: none;
+			li {
+				text-align: left;
+				margin-bottom:19px;
+				position: relative;
+				input {
+					width:100%;
+					margin-top:4px;
+					height:27px;
+					border:none;
+					padding-left:5px;
+				}
+				
+			}
+		}
+		.validation_message {
+			position: absolute;
+			top: 49px;
+			font-size: 12px;
+			color:$yellow;
+		}
+	}
+}
+
+input.gform_button {
+	background: $purple;
+	border:none;
+	color: #fff;
+	font-family: $lato;
+	padding:5px 11px;
+	text-transform: uppercase;
+	font-size:14px;
+	cursor: pointer;
+}
+
+.validation_error {
+	display: none;
 }
 
 
@@ -2445,6 +2499,7 @@ ul.sub-menu {
 
 .review_icons {
 	padding:0 8px;
+	cursor: pointer;
 	.review_single_icon {
 		width:33.3333333%;
 		float:left;
@@ -2468,6 +2523,7 @@ ul.sub-menu {
 	text-align: center;
 	padding-top: 6px;
 	color:#fff;
+	cursor: pointer;
 	a {
 		color:#fff;
 		text-decoration: none;

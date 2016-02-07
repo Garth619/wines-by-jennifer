@@ -136,7 +136,8 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 				
 				<div class="right_header">
 					<div class="desktop_store_wrap">
-						
+						shopping cart will go here
+						<?php get_search_form();?>
 					</div><!-- desktop_store_wrap -->
 					<div class="newsletter_signup">
 						<img class="newsletter_bg" src="<?php bloginfo('template_directory');?>/images/newsletter.png"/>
@@ -144,7 +145,7 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 							<div class="newsletter_text">
 							<span class="newsletter_title"><img class="gift_icon" src="<?php bloginfo('template_directory');?>/images/gift.png"/>Free Gift!</span>
 							
-								<span class="newsletter_subtitle">“5 DAYS TO EXPERT WINE&nbsp;TASTING”r <div class="arrow-right-yellow"></div> </span>
+								<span class="newsletter_subtitle">“5 DAYS TO EXPERT<br/>&nbsp;&nbsp;WINE&nbsp;TASTING”r <div class="arrow-right-yellow"></div> </span>
 							</div><!-- newsletter_text -->
 						</div><!-- newsletter_text_wrap -->
 						

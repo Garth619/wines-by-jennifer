@@ -358,14 +358,14 @@ h3#reply-title { margin: 18px 0; }
 
 .desktop_store_wrap { display: none; }
 
-.newsletter_signup { position: relative; border-top: 2px #fff solid; }
-.newsletter_signup img.newsletter_bg { width: 100%; }
+.newsletter_signup { position: relative; border-top: 2px solid #fff; border-bottom: 2px solid #fff; }
+.newsletter_signup img.newsletter_bg { width: 100%; display: block; }
 .newsletter_signup img.flyer { display: none; }
 .newsletter_signup .newsletter_text_wrap { height: 100%; position: absolute; top: 0; width: 100%; z-index: 50; background: transparent; background: rgba(0, 0, 0, 0.3); cursor: pointer; }
 .newsletter_signup .newsletter_text_wrap .newsletter_text { position: relative; top: 50%; transform: translateY(-50%); -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); text-align: center; }
 .newsletter_signup .newsletter_text_wrap .newsletter_text img.gift_icon { width: 8%; }
 .newsletter_signup .newsletter_text_wrap .newsletter_text .newsletter_title { display: block; color: #fff; font-size: 10vw; font-family: "Cinzel", serif; text-shadow: 0px 1px 2px black; text-decoration: none; }
-.newsletter_signup .newsletter_text_wrap .newsletter_text .newsletter_subtitle { display: block; color: #fff; font-size: 4vw; font-family: "Lato", sans-serif; text-shadow: 0px 1px 2px black; text-decoration: none; }
+.newsletter_signup .newsletter_text_wrap .newsletter_text .newsletter_subtitle { display: block; color: #fff; font-size: 5vw; font-family: "Lato", sans-serif; text-shadow: 0px 1px 2px black; text-decoration: none; }
 
 .menu-header { background: #fff; overflow: hidden; }
 .menu-header ul { list-style: none; margin: 0; overflow: hidden; }
@@ -521,7 +521,8 @@ ul.sub-menu { display: none; }
 .overlay .overlay_inner { width: 95%; margin: 30px auto; background: url(images/gift_bg.png) top center no-repeat; background-size: cover; max-width: 500px; padding: 45px; text-align: center; color: #fff; position: relative; }
 .overlay .overlay_inner span.overlay_close { position: absolute; right: 8px; top: 8px; color: #E5C854; cursor: pointer; }
 .overlay .overlay_inner h1 { font-family: "Cinzel", serif; font-size: 42px; }
-.overlay .overlay_inner p { font-size: 19px; }
+.overlay .overlay_inner h2 { margin-bottom: 15px; }
+.overlay .overlay_inner p { font-size: 17px; }
 .overlay .overlay_inner .cover { position: relative; max-width: 250px; margin: 0px auto 0; cursor: pointer; }
 .overlay .overlay_inner .cover .newsletter_button_wrapper { position: absolute; top: 0; z-index: 500; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); transition: all .2s ease; }
 .overlay .overlay_inner .cover img.newsletter_img { max-width: 100%; height: auto; }
@@ -539,15 +540,18 @@ ul.sub-menu { display: none; }
 
 .overlay_carousel.open { opacity: 1; visibility: visible; transition: all .5s ease; }
 
+.backtotop { cursor: pointer; color: #E5C854; }
+
 @media screen and (min-width: 660px) { .intro { overflow: hidden; background: url(images/intro_bg.jpg) repeat; }
   .intro .logo_wrapper { display: block; float: left; width: 18%; }
   .intro .logo_wrapper .logo { width: 100%; height: auto; display: block; }
   .intro .intro_content { background: none; width: 82%; float: left; text-align: left; font-size: 3vw; padding: 24px 30px; }
+  .newsletter_signup { border-bottom: none; }
   .newsletter_signup img.flyer { position: absolute; right: 5%; top: -9px; width: 29%; display: block; z-index: 75; }
-  .newsletter_signup .newsletter_text_wrap .newsletter_text { text-align: left; margin-left: 4%; }
+  .newsletter_signup .newsletter_text_wrap .newsletter_text { text-align: left; margin-left: 6%; }
   .newsletter_signup .newsletter_text_wrap .newsletter_text img.gift_icon { width: 6%; }
   .newsletter_signup .newsletter_text_wrap .newsletter_text .newsletter_title { font-size: 7vw; }
-  .newsletter_signup .newsletter_text_wrap .newsletter_text .newsletter_subtitle { font-size: 3vw; }
+  .newsletter_signup .newsletter_text_wrap .newsletter_text .newsletter_subtitle { font-size: 4vw; }
   .box_row { overflow: hidden; }
   .box { width: 50%; float: left; border: none; }
   .box img { width: 100%; display: block; }
@@ -597,7 +601,8 @@ ul.sub-menu { display: none; }
   .intro .intro_content { background: url(images/cloth2.jpg) repeat; width: 289px; text-align: left; font-size: 16px; padding: 28px 17px 0; height: 144px; }
   .right_header { float: right; }
   .mobile_shopping_cart { display: none; }
-  .desktop_store_wrap { display: block; width: 100%; height: 52px; background: #363636; }
+  .desktop_store_wrap { display: block; width: 100%; height: 52px; }
+  .newsletter_signup { -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); -ms-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); border: 2px solid #fff; }
   .newsletter_signup img.flyer { right: 2%; top: -5px; }
   .newsletter_signup .newsletter_text_wrap { transition: all .3s ease; }
   .newsletter_signup .newsletter_text_wrap .newsletter_text { text-align: left; margin-left: 4%; }
@@ -605,6 +610,13 @@ ul.sub-menu { display: none; }
   .newsletter_signup .newsletter_text_wrap .newsletter_text .newsletter_title { font-size: 21px; }
   .newsletter_signup .newsletter_text_wrap .newsletter_text .newsletter_subtitle { font-size: 16px; }
   .newsletter_signup .newsletter_text_wrap:hover { background: transparent; transition: all .3s ease; }
+  .newsletter_form .gform_wrapper { max-width: 250px; margin: 15px auto 0; }
+  .newsletter_form .gform_wrapper ul { list-style: none; }
+  .newsletter_form .gform_wrapper ul li { text-align: left; margin-bottom: 19px; position: relative; }
+  .newsletter_form .gform_wrapper ul li input { width: 100%; margin-top: 4px; height: 27px; border: none; padding-left: 5px; }
+  .newsletter_form .gform_wrapper .validation_message { position: absolute; top: 49px; font-size: 12px; color: #E5C854; }
+  input.gform_button { background: #8c2555; border: none; color: #fff; font-family: "Lato", sans-serif; padding: 5px 11px; text-transform: uppercase; font-size: 14px; cursor: pointer; }
+  .validation_error { display: none; }
   .menu-header { background: url(images/nav-bg.jpg) top left repeat-x; width: 75%; float: left; overflow: visible; }
   .menu-header ul { list-style: none; margin: 0; overflow: visible; }
   .menu-header ul li { width: 25%; height: auto; background: none; float: left; border: none; position: relative; padding: 4px 0; z-index: 1000; }
@@ -645,10 +657,10 @@ ul.sub-menu { display: none; }
   span.purple_quote { color: #8c2555; display: inline; }
   img.testimonial_img { margin: 8px; float: left; width: 50px; }
   .testimonial_name { float: left; font-size: 14px; margin-top: 15px; }
-  .review_icons { padding: 0 8px; }
+  .review_icons { padding: 0 8px; cursor: pointer; }
   .review_icons .review_single_icon { width: 33.3333333%; float: left; padding: 0 1%; }
   .review_icons .review_single_icon img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
-  .green_bar { width: 100%; background: url(images/green-texture.png) top left repeat; height: 33px; clear: both; text-align: center; padding-top: 6px; color: #fff; }
+  .green_bar { width: 100%; background: url(images/green-texture.png) top left repeat; height: 33px; clear: both; text-align: center; padding-top: 6px; color: #fff; cursor: pointer; }
   .green_bar a { color: #fff; text-decoration: none; padding-top: 5px; }
   .desktop_single_event { padding: 8px; }
   .desktop_single_event h1 { font-size: 16px; margin-bottom: 10px; }
