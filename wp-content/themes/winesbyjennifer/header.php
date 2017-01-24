@@ -89,26 +89,61 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 		
 	
 		
-		<div class="mobile_header">
+		<div class="mymobile_header">
 			
-			<h1><a href="<?php bloginfo('url');?>">Wines by Jennifer&reg;</a></h1>
+			<div class="mobile_offer">
+				
+				<span class="offer_title">
+					
+					<span class="color_change">Free Gift!</span> Five Days to Expert Wine Tasting&nbsp;<sup>&reg;</sup> <span class="color_change">Click Here</span><!-- color_change -->
+				
+				</span><!-- offer_title -->
+				
+			</div><!-- mobile_offer -->
 			
-			<?php if(is_handheld()): ?>	
-		
-			<span class="overlay_close_mobile_menu">Close X</span>
+			<div class="mymenu_main">
+				
+				<div class="mymobile_icons_wrapper">
+					
+					<a href=""><img class="icon" src="<?php bloginfo('template_directory');?>/images/cart.png"/></a>
+					<a href=""><img class="icon" src="<?php bloginfo('template_directory');?>/images/pin.png"/></a>
+					<a href=""><img class="icon" src="<?php bloginfo('template_directory');?>/images/search.png"/></a>
+					
+				</div><!-- mymobile_icons_wrapper -->
+				
+				<div class="mylogo_wrapper">
+					
+					<a href="<?php bloginfo('url');?>">
+					
+						<img src="<?php bloginfo('template_directory');?>/images/logo.jpg"/>
+					
+					</a>
+					
+				</div><!-- mylogo_wrapper -->
+				
+				<div class="my_mobile_menu_wrapper">
+					
+					<div class="sign_in_wrapper">
+					
+						<a class="mysign_in" href="">Sign In</a>
+					
+						<div class="menu_bars_wrapper">
+						
+							<div class="menu_bar"></div><!-- menu_bar -->
+							<div class="menu_bar"></div><!-- menu_bar -->
+							<div class="menu_bar"></div><!-- menu_bar -->
+						
+						</div><!-- menu_bars_wrapper -->
+					
+					</div><!-- sign_in_wrapper -->
+					
+				</div><!-- my_mobile_menu_wrapper -->
+				
+				
+			</div><!-- mymenu_main -->
 			
-			<div class="mobile_menu">
-				<div class="white_bar"></div>
-				<div class="white_bar"></div>
-				<div class="white_bar"></div>
-			</div><!-- mobile menu -->
 			
-			
-			
-			<?php endif; ?>
-		
-		</div><!-- mobile_header --> 
-		
+		</div><!-- mymobile_header -->
 	
 		
 		<div class="bg_bug"></div><!-- bg_bug -->

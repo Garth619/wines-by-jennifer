@@ -68,6 +68,7 @@ class api
 	public function broadcast_children( $post_id, $blogs )
 	{
 		$bcd = \threewp_broadcast\broadcasting_data::make( $post_id, $blogs );
+		$bcd->high_priority = true;
 		apply_filters( 'threewp_broadcast_broadcast_post', $bcd );
 		return $bcd;
 	}
@@ -82,6 +83,7 @@ class api
 	public function update_children( $post_id, $new_blogs = [] )
 	{
 		$bcd = \threewp_broadcast\broadcasting_data::make( $post_id );
+		$bcd->high_priority = true;
 		foreach( $this->_get_post_children( $post_id ) as $blog_id )
 			$bcd->broadcast_to( $blog_id );
 

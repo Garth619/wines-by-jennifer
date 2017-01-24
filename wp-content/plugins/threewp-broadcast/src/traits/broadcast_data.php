@@ -51,6 +51,31 @@ trait broadcast_data
 	}
 
 	/**
+		@brief		Convenience method to return the broadcast data of the linked parent (if any).
+		@details	Will retrieve the broadcast data of this blogid / postid. If it is a linked child, will return the parent's broadcast data.
+
+		Note that it is extra convenient by leaving the $post_id optional, meaning you can use the $blog_id as the $post_id, if the post is on this blog.
+		@since		2016-07-12 19:58:52
+	**/
+	public function get_parent_post_broadcast_data( $blog_id, $post_id = null )
+	{
+		if ( $post_id === null )
+		{
+			$post_id = $blog_id;
+			$blog_id = get_current_blog_id();
+		}
+
+		$bcd = $this->get_post_broadcast_data( $blog_id, $post_id );
+
+		// Is this a child? Retrieve the parent's bcd.
+		$parent = $bcd->get_linked_parent();
+		if ( $parent !== false )
+			$bcd = $this->get_post_broadcast_data( $parent[ 'blog_id' ], $parent[ 'post_id' ] );
+
+		return $bcd;
+	}
+
+	/**
 	 * Retrieves the BroadcastData for this post_id.
 	 *
 	 * Will return a fully functional BroadcastData class even if the post doesn't have BroadcastData.

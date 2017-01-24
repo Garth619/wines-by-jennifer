@@ -67,7 +67,7 @@ trait debug
 		$filename = $this->get_debug_filename();
 		$basename = basename( $filename );
 		$filename = sprintf( '<a href="%s">%s</a>',
-			$this->paths( 'path_from_base_directory' ) . '/' . $basename,
+			$this->paths( 'url' ) . '/' . $basename,
 			$basename
 		);
 		$description = $this->_( 'The debug data will be saved to the file %s. This link is distributable.', $filename );
@@ -119,7 +119,7 @@ trait debug
 		$class_name = preg_replace( '/.*\\\/', '', $class_name );
 
 		// Date class: string
-		$text = sprintf( '%s <em>%s</em>: %s<br/>', $this->now(), $class_name, $text, "\n" );
+		$text = sprintf( '%s.%s <em>%s</em>: %s<br/>', $this->now(), microtime( true ), $class_name, $text, "\n" );
 
 		$plugin = self::instance();
 
@@ -199,7 +199,7 @@ trait debug
 	{
 		$hash = md5( $this->paths( '__FILE__' ) . AUTH_KEY );
 		$hash = substr( $hash, 0, 8 );
-		return $this->paths( '__FILE__' ) . ".$hash.debug.php";
+		return $this->paths( '__FILE__' ) . ".$hash.debug.html";
 	}
 
 	/**

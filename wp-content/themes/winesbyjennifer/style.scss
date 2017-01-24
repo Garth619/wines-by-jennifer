@@ -826,51 +826,113 @@ h3#reply-title {
 --------------------------------------------- */
 
 .wrapper {
-	width:92%;
-	border:2px solid #fff;
-	background:url(images/cloth.jpg) top left repeat;
-	margin:60px auto 0px;
-	-webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
-	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
+	width:100%;
+	
+// 	background:url(images/cloth.jpg) top left repeat;
+// 	margin:60px auto 0px;
+	
 }
 
 
 
 
-.mobile_header {
-	width:100%;
-	overflow:hidden;
-	background:url(images/texture.png) top left repeat $purple;
-	position: fixed;
-	top:0;
-	z-index:10000;
-	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
-	h1 {
-		color:#fff;
-		font-size:20px;
-		font-family: $cinzel;
-		padding:10px 15px;
-		float:left;
-		a {
-			color:#fff;
-			text-decoration: none;
+
+
+/* New Mobile */
+
+
+
+
+
+.mymobile_header {
+	width: 100%;
+	
+	.mobile_offer {
+		background: url(images/cloth.jpg) top left repeat;
+		font-family: $lato;
+		font-weight:700;
+		text-transform: uppercase;
+		text-align: center;
+		color:#272727;
+		font-size:17px;
+		letter-spacing: 0.2px;
+		line-height: 22px;
+		span.offer_title {
+			padding:10px 4px;
+			display: block;
+			span.color_change {
+				color:#811d49;
+			}
 		}
 	}
-}
+	
+	.mymenu_main {
+		background: $green;
 
-.mobile_menu {
-	float:right;
-	padding:9px 12px 0 0;
-	cursor: pointer;
-	.white_bar {
-		width:35px;
-		height:4px;
-		background:#fff;
-		margin-bottom:4px;
+display: flex;
+flex-direction: row;
+		.mymobile_icons_wrapper {
+			width:120px;
+			padding-top: 60px;
+			padding-left: 8px;
+
+			img.icon {
+				width:30px;
+				height:30px;
+				margin-right:0px;
+			}
+		}
+		.mylogo_wrapper {
+			flex-grow:1;
+			padding:7px 0;
+			img {
+				width:75px;
+				margin: 0 auto;
+				display: block;
+			}
+		}
+		.my_mobile_menu_wrapper {
+			width:120px;
+			.sign_in_wrapper {
+				float:right;
+				padding-right:10px;
+				margin-top: 25px;
+				.mysign_in {
+					color:#fff;
+					text-transform: uppercase;
+					text-decoration: none;
+					letter-spacing: 0.2px;
+					font-size:14px;
+					margin-bottom:15px;
+					display: block;
+				}
+				.menu_bars_wrapper {
+					width:53px;
+					.menu_bar {
+						width: 100%;
+						height:4px;
+						background:#fff;
+						margin-bottom:5px;
+					}
+				}
+			}
+		}
+		
 		
 	}
+	
+	
 }
+
+
+
+
+
+
+
+/*---------------*/
+
+
 
 .intro {
 	.logo_wrapper {

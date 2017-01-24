@@ -885,7 +885,7 @@ class base
 			foreach( $this->site_options() as $option=>$value )
 			{
 				$option = $this->fix_local_option_name( $option );
-				if (get_option( $option ) === false)
+				if ( get_option( $option ) === false)
 					update_option( $option, $value );
 			}
 		}
@@ -1432,6 +1432,24 @@ class base
 	}
 
 	/**
+		@brief		Load the PHPmailer object, if necessary.
+		@since		2016-02-01 20:11:34
+	**/
+	public static function mail()
+	{
+		// This ensures that the PHPmailer class is loaded and ready.
+		try
+		{
+			require_once( ABSPATH . WPINC . '/pluggable.php' );
+			wp_mail( '' , '', '' );
+		}
+		catch ( \phpmailerException $e )
+		{
+		}
+		return parent::mail();
+	}
+
+	/**
 		@brief		Return the menu_page object.
 		@since		2015-12-26 19:04:58
 	**/
@@ -1631,7 +1649,6 @@ class base
 		$text =  call_user_func_array( 'sprintf', $args );
 		if ( $text == '' )
 			$text = $message;
-		$this->error( $text );
 		wp_die( $text );
 	}
 

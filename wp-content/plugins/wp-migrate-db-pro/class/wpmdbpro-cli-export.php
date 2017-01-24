@@ -19,7 +19,7 @@ class WPMDBPro_CLI_Export extends WPMDB_CLI {
 		$this->wpmdbpro = $wpmdbpro;
 
 		// add support for extra args
-		add_filter( 'wpmdb_cli_filter_get_extra_args', array( $this, 'filter_extra_args' ), 10, 1 );
+		add_filter( 'wpmdb_cli_filter_get_extra_args', array( $this, 'filter_extra_args_cli_export' ), 10, 1 );
 		add_filter( 'wpmdb_cli_filter_get_profile_data_from_args', array( $this, 'add_extra_args_for_pro_export' ), 10, 3 );
 
 		// extend get_tables_to_migrate with migrate_select
@@ -33,7 +33,7 @@ class WPMDBPro_CLI_Export extends WPMDB_CLI {
 	 *
 	 * @return array
 	 */
-	public function filter_extra_args( $args = array() ) {
+	public function filter_extra_args_cli_export( $args = array() ) {
 		$args[] = 'include-tables';
 		$args[] = 'exclude-post-types';
 
@@ -86,11 +86,10 @@ class WPMDBPro_CLI_Export extends WPMDB_CLI {
 	 * @return array
 	 */
 	function tables_to_migrate_include_select( $tables_to_migrate ) {
-		if ( 'savefile' === $this->profile['action'] &&
-		     'migrate_select' === $this->profile['table_migrate_option'] &&
-		     ! empty( $this->profile['select_tables'] )
-		) {
-			$tables_to_migrate = array_intersect( $this->profile['select_tables'], $this->get_tables() );
+		if ( in_array( $this->profile['action'], array( 'find_replace', 'savefile' ) ) ) {
+			if ( 'migrate_select' === $this->profile['table_migrate_option'] && ! empty( $this->profile['select_tables'] ) ) {
+				$tables_to_migrate = array_intersect( $this->profile['select_tables'], $this->get_tables() );
+			}
 		}
 
 		return $tables_to_migrate;

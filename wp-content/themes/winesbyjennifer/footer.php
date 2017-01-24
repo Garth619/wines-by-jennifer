@@ -399,6 +399,7 @@ Cart (0) | Search
 		
 		
 		
+/*
 		jQuery('.mymenu').addClass('original').clone().insertAfter('.mymenu').addClass('cloned').css('position','fixed').css('top','0').css('margin-top','0').css('z-index','500').removeClass('original').hide();
 
 scrollIntervalID = setInterval(stickIt, 10);
@@ -430,6 +431,7 @@ function stickIt() {
     jQuery('.mobile_shopping_cart').hide(150);
   }
 }
+*/
 
 
 

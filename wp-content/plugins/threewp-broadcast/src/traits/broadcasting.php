@@ -47,13 +47,12 @@ trait broadcasting
 		// To prevent recursion
 		array_push( $this->broadcasting, $bcd );
 
-		$this->debug( 'Broadcast version %s.', THREEWP_BROADCAST_VERSION );
+		$this->debug( 'System info: %s', $this->get_system_info_table() . '' );
 
 		$this->debug( 'Broadcasting the post %s <pre>%s</pre>', $bcd->post->ID, $bcd->post );
 
 		$this->debug( 'The POST is <pre>%s</pre>', $bcd->_POST );
 
-		// See: For nested broadcasts. Just in case.
 		switch_to_blog( $bcd->parent_blog_id );
 
 		if ( $bcd->link )
@@ -66,9 +65,14 @@ trait broadcasting
 				$bcd->broadcast_data = $this->get_post_broadcast_data( $bcd->parent_blog_id, $bcd->post->ID );
 
 				// Does this post type have parent support, so that we can link to a parent?
-				if ( $bcd->post_type_is_hierarchical && $bcd->post->post_parent > 0)
+				if ( $bcd->post->post_parent > 0)
 				{
-					$parent_broadcast_data = $this->get_post_broadcast_data( $bcd->parent_blog_id, $bcd->post->post_parent );
+					// Load the parent's bcd
+					$bcd->parent_broadcast_data = $this->get_post_broadcast_data( $bcd->parent_blog_id, $bcd->post->post_parent );
+					// And, if necessary, load the bcd of the parent post.
+					$parent_bcd = $bcd->parent_broadcast_data->get_linked_parent();
+					if ( $parent_bcd )
+						$bcd->parent_broadcast_data = $this->get_post_broadcast_data( $parent_bcd[ 'blog_id' ], $parent_bcd[ 'post_id' ] );
 				}
 				$this->debug( 'Post type is hierarchical: %s', $this->yes_no( $bcd->post_type_is_hierarchical ) );
 			}
@@ -85,7 +89,12 @@ trait broadcasting
 		else
 			$this->debug( 'Will not broadcast taxonomies.' );
 
-		$bcd->attachment_data = [];
+		// Only create the attachment_data array if necessary.
+		if ( ! isset( $bcd->attachment_data ) )
+			$bcd->attachment_data = [];
+		if ( ! is_array( $bcd->attachment_data ) )
+			$bcd->attachment_data = [];
+
 		$attached_files = get_children( 'post_parent='.$bcd->post->ID.'&post_type=attachment' );
 		$has_attached_files = count( $attached_files) > 0;
 		if ( $has_attached_files )
@@ -116,8 +125,15 @@ trait broadcasting
 
 			if ( isset( $GLOBALS[ 'wpseo_metabox' ] ) )
 			{
-				$this->debug( 'Yoast SEO detected. Activating workaround. Asking metabox to save its settings.' );
-				$GLOBALS[ 'wpseo_metabox' ]->save_postdata( $bcd->post->ID );
+				if ( count( $this->broadcasting ) == 1 )
+				{
+					$this->debug( 'Yoast SEO detected. Activating workaround. Asking metabox to save its settings.' );
+					restore_current_blog();
+					$GLOBALS[ 'wpseo_metabox' ]->save_postdata( $bcd->post->ID );
+					switch_to_blog( $bcd->parent_blog_id );
+				}
+				else
+					$this->debug( 'Yoast SEO detected but not activating, because we are not the top broadcast.' );
 			}
 
 			// Save the original custom fields for future use.
@@ -190,42 +206,6 @@ trait broadcasting
 		else
 			$this->debug( 'Will not broadcast custom fields.' );
 
-		// Handle any galleries.
-		$bcd->galleries = new collection;
-		$matches = $this->find_shortcodes( $bcd->post->post_content, 'gallery' );
-		$this->debug( 'Found %s gallery shortcodes.', count( $matches[ 2 ] ) );
-
-		// [2] contains only the shortcode command / key. No options.
-		foreach( $matches[ 2 ] as $index => $key )
-		{
-			// We've found a gallery!
-			$bcd->has_galleries = true;
-			$gallery = (object)[];
-			$bcd->galleries->push( $gallery );
-
-			// Complete matches are in 0.
-			$gallery->old_shortcode = $matches[ 0 ][ $index ];
-
-			// Extract the IDs
-			$gallery->ids_string = preg_replace( '/.*ids=\"([0-9,]*)".*/', '\1', $gallery->old_shortcode );
-			$this->debug( 'Gallery %s has IDs: %s', $gallery->old_shortcode, $gallery->ids_string );
-			$gallery->ids_array = explode( ',', $gallery->ids_string );
-			foreach( $gallery->ids_array as $id )
-			{
-				$this->debug( 'Gallery has attachment %s.', $id );
-				try
-				{
-					$data = attachment_data::from_attachment_id( $id );
-					$data->set_attached_to_parent( $bcd->post );
-					$bcd->attachment_data[ $id ] = $data;
-				}
-				catch( Exception $e )
-				{
-					$this->debug( 'Exception adding attachment: ' . $e->getMessage() );
-				}
-			}
-		}
-
 		// Handle sticky status. This can be done in two ways: by _POST and by the options.
 		// If the user is using the nromal editor, look in the post.
 		if ( isset( $_POST[ '_wp_http_referer' ] ) )
@@ -261,13 +241,20 @@ trait broadcasting
 		$this->__siteurl = get_option( 'siteurl' );
 		$this->add_action( 'upload_dir', 'broadcasting_upload_dir' );
 
+		// Inform everyone of content that will be parsed later on.
+		$preparse_content = new actions\preparse_content();
+		$preparse_content->broadcasting_data = $bcd;
+		$preparse_content->content = $bcd->post->post_content;
+		$preparse_content->id = 'post_content';
+		$preparse_content->execute();
+
 		$action = new actions\broadcasting_started;
 		$action->broadcasting_data = $bcd;
 		$action->execute();
 
 		$this->debug( 'The attachment data is: %s', $bcd->attachment_data );
 
-		$this->debug( 'Beginning child broadcast loop.' );
+		$this->debug( 'Beginning child broadcast loop to blogs %s', $bcd->blogs );
 
 		foreach( $bcd->blogs as $child_blog )
 		{
@@ -288,6 +275,22 @@ trait broadcasting
 			$action->broadcasting_data = $bcd;
 			$action->execute();
 
+			$upload_dir_info = [
+				'ms_dir' => '/sites/' . get_current_blog_id(),
+				'ms_files_rewriting option' => get_option( 'ms_files_rewriting' ),
+				'upload_path option' => get_option( 'upload_path' ),
+			];
+
+			foreach( [ 'BLOGUPLOADDIR', 'UPLOADS' ] as $key )
+				if ( defined( $key ) )
+					$upload_dir_info[ $key ] = get_defined_constants()[ $key ];
+
+			$this->debug( 'Site URL is %s and upload dir is now %s which comes from %s',
+				get_option( 'siteurl' ),
+				wp_upload_dir(),
+				$upload_dir_info
+			);
+
 			if ( ! $action->broadcast_here )
 			{
 				$this->debug( 'Skipping this blog.' );
@@ -299,12 +302,27 @@ trait broadcasting
 			$bcd->broadcast_data = $this->get_post_broadcast_data( $bcd->parent_blog_id, $bcd->post->ID );
 
 			// Post parent
-			if ( $bcd->link && isset( $parent_broadcast_data ) )
-				if ( $parent_broadcast_data->has_linked_child_on_this_blog() )
+			if ( $bcd->link AND $bcd->parent_broadcast_data !== false )
+			{
+				// Check first for linked children.
+				if ( $bcd->parent_broadcast_data->has_linked_child_on_this_blog() )
 				{
-					$linked_parent = $parent_broadcast_data->get_linked_child_on_this_blog();
+					$linked_parent = $bcd->parent_broadcast_data->get_linked_child_on_this_blog();
 					$bcd->new_post->post_parent = $linked_parent;
+					$this->debug( "Parent post has a child here. The post's new parent is %s", $linked_parent );
 				}
+				else
+				{
+					// Maybe the parent post is a parent post on this blog?
+					if ( $bcd->parent_broadcast_data->blog_id == $bcd->current_child_blog_id )
+					{
+						$bcd->new_post->post_parent = $bcd->parent_broadcast_data->post_id;
+						$this->debug( "Parent post has a parent here. The post's new parent is %s", $bcd->new_post->post_parent );
+					}
+				}
+			}
+			else
+				$this->debug( "Ignoring post's parent." );
 
 			// Insert new? Or update? Depends on whether the parent post was linked before or is newly linked?
 			$need_to_insert_post = true;
@@ -320,6 +338,11 @@ trait broadcasting
 					{
 						$temp_post_data = $bcd->new_post;
 						$temp_post_data->ID = $child_post_id;
+
+						// Allow modification of post date.
+						$temp_post_data->edit_date = true;
+
+						$this->debug( 'Running wp_update_post with %s', $temp_post_data );
 						wp_update_post( $temp_post_data );
 						$bcd->new_post->ID = $child_post_id;
 						$need_to_insert_post = false;
@@ -337,6 +360,7 @@ trait broadcasting
 				$this->debug( 'Creating a new post: %s', $temp_post_data );
 				unset( $temp_post_data->ID );
 
+				$this->debug( 'Running wp_insert_post with %s', $temp_post_data );
 				$result = wp_insert_post( $temp_post_data, true );
 
 				// Did we manage to insert the post properly?
@@ -359,8 +383,27 @@ trait broadcasting
 				}
 			}
 
+			$bcd->new_post = get_post( $bcd->new_post( 'ID' ) );
+
 			$bcd->equivalent_posts()->set( $bcd->parent_blog_id, $bcd->post->ID, $bcd->current_child_blog_id, $bcd->new_post( 'ID' ) );
 			$this->debug( 'Equivalent of %s/%s is %s/%s', $bcd->parent_blog_id, $bcd->post->ID, $bcd->current_child_blog_id, $bcd->new_post( 'ID' )  );
+
+			// Maybe remove the current attachments.
+			if ( $bcd->delete_attachments )
+			{
+				$attachments_to_remove = get_children( 'post_parent='.$bcd->new_post( 'ID' ) . '&post_type=attachment' );
+				$this->debug( '%s attachments to remove.', count( $attachments_to_remove ) );
+				foreach ( $attachments_to_remove as $attachment_to_remove )
+				{
+					$this->debug( 'Deleting existing attachment: %s', $attachment_to_remove->ID );
+					wp_delete_attachment( $attachment_to_remove->ID );
+				}
+			}
+			else
+				$this->debug( 'Not deleting child attachments.' );
+
+			// Copy the attachments
+			$this->copy_attachments_to_child( $bcd );
 
 			if ( $bcd->taxonomies )
 			{
@@ -450,91 +493,17 @@ trait broadcasting
 				$this->debug( 'Taxonomies: Finished.' );
 			}
 
-			// Maybe remove the current attachments.
-			if ( $bcd->delete_attachments )
-			{
-				$attachments_to_remove = get_children( 'post_parent='.$bcd->new_post( 'ID' ) . '&post_type=attachment' );
-				$this->debug( '%s attachments to remove.', count( $attachments_to_remove ) );
-				foreach ( $attachments_to_remove as $attachment_to_remove )
-				{
-					$this->debug( 'Deleting existing attachment: %s', $attachment_to_remove->ID );
-					wp_delete_attachment( $attachment_to_remove->ID );
-				}
-			}
-			else
-				$this->debug( 'Not deleting child attachments.' );
-
-			// Copy the attachments
-			$bcd->copied_attachments = [];
-			$this->debug( 'Looking through %s attachments.', count( $bcd->attachment_data ) );
-			foreach( $bcd->attachment_data as $key => $attachment )
-			{
-				$o = clone( $bcd );
-				$o->attachment_data = clone( $attachment );
-				$o->attachment_data->post = clone( $attachment->post );
-				$this->debug( "The attachment's post parent is %s.", $o->attachment_data->post->post_parent );
-				if ( $o->attachment_data->is_attached_to_parent() )
-				{
-					$this->debug( 'Assigning new post parent ID (%s) to attachment %s.', $bcd->new_post( 'ID' ), $o->attachment_data->post->ID );
-					$o->attachment_data->post->post_parent = $bcd->new_post( 'ID' );
-				}
-				else
-				{
-					$this->debug( 'Resetting post parent for attachment %s.', $o->attachment_data->post->ID );
-					$o->attachment_data->post->post_parent = 0;
-				}
-				$this->maybe_copy_attachment( $o );
-				$bcd->copied_attachments()->add( $attachment->post, get_post( $o->attachment_id ) );
-				$this->debug( 'Copied attachment %s to %s', $attachment->post->ID, $o->attachment_id );
-			}
-
 			// Maybe modify the post content with new URLs to attachments and what not.
 			$unmodified_post = (object)$bcd->new_post;
 			$modified_post = clone( $unmodified_post );
 
-			// If there were any image attachments copied...
-			if ( count( $bcd->copied_attachments() ) > 0 )
-			{
-				$this->debug( '%s attachments were copied.', count( $bcd->copied_attachments() ) );
-				// Update the URLs in the post to point to the new images.
-				$new_upload_dir = wp_upload_dir();
-				foreach( $bcd->copied_attachments() as $a )
-				{
-					$count = 0;
-					// Replace the GUID with the new one.
-					$modified_post->post_content = str_replace( $a->old->guid, $a->new->guid, $modified_post->post_content, $count );
-					if ( $count > 0 )
-						$this->debug( 'Modified attachment guid from %s to %s: %s times', $a->old->guid, $a->new->guid, $count );
-					// And replace the IDs present in any image captions.
-					$modified_post->post_content = str_replace( 'id="attachment_' . $a->old->id . '"', 'id="attachment_' . $a->new->id . '"', $modified_post->post_content, $count );
-					if ( $count > 0 )
-						$this->debug( 'Modified attachment link from %s to %s: %s times', $a->old->id, $a->new->id, $count );
-				}
-			}
-			else
-				$this->debug( 'No attachments were copied.' );
-
-			// If there are galleries...
-			$this->debug( '%s galleries are to be handled.', count( $bcd->galleries ) );
-			foreach( $bcd->galleries as $gallery )
-			{
-				// Work on a copy.
-				$gallery = clone( $gallery );
-				$new_ids = [];
-
-				// Go through all the attachment IDs
-				foreach( $gallery->ids_array as $id )
-				{
-					$new_id = $bcd->copied_attachments()->get( $id );
-					if ( $new_id )
-						$new_ids[] = $new_id;
-				}
-				$new_ids_string = implode( ',', $new_ids );
-				$new_shortcode = $gallery->old_shortcode;
-				$new_shortcode = str_replace( $gallery->ids_string, $new_ids_string, $gallery->old_shortcode );
-				$this->debug( 'Replacing gallery shortcode %s with %s.', $gallery->old_shortcode, $new_shortcode );
-				$modified_post->post_content = str_replace( $gallery->old_shortcode, $new_shortcode, $modified_post->post_content );
-			}
+			// Tell everyone it's time to parse this content.
+			$parse_content = new actions\parse_content();
+			$parse_content->broadcasting_data = $bcd;
+			$parse_content->content = $modified_post->post_content;
+			$parse_content->id = 'post_content';
+			$parse_content->execute();
+			$modified_post->post_content = $parse_content->content;
 
 			$bcd->modified_post = $modified_post;
 			$action = new actions\broadcasting_modify_post;
@@ -553,7 +522,7 @@ trait broadcasting
 			// Maybe updating the post is not necessary.
 			if ( $post_modified )
 			{
-				$this->debug( 'Modifying new post.' );
+				$this->debug( 'Modifying new post: %s', $modified_post );
 				wp_update_post( $modified_post );	// Or maybe it is.
 			}
 			else
@@ -664,7 +633,6 @@ trait broadcasting
 			$child_blog->switch_from();
 		}
 
-		// SEE: For nested broadcasts. Just in case.
 		restore_current_blog();
 
 		$action = new actions\broadcasting_finished;
@@ -716,7 +684,8 @@ trait broadcasting
 
 		$current_url = get_option( 'siteurl' );
 		foreach( [ 'url', 'baseurl' ] as $key )
-			$upload_dir[ $key ] = str_replace( $this->__siteurl, $current_url, $upload_dir[ $key ] );
+			if ( substr( $upload_dir[ $key ], 0, strlen( $current_url ) ) != $current_url )
+				$upload_dir[ $key ] = str_replace( $this->__siteurl, $current_url, $upload_dir[ $key ] );
 
 		return $upload_dir;
 	}
@@ -759,10 +728,12 @@ trait broadcasting
 			return $this->debug( 'No _POST available. Not broadcasting.' );
 
 		// Does this post_id match up with the one in the post?
-		$_post_id = $_POST[ 'ID' ];
-		if ( isset( $_post_id ) )
+		if ( isset( $_POST[ 'ID' ] ) )
+		{
+			$_post_id = $_POST[ 'ID' ];
 			if ( $_post_id != $post_id )
 				return $this->debug( 'Post ID %s does not match up with ID in POST %s.', $post_id, $_post_id );
+		}
 
 		// Is this post a child?
 		$broadcast_data = $this->get_post_broadcast_data( get_current_blog_id(), $post_id );
@@ -796,6 +767,9 @@ trait broadcasting
 			$this->filters( 'threewp_broadcast_broadcast_post', $broadcasting_data );
 		else
 			$this->debug( 'No blogs are selected. Not broadcasting.' );
+
+		// In case anyone called save_post(), instead of the action.
+		return $broadcasting_data;
 	}
 
 	/**
@@ -811,6 +785,48 @@ trait broadcasting
 	}
 
 	/**
+		@brief		Parse content.
+		@since		2016-03-30 17:49:10
+	**/
+	public function threewp_broadcast_parse_content( $action )
+	{
+		$bcd = $action->broadcasting_data;
+
+		// If there were any image attachments copied...
+		if ( count( $action->broadcasting_data->copied_attachments() ) > 0 )
+		{
+			$this->debug( '%s attachments were copied.', count( $action->broadcasting_data->copied_attachments() ) );
+			// Update the URLs in the post to point to the new images.
+			$action->content = $this->update_attachment_ids( $action->broadcasting_data, $action->content );
+		}
+		else
+			$this->debug( 'No attachments were copied.' );
+
+		// Manipulate the galleries.
+		$galleries = $bcd->galleries->collection( $action->id );
+		$this->debug( '%s galleries are to be handled for content ID %s.', count( $galleries ), $action->id );
+		foreach( $galleries as $gallery )
+		{
+			// Work on a copy.
+			$gallery = clone( $gallery );
+			$new_ids = [];
+
+			// Go through all the attachment IDs
+			foreach( $gallery->ids_array as $id )
+			{
+				$new_id = $bcd->copied_attachments()->get( $id );
+				if ( $new_id )
+					$new_ids[] = $new_id;
+			}
+			$new_ids_string = implode( ',', $new_ids );
+			$new_shortcode = $gallery->old_shortcode;
+			$new_shortcode = str_replace( $gallery->ids_string, $new_ids_string, $gallery->old_shortcode );
+			$this->debug( 'Replacing gallery shortcode %s with %s.', $gallery->old_shortcode, $new_shortcode );
+			$action->content = str_replace( $gallery->old_shortcode, $new_shortcode, $action->content );
+		}
+	}
+
+	/**
 		@brief		Modifies the broadcasting_data according to the users's input in the meta box (blogs) and the user's roles.
 		@details	Only does any real good when parsing user input from a meta box, for example during normal editing or using Send To Many or UBS Post.
 		@since		20131004
@@ -818,7 +834,7 @@ trait broadcasting
 	public function threewp_broadcast_prepare_broadcasting_data( $action )
 	{
 		$bcd = $action->broadcasting_data;
-		$allowed_post_status = [ 'pending', 'private', 'publish' ];
+		$allowed_post_status = apply_filters( 'threewp_broadcast_allowed_post_statuses', [ 'pending', 'private', 'publish' ] );
 
 		if ( $bcd->post->post_status == 'draft' && static::user_has_roles( $this->get_site_option( 'role_broadcast_as_draft' ) ) )
 			$allowed_post_status[] = 'draft';
@@ -883,22 +899,18 @@ trait broadcasting
 			{
 				switch_to_blog( $blog_id );
 
-				$post_id = $bcd->meta_box_data->broadcast_data->get_linked_child_on_this_blog();
+				$post_id = $bcd->meta_box_data->broadcast_data->get_linked_post_on_this_blog();
 				$unlink = false;
+
+				$post_action = new actions\post_action();
+				$post_action->action = $unchecked_child_blogs_action;
+				$post_action->post_id = $post_id;
+				$this->debug( 'Executing post action %s on %s', $unchecked_child_blogs_action, $post_id );
+				$post_action->execute();
 
 				switch( $unchecked_child_blogs_action )
 				{
 					case 'delete':
-						$this->debug( 'Deleting child post %s', $post_id );
-						wp_delete_post( $post_id, true );
-						$unlink = true;
-						break;
-
-					case 'trash':
-						$this->debug( 'Trashing child post %s', $post_id );
-						wp_delete_post( $post_id );
-						break;
-
 					case 'unlink':
 						$unlink = true;
 						break;
@@ -916,6 +928,54 @@ trait broadcasting
 
 				$this->debug( 'Resaving braodcast data.' );
 				$this->set_post_broadcast_data( get_current_blog_id(), $bcd->post->ID, $bcd->meta_box_data->broadcast_data );
+			}
+		}
+	}
+
+	/**
+		@brief		Save info about the content.
+		@since		2016-04-22 12:56:59
+	**/
+	public function threewp_broadcast_preparse_content( $action )
+	{
+		$bcd = $action->broadcasting_data;
+
+		if ( ! isset( $bcd->galleries ) )
+			$bcd->galleries = ThreeWP_Broadcast()->collection();
+
+		// Return a collection of galleries for thie content id.
+		$galleries = $bcd->galleries->collection( $action->id );
+
+		$matches = $this->find_shortcodes( $action->content, 'gallery' );
+		$this->debug( 'Found %s gallery shortcodes for content ID %s', count( $matches[ 2 ] ), $action->id );
+
+		// [2] contains only the shortcode command / key. No options.
+		foreach( $matches[ 2 ] as $index => $key )
+		{
+			// We've found a gallery!
+			$gallery = (object)[];
+			$galleries->push( $gallery );
+
+			// Complete matches are in 0.
+			$gallery->old_shortcode = $matches[ 0 ][ $index ];
+
+			// Extract the IDs
+			$gallery->ids_string = preg_replace( '/.*ids=\"([0-9,]*)".*/', '\1', $gallery->old_shortcode );
+			$this->debug( 'Gallery %s has IDs: %s', $gallery->old_shortcode, $gallery->ids_string );
+			$gallery->ids_array = explode( ',', $gallery->ids_string );
+			foreach( $gallery->ids_array as $id )
+			{
+				$this->debug( 'Gallery has attachment %s.', $id );
+				try
+				{
+					$data = attachment_data::from_attachment_id( $id );
+					$data->set_attached_to_parent( $bcd->post );
+					$bcd->attachment_data[ $id ] = $data;
+				}
+				catch( Exception $e )
+				{
+					$this->debug( 'Exception adding attachment: ' . $e->getMessage() );
+				}
 			}
 		}
 	}

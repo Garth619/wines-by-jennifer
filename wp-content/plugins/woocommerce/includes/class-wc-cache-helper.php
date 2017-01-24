@@ -164,7 +164,6 @@ class WC_Cache_Helper {
 
 	/**
 	 * Prevent caching on dynamic pages.
-	 * @access public
 	 */
 	public static function prevent_caching() {
 		if ( false === ( $wc_page_uris = get_transient( 'woocommerce_cache_excluded_uris' ) ) ) {
@@ -175,8 +174,8 @@ class WC_Cache_Helper {
 		if ( isset( $_GET['download_file'] ) ) {
 			self::nocache();
 		} elseif ( is_array( $wc_page_uris ) ) {
-			foreach( $wc_page_uris as $uri ) {
-				if ( stristr( $_SERVER['REQUEST_URI'], $uri ) ) {
+			foreach ( $wc_page_uris as $uri ) {
+				if ( stristr( trailingslashit( $_SERVER['REQUEST_URI'] ), $uri ) ) {
 					self::nocache();
 					break;
 				}
@@ -189,15 +188,15 @@ class WC_Cache_Helper {
 	 * @access private
 	 */
 	private static function nocache() {
-		if ( ! defined( 'DONOTCACHEPAGE' ) )
-			define( "DONOTCACHEPAGE", "true" );
-
-		if ( ! defined( 'DONOTCACHEOBJECT' ) )
-			define( "DONOTCACHEOBJECT", "true" );
-
-		if ( ! defined( 'DONOTCACHEDB' ) )
-			define( "DONOTCACHEDB", "true" );
-
+		if ( ! defined( 'DONOTCACHEPAGE' ) ) {
+			define( "DONOTCACHEPAGE", true );
+		}
+		if ( ! defined( 'DONOTCACHEOBJECT' ) ) {
+			define( "DONOTCACHEOBJECT", true );
+		}
+		if ( ! defined( 'DONOTCACHEDB' ) ) {
+			define( "DONOTCACHEDB", true );
+		}
 		nocache_headers();
 	}
 

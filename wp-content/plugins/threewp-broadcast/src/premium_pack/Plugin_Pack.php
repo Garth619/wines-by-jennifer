@@ -14,6 +14,7 @@ abstract class Plugin_Pack
 
 	public function _construct()
 	{
+		$this->add_action( 'threewp_broadcast_broadcasting_started', 'dump_pack_info' );
 		$this->add_action( 'ThreeWP_Broadcast_Plugin_Pack_get_plugin_classes' );
 		$this->add_action( 'threewp_broadcast_plugin_pack_uninstall' );
 		$this->add_action( 'threewp_broadcast_plugin_pack_tabs' );
@@ -23,6 +24,24 @@ abstract class Plugin_Pack
 	// --------------------------------------------------------------------------------------------
 	// ----------------------------------------- EDD Updater
 	// --------------------------------------------------------------------------------------------
+
+	/**
+		@brief		Show some text about the SSL workaround.
+		@since		2016-04-14 14:01:01
+	**/
+	public function edd_admin_license_tab_text()
+	{
+		return $this->p( "If the pack is not activating as it should due to an SSL error, add this to your wp-config.php file: <code>define( 'BROADCAST_PP_SSL_WORKAROUND', true );</code>" );
+	}
+
+	/**
+		@brief		edd_enable_ssl_workaround
+		@since		2016-04-14 12:24:30
+	**/
+	public function edd_enable_ssl_workaround()
+	{
+		return defined( 'BROADCAST_PP_SSL_WORKAROUND' );
+	}
 
 	public abstract function edd_get_item_name();
 
@@ -38,6 +57,17 @@ abstract class Plugin_Pack
 	// --------------------------------------------------------------------------------------------
 	// ----------------------------------------- Misc functions
 	// --------------------------------------------------------------------------------------------
+
+	/**
+		@brief		Show the pack's license key.
+		@since		2016-11-28 16:56:33
+	**/
+	public function dump_pack_info()
+	{
+		$key = $this->get_site_option( 'edd_updater_license_key' );
+		$key = substr( $key, -8 );
+		ThreeWP_Broadcast()->debug( 'My license key is ~%s', $key );
+	}
 
 	public abstract function get_plugin_classes();
 

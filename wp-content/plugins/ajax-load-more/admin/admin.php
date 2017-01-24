@@ -1,7 +1,5 @@
 <?php
-
-/* Admin function */
-
+   
 add_action( 'plugins_loaded', 'alm_core_update' ); // Core Update
 add_action( 'wp_ajax_alm_save_repeater', 'alm_save_repeater' ); // Ajax Save Repeater
 add_action( 'wp_ajax_alm_update_repeater', 'alm_update_repeater' ); // Ajax Update Repeater
@@ -9,9 +7,11 @@ add_action( 'wp_ajax_alm_get_tax_terms', 'alm_get_tax_terms' ); // Ajax Get Taxo
 add_action( 'wp_ajax_alm_delete_cache', 'alm_delete_cache' ); // Delete Cache
 add_action( 'wp_ajax_alm_layouts_dismiss', 'alm_layouts_dismiss' ); // Dismiss Layouts CTA
 add_action( 'wp_ajax_alm_license_activation', 'alm_license_activation' ); // Activate Add-on
-add_action( 'add_layout_listing', 'add_layout_listing' ); // Add layout dropmenu  		
-add_action( 'wp_ajax_alm_layouts_get', 'alm_layouts_get' ); // Get layout
-add_action( 'admin_init', 'alm_image_sizes' ); // Add image size
+add_action( 'alm_get_layouts', 'alm_get_layouts' ); // Add layout selection  
+add_action( 'wp_ajax_alm_get_layout', 'alm_get_layout' ); // Get layout
+add_action( 'wp_ajax_alm_dismiss_sharing', 'alm_dismiss_sharing' ); // Dismiss sharing
+add_filter( 'admin_footer_text', 'alm_filter_admin_footer_text'); // Admin menu text
+
 
 
 /*
@@ -23,88 +23,129 @@ add_action( 'admin_init', 'alm_image_sizes' ); // Add image size
 
 function alm_license_activation(){
 	
-	$nonce = $_GET["nonce"];
-   $type = $_GET["type"]; // activate / deactivate
-   $item = $_GET["item"];    
-   $license = $_GET["license"];     
-   $url = $_GET["url"];      
-   $upgrade = $_GET["upgrade"];     
-   $option_status = $_GET["status"];   
-   $option_key = $_GET["key"];   
-      
-   // Check our nonce, if they don't match then bounce!
-   if (! wp_verify_nonce( $nonce, 'alm_repeater_nonce' ))
-      die('Error - unable to verify nonce, please try again.');          
-
-	// data to send in our API request
-	if($type === 'activate'){
-		$action = 'activate_license';
-	}else{
-		$action = 'deactivate_license';
-	}
-	
-	$api_params = array( 
-		'edd_action'=> $action, 
-		'license' 	=> $license, 
-		'item_id'   => $item, // the ID of our product in EDD
-		'url'       => home_url()
-	);
-	
-	// Call the custom API.
-	$response = wp_remote_get( add_query_arg( $api_params, $url ), array( 'timeout' => 15, 'sslverify' => false ) );
-	
-	$license_data = $response['body'];
-	$license_data = json_decode($license_data); // decode the license data
-	
-
-	$return["success"] = $license_data->success;
+	if (current_user_can( 'edit_theme_options' )){
 		
-	$msg = '';
-	if($type === 'activate'){		
-		$return["license_limit"] = $license_data->license_limit;
-		$return["expires"] = $license_data->expires;
-		$return["site_count"] = $license_data->site_count;
-		$return["activations_left"] = $license_data->activations_left;
-		$return["license"] = $license_data->license;
-		$return["item_name"] = $license_data->item_name;	
-		if($license_data->activations_left === 0 && $license_data->success === false){
-			$msg = '<strong>Sorry, but you are out of available licenses <em>('. $license_data->license_limit .' / '. $license_data->site_count .')</em>.</strong> Please visit the <a href="'.$upgrade.'" target="_blank">'.$license_data->item_name.'</a> page to add additional licenses.';
-		}	
-	}
-	$return["msg"] = $msg;
+		$nonce = $_GET["nonce"];
+	   $type = $_GET["type"]; // activate / deactivate
+	   $item = $_GET["item"];    
+	   $license = $_GET["license"];     
+	   $url = $_GET["url"];      
+	   $upgrade = $_GET["upgrade"];     
+	   $option_status = $_GET["status"];   
+	   $option_key = $_GET["key"];   
+	      
+	   // Check our nonce, if they don't match then bounce!
+	   if (! wp_verify_nonce( $nonce, 'alm_repeater_nonce' ))
+	      die('Error - unable to verify nonce, please try again.');          
 	
+		// data to send in our API request
+		if($type === 'activate'){
+			$action = 'activate_license';
+		}else{
+			$action = 'deactivate_license';
+		}
+		
+		$api_params = array( 
+			'edd_action'=> $action, 
+			'license' 	=> $license, 
+			'item_id'   => $item, // the ID of our product in EDD
+			'url'       => home_url()
+		);
+		
+		// Call the custom API.
+		//$response = wp_remote_get( add_query_arg( $api_params, $url ), array( 'timeout' => 15, 'sslverify' => false ) );
+		
+		// Updated 2.8.7
+		$response = wp_remote_post( ALM_STORE_URL, array( 'timeout' => 15, 'sslverify' => false, 'body' => $api_params ) );
 	
-	update_option( $option_status, $license_data->license);
-	update_option( $option_key, $license );	
+		// make sure the response came back okay
+		if ( is_wp_error( $response ) )
+			return false;
+		
+		
+		$license_data = $response['body'];
+		$license_data = json_decode($license_data); // decode the license data
+		
 	
-   echo json_encode($return);
+		$return["success"] = $license_data->success;
+			
+		$msg = '';
+		if($type === 'activate'){		
+			$return["license_limit"] = $license_data->license_limit;
+			$return["expires"] = $license_data->expires;
+			$return["site_count"] = $license_data->site_count;
+			$return["activations_left"] = $license_data->activations_left;
+			$return["license"] = $license_data->license;
+			$return["item_name"] = $license_data->item_name;	
+			if($license_data->activations_left === 0 && $license_data->success === false){
+				$msg = '<strong>Sorry, but you are out of available licenses <em>('. $license_data->license_limit .' / '. $license_data->site_count .')</em>.</strong> Please visit the <a href="'.$upgrade.'" target="_blank">'.$license_data->item_name.'</a> page to add additional licenses.';
+			}	
+		}
+		$return["msg"] = $msg;
+		
+		update_option( $option_status, $license_data->license);
+		update_option( $option_key, $license );	
+		
+	   echo json_encode($return);
+		
+		die();
 	
-	die();
+	} else {
+      echo __('You don\'t belong here.', ALM_NAME);
+   } 
 }
 
 
 
 /*
-*  alm_layouts_get
+*  alm_get_layout
 *  Get layout and return value to repeater template
 *
 *  @since 2.8.3
+*  @updated 2.14.0
 */
 
-function alm_layouts_get(){	
+function alm_get_layout(){	
    if (current_user_can( 'edit_theme_options' )){         
    
-      $nonce = $_GET["nonce"];
-      $type = $_GET["type"];      
+      $nonce = sanitize_text_field($_GET["nonce"]);
+      $type = sanitize_text_field($_GET["type"]);           
+      $custom = sanitize_text_field($_GET["custom"]); 
+      
       // Check our nonce, if they don't match then bounce!
       if (! wp_verify_nonce( $nonce, 'alm_repeater_nonce' ))
          die('Error - unable to verify nonce, please try again.');    
       
       if($type === 'default'){
+	      
+	      // Default Layout
          $content =  file_get_contents(ALM_PATH.'admin/includes/layout/'.$type.'.php');
+         
       }else{
-         $content =  file_get_contents(ALM_LAYOUTS_PATH.'layouts/'.$type.'.php');         
-      }      
+	      
+		   // Custom Layout
+	      if($custom == 'true'){
+		      $dir = 'alm_layouts';
+		      
+				if(is_child_theme()){
+					$path = get_stylesheet_directory().'/'. $dir .'/' .$type;
+					// if child theme does not have the layout, check the parent theme
+					if(!file_exists($path)){
+						$path = get_template_directory().'/'. $dir .'/' .$type;
+					}
+				}
+				else{
+					$path = get_template_directory().'/'. $dir .'/' .$type;
+				}
+         	$content =  file_get_contents($path); 		      
+		      
+		   } 
+		   
+		   // Layouts Add-on
+		   else {			   
+         	$content =  file_get_contents(ALM_LAYOUTS_PATH.'layouts/'.$type.'.php');      
+         }   
+      }       
       
       $return["value"] = $content;
       echo json_encode($return);        
@@ -116,29 +157,16 @@ function alm_layouts_get(){
 
 
 
-/*
-*  alm_layouts_image_sizes
-*  Add the required image sizes
-*
-*  @since 2.8.3
-*/
-
-function alm_image_sizes(){   
-	add_image_size( 'alm-thumbnail', 150, 150, true); // Custom ALM thumbnail size
-} 
-
-
 
 /*
-*  add_layout_listing
-*  Get the list of layouts
+*  alm_get_layouts
+*  Get the list of layout templates
 *
-*  @since 2.8.3
+*  @since 2.8.7
 */
-function add_layout_listing(){
-   //include( ALM_PATH . 'admin/includes/components/layout-list.php'); 
+function alm_get_layouts(){ // do_action
+   include( ALM_PATH . 'admin/includes/components/layout-list.php'); 
 }
-
 
 
 /*
@@ -154,11 +182,19 @@ function alm_admin_vars() { ?>
         'ajax_admin_url' => admin_url( 'admin-ajax.php' ),
         'active' => __('Active', 'ajax-load-more'),
         'inactive' => __('Inactive', 'ajax-load-more'),
-        'alm_admin_nonce' => wp_create_nonce( 'alm_repeater_nonce' )
+        'applying_layout' => __('Applying layout', 'ajax-load-more'),
+        'template_updated' => __('Template Updated', 'ajax-load-more'),
+        'alm_admin_nonce' => wp_create_nonce( 'alm_repeater_nonce' ),
+        'select_authors' => __('Select Author(s)', 'ajax-load-more'),
+        'select_cats' => __('Select Categories', 'ajax-load-more'),
+        'select_tags' => __('Select Tags', 'ajax-load-more'),
+        'jump_to_option' => __('Jump to Option', 'ajax-load-more'),
+        'jump_to_template' => __('Jump to Template', 'ajax-load-more')
     )); ?>
     /* ]]> */
     </script>
 <?php }
+
 
 
 /*
@@ -189,7 +225,13 @@ function alm_core_update() {
 	
 	$alm_installed_ver = get_option( "alm_version" ); // Get value from WP Option tbl
 	if ( $alm_installed_ver != ALM_VERSION ) {
+   	
+   	// Delete ALM transients
+   	delete_transient('alm_dismiss_sharing');
+		
+		// Update repeaters
 		alm_run_update();	
+		
 	}  
 }
 
@@ -290,7 +332,7 @@ function alm_update_template_files(){
 add_action( 'admin_menu', 'alm_admin_menu' );
 function alm_admin_menu() {  
    $icon = 'dashicons-plus-alt';
-   $icon = ALM_ADMIN_URL . "/img/alm-logo-16x16.png";
+   $icon = ALM_ADMIN_URL . "/img/alm-logo-16x16.svg";
    
    $alm_page = add_menu_page( 
       'Ajax Load More', 
@@ -327,15 +369,6 @@ function alm_admin_menu() {
       'ajax-load-more-shortcode-builder', 
       'alm_shortcode_builder_page'
    );
-   
-   $alm_examples_page = add_submenu_page( 
-      'ajax-load-more', 
-      'Examples', 
-      'Examples', 
-      'edit_theme_options', 
-      'ajax-load-more-examples', 
-      'alm_example_page'
-   );  	
    	
    $alm_addons_page = add_submenu_page( 
       'ajax-load-more', 
@@ -344,7 +377,25 @@ function alm_admin_menu() {
       'edit_theme_options', 
       'ajax-load-more-add-ons', 
       'alm_add_ons_page'
-   ); 
+   );     
+   
+   $alm_examples_page = add_submenu_page( 
+      'ajax-load-more', 
+      'Examples', 
+      'Examples', 
+      'edit_theme_options', 
+      'ajax-load-more-examples', 
+      'alm_examples_page'
+   );    
+   
+   $alm_help_page = add_submenu_page( 
+      'ajax-load-more', 
+      'Help', 
+      'Help', 
+      'edit_theme_options', 
+      'ajax-load-more-help', 
+      'alm_help_page'
+   );  	
    
    $alm_licenses_page = add_submenu_page(
       'ajax-load-more', 
@@ -366,15 +417,19 @@ function alm_admin_menu() {
       );
       add_action( 'load-' . $alm_cache_page, 'alm_load_admin_js' );
       add_action( 'load-' . $alm_cache_page, 'alm_load_cache_admin_js' );
+      add_action( 'load-' . $alm_cache_page, 'alm_set_admin_nonce' ); 
    }
    
    //Add our admin scripts
    add_action( 'load-' . $alm_settings_page, 'alm_load_admin_js' );
+   add_action( 'load-' . $alm_settings_page, 'alm_set_admin_nonce' );   
    add_action( 'load-' . $alm_template_page, 'alm_load_admin_js' );
    add_action( 'load-' . $alm_template_page, 'alm_set_admin_nonce' );   
    add_action( 'load-' . $alm_shortcode_page, 'alm_load_admin_js' );
    add_action( 'load-' . $alm_shortcode_page, 'alm_set_admin_nonce' );
    add_action( 'load-' . $alm_examples_page, 'alm_load_admin_js' );
+   add_action( 'load-' . $alm_examples_page, 'alm_set_admin_nonce' );
+   add_action( 'load-' . $alm_help_page, 'alm_load_admin_js' );
    add_action( 'load-' . $alm_addons_page, 'alm_load_admin_js' );
    add_action( 'load-' . $alm_licenses_page, 'alm_load_admin_js' );
    add_action( 'load-' . $alm_licenses_page, 'alm_set_admin_nonce' );
@@ -408,11 +463,11 @@ function alm_load_cache_admin_js(){
 function alm_enqueue_admin_scripts(){
 
    //Load Admin CSS
-   wp_enqueue_style( 'alm-admin-css', ALM_ADMIN_URL. 'css/admin.css');
-   wp_enqueue_style( 'alm-select2-css', ALM_ADMIN_URL. 'css/select2.css');
+   wp_enqueue_style( 'alm-admin', ALM_ADMIN_URL. 'css/admin.css');
+   wp_enqueue_style( 'alm-select2', ALM_ADMIN_URL. 'css/select2.css');
    wp_enqueue_style( 'alm-tooltipster', ALM_ADMIN_URL. 'css/tooltipster/tooltipster.css');
-   wp_enqueue_style( 'alm-core-css', ALM_URL. '/core/css/ajax-load-more.css');
-   wp_enqueue_style( 'alm-font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
+   wp_enqueue_style( 'alm-core', ALM_URL. '/core/css/ajax-load-more.css');
+   wp_enqueue_style( 'alm-font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css');
    
    //Load CodeMirror Syntax Highlighting if on Repater Template page 
    $screen = get_current_screen();
@@ -494,8 +549,21 @@ function alm_shortcode_builder_page(){
 *  @since 2.0.0
 */
 
-function alm_example_page(){ 
+function alm_examples_page(){ 
    include_once( ALM_PATH . 'admin/views/examples.php');		
+}
+
+
+
+/*
+*  alm_help_page
+*  Help Page (Implementation Inforgraphic) 
+*
+*  @since 2.8.7
+*/
+
+function alm_help_page(){ 
+   include_once( ALM_PATH . 'admin/views/help.php');		
 }
 
 
@@ -773,6 +841,48 @@ function alm_layouts_dismiss(){
 
 
 /*
+*  alm_dismiss_sharing
+*  Dismiss sharing widget on plugin settings page.
+*
+*  @since 2.8.2.1
+*/
+function alm_dismiss_sharing(){
+   if (current_user_can( 'edit_theme_options' )){
+	
+		$nonce = $_POST["nonce"];
+		
+		// Check our nonce, if they don't match then bounce!
+		if (! wp_verify_nonce( $nonce, 'alm_repeater_nonce' ))
+			die('Error - unable to verify nonce, please try again.');			
+		
+      set_transient( 'alm_dismiss_sharing', 'true', YEAR_IN_SECONDS );
+      echo 'ALM sharing dismissed successfully.';
+      
+      die();
+   }
+}
+
+
+
+/*
+*  alm_filter_admin_footer_text
+*  Filter the WP Admin footer text only on ALM pages
+*
+*  @since 2.12.0
+*/
+
+function alm_filter_admin_footer_text( $text ) {	
+	$screen = alm_is_admin_screen();	
+	if(!$screen){
+		return;
+	}
+	
+	echo '<strong>Ajax Load More</strong> is made with <span style="color: #e25555;">♥</span> by <a href="https://connekthq.com" target="_blank" style="font-weight: 500;">Connekt</a> | <a href="https://wordpress.org/support/plugin/ajax-load-more/reviews/" target="_blank" style="font-weight: 500;">Leave a Review</a> | <a href="https://connekthq.com/plugins/ajax-load-more/support/" target="_blank" style="font-weight: 500;">Get Support</a>';
+}
+
+
+
+/*
 *  admin_init
 *  Initiate the plugin, create our setting variables.
 *
@@ -916,6 +1026,12 @@ function alm_admin_init(){
 	// PRELOADED
 	if(has_action('alm_preloaded_settings')){	   
    	do_action('alm_preloaded_settings');   	
+   }
+   
+	
+	// REST API
+	if(has_action('alm_rest_api_settings')){	   
+   	do_action('alm_rest_api_settings');   	
    }
    
    
@@ -1160,10 +1276,8 @@ function alm_btn_color_callback() {
     $html .= '<option value="default" class="alm-color default" ' . $selected0 .'>Default</option>';
     $html .= '<option value="blue" class="alm-color blue" ' . $selected1 .'>Blue</option>';
     $html .= '<option value="green" class="alm-color green" ' . $selected2 .'>Green</option>';
-    //$html .= '<option value="red" ' . $selected3 .'>Red</option>';
     $html .= '<option value="purple" class="alm-color purple" ' . $selected4 .'>Purple</option>';
     $html .= '<option value="grey" class="alm-color grey" ' . $selected5 .'>Grey</option>';
-    //$html .= '<option value="white" ' . $selected6 .'>White (Button)</option>';
     $html .= '</optgroup>';
     $html .= '<optgroup label="Infinite Scroll (no button)">';
     $html .= '<option value="infinite classic" class="infinite classic" ' . $selected7 .'>Classic</option>';
@@ -1175,7 +1289,7 @@ function alm_btn_color_callback() {
     $html .= '</optgroup>';
     $html .= '</select>';
      
-    $html .= '<div class="clear"></div><div class="ajax-load-more-wrap core '.$type.'"><span>'.__('Preview', 'ajax-load-more') .'</span><button class="alm-load-more-btn loading" disabled="disabled">Load More</button></div>';
+    $html .= '<div class="clear"></div><div class="ajax-load-more-wrap core '.$type.'"><span>'.__('Preview', 'ajax-load-more') .'</span><button class="alm-load-more-btn loading" disabled="disabled">'.apply_filters('alm_button_label', __('Older Posts', 'ajax-load-more')).'</button></div>';
     echo $html;
 }
 
@@ -1204,16 +1318,16 @@ function alm_btn_class_callback(){
 		// Check if Disable CSS  === true
 		if(jQuery('input#alm_disable_css_input').is(":checked")){
 	      jQuery('select#alm_settings_btn_color').parent().parent().hide(); // Hide button color
-         jQuery('input.btn-classes').parent().parent().hide(); // Hide Button Classes
+         //jQuery('input.btn-classes').parent().parent().hide(); // Hide Button Classes
     	}
     	jQuery('input#alm_disable_css_input').change(function() {
     		var el = jQuery(this);
 	      if(el.is(":checked")) {
 	      	el.parent().parent('tr').next('tr').hide(); // Hide button color
-	      	el.parent().parent('tr').next('tr').next('tr').hide(); // Hide Button Classes
+	      	//el.parent().parent('tr').next('tr').next('tr').hide(); // Hide Button Classes
 	      }else{		      
 	      	el.parent().parent('tr').next('tr').show(); // show button color
-	      	el.parent().parent('tr').next('tr').next('tr').show(); // show Button Classes
+	      	//el.parent().parent('tr').next('tr').next('tr').show(); // show Button Classes
 	      }
 	   });
 	   

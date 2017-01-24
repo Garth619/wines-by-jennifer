@@ -136,9 +136,11 @@ trait meta_boxes
 		$meta_box_data->last_used_settings = $this->load_last_used_settings( $this->user_id() );
 
 		$post_type = $meta_box_data->post->post_type;
-		$post_type_object = get_post_type_object( $post_type );
 		$post_type_supports_thumbnails = post_type_supports( $post_type, 'thumbnail' );
-		$post_type_is_hierarchical = $post_type_object->hierarchical;
+
+		$post_type_object = get_post_type_object( $post_type );
+		// Yepp. Some post types don't return proper info.
+		$post_type_is_hierarchical = @ ( $post_type_object->hierarchical === true );
 
 		if ( is_super_admin() OR static::user_has_roles( $this->get_site_option( 'role_link' ) ) )
 		{
@@ -147,7 +149,6 @@ trait meta_boxes
 				->checked( true )
 				->label_( 'Link this post to its children' )
 				->title( $this->_( 'Create a link to the children, which will be updated when this post is updated, trashed when this post is trashed, etc.' ) );
-			$meta_box_data->html->put( 'link', '' );
 			$meta_box_data->convert_form_input_later( 'link' );
 		}
 
@@ -165,7 +166,6 @@ trait meta_boxes
 				->checked( isset( $meta_box_data->last_used_settings[ 'custom_fields' ] ) )
 				->label_( 'Custom fields' )
 				->title( 'Broadcast all the custom fields and the featured image?' );
-			$meta_box_data->html->put( 'custom_fields', '' );
 			$meta_box_data->convert_form_input_later( 'custom_fields' );
 		}
 
@@ -175,7 +175,6 @@ trait meta_boxes
 				->checked( isset( $meta_box_data->last_used_settings[ 'taxonomies' ] ) )
 				->label_( 'Taxonomies' )
 				->title( 'The taxonomies must have the same name (slug) on the selected blogs.' );
-			$meta_box_data->html->put( 'taxonomies', '' );
 			$meta_box_data->convert_form_input_later( 'taxonomies' );
 		}
 
@@ -206,7 +205,7 @@ trait meta_boxes
 			$blogs_input->option( $label, $blog->id );
 			$input_name = 'blogs_' . $blog->id;
 			$option = $blogs_input->input( $input_name );
-			$option->get_label()->content = $label;
+			$option->get_label()->content = htmlspecialchars( $label );
 			$option->css_class( 'blog ' . $blog->id );
 			if ( $blog->is_disabled() )
 				$option->disabled()->css_class( 'disabled' );
@@ -221,7 +220,6 @@ trait meta_boxes
 				$option->hidden();
 		}
 
-		$meta_box_data->html->put( 'blogs', '' );
 		$meta_box_data->convert_form_input_later( 'blogs' );
 
 		$unchecked_child_blogs = $form->select( 'unchecked_child_blogs' )
@@ -238,7 +236,6 @@ trait meta_boxes
 			->option_( 'Trash the child post', 'trash' )
 			// With the unchecked child blogs:
 			->option_( 'Unlink the child post', 'unlink' );
-		$meta_box_data->html->put( 'unchecked_child_blogs', '' );
 		$meta_box_data->convert_form_input_later( 'unchecked_child_blogs' );
 
 		$js = sprintf( '<script type="text/javascript">var broadcast_blogs_to_hide = %s;</script>', $this->get_site_option( 'blogs_to_hide', 5 ) );

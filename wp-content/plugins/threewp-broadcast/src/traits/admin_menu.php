@@ -55,7 +55,7 @@ trait admin_menu
 		$r = '';
 		$r .= $this->html_css();
 		$contents = file_get_contents( __DIR__ . '/../../html/premium_pack_info.html' );
-		$r .= $this->wrap( $contents, $this->_( 'Broadcast plugin packs info' ) );
+		$r .= $this->wrap( $contents, $this->_( 'Broadcast add-on packs info' ) );
 		echo $r;
 	}
 
@@ -68,6 +68,32 @@ trait admin_menu
 		$r = '';
 		$roles = $this->roles_as_options();
 		$roles = array_flip( $roles );
+
+		// Check that the version of BC and the packs mostly match.
+		$constants = get_defined_constants();
+		$bc_major_version = THREEWP_BROADCAST_VERSION;
+		$bc_major_version = preg_replace( '/\..*/', '', $bc_major_version );
+		foreach( $this->get_addon_packs_info() as $pack )
+		{
+			$define = $pack->get( 'version_define' );
+			if ( ! isset( $constants[ $define ] ) )
+				continue;
+
+			// Extract the major version.
+			$pack_version = $constants[ $define ];
+			$pack_version = preg_replace( '/\..*/', '', $pack_version );
+
+			if ( $pack_version != $bc_major_version )
+			{
+				$message = $this->p_( 'Network admin! To ensure compatibility, please upgrade your version of the Broadcast %s add-on pack (%s) to match the major version of Broadcast itself: %s',
+						$pack->get( 'name' ),
+						$constants[ $define ],
+						$bc_major_version
+					);
+
+				$r .= sprintf( '<div class="inline error notice">%s</div>', $message );
+			}
+		}
 
 		// --CUSTOM FIELDS------------------------------------------------------------------------------------------
 
@@ -320,63 +346,7 @@ trait admin_menu
 	**/
 	public function admin_menu_system_info()
 	{
-		$table = $this->table();
-		// Caption for the blog / PHP information table
-		$table->caption()->text_( 'Information' );
-
-		$row = $table->head()->row();
-		$row->th()->text_( 'Key' );
-		$row->th()->text_( 'Value' );
-
-		if ( $this->debugging() )
-		{
-			$row = $table->body()->row();
-			$row->td()->text_( 'Debugging' );
-			$row->td()->text_( 'Enabled' );
-		}
-
-		$row = $table->body()->row();
-		$row->td()->text_( 'Broadcast version' );
-		$row->td()->text( $this->plugin_version );
-
-		$row = $table->body()->row();
-		$row->td()->text_( 'PHP version' );
-		$row->td()->text( phpversion() );
-
-		$row = $table->body()->row();
-		$row->td()->text_( 'Wordpress upload directory array' );
-		$row->td()->text( '<pre>' . var_export( wp_upload_dir(), true ) . '</pre>' );
-
-		$row = $table->body()->row();
-		$row->td()->text_( 'PHP maximum execution time' );
-		$text = $this->p_( '%s seconds', ini_get ( 'max_execution_time' ) );
-		$row->td()->text( $text );
-
-		$row = $table->body()->row();
-		$row->td()->text_( 'PHP memory limit' );
-		$text = ini_get( 'memory_limit' );
-		$row->td()->text( $text );
-
-		$row = $table->body()->row();
-		$row->td()->text_( 'Wordpress memory limit' );
-		$text = wpautop( sprintf( WP_MEMORY_LIMIT . "
-
-%s
-
-<code>define('WP_MEMORY_LIMIT', '512M');</code>
-",		$this->_( 'This can be increased by adding the following to your wp-config.php:' ) ) );
-		$row->td()->text( $text );
-
-		$row = $table->body()->row();
-		$row->td()->text_( 'Debug code' );
-		$text = WP_MEMORY_LIMIT;
-		$text = wpautop( sprintf( "%s
-
-<code>ini_set('display_errors','On');</code>
-<code>define('WP_DEBUG', true);</code>
-",		$this->p_( 'Add the following lines to your wp-config.php to help find out why errors or blank screens are occurring:' ) ) );
-		$row->td()->text( $text );
-
+		$table = $this->get_system_info_table();
 		echo $table;
 	}
 
@@ -474,7 +444,9 @@ trait admin_menu
 			}
 		}
 
-		$tabs->tab( 'admin_menu_broadcast_info' )->name_( 'Broadcast information' );
+		$tabs->tab( 'admin_menu_broadcast_info' )
+			->callback_this( 'admin_menu_broadcast_info' )
+			->name_( 'Broadcast information' );
 
 		$action = new actions\broadcast_menu_tabs();
 		$action->tabs = $tabs;
@@ -493,8 +465,8 @@ trait admin_menu
 		if ( $this->display_premium_pack_info && is_super_admin() )
 		$this->add_submenu_page(
 				'threewp_broadcast',
-				$this->_( 'Plugin packs info' ),
-				$this->_( 'Plugin packs' ),
+				$this->_( 'Add-on packs info' ),
+				$this->_( 'Add-on packs' ),
 				'edit_posts',
 				'threewp_broadcast_premium_pack_info',
 				[ &$this, 'admin_menu_premium_pack_info' ]

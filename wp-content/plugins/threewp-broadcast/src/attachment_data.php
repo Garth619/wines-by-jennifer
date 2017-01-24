@@ -58,6 +58,9 @@ class attachment_data
 		$r->filename_path = get_attached_file( $r->id );
 		$r->filename_base = basename( $r->filename_path );
 
+		if ( $r->filename_path == '' )
+			throw new Exception( sprintf( 'The attachment ID %s does not have a filename.', $r->id ) );
+
 		// Copy all of the custom data for this post.
 		$r->post_custom = get_post_custom( $r->id );
 
@@ -81,7 +84,7 @@ class attachment_data
 	**/
 	public function is_url()
 	{
-		return ( filter_var( $this->filename_path, FILTER_VALIDATE_URL) !== FALSE );
+		return strpos( $this->filename_path, '://' ) !== false;
 	}
 
 	/**

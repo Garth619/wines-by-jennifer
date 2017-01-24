@@ -41,7 +41,7 @@ class broadcasting_data
 		@var		$attachment_data
 		@since		20130603
 	**/
-	public $attachment_data;
+	public $attachment_data = [];
 
 	/**
 		@brief		[IN]: Array of child blog objects to which to broadcast.
@@ -58,6 +58,12 @@ class broadcasting_data
 		@since		2014-08-31 18:50:10
 	**/
 	public $broadcast_data;
+
+	/**
+		@brief		A collection of blog_id => true, showing to which blogs the attachments have been copied.
+		@since		2016-09-18 19:12:26
+	**/
+	public $copied_attachments_to_blog;
 
 	/**
 		@brief		The ID of the child blog we are currently working on.
@@ -94,6 +100,17 @@ class broadcasting_data
 		@since		2014-09-21 12:55:22
 	**/
 	public $equivalent_posts;
+
+	/**
+		@brief		Broadcast this right now, or is it OK if it gets broadcasted later?
+		@details	If false will allow plugins, like the Queue, to broadcast this later. If set to true, will broadcast it immediately, bypassing the queue.
+					This will prevent subbroadcasts from breaking the main broadcast, for example when an ACF Post Relationship needs to be broadcasted / updated so that we can use the new post ID.
+
+					Using the API will always set it to true automatically.
+
+		@since		2016-07-13 13:42:07
+	**/
+	public $high_priority = false;
 
 	/**
 		@brief		[IN]: True if the broadcaster wants to link this post to the child blog posts,
@@ -140,6 +157,12 @@ class broadcasting_data
 		@since		20130927
 	**/
 	public $parent_blog_id;
+
+	/**
+		@brief		[IN]: The broadcast data of the parent post on the parent blog. If any.
+		@since		2016-03-06 16:39:02
+	**/
+	public $parent_broadcast_data = false;
 
 	/**
 		@brief		IN: The ID of the parent post.
@@ -238,6 +261,8 @@ class broadcasting_data
 			if ( is_object( $this->custom_fields ) )
 				$this->custom_fields = clone( $options[ 'custom_fields' ] );
 
+		$this->copied_attachments_to_blog = ThreeWP_Broadcast()->collection();
+
 		if ( ! $this->parent_post_id )
 			throw new Exception( 'Specify the parent post ID property when creating the broadcasting_data object.' );
 
@@ -258,11 +283,13 @@ class broadcasting_data
 		if ( $this->upload_dir === null )
 			$this->upload_dir = wp_upload_dir();
 
-		$this->post_type_object = get_post_type_object( $this->post->post_type );
 		$this->post_type_supports_thumbnails = post_type_supports( $this->post->post_type, 'thumbnail' );
 		//$this->post_type_supports_custom_fields = post_type_supports( $this->post->post_type, 'custom-fields' );
 		$this->post_type_supports_custom_fields = true;
-		$this->post_type_is_hierarchical = $this->post_type_object->hierarchical;
+
+		$this->post_type_object = get_post_type_object( $this->post->post_type );
+		// Yepp. Some post types don't return proper info.
+		$this->post_type_is_hierarchical = @ ( $this->post_type_object->hierarchical === true );
 
 		if ( $this->meta_box_data === null )
 		{
@@ -421,6 +448,17 @@ class broadcasting_data
 		if ( $key === null )
 			return $this->new_post;
 		return $this->new_post->$key;
+	}
+
+	/**
+		@brief		Return the partial broadcast object.
+		@since		2016-12-03 20:59:53
+	**/
+	public function partial_broadcast()
+	{
+		if ( ! isset( $this->__partial_broadcast ) )
+			$this->__partial_broadcast = new \threewp_broadcast\broadcasting_data\Partial_Broadcast();
+		return $this->__partial_broadcast;
 	}
 
 	/**

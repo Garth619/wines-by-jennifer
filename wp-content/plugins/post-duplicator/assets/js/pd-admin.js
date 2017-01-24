@@ -9,14 +9,16 @@ jQuery( document ).ready( function() {
 	 * @since 2.12
 	 */
 	 
-	jQuery( '.m4c-duplicate-post' ).click( function( e ) {
+	jQuery( '.m4c-duplicate-post' ).live( 'click', function( e ) {
 		
 		e.preventDefault();
+		var $spinner = jQuery(this).next('.spinner');
+		$spinner.css('visibility', 'visible');
 	
 		// Create the data to pass
 		var data = {
 			action: 'm4c_duplicate_post',
-			original_id: jQuery(this).attr('href'),
+			original_id: jQuery(this).data('postid'),
 			security: jQuery(this).attr('rel')
 		};
 	

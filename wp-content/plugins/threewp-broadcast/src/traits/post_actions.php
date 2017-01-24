@@ -238,16 +238,19 @@ trait post_actions
 			// Delete all children
 			case 'delete':
 				$broadcast_data = $this->get_post_broadcast_data( $blog_id, $post_id );
-				foreach( $broadcast_data->get_linked_children() as $child_blog_id => $child_post_id )
+				if ( $broadcast_data->get_linked_children() )
 				{
-					if ( ( $on_child_blog_id > 0 ) && ( $child_blog_id != $on_child_blog_id ) )
-						continue;
-					switch_to_blog( $child_blog_id );
-					wp_delete_post( $child_post_id, true );
-					$broadcast_data->remove_linked_child( $child_blog_id );
-					restore_current_blog();
+					foreach( $broadcast_data->get_linked_children() as $child_blog_id => $child_post_id )
+					{
+						if ( ( $on_child_blog_id > 0 ) && ( $child_blog_id != $on_child_blog_id ) )
+							continue;
+						switch_to_blog( $child_blog_id );
+						wp_delete_post( $child_post_id, true );
+						$broadcast_data->remove_linked_child( $child_blog_id );
+						restore_current_blog();
+					}
+					$broadcast_data = $this->set_post_broadcast_data( $blog_id, $post_id, $broadcast_data );
 				}
-				$broadcast_data = $this->set_post_broadcast_data( $blog_id, $post_id, $broadcast_data );
 			break;
 			case 'find_unlinked':
 				$post = get_post( $post_id );
@@ -265,12 +268,13 @@ trait post_actions
 
 					$blog->switch_to();
 
-					$args = array(
+					$args = [
 						'cache_results' => false,
 						'name' => $post->post_name,
-						'numberposts' => 2,
-						'post_type'=> $post->post_type,
-					);
+						'post_type' => $post->post_type,
+						'post_status' => $post->post_status,
+					];
+					$this->debug( 'Searching for posts on blog %s: %s', $args, $blog->id );
 					$posts = get_posts( $args );
 
 					// An exact match was found.
@@ -282,6 +286,7 @@ trait post_actions
 						if ( $child_broadcast_data->get_linked_parent() === false )
 							if ( ! $child_broadcast_data->has_linked_children() )
 							{
+								$this->debug( 'Adding linked child %s on blog %s', $unlinked->ID, $blog->id );
 								$broadcast_data->add_linked_child( $blog->id, $unlinked->ID );
 
 								// Add link info for the new child.
@@ -289,6 +294,8 @@ trait post_actions
 								$this->set_post_broadcast_data( $blog->id, $unlinked->ID, $child_broadcast_data );
 							}
 					}
+					else
+						$this->debug( 'Not exactly one match on blog.' );
 
 					$blog->switch_from();
 				}
@@ -297,26 +304,28 @@ trait post_actions
 			// Restore children
 			case 'restore':
 				$broadcast_data = $this->get_post_broadcast_data( $blog_id, $post_id );
-				foreach( $broadcast_data->get_linked_children() as $child_blog_id => $child_post_id )
-				{
-					if ( ( $on_child_blog_id > 0 ) && ( $child_blog_id != $on_child_blog_id ) )
-						continue;
-					switch_to_blog( $child_blog_id );
-					wp_publish_post( $child_post_id );
-					restore_current_blog();
-				}
+				if ( $broadcast_data->get_linked_children() )
+					foreach( $broadcast_data->get_linked_children() as $child_blog_id => $child_post_id )
+					{
+						if ( ( $on_child_blog_id > 0 ) && ( $child_blog_id != $on_child_blog_id ) )
+							continue;
+						switch_to_blog( $child_blog_id );
+						wp_publish_post( $child_post_id );
+						restore_current_blog();
+					}
 			break;
 			// Trash children
 			case 'trash':
 				$broadcast_data = $this->get_post_broadcast_data( $blog_id, $post_id );
-				foreach( $broadcast_data->get_linked_children() as $child_blog_id => $child_post_id )
-				{
-					if ( ( $on_child_blog_id > 0 ) && ( $child_blog_id != $on_child_blog_id ) )
-						continue;
-					switch_to_blog( $child_blog_id );
-					wp_trash_post( $child_post_id );
-					restore_current_blog();
-				}
+				if ( $broadcast_data->get_linked_children() )
+					foreach( $broadcast_data->get_linked_children() as $child_blog_id => $child_post_id )
+					{
+						if ( ( $on_child_blog_id > 0 ) && ( $child_blog_id != $on_child_blog_id ) )
+							continue;
+						switch_to_blog( $child_blog_id );
+						wp_trash_post( $child_post_id );
+						restore_current_blog();
+					}
 			break;
 			// Unlink children
 			case 'unlink':
@@ -367,6 +376,8 @@ trait post_actions
 		global $blog_id;
 		$broadcast_data = $this->get_post_broadcast_data( $blog_id, $post_id );
 
+		$this->debug( 'Intercepted %s on blog %s, post %s', $command, $blog_id, $post_id );
+
 		if ( $broadcast_data->has_linked_children() )
 		{
 			foreach( $broadcast_data->get_linked_children() as $childBlog=>$childPost)
@@ -377,6 +388,7 @@ trait post_actions
 					$this->delete_post_broadcast_data( $childBlog, $childPost );
 				}
 				switch_to_blog( $childBlog);
+				$this->debug( 'Running %s on blog %s, post %s', $command, $childBlog, $childPost );
 				$command( $childPost);
 				restore_current_blog();
 			}

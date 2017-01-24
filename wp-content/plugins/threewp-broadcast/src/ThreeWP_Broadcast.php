@@ -113,15 +113,19 @@ class ThreeWP_Broadcast
 		// Don't want to break anyone's plugins.
 		$this->add_action( 'threewp_broadcast_broadcast_post' );
 
+		$this->add_action( 'threewp_broadcast_collect_post_type_taxonomies', 5 );
+
 		$this->add_action( 'threewp_broadcast_each_linked_post' );
 		$this->add_action( 'threewp_broadcast_get_user_writable_blogs', 100 );		// Allow other plugins to do this first.
 		$this->add_filter( 'threewp_broadcast_get_post_types', 5 );					// Add our custom post types to the array of broadcastable post types.
 		$this->add_action( 'threewp_broadcast_maybe_clear_post', 100 );
 		$this->add_action( 'threewp_broadcast_menu', 5 );
 		$this->add_action( 'threewp_broadcast_menu', 'threewp_broadcast_menu_final', 100 );
+		$this->add_filter( 'threewp_broadcast_parse_content' );
 		$this->add_action( 'threewp_broadcast_prepare_broadcasting_data' );
 		$this->add_filter( 'threewp_broadcast_prepare_meta_box', 5 );
 		$this->add_filter( 'threewp_broadcast_prepare_meta_box', 'threewp_broadcast_prepared_meta_box', 100 );
+		$this->add_filter( 'threewp_broadcast_preparse_content' );
 		$this->add_action( 'threewp_broadcast_wp_insert_term', 5 );
 		$this->add_action( 'threewp_broadcast_wp_update_term', 5 );
 
@@ -497,9 +501,9 @@ class ThreeWP_Broadcast
 		@brief		Convenience function to return a Plainview SDK Collection.
 		@since		2014-10-31 13:21:06
 	**/
-	public static function collection()
+	public static function collection( $items = [] )
 	{
-		return new \plainview\sdk_broadcast\collections\Collection();
+		return new \plainview\sdk_broadcast\collections\Collection( $items );
 	}
 
 	/**
@@ -575,6 +579,37 @@ class ThreeWP_Broadcast
 	}
 
 	/**
+		@brief		Return a collection of add-on pack info.
+		@since		2016-12-05 14:50:20
+	**/
+	public function get_addon_packs_info()
+	{
+		$r = $this->collection();
+
+		$pack = $r->collection( '3rdparty' );
+		$pack->set( 'name', '3rd party' );
+		$pack->set( 'version_define', 'BROADCAST_3RD_PARTY_PACK_VERSION' );
+
+		$pack = $r->collection( 'control' );
+		$pack->set( 'name', 'Control' );
+		$pack->set( 'version_define', 'BROADCAST_CONTROL_PACK_VERSION' );
+
+		$pack = $r->collection( 'efficiency' );
+		$pack->set( 'name', 'Efficiency' );
+		$pack->set( 'version_define', 'BROADCAST_EFFICIENCY_PACK_VERSION' );
+
+		$pack = $r->collection( 'premium' );
+		$pack->set( 'name', 'Premium' );
+		$pack->set( 'version_define', 'BROADCAST_PREMIUM_PACK_VERSION' );
+
+		$pack = $r->collection( 'utilities' );
+		$pack->set( 'name', 'Utilities' );
+		$pack->set( 'version_define', 'BROADCAST_UTILITIES_PACK_VERSION' );
+
+		return $r;
+	}
+
+	/**
 		@brief		Return an array of post types available on this blog.
 		@details	Excludes the nav menu item post type.
 		@since		2014-11-16 23:10:09
@@ -595,6 +630,8 @@ class ThreeWP_Broadcast
 	{
 		global $wp_filter;
 		$filters = $wp_filter[ $hook ];
+		if ( is_object( $filters ) )
+			$filters = $filters->callbacks;
 		ksort( $filters );
 		$hook_callbacks = [];
 		//$wp_filter[$tag][$priority][$idx] = array('function' => $function_to_add, 'accepted_args' => $accepted_args);
@@ -609,7 +646,7 @@ class ThreeWP_Broadcast
 				{
 					$function_name = $function[ 0 ];
 					if ( is_object( $function_name ) )
-						$function_name = get_class( $function_name );
+						$function_name = sprintf( '%s::%s', get_class( $function_name ), $function[ 1 ] );
 					else
 						$function_name = sprintf( '%s::%s', $function_name, $function[ 1 ] );
 				}
@@ -619,6 +656,129 @@ class ThreeWP_Broadcast
 			}
 		}
 		return $hook_callbacks;
+	}
+
+	/**
+		@brief		Return a table containing the info of each plugin.
+		@since		2016-07-19 13:46:46
+	**/
+	public function get_plugin_info_array( $plugins )
+	{
+		$r = [];
+		if ( function_exists( 'get_plugin_data' ) )
+			foreach( $plugins as $plugin_filename )
+			{
+				$s = [];
+				$plugin_data = get_plugin_data( WP_PLUGIN_DIR . '/' . $plugin_filename );
+				$plugin_data = (object)$plugin_data;
+				$s []= $plugin_filename;
+				$s []= $plugin_data->Name;
+				$s []= $plugin_data->Version;
+				$s = implode( ', ', $s );
+				$r []= $s;
+			}
+		return $r;
+	}
+
+	/**
+		@brief		Return a table object containing the system info.
+		@since		2016-05-04 21:06:33
+	**/
+	public function get_system_info_table()
+	{
+		$table = $this->table();
+		// Caption for the blog / PHP information table
+		$table->caption()->text_( 'Information' );
+
+		$row = $table->head()->row();
+		$row->th()->text_( 'Key' );
+		$row->th()->text_( 'Value' );
+
+		if ( $this->debugging() )
+		{
+			$row = $table->body()->row();
+			$row->td()->text_( 'Debugging' );
+			$row->td()->text_( 'Enabled' );
+		}
+
+		$row = $table->body()->row();
+		$row->td()->text_( 'Broadcast version' );
+		$row->td()->text( $this->plugin_version );
+
+		global $wp_version;
+		$row = $table->body()->row();
+		$row->td()->text_( 'Wordpress version' );
+		$row->td()->text( $wp_version );
+
+		$row = $table->body()->row();
+		$row->td()->text_( 'PHP version' );
+		$row->td()->text( phpversion() );
+
+		$row = $table->body()->row();
+		$row->td()->text_( 'Wordpress upload directory array' );
+		$row->td()->text( '<pre>' . var_export( wp_upload_dir(), true ) . '</pre>' );
+
+		$this->paths[ 'ABSPATH' ] = ABSPATH;
+		$this->paths[ 'WP_PLUGIN_DIR' ] = WP_PLUGIN_DIR;
+		$row = $table->body()->row();
+		$row->td()->text_( 'Plugin paths' );
+		$row->td()->text( '<pre>' . var_export( $this->paths(), true ) . '</pre>' );
+
+		$row = $table->body()->row();
+		$row->td()->text_( 'PHP maximum execution time' );
+		$text = $this->p_( '%s seconds', ini_get ( 'max_execution_time' ) );
+		$row->td()->text( $text );
+
+		$row = $table->body()->row();
+		$row->td()->text_( 'PHP memory limit' );
+		$text = ini_get( 'memory_limit' );
+		$row->td()->text( $text );
+
+		$row = $table->body()->row();
+		$row->td()->text_( 'Wordpress memory limit' );
+		$text = wpautop( sprintf( WP_MEMORY_LIMIT . "
+
+%s
+
+<code>define('WP_MEMORY_LIMIT', '512M');</code>
+",		$this->_( 'This can be increased by adding the following to your wp-config.php:' ) ) );
+		$row->td()->text( $text );
+
+		$row = $table->body()->row();
+		$row->td()->text_( 'Debug code' );
+		$text = WP_MEMORY_LIMIT;
+		$text = wpautop( sprintf( "%s
+
+<code>ini_set('display_errors','On');</code>
+<code>define('WP_DEBUG', true);</code>
+",		$this->p_( 'Add the following lines to your wp-config.php to help find out why errors or blank screens are occurring:' ) ) );
+		$row->td()->text( $text );
+
+		$row = $table->body()->row();
+		$row->td()->text_( 'Hooked into save_post' );
+		$hooks = $this->get_hooks( 'save_post' );
+		$row->td()->text( implode( "<br>\n", $hooks ) );
+
+		$row = $table->body()->row();
+		$row->td()->text_( 'Save post decoys' );
+		$row->td()->text( $this->get_site_option( 'save_post_decoys' ) );
+
+		$row = $table->body()->row();
+		$row->td()->text_( 'Save post priority' );
+		$row->td()->text( $this->get_site_option( 'save_post_priority' ) );
+
+		$row = $table->body()->row();
+		$row->td()->text_( 'Plugins active on blog' );
+		$plugins = $this->get_plugin_info_array( get_option( 'active_plugins' ) );
+		$row->td()->text( implode( "<br>\n", $plugins ) );
+
+		$row = $table->body()->row();
+		$row->td()->text_( 'Plugins active on network' );
+		$plugins = get_site_option( 'active_sitewide_plugins' );
+		$plugins = $this->get_plugin_info_array( array_keys( $plugins ) );
+		$row->td()->text( implode( "<br>\n", $plugins ) );
+
+		return $table;
 	}
 
 	/**

@@ -21,10 +21,13 @@ jQuery(document).ready(function($) {
       
       // multiple
       $('.ajax-load-more .categories select.multiple').select2({
-         placeholder : '-- Select Categories --',
+         placeholder : '-- '+  alm_admin_localize.select_cats +' --',
       });     
       $('.ajax-load-more .tags select.multiple').select2({
-         placeholder : '-- Select Tags --'         
+         placeholder : '-- '+ alm_admin_localize.select_tags +' --'         
+      });  
+      $('.ajax-load-more .authors select.multiple').select2({
+         placeholder : '-- '+ alm_admin_localize.select_authors +' --'         
       });
    };
    _alm.select2();
@@ -38,7 +41,8 @@ jQuery(document).ready(function($) {
       
       // multiple
       $('.ajax-load-more .categories select.multiple').select2();     
-      $('.ajax-load-more .tags select.multiple').select2();
+      $('.ajax-load-more .tags select.multiple').select2(); 
+      $('.ajax-load-more .authors select.multiple').select2();
    };   
             
      
@@ -150,7 +154,36 @@ jQuery(document).ready(function($) {
    */     
 
    _alm.buildShortcode = function(){
-      output = '[ajax_load_more';    
+      output = '[ajax_load_more';   
+                 
+      
+      // ---------------------------
+      // - ID      
+      // ---------------------------
+      
+      var unique_id = $('input#unique-id').val(); 
+      if(unique_id)
+         output += ' id="'+unique_id+'"';    
+      
+      
+      // ---------------------------
+      // - Container Type      
+      // ---------------------------
+      
+      var container_type = $('.container_type input[name=alm_container_type]:checked').val(); 
+      if(container_type)
+         output += ' container_type="'+container_type+'"';
+      
+      
+      // ---------------------------
+      // - Container Classes      
+      // ---------------------------
+      
+      var container_classes = $('.alm-instance-options input#container-classes').val();    
+      container_classes = $.trim(container_classes);       
+      if(container_classes !== '' && $('.alm-instance-options input#container-classes').hasClass('changed')) 
+         output += ' css_classes="'+container_classes+'"'; 
+               
       
       // ---------------------------
       // - Cache      
@@ -168,6 +201,38 @@ jQuery(document).ready(function($) {
             output += ' cache_id="'+cache_id+'"';  
       }else{
          $('.cache_id').slideUp(100, 'alm_easeInOutQuad')
+      }                 
+      
+      
+      // ---------------------------
+      // - Call to Actions      
+      // ---------------------------
+      
+      var cta_container = $('#alm-cta');
+      var cta = $('input[name=cta]:checked', cta_container).val(); 
+      var cta_position = $('input[name=cta-position]', cta_container).val(); 
+      var cta_before_after = $('select[name=cta-before-after]', cta_container).val();
+      var cta_repeater = $('select[name=cta-repeater-select]', cta_container).val(); 
+      var cta_theme_repeater = $('select[name=theme-repeater-select]', cta_container).val(); 
+      
+      if(cta !== 'false' && cta != undefined){         
+         $('.cta_template_wrap').slideDown(100, 'alm_easeInOutQuad');         
+         // Standard repeater
+         if(cta_repeater != '' && cta_repeater != undefined && cta_position != '' && cta_position != null){
+            output += ' cta="'+cta+'"'; 
+            output += ' cta_position="'+cta_before_after+':'+cta_position+'"'; 
+            output += ' cta_repeater="'+cta_repeater+'"'; 
+         }  
+         // Theme repeater
+         if(cta_theme_repeater != '' && cta_theme_repeater != undefined && cta_position != '' && cta_position != null){
+            output += ' cta="'+cta+'"'; 
+            output += ' cta_position="'+cta_before_after+':'+cta_position; 
+            output += ' cta_theme_repeater="'+cta_theme_repeater+'"'; 
+         }          
+         $('#sequence-update').text(cta_position); 
+         $('#sequence-update-before-after').text(cta_before_after);       
+      }else{         
+         $('.cta_template_wrap').slideUp(100, 'alm_easeInOutQuad');         
       } 
       
       
@@ -218,7 +283,7 @@ jQuery(document).ready(function($) {
       
       
       // ---------------------------
-      // - PAGING      
+      // - Paging      
       // ---------------------------     
       
       var paging = $('#alm-paging input[name=paging]:checked').val();
@@ -281,6 +346,43 @@ jQuery(document).ready(function($) {
          $('.prev_post_id').slideUp(100, 'alm_easeInOutQuad');
       }   
       
+        
+      
+      // ---------------------------
+      // - REST API      
+      // ---------------------------     
+       
+      var rest = $('#alm-rest input[name=rest]:checked').val(); 
+      if(rest !== 'false' && rest != undefined){            
+         $('.restapi_options').slideDown(100, 'alm_easeInOutQuad');
+         output += ' restapi="'+rest+'"';    
+         
+         var restapi_base = $('#alm-rest input#rest-base').val().trim(),
+             restapi_namespace = $('#alm-rest input#rest-namespace').val().trim(),
+             restapi_endpoint = $('#alm-rest input#rest-endpoint').val().trim(),
+             restapi_template_id = $('#alm-rest input#rest-template-id').val().trim(),
+             restapi_debug = $('#alm-rest input[name=rest-debug]:checked').val().trim(); 
+      
+         if(restapi_base !== '') 
+            output += ' restapi_base="'+restapi_base+'"';  
+      
+         if(restapi_namespace !== '') 
+            output += ' restapi_namespace="'+restapi_namespace+'"';  
+      
+         if(restapi_endpoint !== '') 
+            output += ' restapi_endpoint="'+restapi_endpoint+'"';  
+      
+         if(restapi_template_id !== ''){
+            restapi_template_id = restapi_template_id.replace("tmpl-", ""); // Remove tmpl- if present in value 
+            output += ' restapi_template_id="'+restapi_template_id+'"'; 
+         }
+      
+         if(restapi_debug !== '' && restapi_debug !== 'false') 
+            output += ' restapi_debug="'+restapi_debug+'"';  
+             
+      }else{
+         $('.restapi_options').slideUp(100, 'alm_easeInOutQuad')
+      }       
       
       
       // ---------------------------
@@ -293,26 +395,24 @@ jQuery(document).ready(function($) {
 	      
          output += ' seo="'+seo+'"';                   
       }
-      
-      
+            
       
       // ---------------------------
-      // - Repeater
+      // - Repeater Templates
       // ---------------------------
       
-      var repeater = $('select#repeater-select').val(),
-      	 theme_repeater = $('select#theme-repeater-select').val();
-      	 
+      var repeater = $('#alm-repeaters select[name=repeater-select]').val(),
+      	 theme_repeater = $('#alm-repeaters .select-theme-repeater select[name=theme-repeater-select]').val();
+      
       if(theme_repeater != 'null' && theme_repeater != '' && theme_repeater != undefined){
 	      output += ' theme_repeater="'+theme_repeater+'"';
       }else{
 	      if(repeater != '' && repeater != undefined && repeater != 'default'){
 		      output += ' repeater="'+repeater+'"';      
 	      }	      
-      }  
+      }           
       
-      
-         
+          
       // ---------------------------
       // - Post Types
       // ---------------------------
@@ -338,6 +438,14 @@ jQuery(document).ready(function($) {
       }
       
       
+      // ---------------------------
+      // - Posts Per Page       
+      // ---------------------------
+      
+      var posts_per_page = $('.posts_per_page input').val();        
+      if(posts_per_page > 0 && posts_per_page != 5)
+         output += ' posts_per_page="'+posts_per_page+'"';  
+              
         
       // ---------------------------
       // - Post Format
@@ -608,7 +716,7 @@ jQuery(document).ready(function($) {
       // ---------------------------
       
       var author = $('.authors #author-select').val();              
-      if(author !== '' && author !== undefined) 
+      if(author !== '' && author !== undefined && author !== null) 
          output += ' author="'+author+'"';   
       
       
@@ -648,16 +756,6 @@ jQuery(document).ready(function($) {
       
       
       // ---------------------------
-      // - Custom Arguments      
-      // ---------------------------
-      
-      var custom_args = $('.custom-arguments input').val();    
-      custom_args = $.trim(custom_args);       
-      if(custom_args !== '') 
-         output += ' custom_args="'+custom_args+'"'; 
-      
-      
-      // ---------------------------
       // - Ordering      
       // ---------------------------
       var order = $('select#post-order').val(),
@@ -686,14 +784,15 @@ jQuery(document).ready(function($) {
       
       
       // ---------------------------
-      // - Posts Per Page       
+      // - Custom Arguments      
       // ---------------------------
       
-      var posts_per_page = $('.posts_per_page input').val();        
-      if(posts_per_page > 0 && posts_per_page != 5)
-         output += ' posts_per_page="'+posts_per_page+'"';  
+      var custom_args = $('.custom-arguments input').val();    
+      custom_args = $.trim(custom_args);       
+      if(custom_args !== '') 
+         output += ' custom_args="'+custom_args+'"'; 
       
-      
+     
       // ---------------------------
       // - Pause Loading      
       // ---------------------------
@@ -702,8 +801,7 @@ jQuery(document).ready(function($) {
       if(pause_load === 't'){          
          output += ' pause="true"'; 
       }         
-            
-      
+                  
       
       // ---------------------------
       // - Scrolling      
@@ -722,7 +820,7 @@ jQuery(document).ready(function($) {
             output += ' scroll_distance="'+$('.scroll_distance input').val()+'"';   
             
          var max_pages = $('.max_pages input').val();   
-         if(max_pages != 5)           
+         if(max_pages != 0)           
             output += ' max_pages="'+$('.max_pages input').val()+'"';  
             
          var pause_override = $('.pause_override input[name=pause_override]:checked').val();  
@@ -739,6 +837,14 @@ jQuery(document).ready(function($) {
       var transition = $('.transition input[name=transition]:checked').val(); 
       if(transition !== 'slide')
          output += ' transition="'+transition+'"';
+         
+      var transition_speed = $('.transition input[name=transition-speed]').val(); 
+      if(transition_speed !== '250' && transition !== 'none')
+         output += ' transition_speed="'+transition_speed+'"';
+      
+      var transition_container = $('.transition input[name=remove_container]:checked').val(); 
+      if(transition_container === 'f' && seo !== 'true' && previous !== 'true')
+         output += ' transition_container="false"';
       
       
       // ---------------------------
@@ -751,7 +857,7 @@ jQuery(document).ready(function($) {
 
       
       // ---------------------------
-      // - disbale after       
+      // - Disable After       
       // ---------------------------
       
       var destroy_after = $('.destroy-after input[name=destroy-after]').val(); 
@@ -770,28 +876,7 @@ jQuery(document).ready(function($) {
          output += ' button_label="'+button_label+'"';  
       
       if(button_loading_label !== '')    
-         output += ' button_loading_label="'+button_loading_label+'"';  
-         
-      
-      
-      
-      // ---------------------------
-      // - Container Type      
-      // ---------------------------
-      
-      var container_type = $('.container_type input[name=alm_container_type]:checked').val(); 
-      if(container_type)
-         output += ' container_type="'+container_type+'"';
-      
-      
-      // ---------------------------
-      // - Container Classes      
-      // ---------------------------
-      
-      var container_classes = $('.alm-classes input#container-classes').val();    
-      container_classes = $.trim(container_classes);       
-      if(container_classes !== '' && $('.alm-classes input#container-classes').hasClass('changed')) 
-         output += ' css_classes="'+container_classes+'"';        
+         output += ' button_loading_label="'+button_loading_label+'"';        
       
       
       output += ']';  //Close shortcode          
@@ -803,6 +888,8 @@ jQuery(document).ready(function($) {
       	$('.reset-shortcode-builder').hide();
    }  
    
+    
+    
     
    /*
    *  On change events
@@ -821,14 +908,14 @@ jQuery(document).ready(function($) {
       el.addClass('changed');     
       
       // reset repeater templates 
-		if(el.attr('id') === 'repeater-select'){
-			$('select#theme-repeater-select').select2('val','');
+		if(el.attr('name') === 'repeater-select'){
+			$('.select-theme-repeater select[name=theme-repeater-select]').select2('val','');
 		}	
-		if(el.attr('id') === 'theme-repeater-select'){
-			if($('#theme-repeater-select').val() !== 'null' && $('#theme-repeater-select').val() !== ''){
-				$('select#repeater-select').select2('val','default');
+		if(el.attr('name') === 'theme-repeater-select'){
+			if($('.select-theme-repeater select[name=theme-repeater-select]').val() !== 'null' && $('.select-theme-repeater select[name=theme-repeater-select]').val() !== ''){
+				$('.repeater select[name=repeater-select]').select2('val','default');
 			}
-		}	
+		}			
 		
 		if(el.attr('id') === 'comments_template'){
 			$('#comments_callback').val('');
@@ -837,7 +924,7 @@ jQuery(document).ready(function($) {
       // If post type is not selected, select 'post'.
       if(!$('.post_types input[type=checkbox]:checked').length > 0){
          $('.post_types input[type=checkbox]#chk-post').prop('checked', true);
-      }       
+      }   
       
       // If Tax Term Operator is not selected, select 'IN'.
       if(!$('#tax-operator-select input[type=radio]:checked').length > 0){
@@ -867,28 +954,63 @@ jQuery(document).ready(function($) {
    
    
    
+   
    /*
-   *  Jump to section, Table of contents
+   *  Jump to section, Table of contents [Repeater Templates, Shortcode Builder]
    *
    *  @since 2.0.0
-   *  Updated v2.4
+   *  Updated v2.13.0
    */ 
    
-   var jumpOptions = '';
-   var toc = '';
-	$('.row').each(function(){
-	   if(!$(this).hasClass('no-brd')){ // Special case for back 2 top on shortcode builder landing
-   		var id = $(this).attr('id');
-   		var title = $(this).find('h3.heading').text();
-   		jumpOptions += '<option value="'+id+'">'+title+'</option>';
-		}
-	});
+	var jumpMenuOptions = '';
+	function almBuildJumpMenu(type){
+   	
+   	if(type === 'repeaters'){
+      	$('.row').each(function(){
+      	   if(!$(this).hasClass('no-brd')){ // Special case for back 2 top on shortcode builder landing
+         		var id = $(this).attr('id'),
+         		    title = $(this).find('h3.heading').text();
+         		jumpMenuOptions += '<option value="'+id+'">'+title+'</option>';
+      		}
+      	});
+   	}
+   	
+   	if(type === 'shortcode'){   	
+      	$('.shortcode-parameter-wrap').each(function(){
+            var el = $(this),
+                opttitle = el.find('h2').text();
+            jumpMenuOptions += '<optgroup label="'+opttitle+'">';
+            $('.row', el).each(function(){
+         	   if(!$(this).hasClass('no-brd')){ // Special case for back 2 top on shortcode builder landing
+            		var id = $(this).attr('id'),
+            		    title = $(this).find('h3.heading').text();
+            		jumpMenuOptions += '<option value="'+id+'">'+title+'</option>';
+         		}
+         	});
+         	jumpMenuOptions += '</optgroup>';   
+         });  
+      }    
+	}	
+	if($('.shortcode-builder .shortcode-parameter-wrap').length){
+   	almBuildJumpMenu('shortcode'); // shortcode builder
+	}
+	if($('#alm-repeaters .repeaters').length){
+   	if($('#unlmited-container').length){
+      	$('#unlmited-container .row').each(function(){
+         	var el = $(this),
+         	    id = el.find('.wrap').data('name');
+            el.attr('id', 'alm_'+id);
+      	});
+   	}
+   	almBuildJumpMenu('repeaters'); // repeater templates
+	}
+	
 	
 	
 	
 	/* Jump Menu */
 	
-	$('select.jump-menu').append(jumpOptions);
+	$('select.jump-menu').append(jumpMenuOptions);
 	$('select.jump-menu').change(function() {
 		var pos = $(this).val();
 		if(pos !== 'null'){
@@ -900,10 +1022,16 @@ jQuery(document).ready(function($) {
    
    
 	
+	
 	/* Table of Contents */
 	
-	$('.table-of-contents .toc').append('<option value="#">-- Jump to Option --</option>');
-	$('.table-of-contents .toc').append(jumpOptions).select2();	
+	if($('.table-of-contents').hasClass('repeaters-toc')){
+	   $('.table-of-contents .toc').append('<option value="#">-- '+ alm_admin_localize.jump_to_template +' --</option>');   	
+	} else {
+	   $('.table-of-contents .toc').append('<option value="#">-- '+ alm_admin_localize.jump_to_option +' --</option>');   	
+	}
+	
+	$('.table-of-contents .toc').append(jumpMenuOptions).select2();	
 	
 	$('.table-of-contents .toc').change(function() {
 	   var pos = $(this).val();
@@ -1041,21 +1169,24 @@ jQuery(document).ready(function($) {
    *  @since 2.6.0
    */  
    
-   _alm.generateUniqueID = function(length) {
+   _alm.generateUniqueID = function(length, el) {
        var id = Math.floor(Math.pow(10, length-1) + Math.random() * 9 * Math.pow(10, length-1));
-       $('#cache-id').val(id);     
+       $(el).val(id);    
+       //_alm.buildShortcode(); 
    }
    
    
    
    /*
-   *  Generate Unique Cache ID Click
+   *  Generate Unique/Cache ID
    *
    *  @since 2.6.0
    */    
    
-   $(document).on('click', '.generate-cache-id', function(){
-      _alm.generateUniqueID(10);
+   $(document).on('click', '.generate-id a', function(){
+	   var id = $(this).data('id'),
+	   	 el = $('#'+id);
+      _alm.generateUniqueID(10, el);
    }); 
    
 
