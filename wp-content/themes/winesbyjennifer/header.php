@@ -95,7 +95,7 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 				
 				<span class="offer_title">
 					
-					<span class="color_change">Free Gift!</span> Five Days to Expert Wine Tasting&nbsp;<sup>&reg;</sup> <span class="color_change">Click Here</span><!-- color_change -->
+					<span class="color_change">Free Gift!</span> Five Days to Expert Wine Tasting&nbsp;<sup>&reg;</sup> <span class="color_change">Click&nbsp;Here</span><!-- color_change -->
 				
 				</span><!-- offer_title -->
 				

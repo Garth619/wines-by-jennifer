@@ -199,19 +199,59 @@ get_header(); ?>
 	<div class="box_wrapper">
 		<?php include('boxes.php');?>
 	</div><!-- box_wrapper -->
-	<div class="events">
-		<div class="social_icon">
-			<img src="<?php bloginfo('template_directory');?>/images/fb.png"/>
-		</div><!-- social_icon -->
-		<div class="events_content">
-			<p>Lorem ipsum dolor sit amet, cons ectet ur adipi sicing elit, sed do eiusmod tem por inc idid unt ut labore et dolore magnrem ipsum dolor sit amet, cons ectet ur adipi sicing...</p>
-			<a class="read_more_main" href="">Read More <div class="arrow-right"></div></a>
-		</div><!-- events_content -->
-	</div><!-- events -->
-	<div class="testimonials">
+	
+	
+	
 		
-		<p>"Thank you for helping make our wedding and reception absolutely perfect! We were able to relax, enjoy the evening with loved ones, as well as enjoy the outstanding food and drink. It was truly a surreal and  magical evening."</p>
-		<img class="testimonial_img" src="<?php bloginfo('template_directory');?>/images/circle.png"/>
-	</div><!-- testimonials -->
+	<div class="new_events_wrapper">
+
+		<div class="inner_event">
+			
+			<span class="large_header">Events</span><!-- large_header -->
+			
+			<div class="single_event">
+			
+				<a href="">
+
+				<span class="title">Lorem ipsum dolor</span><!-- description -->
+			
+				<span class="description">Lorem ipsum dolor sit amet, conse ctetur adi pisicing elit, sed do eiusmod tem por in cid idunt ut labore et dolore magna aliq ua. Ut enim ad minim veniam, quis nostrud ex ercitation ullamco laboris nisi ut aliquip ex ea </span><!-- description -->
+			
+				<span class="events_read_more">Read More</span><!-- events_read_more -->
+			
+			</a>
+			
+			</div><!-- single_event -->
+			
+		</div><!-- inner_event -->
+		
+	</div><!-- new_events -->
+	
+	
+	<div class="my_blog">
+		
+		<span class="large_header">WBJ Blog</span><!-- large_header -->
+		
+		<div class="main_page_blog_post">
+		
+			<a href="">
+				
+				
+			
+				<img src="<?php bloginfo('template_directory');?>/images/blog-test.jpg"/>
+				
+				<span class="my_blog_title">Blog Title</span>
+			
+				<span class="blog_description">Lorem ipsum dolor sit amet, conse ctetur adi pisicing elit, sed do eiusmod tem por in cid idunt ut labore et dolore magna aliq ua. Ut enim ad minim veniam, quis nostrud ex ercitation ullamco laboris nisi ut aliquip ex ea commodo conse quat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillu</span>
+			
+				<span class="blog_readmore">Read More</span><!-- blog_readmore -->
+			
+			</a>
+			
+		</div><!-- main_page_blog_post -->
+		
+	</div><!-- my_blog -->
+	
+	
 
 <?php get_footer(); ?>
