@@ -144,6 +144,16 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 			
 			
 		</div><!-- mymobile_header -->
+		
+		<nav class="mymobile_dropdown">
+			
+			<span class="myclose">Close X</span><!-- close -->
+			
+			<ul>
+				<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
+			</ul>
+			
+		</nav><!-- mymobile_dropdown -->
 	
 		
 		<div class="bg_bug"></div><!-- bg_bug -->
@@ -204,24 +214,7 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 				
 		</div><!-- header -->		
 				
-			<?php if(is_handheld()): ?>
-			
-				<div class="nav">
-					
-					<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
-					<div class="social_icons_wrapper">
-						<ul class="social_icons">
-							<li><a href="https://www.facebook.com/WinesByJennifer" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/facebook.png"/></a></li>
-							<li><a href="" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/google-plus.png"/></a></li>
-							<li><a href="https://twitter.com/WinesByJennifer" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/twitter.png"/></a></li>
-							<li><a href="" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/instagram.png"/></a></li>
-							<li><a href="http://www.youtube.com/user/WinesByJennifer" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/youtube.png"/></a></li>
-						</ul>
-					</div><!-- social_icons_wrapper -->
-				</div><!-- nav -->
-			
-			<?php endif;?>
-			
+						
 			<?php if(!is_handheld()): ?>
 			
 			<div class="modernizr_wrapper">

@@ -893,6 +893,7 @@ flex-direction: row;
 		}
 		.my_mobile_menu_wrapper {
 			width:120px;
+			cursor: pointer;
 			.sign_in_wrapper {
 				float:right;
 				padding-right:10px;
@@ -925,6 +926,76 @@ flex-direction: row;
 }
 
 
+/* Mobile Nav */
+
+.mymobile_dropdown {
+	position:fixed;
+	display: none;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:$green;
+	z-index:100;
+	text-align: center;
+	overflow-y: scroll;
+	padding-top:70px;
+	span.myclose {
+		color:$yellow;
+		position: absolute;
+		top:25px;
+		right:25px;
+		font-size:18px;
+		cursor: pointer;
+	}
+	.menu-header {
+		
+		padding-bottom:50px;
+		ul {
+			list-style: none;
+			li {
+				font-size:18px;
+				text-transform: uppercase;
+				a {
+					color:#fff;
+					text-decoration: none;
+					margin-bottom:18px;
+					display: block;
+					transition: all .2s ease-in-out;
+					&:hover {
+						color:$yellow;
+					}
+				}
+			}
+		}
+		ul.menu {
+			> li {
+				> a {
+					
+				}
+				> ul.sub-menu.myopen {
+					max-height:3000px;
+					opacity: 1;
+					visibility: visible;
+					
+				}
+				> ul.sub-menu {
+					opacity:0;
+					visibility: hidden;
+					max-height:0;
+					transition: all .2s ease-in-out;
+					> li {
+						> a {
+							
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
 
 /* Events */
 
@@ -937,17 +1008,17 @@ flex-direction: row;
 	.inner_event {
 		background:#fff;
 		text-align: center;
-		padding:35px 15px;
+		padding:35px 15px 95px;
 		span.large_header {
-				font-family: $cinzel;
-				font-size:40px;
-				color:$purple;
-				display: inline-block;
-				margin-bottom:30px;
-				border-bottom: 2px solid $purple;
-				padding-bottom:7px;
-				font-weight: bold;
-			}
+			font-family: $cinzel;
+			font-size:40px;
+			color:$purple;
+			display: inline-block;
+			margin-bottom:30px;
+			border-bottom: 2px solid $purple;
+			padding-bottom:7px;
+			font-weight: bold;
+		}
 		.single_event {
 			
 			span.title {
@@ -961,15 +1032,29 @@ flex-direction: row;
 			span.description {
 				line-height: 23px;
 				color:$grey;
+				display: block;
 			}
 			span.events_read_more {
-				color:$purple;
+				color:#fff;
 				text-transform: uppercase;
-				display: block;
+				display: inline-block;
 				margin-top:20px;
 				font-size:15px;
+				background:$purple;
+				padding:8px 20px;
 			}
 		}
+	}
+}
+
+
+.myarrows {
+	width:90px;
+	margin:0 auto;
+	position: relative;
+	top:-65px;
+	img {
+		margin:0 5px;
 	}
 }
 
@@ -982,7 +1067,7 @@ flex-direction: row;
 .my_blog {
 	text-align: center;
 	background: #fff;
-	padding:55px 25px;
+	padding:55px 25px 75px;
 	a {text-decoration: none;}
 	span.large_header {
 		font-family: $cinzel;
@@ -998,15 +1083,78 @@ flex-direction: row;
 		.my_blog_title {
 			color:$purple;
 			text-transform: uppercase;
-			letter-spacing: 2px;
+			letter-spacing: 1.2px;
 			display: block;
 			margin-bottom:14px;
+			margin-top:25px;
 		}
 		img {
 			max-width: 100%;
 			height:auto;
 		}
+		.blog_description {
+			color:#000;
+			line-height:20px;
+			display: block;
+		}
+		.blog_readmore {
+			display: inline-block;
+			margin-top:20px;
+			text-transform: uppercase;
+			color:$purple;
+			letter-spacing: 1.2px;
+			background:$purple;
+				padding:8px 20px;
+				color:#fff;
+		}
 	}
+	.myarrows {
+		top:0;
+		margin-top:35px;
+	}
+}
+
+
+/* Testimonials */
+
+
+.my_testimonials {
+	background:#811d49;
+	text-align: center;
+	padding:35px 25px 30px;
+	a {text-decoration: none;}
+	.single_testimonial {
+		width:90%;
+			margin:0 auto;
+		img.mytestimonial_img {
+			border-radius: 50%;
+			width:95px;
+			display: inline-block;
+		}
+		span.my_testimonial_name {
+			color:#fff;
+			text-transform: uppercase;
+			display: block;
+			margin-top:25px;
+			margin-bottom:14px;
+		}
+		span.my_testimonial_content {
+			color:#fff;
+			text-decoration: none;
+			line-height: 20px;
+			
+		}
+	}
+	.myarrows {
+		top:0;
+		margin-top:45px;
+	}
+}
+
+
+
+.footer {
+	width:100%;
 }
 
 
@@ -1041,6 +1189,7 @@ flex-direction: row;
 	color:#fff;
 	text-transform: uppercase;
 	font-size:15px;
+	display: none;
 }
 
 .desktop_store_wrap {
@@ -1104,6 +1253,7 @@ flex-direction: row;
 }
 
 
+/*
 .menu-header {
 	background: #fff;
 	overflow: hidden;
@@ -1147,13 +1297,16 @@ flex-direction: row;
 		
 	}
 }	
+*/
 
 
+/*
 ul.sub-menu {
 			
 				display: none;
 			
 		}
+*/
 
 
 
@@ -1350,10 +1503,10 @@ ul.sub-menu {
 }
 
 .footer {
-	width:92%;
+// 	width:92%;
 	background:url(images/green-texture.png) top left repeat $green;
 	font-size:15px;
-	margin:0 auto 35px;
+	margin:0 auto;
 	color:#fff;
 	text-align: center;
 	padding:25px;

@@ -209,6 +209,10 @@ get_header(); ?>
 			
 			<span class="large_header">Events</span><!-- large_header -->
 			
+			
+			<div class="event_slider">
+			
+			
 			<div class="single_event">
 			
 				<a href="">
@@ -223,7 +227,61 @@ get_header(); ?>
 			
 			</div><!-- single_event -->
 			
+			<div class="single_event">
+			
+				<a href="">
+
+				<span class="title">Lorem ipsum dolor</span><!-- description -->
+			
+				<span class="description">Lorem ipsum dolor sit amet, conse ctetur adi pisicing elit, sed do eiusmod tem por in cid idunt ut labore et dolore magna aliq ua. Ut enim ad minim veniam, quis nostrud ex ercitation ullamco laboris nisi ut aliquip ex ea </span><!-- description -->
+			
+				<span class="events_read_more">Read More</span><!-- events_read_more -->
+			
+			</a>
+			
+			</div><!-- single_event -->
+			
+			<div class="single_event">
+			
+				<a href="">
+
+				<span class="title">Lorem ipsum dolor</span><!-- description -->
+			
+				<span class="description">Lorem ipsum dolor sit amet, conse ctetur adi pisicing elit, sed do eiusmod tem por in cid idunt ut labore et dolore magna aliq ua. Ut enim ad minim veniam, quis nostrud ex ercitation ullamco laboris nisi ut aliquip ex ea </span><!-- description -->
+			
+				<span class="events_read_more">Read More</span><!-- events_read_more -->
+			
+			</a>
+			
+			</div><!-- single_event -->
+			
+			<div class="single_event">
+			
+				<a href="">
+
+				<span class="title">Lorem ipsum dolor</span><!-- description -->
+			
+				<span class="description">Lorem ipsum dolor sit amet, conse ctetur adi pisicing elit, sed do eiusmod tem por in cid idunt ut labore et dolore magna aliq ua. Ut enim ad minim veniam, quis nostrud ex ercitation ullamco laboris nisi ut aliquip ex ea </span><!-- description -->
+			
+				<span class="events_read_more">Read More</span><!-- events_read_more -->
+			
+			</a>
+			
+			</div><!-- single_event -->
+			
+			</div><!-- event_slider -->
+			
 		</div><!-- inner_event -->
+		
+		
+		<div class="myarrows">
+			
+			<img class="myprev" src="<?php bloginfo('template_directory');?>/images/myleft.png"/>
+			<img class="mynext" src="<?php bloginfo('template_directory');?>/images/myright.png"/>
+			
+		</div><!-- myarrows -->
+		
+		
 		
 	</div><!-- new_events -->
 	
@@ -231,6 +289,11 @@ get_header(); ?>
 	<div class="my_blog">
 		
 		<span class="large_header">WBJ Blog</span><!-- large_header -->
+		
+		
+		
+		<div class="blog_slider">
+		
 		
 		<div class="main_page_blog_post">
 		
@@ -250,7 +313,112 @@ get_header(); ?>
 			
 		</div><!-- main_page_blog_post -->
 		
-	</div><!-- my_blog -->
+		<div class="main_page_blog_post">
+		
+			<a href="">
+				
+				
+			
+				<img src="<?php bloginfo('template_directory');?>/images/blog-test.jpg"/>
+				
+				<span class="my_blog_title">Blog Title</span>
+			
+				<span class="blog_description">Lorem ipsum dolor sit amet, conse ctetur adi pisicing elit, sed do eiusmod tem por in cid idunt ut labore et dolore magna aliq ua. Ut enim ad minim veniam, quis nostrud ex ercitation ullamco laboris nisi ut aliquip ex ea commodo conse quat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillu</span>
+			
+				<span class="blog_readmore">Read More</span><!-- blog_readmore -->
+			
+			</a>
+			
+		</div><!-- main_page_blog_post -->
+		
+		<div class="main_page_blog_post">
+		
+			<a href="">
+				
+				
+			
+				<img src="<?php bloginfo('template_directory');?>/images/blog-test.jpg"/>
+				
+				<span class="my_blog_title">Blog Title</span>
+			
+				<span class="blog_description">Lorem ipsum dolor sit amet, conse ctetur adi pisicing elit, sed do eiusmod tem por in cid idunt ut labore et dolore magna aliq ua. Ut enim ad minim veniam, quis nostrud ex ercitation ullamco laboris nisi ut aliquip ex ea commodo conse quat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillu</span>
+			
+				<span class="blog_readmore">Read More</span><!-- blog_readmore -->
+			
+			</a>
+			
+		</div><!-- main_page_blog_post -->
+		
+		</div><!-- blog_slider -->
+		
+		<div class="myarrows">
+			
+			<img class="myprev" src="<?php bloginfo('template_directory');?>/images/myleft.png"/>
+			<img class="mynext" src="<?php bloginfo('template_directory');?>/images/myright.png"/>
+			
+		</div><!-- myarrows -->
+		
+		</div><!-- my_blog -->
+		
+		<div class="my_testimonials">
+			
+			<div class="testimonials_slider">
+			
+			<div class="single_testimonial">
+				
+				<a href="">
+					
+					<img class="mytestimonial_img" src="<?php bloginfo('template_directory');?>/images/testimonials.png"/>
+					
+					<span class="my_testimonial_name">Lorem ipsum dolor</span><!-- my_testimonial_name -->
+					
+					<span class="my_testimonial_content">"Lorem ipsum dolor sit amet, conse ctetur adi pisicing elit, sed do eiusmod tem por in cid idunt ut labore et dolore magna aliq ua. Ut enim ad minim veniam, quis nostrud ex ercitation ullamco laboris nisi ut aliquip ex ea commodo conse quat. Duis aute irure dolor in"</span><!-- my_testimonial_content -->
+					
+				</a>
+				
+			</div><!-- single_testimonial -->
+			
+			<div class="single_testimonial">
+				
+				<a href="">
+					
+					<img class="mytestimonial_img" src="<?php bloginfo('template_directory');?>/images/testimonials.png"/>
+					
+					<span class="my_testimonial_name">Lorem ipsum dolor</span><!-- my_testimonial_name -->
+					
+					<span class="my_testimonial_content">"Lorem ipsum dolor sit amet, conse ctetur adi pisicing elit, sed do eiusmod tem por in cid idunt ut labore et dolore magna aliq ua. Ut enim ad minim veniam, quis nostrud ex ercitation ullamco laboris nisi ut aliquip ex ea commodo conse quat. Duis aute irure dolor in"</span><!-- my_testimonial_content -->
+					
+				</a>
+				
+			</div><!-- single_testimonial -->
+			
+			<div class="single_testimonial">
+				
+				<a href="">
+					
+					<img class="mytestimonial_img" src="<?php bloginfo('template_directory');?>/images/testimonials.png"/>
+					
+					<span class="my_testimonial_name">Lorem ipsum dolor</span><!-- my_testimonial_name -->
+					
+					<span class="my_testimonial_content">"Lorem ipsum dolor sit amet, conse ctetur adi pisicing elit, sed do eiusmod tem por in cid idunt ut labore et dolore magna aliq ua. Ut enim ad minim veniam, quis nostrud ex ercitation ullamco laboris nisi ut aliquip ex ea commodo conse quat. Duis aute irure dolor in"</span><!-- my_testimonial_content -->
+					
+				</a>
+				
+			</div><!-- single_testimonial -->
+			
+			</div><!-- testimonials_slider -->
+			
+			<div class="myarrows">
+			
+			<img class="myprev" src="<?php bloginfo('template_directory');?>/images/whiteleft.png"/>
+			<img class="mynext" src="<?php bloginfo('template_directory');?>/images/whiteright.png"/>
+			
+		</div><!-- myarrows -->
+			
+			
+		</div><!-- my_testimonials -->
+		
+	
 	
 	
 
