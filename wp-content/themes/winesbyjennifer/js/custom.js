@@ -7,6 +7,22 @@ jQuery(document).ready(function(){
   });	
   
   
+  // Search Overlay
+  
+  
+  jQuery('.mysearchicon').click(function(){
+	  
+	  jQuery('.search_overlay').slideDown();
+	  
+  });
+  
+  jQuery('.mysearchclose').click(function(){
+	  
+	  jQuery('.search_overlay').slideUp();
+	  
+  });
+  
+  
   // Mobile Menu
   
   
@@ -47,7 +63,7 @@ jQuery(document).ready(function(){
 			// Newsletter
 		
 		
-			jQuery('.newsletter_signup').click(function(){
+			jQuery('.newsletter_signup, .mobile_offer').click(function(){
 				
 				jQuery('.overlay').addClass('open');
 				jQuery('.newsletter_overlay_content').fadeIn(50);

@@ -85,8 +85,7 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 
 <body <?php body_class(); ?>>
 
-				
-		
+
 	
 		
 		<div class="mymobile_header">
@@ -107,7 +106,7 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 					
 					<a href=""><img class="icon" src="<?php bloginfo('template_directory');?>/images/cart.png"/></a>
 					<a href=""><img class="icon" src="<?php bloginfo('template_directory');?>/images/pin.png"/></a>
-					<a href=""><img class="icon" src="<?php bloginfo('template_directory');?>/images/search.png"/></a>
+					<img class="icon mysearchicon" src="<?php bloginfo('template_directory');?>/images/search.png"/>
 					
 				</div><!-- mymobile_icons_wrapper -->
 				
@@ -154,6 +153,18 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 			</ul>
 			
 		</nav><!-- mymobile_dropdown -->
+		
+		
+		
+		
+		<div class="search_overlay">
+			
+			<span class="mysearchclose">Close X</span><!-- close -->
+			
+			<?php get_search_form(); ?>
+			
+			
+		</div><!-- search_overlay -->
 	
 		
 		<div class="bg_bug"></div><!-- bg_bug -->

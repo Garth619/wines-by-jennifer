@@ -5,6 +5,14 @@ Author: Garrett Cullen
 *, *:before, *:after {
   box-sizing: border-box; }
 
+html {
+  -webkit-text-size-adjust: 100%; }
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05); }
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -748,7 +756,10 @@ h3#reply-title {
 
 --------------------------------------------- */
 .wrapper {
-  width: 100%; }
+  width: 100%;
+  background: url(images/cloth.jpg) top left repeat;
+  border: 2px solid #fff;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.75); }
 
 /* New Mobile */
 .mymobile_header {
@@ -762,7 +773,8 @@ h3#reply-title {
     color: #272727;
     font-size: 17px;
     letter-spacing: 0.2px;
-    line-height: 22px; }
+    line-height: 22px;
+    cursor: pointer; }
     .mymobile_header .mobile_offer span.offer_title {
       padding: 10px 4px;
       display: block; }
@@ -784,7 +796,8 @@ h3#reply-title {
       .mymobile_header .mymenu_main .mymobile_icons_wrapper img.icon {
         width: 30px;
         height: 30px;
-        margin-right: 0px; }
+        margin-right: 0px;
+        cursor: pointer; }
     .mymobile_header .mymenu_main .mylogo_wrapper {
       -webkit-box-flex: 1;
           -ms-flex-positive: 1;
@@ -863,6 +876,56 @@ h3#reply-title {
       max-height: 0;
       -webkit-transition: all .2s ease-in-out;
       transition: all .2s ease-in-out; }
+
+/* Search Form */
+.search_overlay {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #163b2b;
+  z-index: 100;
+  text-align: center;
+  overflow-y: scroll;
+  padding-top: 70px; }
+  .search_overlay form {
+    padding: 0 35px; }
+    .search_overlay form label {
+      display: none; }
+    .search_overlay form input[type="text"] {
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: 1px solid #fff;
+      background: transparent;
+      box-shadow: none;
+      color: #fff;
+      width: 100%;
+      font-size: 20px;
+      padding-bottom: 10px;
+      font-family: "Lato", sans-serif;
+      border-radius: 0; }
+    .search_overlay form input[type="submit"] {
+      background: #8c2555;
+      color: #fff;
+      border: none;
+      padding: 8px 20px;
+      font-size: 17px;
+      text-transform: uppercase;
+      margin-top: 25px;
+      cursor: pointer;
+      border-radius: 0;
+      -webkit-appearance: none; }
+
+.mysearchclose {
+  color: #E5C854;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-size: 18px;
+  cursor: pointer; }
 
 /* Events */
 .new_events_wrapper {
@@ -1734,6 +1797,11 @@ body.single .inner_banner .banner_overlay a {
 body.single .inner_banner .banner_overlay a:hover {
   color: #E5C854; }
 
+@media screen and (min-width: 400px) {
+  .box .box_text_wrap h2 {
+    font-size: 45px; } }
+
+/* Media Query */
 @media screen and (min-width: 660px) {
   .intro {
     overflow: hidden;
@@ -1884,9 +1952,6 @@ body.single .inner_banner .banner_overlay a:hover {
 		}
 */
   .wrapper {
-    background: url(images/cloth.jpg) top left repeat;
-    border: 2px solid #fff;
-    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.75);
     max-width: 1175px;
     margin: 35px auto 0; }
   .header {
