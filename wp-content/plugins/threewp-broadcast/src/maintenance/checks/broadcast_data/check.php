@@ -36,8 +36,9 @@ extends \threewp_broadcast\maintenance\checks\check
 	**/
 	public function blogname( $blog_id )
 	{
-		if ( switch_to_blog( $blog_id ) === true )
+		if ( ThreeWP_Broadcast()->blog_exists( $blog_id ) )
 		{
+			switch_to_blog( $blog_id );
 			$r = sprintf( '%s %s', get_bloginfo( 'name' ), $blog_id );
 			restore_current_blog();
 		}
@@ -53,8 +54,9 @@ extends \threewp_broadcast\maintenance\checks\check
 	**/
 	public function blogpost( $blog_id, $post_id )
 	{
-		if ( switch_to_blog( $blog_id ) === true )
+		if ( ThreeWP_Broadcast()->blog_exists( $blog_id ) )
 		{
+			switch_to_blog( $blog_id );
 			$post = get_post( $post_id );
 			$r = sprintf( '<a href="%s">%s</a> on %s (%s)',
 				get_permalink( $post_id ),
@@ -399,16 +401,14 @@ extends \threewp_broadcast\maintenance\checks\check
 
 	public function blog_and_post_exists( $blog_id, $post_id )
 	{
-		$ok = true;
+		if ( ! ThreeWP_Broadcast()->blog_exists( $blog_id ) )
+			return false;
+
 		switch_to_blog( $blog_id );
-		$url = get_bloginfo( 'url' );
-		$ok = ( $url != '' );
-		if ( $ok )
-		{
-			$post = get_post( $post_id );
-			$ok = ( $post !== null );
-		}
+		$post = get_post( $post_id );
+		$ok = ( $post !== null );
 		restore_current_blog();
+
 		return $ok;
 	}
 

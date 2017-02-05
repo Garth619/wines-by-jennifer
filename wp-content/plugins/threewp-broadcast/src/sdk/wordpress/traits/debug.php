@@ -156,9 +156,11 @@ trait debug
 		if ( $ips == '' )
 			return true;
 
+		$ips = str_replace( "\r", '', $ips );
 		$lines = explode( "\n", $ips );
+		$lines = array_filter( $lines );
 		foreach( $lines as $line )
-			if ( strpos( $_SERVER[ 'REMOTE_ADDR' ], $line ) !== false )
+			if ( strpos( $_SERVER[ 'REMOTE_ADDR' ], trim( $line ) ) !== false )
 				return true;
 
 		// No match = not debugging for this user.

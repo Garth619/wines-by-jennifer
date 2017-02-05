@@ -351,14 +351,8 @@ class broadcasting_data
 		foreach( $blogs as $blog )
 		{
 			$blog_id = $blog->id;
-
-			switch_to_blog( $blog_id );
-
-			if ( get_current_blog_id() != $blog_id )
+			if ( ! ThreeWP_Broadcast()->blog_exists( $blog_id ) )
 				continue;
-
-			restore_current_blog();
-
 			$this->blogs->put( $blog->id, $blog );
 		}
 

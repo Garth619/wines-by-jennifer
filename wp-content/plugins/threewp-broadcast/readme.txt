@@ -4,7 +4,7 @@ License: GPLv3
 Requires at least: 3.9
 Stable tag: trunk
 Tags: broadcast, multipost, sharing, share content, duplicate, posts, syndicate, syndication, marketing, threewp, linking, aggregator, aggregation, autoblogging, news, content hub, content sharing, publishing
-Tested up to: 4.7.1
+Tested up to: 4.7.2
 
 Network content syndication made easy! Automatically share content by multiposting between multisite blogs.
 
@@ -12,7 +12,7 @@ Network content syndication made easy! Automatically share content by multiposti
 
 = Network Content Syndication Made Easy! =
 
-Automatically share content by multiposting between multisite blogs. Syndicate posts to other blogs, update posts between blogs, share content templates, etc. Broadcasted posts can be linked to their parents, which updates child posts when the parent post is updated. This includes all data: title, slug, content, custom fields, attachments, etc.
+Automatically share content by multiposting between multisite blogs. Syndicate posts to other blogs, update posts between blogs, sync posts, share content templates, etc. Broadcasted posts can be linked to their parents, which updates child posts when the parent post is updated. This includes all data: title, slug, content, custom fields, attachments, etc.
 
 Broadcast is great for:
 
@@ -289,6 +289,16 @@ Xcache v2 does not support PHP namespaces, which is a PHP 5.3 feature. Trying to
 Xcache v3, which does support namespaces, has not yet been tested. Anyone with Xcache v3 experience is welcome to contact me with info.
 
 == Changelog ==
+
+= 35.8 20170203 =
+
+* Fix: Make the unchecked post actions in the meta box work again. A previous change in 35.5 broke the delete/trash option from the select box that appears when a broadcasted post is unchecked in the meta box.
+
+= 35.7 20170127 =
+
+* New: Add special check for incompatible plugins (only Post Type Switcher so far) and show an error message instead of broadcasting.
+* Fix: Check that the child blog exists before broadcasting to it. Fixes maintenance checks failing when blogs have been deleted.
+* Fix: Do extra image URL replacements in the content for all copied attachments. Requires that the images have been copied during the broadcast (attaching the image to the blog, or referring to the image in a gallery will suffice). This will take care of images that are statically referenced within shortcodes.
 
 = 35.5 20170113 =
 

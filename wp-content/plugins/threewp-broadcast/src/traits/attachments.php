@@ -387,6 +387,10 @@ trait attachments
 					$old_match = $new_match;
 				}
 			}
+
+			// Replace whatever is left.
+			$content = str_replace( $a->old->guid, $a->new->guid, $content, $count );
+			$this->debug( 'Replaced %s occurrences of %s with %s', $count, $a->old->guid, $a->new->guid );
 		}
 		return $content;
 	}

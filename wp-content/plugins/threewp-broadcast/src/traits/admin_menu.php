@@ -380,6 +380,15 @@ trait admin_menu
 	}
 
 	/**
+		@brief		Init the admin menu trait.
+		@since		2017-01-31 15:08:51
+	**/
+	public function admin_menu_trait_init()
+	{
+		$this->add_filter( 'plugin_row_meta', 10, 2 );
+	}
+
+	/**
 		@brief		Allow tabs to be shown when deleting / trashing / whatever a post from the post overview.
 		@since		2014-10-19 14:22:54
 	**/
@@ -453,6 +462,26 @@ trait admin_menu
 		$action->execute();
 
 		echo $tabs;
+	}
+
+	/**
+		@brief		plugin_row_meta
+		@since		2017-01-31 15:10:07
+	**/
+	public function plugin_row_meta( $input, $file )
+	{
+		// We only care about ourself.
+		if ( strpos( $file, $this->paths( 'filename' ) ) === false )
+			return $input;
+
+		$links = [];
+
+		if ( ThreeWP_Broadcast()->menu_page()->has( 'threewp_broadcast_premium_pack_info' ) )
+			$links []= '<a href="https://broadcast.plainviewplugins.com" title="View the available Broadcast add-on packs">Add-ons</a>';
+
+		$input = array_merge( $input, $links );
+
+		return $input;
 	}
 
 	/**

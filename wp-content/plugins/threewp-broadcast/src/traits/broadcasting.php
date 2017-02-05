@@ -258,6 +258,12 @@ trait broadcasting
 
 		foreach( $bcd->blogs as $child_blog )
 		{
+			if ( ! $this->blog_exists( $child_blog->get_id() ) )
+			{
+				$this->debug( 'Blog %s does not exist anymore. Skipping!', $child_blog->get_id() );
+				continue;
+			}
+
 			$child_blog->switch_to();
 			$bcd->current_child_blog_id = $child_blog->get_id();
 			$this->debug( 'Switched to blog %s (%s)', get_bloginfo( 'name' ), $bcd->current_child_blog_id );
@@ -900,7 +906,6 @@ trait broadcasting
 				switch_to_blog( $blog_id );
 
 				$post_id = $bcd->meta_box_data->broadcast_data->get_linked_post_on_this_blog();
-				$unlink = false;
 
 				$post_action = new actions\post_action();
 				$post_action->action = $unchecked_child_blogs_action;
@@ -911,22 +916,23 @@ trait broadcasting
 				switch( $unchecked_child_blogs_action )
 				{
 					case 'delete':
-					case 'unlink':
-						$unlink = true;
+						$this->debug( 'Deleting child post %s', $post_id );
+						wp_delete_post( $post_id, true );
 						break;
-					break;
-				}
-
-				if ( $unlink )
-				{
-					$this->debug( 'Unlinking child post %s', $post_id );
-					$bcd->meta_box_data->broadcast_data->remove_linked_child( $blog_id );
-					$this->delete_post_broadcast_data( get_current_blog_id(), $post_id );
+					case 'trash':
+						$this->debug( 'Trashing child post %s', $post_id );
+						wp_delete_post( $post_id );
+						break;
+					case 'unlink':
+						$this->debug( 'Unlinking child post %s', $post_id );
+						$bcd->meta_box_data->broadcast_data->remove_linked_child( $blog_id );
+						$this->delete_post_broadcast_data( get_current_blog_id(), $post_id );
+						break;
 				}
 
 				restore_current_blog();
 
-				$this->debug( 'Resaving braodcast data.' );
+				$this->debug( 'Resaving broadcast data.' );
 				$this->set_post_broadcast_data( get_current_blog_id(), $bcd->post->ID, $bcd->meta_box_data->broadcast_data );
 			}
 		}

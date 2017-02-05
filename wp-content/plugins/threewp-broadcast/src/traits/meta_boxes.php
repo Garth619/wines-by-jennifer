@@ -95,6 +95,25 @@ trait meta_boxes
 	{
 		$meta_box_data = $action->meta_box_data;	// Convenience.
 
+		// Check for incompatible plugins. This is thanks to Post Type Switcher which has now caused me enough headache.
+		$plugins = array_keys( get_site_option( 'active_sitewide_plugins' ) );
+		$plugins = array_merge( $plugins, get_option( 'active_plugins' ) );
+		$incompatible_plugins = array_intersect( $plugins, static::$incompatible_plugins );
+		if ( count( $incompatible_plugins ) > 0 )
+		{
+			$meta_box_data->html->put( 'incompatible_plugins1', $this->p_( 'Please disable the following incompatible plugins before using Broadcasting:' ) );
+			$incompatible_plugins = $this->get_plugin_info_array( $incompatible_plugins );
+			// Extract only the middle part.
+			foreach( $incompatible_plugins as $index => $string )
+			{
+				$parts = explode( ',', $string );
+				$string = trim( $parts[ 1 ] );
+				$incompatible_plugins[ $index ] = $string;
+			}
+			$meta_box_data->html->put( 'incompatible_plugins2', implode( "<br>\n", $incompatible_plugins ) );
+			return;
+		}
+
 		// Add translation strings
 		$meta_box_data->html->put( 'broadcast_strings', '
 			<script type="text/javascript">

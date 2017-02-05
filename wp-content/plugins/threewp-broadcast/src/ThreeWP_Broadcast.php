@@ -76,6 +76,14 @@ class ThreeWP_Broadcast
 	public $display_premium_pack_info = true;
 
 	/**
+		@brief		An array of incompatible plugins that prevent Broadcast from working.
+		@since		2017-01-16 17:14:35
+	**/
+	public static $incompatible_plugins = [
+		'post-type-switcher/post-type-switcher.php',
+	];
+
+	/**
 		@brief		Caches permalinks looked up during this page view.
 		@see		post_link()
 		@since		20130923
@@ -131,6 +139,8 @@ class ThreeWP_Broadcast
 
 		if ( $this->get_site_option( 'canonical_url' ) )
 			$this->add_action( 'wp_head', 1 );
+
+		$this->admin_menu_trait_init();
 
 		$this->permalink_cache = (object)[];
 	}
@@ -495,6 +505,16 @@ class ThreeWP_Broadcast
 	public function api()
 	{
 		return new api();
+	}
+
+	/**
+		@brief		Checks whether a blog exists.
+		@details	Yes, Wordpress' switch_to_blog() doesn't do that check and ALWAYS RETURNS TRUE (!!!!).
+		@since		2017-01-18 20:10:26
+	**/
+	public function blog_exists( $blog_id )
+	{
+		return get_blog_status( $blog_id, 'blog_id' ) == $blog_id;
 	}
 
 	/**
