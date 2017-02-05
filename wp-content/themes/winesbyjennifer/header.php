@@ -206,9 +206,15 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 				
 				<div class="right_header">
 					<div class="desktop_store_wrap">
-						shopping cart will go here<br/>
-						search will go here
-						<?php //get_search_form();?>
+						
+						<span style="margin-bottom:4px;display:block">shopping cart will go here</span>
+						
+						<div class="desktop_search">
+						
+							<?php get_search_form(); ?>
+						
+						</div><!-- desktop_search -->
+					
 					</div><!-- desktop_store_wrap -->
 					<div class="newsletter_signup">
 						<img class="newsletter_bg" src="<?php bloginfo('template_directory');?>/images/newsletter.png"/>

@@ -36,5 +36,10 @@ get_header(); ?>
 			</div>
 		</div>
 
+<div class="box_wrapper inner wow fadeIn" data-wow-delay="0.2s">
+		
+		<?php include('boxes.php');?>
+
+	</div><!-- box_wrapper -->
 
 <?php get_footer(); ?>
