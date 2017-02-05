@@ -80,18 +80,8 @@ get_header(); ?>
 			
 		</div><!-- desktop_testimomials -->
 		
-		<?php if(is_handheld()): ?>
-		
-			<div class="slideshow">
 			
-				<div class="slide" style="background:url(<?php bloginfo('template_directory');?>/images/slide2.jpg) top center no-repeat;background-size:cover;"></div><!-- slide -->
-				
-			
-			</div><!-- slideshow -->
 		
-		<?php endif;?>
-		
-		<?php if(!is_handheld()): ?>
 		
 			<div class="slideshow cycle-slideshow" data-cycle-slides="> .slide">
 				
@@ -107,7 +97,7 @@ get_header(); ?>
 			
 		</div><!-- slideshow -->
 		
-		<?php endif;?>
+		
 		
 		
     <div class="desktop_events">

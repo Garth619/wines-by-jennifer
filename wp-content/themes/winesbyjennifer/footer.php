@@ -140,19 +140,6 @@ Cart (0) | Search
 	
 </div><!-- overlay_carousel -->
 
-<?php if(is_handheld()): ?>
-
-<div class="mobile_menu_overlay">
-	
-	<div class="overlay_inner">
-		
-		<span style="color:#fff;margin-top:50px;margin-left:20px;display: block;">Mobile Menu Will Go Here</span>
-		
-	</div><!-- overlay_inner -->
-	
-</div><!-- mobile_menu_overlay -->
-
-<?php endif;?>
 
 	
 <?php wp_footer(); ?>

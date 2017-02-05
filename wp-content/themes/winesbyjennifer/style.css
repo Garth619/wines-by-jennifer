@@ -2,11 +2,7 @@
 Theme Name: Wines by Jennifer
 Author: Garrett Cullen
 */
-/* =Reset default browser CSS. Based on work by Eric Meyer.
--------------------------------------------------------------- */
 *, *:before, *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 html, body, div, span, applet, object, iframe,
@@ -774,8 +770,13 @@ h3#reply-title {
         color: #811d49; }
   .mymobile_header .mymenu_main {
     background: #163b2b;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row; }
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row; }
     .mymobile_header .mymenu_main .mymobile_icons_wrapper {
       width: 120px;
       padding-top: 60px;
@@ -785,7 +786,9 @@ h3#reply-title {
         height: 30px;
         margin-right: 0px; }
     .mymobile_header .mymenu_main .mylogo_wrapper {
-      flex-grow: 1;
+      -webkit-box-flex: 1;
+          -ms-flex-positive: 1;
+              flex-grow: 1;
       padding: 7px 0; }
       .mymobile_header .mymenu_main .mylogo_wrapper img {
         width: 75px;
@@ -846,6 +849,7 @@ h3#reply-title {
           text-decoration: none;
           margin-bottom: 18px;
           display: block;
+          -webkit-transition: all .2s ease-in-out;
           transition: all .2s ease-in-out; }
           .mymobile_dropdown .menu-header ul li a:hover {
             color: #E5C854; }
@@ -857,6 +861,7 @@ h3#reply-title {
       opacity: 0;
       visibility: hidden;
       max-height: 0;
+      -webkit-transition: all .2s ease-in-out;
       transition: all .2s ease-in-out; }
 
 /* Events */
@@ -884,11 +889,17 @@ h3#reply-title {
       text-transform: uppercase;
       letter-spacing: 2px;
       display: block;
-      margin-bottom: 14px; }
+      margin-bottom: 14px;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto; }
     .new_events_wrapper .inner_event .single_event span.description {
       line-height: 23px;
       color: #363636;
-      display: block; }
+      display: block;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto; }
     .new_events_wrapper .inner_event .single_event span.events_read_more {
       color: #fff;
       text-transform: uppercase;
@@ -928,14 +939,22 @@ h3#reply-title {
     letter-spacing: 1.2px;
     display: block;
     margin-bottom: 14px;
-    margin-top: 25px; }
+    margin-top: 25px;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto; }
   .my_blog .main_page_blog_post img {
-    max-width: 100%;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
     height: auto; }
   .my_blog .main_page_blog_post .blog_description {
     color: #000;
     line-height: 20px;
-    display: block; }
+    display: block;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto; }
   .my_blog .main_page_blog_post .blog_readmore {
     display: inline-block;
     margin-top: 20px;
@@ -953,7 +972,7 @@ h3#reply-title {
 .my_testimonials {
   background: #811d49;
   text-align: center;
-  padding: 35px 25px 30px; }
+  padding: 35px 25px 40px; }
   .my_testimonials a {
     text-decoration: none; }
   .my_testimonials .single_testimonial {
@@ -968,14 +987,21 @@ h3#reply-title {
       text-transform: uppercase;
       display: block;
       margin-top: 25px;
-      margin-bottom: 14px; }
+      margin-bottom: 14px;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto; }
     .my_testimonials .single_testimonial span.my_testimonial_content {
       color: #fff;
       text-decoration: none;
-      line-height: 20px; }
+      line-height: 20px;
+      max-width: 560px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto; }
   .my_testimonials .myarrows {
     top: 0;
-    margin-top: 45px; }
+    margin-top: 25px; }
 
 .footer {
   width: 100%; }
@@ -1106,9 +1132,11 @@ ul.sub-menu {
 .social_icons_wrapper {
   display: none; }
 
+/*
 .inner_page_hide_header {
-  display: none; }
-
+	display: none;
+}
+*/
 .main_top {
   display: none; }
 
@@ -1263,8 +1291,6 @@ ul.sub-menu {
   color: #fff;
   text-align: center;
   padding: 25px;
-  -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
   -ms-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); }
   .footer ul {
@@ -1342,16 +1368,13 @@ ul.sub-menu {
     height: 175px;
     display: block;
     margin: 0 auto 15px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
     border-radius: 50%;
     border: 2px solid #fff;
-    -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
     -ms-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
     background: url(images/blank-profile-hi.png) center center no-repeat;
     background-size: 100%;
+    -webkit-transition: all .2s ease;
     transition: all .2s ease; }
     #content .single_team_member .team_profile_wrapper a {
       display: block;
@@ -1361,6 +1384,7 @@ ul.sub-menu {
     background: url(images/blank-profile-hi.png) center center no-repeat;
     background-position: center center;
     background-size: 110%;
+    -webkit-transition: all .2s ease;
     transition: all .2s ease; }
   #content .single_team_member h2 {
     text-transform: uppercase;
@@ -1393,12 +1417,8 @@ ul.sub-menu {
       margin: 0 auto 15px;
       max-width: 175px;
       height: auto;
-      -webkit-border-radius: 50%;
-      -moz-border-radius: 50%;
       border-radius: 50%;
       border: 2px solid #fff;
-      -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
-      -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
       -ms-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
       box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); }
   .single_bio_wrapper .right_col_bio {
@@ -1483,9 +1503,11 @@ ul.sub-menu {
   display: inline-block;
   position: relative;
   top: 0;
+  -webkit-transition: all .2s ease;
   transition: all .2s ease; }
 
 #content a.button:hover {
+  -webkit-transition: all .2s ease;
   transition: all .2s ease;
   top: 3px;
   text-decoration: underline; }
@@ -1535,8 +1557,6 @@ ul.sub-menu {
   margin-bottom: 20px;
   display: block;
   border: 2px solid #fff;
-  -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); }
 
 .modernizr_wrapper {
@@ -1553,6 +1573,7 @@ ul.sub-menu {
   overflow-y: scroll;
   opacity: 0;
   visibility: hidden;
+  -webkit-transition: all .5s ease;
   transition: all .5s ease; }
   .overlay .overlay_inner {
     width: 95%;
@@ -1589,6 +1610,7 @@ ul.sub-menu {
         width: 100%;
         height: 100%;
         background: rgba(0, 0, 0, 0.5);
+        -webkit-transition: all .2s ease;
         transition: all .2s ease; }
       .overlay .overlay_inner .cover img.newsletter_img {
         max-width: 100%;
@@ -1603,6 +1625,7 @@ ul.sub-menu {
         margin-bottom: 20px;
         display: inline-block;
         position: relative;
+        -webkit-transition: all .2s ease;
         transition: all .2s ease;
         top: 50%;
         transform: translateY(-50%);
@@ -1611,11 +1634,13 @@ ul.sub-menu {
         text-align: center; }
       .overlay .overlay_inner .cover .newsletter_button_wrapper:hover {
         background: transparent;
+        -webkit-transition: all .2s ease;
         transition: all .2s ease; }
 
 .overlay.open {
   opacity: 1;
   visibility: visible;
+  -webkit-transition: all .5s ease;
   transition: all .5s ease; }
 
 .newsletter_cover_form_wrapper {
@@ -1632,6 +1657,7 @@ ul.sub-menu {
   overflow-y: scroll;
   opacity: 0;
   visibility: hidden;
+  -webkit-transition: all .5s ease;
   transition: all .5s ease; }
   .overlay_carousel .overlay_inner {
     margin: 50px auto 30px;
@@ -1658,6 +1684,7 @@ ul.sub-menu {
 .overlay_carousel.open {
   opacity: 1;
   visibility: visible;
+  -webkit-transition: all .5s ease;
   transition: all .5s ease; }
 
 .backtotop {
@@ -1782,8 +1809,6 @@ body.single .inner_banner .banner_overlay a:hover {
   .ribbon_right {
     margin-left: 15px; }
   .content_container {
-    -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
     -ms-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
     width: 92%;
@@ -1842,6 +1867,8 @@ body.single .inner_banner .banner_overlay a:hover {
     text-align: left; } }
 
 @media screen and (min-width: 1040px) {
+  .mymobile_header, .mymobile_dropdown, .new_events_wrapper, .my_blog, .my_testimonials {
+    display: none !important; }
   .modernizr_wrapper {
     display: block; }
   .logotest {
@@ -1851,9 +1878,15 @@ body.single .inner_banner .banner_overlay a:hover {
     background-size: cover; }
   .bg_bug {
     display: none; }
-  .inner_page_hide_header {
-    display: block; }
+  /*
+	.inner_page_hide_header {
+		display: block;
+		}
+*/
   .wrapper {
+    background: url(images/cloth.jpg) top left repeat;
+    border: 2px solid #fff;
+    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.75);
     max-width: 1175px;
     margin: 35px auto 0; }
   .header {
@@ -1875,10 +1908,9 @@ body.single .inner_banner .banner_overlay a:hover {
     background: none;
     width: 408px;
     border: 2px solid #fff;
-    -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
-    float: left; }
+    float: left;
+    display: block; }
     .intro .logo_wrapper {
       width: 113px; }
     .intro .intro_content {
@@ -1897,15 +1929,15 @@ body.single .inner_banner .banner_overlay a:hover {
     width: 100%;
     height: 52px; }
   .newsletter_signup {
-    -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
     -ms-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
-    border: 2px solid #fff; }
+    border: 2px solid #fff;
+    display: block; }
     .newsletter_signup img.flyer {
       right: 2%;
       top: -5px; }
     .newsletter_signup .newsletter_text_wrap {
+      -webkit-transition: all .3s ease;
       transition: all .3s ease; }
       .newsletter_signup .newsletter_text_wrap .newsletter_text {
         text-align: left;
@@ -1919,6 +1951,7 @@ body.single .inner_banner .banner_overlay a:hover {
           font-size: 16px; }
     .newsletter_signup .newsletter_text_wrap:hover {
       background: transparent;
+      -webkit-transition: all .3s ease;
       transition: all .3s ease; }
   .newsletter_form .gform_wrapper {
     max-width: 250px;
@@ -2002,6 +2035,7 @@ body.single .inner_banner .banner_overlay a:hover {
     left: 55px;
     opacity: 0;
     visibility: hidden;
+    -webkit-transition: all .2s ease;
     transition: all .2s ease;
     box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75); }
     ul.sub-menu li {
@@ -2018,6 +2052,7 @@ body.single .inner_banner .banner_overlay a:hover {
     opacity: 1;
     visibility: visible;
     top: 30px;
+    -webkit-transition: all .2s ease;
     transition: all .2s ease; }
   .mymenu.cloned .menu-header {
     background: #8c2555;
@@ -2048,8 +2083,6 @@ body.single .inner_banner .banner_overlay a:hover {
     width: 100%;
     overflow: hidden;
     margin-bottom: 25px;
-    -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
     border: 2px solid #fff; }
     .main_top .desktop_testimomials, .main_top .desktop_events {
@@ -2088,21 +2121,25 @@ body.single .inner_banner .banner_overlay a:hover {
         cursor: pointer;
         top: 0;
         background: transparent;
+        -webkit-transition: all .3s ease;
         transition: all .3s ease; }
       .main_top .slideshow .cycle-prev {
         left: 0%;
         height: 100%;
         padding-left: 3%;
         padding-right: 2%;
+        -webkit-transition: all .3s ease;
         transition: all .3s ease; }
       .main_top .slideshow .cycle-prev:hover, .main_top .slideshow .cycle-next:hover {
         background: rgba(255, 255, 255, 0.25);
+        -webkit-transition: all .3s ease;
         transition: all .3s ease; }
       .main_top .slideshow .cycle-next {
         padding-right: 3%;
         padding-left: 3%;
         right: 0%;
         height: 100%;
+        -webkit-transition: all .3s ease;
         transition: all .3s ease; }
   .testimonial_top_half {
     padding: 13px 8px 8px;
@@ -2186,16 +2223,16 @@ body.single .inner_banner .banner_overlay a:hover {
   .box {
     width: 48%;
     float: left;
-    -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
     border: 2px solid #fff; }
     .box .box_text_wrap {
+      -webkit-transition: all .3s ease;
       transition: all .3s ease; }
       .box .box_text_wrap h2 {
         font-size: 27px; }
     .box .box_text_wrap:hover {
       background: transparent;
+      -webkit-transition: all .3s ease;
       transition: all .3s ease; }
   .box:nth-child(1) {
     margin-right: 4%; }
@@ -2276,12 +2313,14 @@ body.single .inner_banner .banner_overlay a:hover {
             background: #fff;
             margin-right: 4px;
             float: left;
+            -webkit-transition: all .2s ease;
             transition: all .2s ease; }
           .list_grid_wrapper .list_wrapper_with_titles .post_list .list_bar_wrapper .list_line {
             height: 3px;
             background: #fff;
             width: 26px;
             float: left;
+            -webkit-transition: all .2s ease;
             transition: all .2s ease; }
         .list_grid_wrapper .list_wrapper_with_titles .post_list .list_bar_wrapper:last-of-type {
           margin-bottom: 0; }
@@ -2307,6 +2346,7 @@ body.single .inner_banner .banner_overlay a:hover {
             background: #fff;
             float: left;
             margin-left: 4px;
+            -webkit-transition: all .2s ease;
             transition: all .2s ease; }
         .list_grid_wrapper .grid_wrapper_with_titles .post_grid .grid_square_wrapper:last-of-type {
           margin-bottom: 0; }
@@ -2317,32 +2357,38 @@ body.single .inner_banner .banner_overlay a:hover {
     padding-top: 5px; }
   .list_wrapper_with_titles .post_list:hover .list_bar_wrapper .list_bullet {
     background: #8c2555;
+    -webkit-transition: all .2s ease;
     transition: all .2s ease; }
   .list_wrapper_with_titles .post_list:hover .list_bar_wrapper .list_line {
     background: #8c2555;
+    -webkit-transition: all .2s ease;
     transition: all .2s ease; }
   .list_wrapper_with_titles .post_list.active .list_bar_wrapper .list_bullet {
     background: yellow;
+    -webkit-transition: all .1s ease;
     transition: all .1s ease; }
   .list_wrapper_with_titles .post_list.active .list_bar_wrapper .list_line {
     background: yellow;
+    -webkit-transition: all .1s ease;
     transition: all .1s ease; }
   .grid_wrapper_with_titles .post_grid:hover .grid_square_wrapper .grid_single_square {
     background: #8c2555;
+    -webkit-transition: all .1s ease;
     transition: all .1s ease; }
   .grid_wrapper_with_titles .post_grid.active .grid_square_wrapper .grid_single_square {
     background: yellow;
+    -webkit-transition: all .1s ease;
     transition: all .1s ease; }
   .content_container {
+    -webkit-transition: all .5s ease;
     transition: all .5s ease; }
   .content_container.grid_view {
     background: transparent;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
     box-shadow: none;
     overflow: hidden;
     text-align: center;
     padding: 0 35px 35px;
+    -webkit-transition: padding .5s ease;
     transition: padding .5s ease;
     width: 100%;
     -webkit-columns: 150px 3;
@@ -2360,8 +2406,6 @@ body.single .inner_banner .banner_overlay a:hover {
     .content_container.grid_view .wbj_post {
       border-bottom: none;
       background: #fff;
-      -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
-      -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
       -ms-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
       box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
       margin: 0 0 25px;
@@ -2390,5 +2434,4 @@ body.single .inner_banner .banner_overlay a:hover {
     margin: 25px 0 0 !important; }
   .regsitered {
     font-size: 10px; } }
-
 /*# sourceMappingURL=style.css.map */

@@ -173,11 +173,13 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 		
 		
 						
+<!--
 			<?php if(!is_page_template('page-main.php')) { ?>
 			
 			<div class="inner_page_hide_header">
 			
-			<?php } ?><!-- main page info -->
+			<?php } ?>
+--><!-- main page info -->
 			
 			<div class="header">
 			
@@ -215,7 +217,7 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 		</div><!-- header -->		
 				
 						
-			<?php if(!is_handheld()): ?>
+			
 			
 			<div class="modernizr_wrapper">
 				<div class="nav mymenu">
@@ -233,11 +235,11 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 				</div><!-- nav -->
 			</div><!-- modernizr_wrapper -->
 			
-			<?php endif;?>
+			
 		
 		<?php if(!is_page_template('page-main.php')) : ?>
 			
-			</div><!-- inner_page_hide_header -->
+<!-- 			</div> --><!-- inner_page_hide_header -->
 			<div class="main inner">
 				
 				<?php else: ?>
