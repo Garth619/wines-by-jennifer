@@ -22,8 +22,13 @@ get_header(); ?>
 	
 	<div class="inner_form_wrapper">
 		
+		<?php 
+			$form_object = get_field('gravity_form_option');
+			gravity_form_enqueue_scripts($form_object['id'], true);
+			gravity_form($form_object['id'], true, false, false, '', true, 12); 
+		?>
 		
-		<?php gravity_form(2, true, false, false, '', true, 12); ?>
+		
 		
 		
 	</div><!-- inner_form_wrapper -->

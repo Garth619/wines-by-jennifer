@@ -105,7 +105,7 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 				<div class="mymobile_icons_wrapper">
 					
 					<a href=""><img class="icon" src="<?php bloginfo('template_directory');?>/images/cart.png"/></a>
-					<a href=""><img class="icon" src="<?php bloginfo('template_directory');?>/images/pin.png"/></a>
+					<a href="<?php bloginfo('url');?>/locations"><img class="icon" src="<?php bloginfo('template_directory');?>/images/pin.png"/></a>
 					<img class="icon mysearchicon" src="<?php bloginfo('template_directory');?>/images/search.png"/>
 					
 				</div><!-- mymobile_icons_wrapper -->

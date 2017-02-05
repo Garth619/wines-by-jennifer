@@ -1952,7 +1952,8 @@ ul.sub-menu {
 		ul {
 			list-style:none;
 			margin:0;
-			li#field_2_6 {
+			
+			li#field_2_6, li#field_3_6 {
 				display: none;
 			}
 			li {
@@ -2249,6 +2250,76 @@ body.single .inner_banner .banner_overlay a {
 body.single .inner_banner .banner_overlay a:hover {
 	color:$yellow;
 }
+
+
+/* Featured Wine */
+
+
+.featured_wine_wrapper {
+	text-align: center;
+	.single_wine_wrapper {
+		margin-bottom:40px;
+		margin-top:40px;
+		border-bottom: 1px solid #ccc;
+		padding-bottom:40px;
+		span.wine_title {
+			font-family: $cinzel;
+			color:$purple;
+			font-size:25px;
+			display: block;
+			margin-bottom:10px;
+		}
+		span.wine_name {
+			color:$purple;
+			font-size:17px;
+			display: block;
+		}
+		span.wine_location {
+			color:$purple;
+			font-size:17px;
+			display: block;
+		}
+		.wine_content {
+			text-align: left;
+			margin-top:45px;
+			p {
+				
+			}
+			img {
+				display: block;
+				margin:0 auto;
+/*
+				float:left;
+				margin-right:10px;
+				margin-bottom: 10px;
+*/
+			}
+		}
+	}
+	.mysee_more {
+		background: $purple;
+		color:#fff;
+		text-transform: uppercase;
+		padding:5px 15px;
+	}
+}
+
+
+.years_list {
+	margin-top:35px;
+	.single_list {
+		margin-bottom:25px;
+		span.myyear {
+			display: block;
+			font-weight: bold;
+		}
+		a.mymonth {
+			display: block;
+		}
+	}
+}
+
+
 
 @media screen and (min-width: 400px) {
 	
@@ -2692,13 +2763,16 @@ body.single .inner_banner .banner_overlay a {
 	padding-right:35px;
  }
  
- 
- 
- #content {
+ body.page-template-page-innerform {
+	  #content {
 	 width:65%;
 	 float:left;
 	 
  }
+	 
+ }
+ 
+
  
  .inner_form_wrapper {
 	 width:30%;

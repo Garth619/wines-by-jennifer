@@ -1612,7 +1612,7 @@ ul.sub-menu {
   .inner_form_wrapper ul {
     list-style: none;
     margin: 0; }
-    .inner_form_wrapper ul li#field_2_6 {
+    .inner_form_wrapper ul li#field_2_6, .inner_form_wrapper ul li#field_3_6 {
       display: none; }
     .inner_form_wrapper ul li {
       width: 100%;
@@ -1849,6 +1849,55 @@ body.single .inner_banner .banner_overlay a {
 body.single .inner_banner .banner_overlay a:hover {
   color: #E5C854; }
 
+/* Featured Wine */
+.featured_wine_wrapper {
+  text-align: center; }
+  .featured_wine_wrapper .single_wine_wrapper {
+    margin-bottom: 40px;
+    margin-top: 40px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 40px; }
+    .featured_wine_wrapper .single_wine_wrapper span.wine_title {
+      font-family: "Cinzel", serif;
+      color: #8c2555;
+      font-size: 25px;
+      display: block;
+      margin-bottom: 10px; }
+    .featured_wine_wrapper .single_wine_wrapper span.wine_name {
+      color: #8c2555;
+      font-size: 17px;
+      display: block; }
+    .featured_wine_wrapper .single_wine_wrapper span.wine_location {
+      color: #8c2555;
+      font-size: 17px;
+      display: block; }
+    .featured_wine_wrapper .single_wine_wrapper .wine_content {
+      text-align: left;
+      margin-top: 45px; }
+      .featured_wine_wrapper .single_wine_wrapper .wine_content img {
+        display: block;
+        margin: 0 auto;
+        /*
+				float:left;
+				margin-right:10px;
+				margin-bottom: 10px;
+*/ }
+  .featured_wine_wrapper .mysee_more {
+    background: #8c2555;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 5px 15px; }
+
+.years_list {
+  margin-top: 35px; }
+  .years_list .single_list {
+    margin-bottom: 25px; }
+    .years_list .single_list span.myyear {
+      display: block;
+      font-weight: bold; }
+    .years_list .single_list a.mymonth {
+      display: block; }
+
 @media screen and (min-width: 400px) {
   .box .box_text_wrap h2 {
     font-size: 45px; } }
@@ -2034,7 +2083,7 @@ body.single .inner_banner .banner_overlay a:hover {
     overflow: hidden;
     padding-left: 35px;
     padding-right: 35px; }
-  #content {
+  body.page-template-page-innerform #content {
     width: 65%;
     float: left; }
   .inner_form_wrapper {

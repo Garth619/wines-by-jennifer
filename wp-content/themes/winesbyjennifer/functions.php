@@ -656,3 +656,30 @@ function twentyten_get_gallery_images() {
 
 	return $images;
 }
+
+
+	// number one
+  
+  add_action('init', 'featured_wines');    
+   	 
+	function featured_wines() {    
+    	$args = array(    
+        	'label' => __('Featured Wines'),    
+        	'singular_label' => __('Wine'),    
+        	'public' => true,    
+        	'show_ui' => true,
+        	'has_archive' => true,	 
+        	'capability_type' => 'post',    
+        	'hierarchical' => false,    
+        	'rewrite' => true,    
+        	'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )    
+       	);    
+   	 
+    	register_post_type( 'featured_wines' , $args );    
+	} 
+	
+   
+
+
+
+
