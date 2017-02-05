@@ -1,10 +1,14 @@
 <?php
 /**
- * Template Name: Featured Wine Template
+ * Template for displaying all single posts
  *
+ * @package WordPress
+ * @subpackage Twenty_Ten
+ * @since Twenty Ten 1.0
  */
 
 get_header(); ?>
+
 
 
 <div class="inner_banner">

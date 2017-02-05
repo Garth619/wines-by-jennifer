@@ -7,6 +7,17 @@ jQuery(document).ready(function(){
   });	
   
   
+  // Year List
+  
+  
+  
+  jQuery('.mysee_more').click(function(){
+	  
+	  jQuery('.years_list').slideDown();
+	  
+	 });
+  
+  
   // Search Overlay
   
   

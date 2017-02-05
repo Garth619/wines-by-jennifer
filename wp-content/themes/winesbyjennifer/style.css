@@ -1832,10 +1832,12 @@ span.overlay_close_mobile_menu {
   margin-top: 6px;
   display: block; }
 
+/*
 body.single .inner_banner .banner_overlay h1 {
-  padding: 80px 35px 0px;
-  text-align: center; }
-
+	padding: 80px 35px 0px;
+	text-align: center;
+}
+*/
 body.single .inner_banner .banner_overlay a {
   color: #fff;
   text-align: center;
@@ -1860,7 +1862,7 @@ body.single .inner_banner .banner_overlay a:hover {
     .featured_wine_wrapper .single_wine_wrapper span.wine_title {
       font-family: "Cinzel", serif;
       color: #8c2555;
-      font-size: 25px;
+      font-size: 28px;
       display: block;
       margin-bottom: 10px; }
     .featured_wine_wrapper .single_wine_wrapper span.wine_name {
@@ -1882,25 +1884,43 @@ body.single .inner_banner .banner_overlay a:hover {
 				margin-right:10px;
 				margin-bottom: 10px;
 */ }
+  .featured_wine_wrapper img.mylocation_image {
+    margin-top: 35px; }
   .featured_wine_wrapper .mysee_more {
     background: #8c2555;
     color: #fff;
     text-transform: uppercase;
-    padding: 5px 15px; }
+    padding: 5px 15px;
+    cursor: pointer; }
 
 .years_list {
-  margin-top: 35px; }
+  margin-top: 35px;
+  overflow: hidden;
+  display: none; }
   .years_list .single_list {
-    margin-bottom: 25px; }
+    margin-bottom: 25px;
+    width: 50%;
+    float: left; }
     .years_list .single_list span.myyear {
       display: block;
       font-weight: bold; }
     .years_list .single_list a.mymonth {
-      display: block; }
+      display: block;
+      margin-bottom: 5px; }
 
 @media screen and (min-width: 400px) {
   .box .box_text_wrap h2 {
     font-size: 45px; } }
+
+/* Media Query */
+@media screen and (min-width: 480px) {
+  /* Featured Wine */
+  .featured_wine_wrapper .single_wine_wrapper .wine_content img {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px; }
+  .years_list .single_list {
+    width: 25%; } }
 
 /* Media Query */
 @media screen and (min-width: 660px) {

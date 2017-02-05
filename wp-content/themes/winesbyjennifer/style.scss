@@ -2231,10 +2231,12 @@ ul.sub-menu {
 		}
 		
 		
+/*
 body.single .inner_banner .banner_overlay h1 {
 	padding: 80px 35px 0px;
 	text-align: center;
 }
+*/
 
 body.single .inner_banner .banner_overlay a {
 	color:#fff;
@@ -2265,7 +2267,7 @@ body.single .inner_banner .banner_overlay a:hover {
 		span.wine_title {
 			font-family: $cinzel;
 			color:$purple;
-			font-size:25px;
+			font-size:28px;
 			display: block;
 			margin-bottom:10px;
 		}
@@ -2296,25 +2298,34 @@ body.single .inner_banner .banner_overlay a:hover {
 			}
 		}
 	}
+	img.mylocation_image {
+		margin-top:35px;
+	}
 	.mysee_more {
 		background: $purple;
 		color:#fff;
 		text-transform: uppercase;
 		padding:5px 15px;
+		cursor: pointer;
 	}
 }
 
 
 .years_list {
 	margin-top:35px;
+	overflow: hidden;
+	display: none;
 	.single_list {
 		margin-bottom:25px;
+		width:50%;
+		float:left;
 		span.myyear {
 			display: block;
 			font-weight: bold;
 		}
 		a.mymonth {
 			display: block;
+			margin-bottom:5px;
 		}
 	}
 }
@@ -2332,6 +2343,68 @@ body.single .inner_banner .banner_overlay a:hover {
 		}
 	}
 	
+	
+	
+	
+} /* Media Query */
+
+
+@media screen and (min-width: 480px) {
+	
+	
+	/* Featured Wine */
+
+
+.featured_wine_wrapper {
+	
+	.single_wine_wrapper {
+		
+		span.wine_title {
+			
+		}
+		span.wine_name {
+			
+		}
+		span.wine_location {
+			
+		}
+		.wine_content {
+			
+			p {
+				
+			}
+			img {
+				
+
+				float:left;
+				margin-right:10px;
+				margin-bottom: 10px;
+
+			}
+		}
+	}
+	.mysee_more {
+		
+	}
+}
+
+
+.years_list {
+	
+	.single_list {
+		
+		width:25%;
+		
+		span.myyear {
+			
+		}
+		a.mymonth {
+			
+		}
+	}
+}
+
+
 	
 	
 	
