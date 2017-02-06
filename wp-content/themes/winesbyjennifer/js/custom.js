@@ -7,13 +7,23 @@ jQuery(document).ready(function(){
   });	
   
   
-  // Year List
+  // Featured Wine Year List
   
   
   
   jQuery('.mysee_more').click(function(){
 	  
 	  jQuery('.years_list').slideDown();
+	  
+	 });
+	 
+	 // Featured Artist List
+	 
+	 
+	 
+  jQuery('.mysee_more_artists').click(function(){
+	  
+	  jQuery('.artist_list').slideDown();
 	  
 	 });
   

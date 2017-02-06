@@ -2331,6 +2331,35 @@ body.single .inner_banner .banner_overlay a:hover {
 }
 
 
+/* Featured Artists */
+
+
+.more_artists_wrapper {
+	text-align: center;
+	border-top:1px #ccc solid;
+	padding-top:35px;
+	.mysee_more_artists {
+		background: $purple;
+		color:#fff;
+		text-transform: uppercase;
+		padding:5px 15px;
+		cursor: pointer;
+		display: inline-block;
+	}
+	.artist_list {
+		margin-top:35px;
+		overflow: hidden;
+		display: none;
+		a {
+			display: block;
+			width:50%;
+			float:left;
+			margin-bottom:5px;
+		}
+	}
+}
+
+
 
 @media screen and (min-width: 400px) {
 	
@@ -2586,6 +2615,32 @@ body.single .inner_banner .banner_overlay a:hover {
 		}
 	}
 	
+	
+	
+	
+} /* Media Query */
+
+
+@media screen and (min-width: 700px) {
+	
+	
+	
+	/* Featured Artists */
+
+
+.more_artists_wrapper {
+	
+	.mysee_more_artists {
+		
+	}
+	.artist_list {
+		
+		a {
+			width:33.33333%;
+		}
+	}
+}
+
 	
 	
 	

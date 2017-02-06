@@ -19,10 +19,48 @@ get_header(); ?>
 <div class="content_container">
 	
 	<div id="content">
+		
+		<h1>featured artist name</h1>
+		
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 	
 
-<?php get_template_part( 'loop', 'page' );?>
+<?php // get_template_part( 'loop', 'page' );?>
 
+	
+	
+	
+	<div class="more_artists_wrapper">
+	
+		<span class="mysee_more_artists">See Previous Artists</span><!-- mysee_more_artists -->
+		
+		<div class="artist_list">
+			
+			<a href="">Artist Name</a>
+			<a href="">Artist Name</a>
+			<a href="">Artist Name</a>
+			<a href="">Artist Name</a>
+			<a href="">Artist Name</a>
+			<a href="">Artist Name</a>
+			<a href="">Artist Name</a>
+			<a href="">Artist Name</a>
+			<a href="">Artist Name</a>
+			<a href="">Artist Name</a>
+			<a href="">Artist Name</a>
+			<a href="">Artist Name</a>
+			<a href="">Artist Name</a>
+			<a href="">Artist Name</a>
+			<a href="">Artist Name</a>
+			
+		</div><!-- artist_list -->
+	
+	</div><!-- more_artists_wrapper -->
 	
 	</div><!-- content -->
 	

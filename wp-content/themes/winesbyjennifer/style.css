@@ -1908,6 +1908,28 @@ body.single .inner_banner .banner_overlay a:hover {
       display: block;
       margin-bottom: 5px; }
 
+/* Featured Artists */
+.more_artists_wrapper {
+  text-align: center;
+  border-top: 1px #ccc solid;
+  padding-top: 35px; }
+  .more_artists_wrapper .mysee_more_artists {
+    background: #8c2555;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 5px 15px;
+    cursor: pointer;
+    display: inline-block; }
+  .more_artists_wrapper .artist_list {
+    margin-top: 35px;
+    overflow: hidden;
+    display: none; }
+    .more_artists_wrapper .artist_list a {
+      display: block;
+      width: 50%;
+      float: left;
+      margin-bottom: 5px; }
+
 @media screen and (min-width: 400px) {
   .box .box_text_wrap h2 {
     font-size: 45px; } }
@@ -1995,6 +2017,12 @@ body.single .inner_banner .banner_overlay a:hover {
         float: left; }
       .inner_form_wrapper ul li:nth-of-type(2n + 2) {
         float: right; } }
+
+/* Media Query */
+@media screen and (min-width: 700px) {
+  /* Featured Artists */
+  .more_artists_wrapper .artist_list a {
+    width: 33.33333%; } }
 
 /* Media Query */
 @media screen and (min-width: 860px) {
