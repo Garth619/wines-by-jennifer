@@ -1422,13 +1422,13 @@ ul.sub-menu {
 /* Meet the team */
 .team_wrapper {
   width: 100%;
-  margin: 20px auto 0;
+  margin: 40px auto;
   text-align: center;
   background: #fff; }
 
 #content .single_team_member {
   text-align: center;
-  margin: 0px 5% 20px;
+  margin: 0px 5% 40px;
   display: inline-block;
   vertical-align: top;
   max-width: 240px;
@@ -1587,20 +1587,24 @@ ul.sub-menu {
 /* FAQ */
 #content p.question {
   margin-bottom: 12px;
-  color: #8c2555;
-  cursor: pointer; }
+  color: #8c2555; }
 
-#content p.question:after {
-  content: "+ Expand";
-  display: inline;
-  margin-left: 4px; }
-
-#content p.question.open:after {
-  content: "-"; }
-
-#content p.answer {
-  display: none; }
-
+/*
+	#content p.question:after {
+		content:"+ Expand";
+		display: inline;
+		margin-left:4px;
+	}
+	
+	#content p.question.open:after {
+		content:"-";
+	}
+*/
+/*
+	#content p.answer {
+		display: none;
+	}
+*/
 /* Become an Ambassador */
 .inner_form_wrapper {
   background: #163b2b;
@@ -2160,8 +2164,7 @@ body.single .inner_banner .banner_overlay a:hover {
   .content_container {
     width: 86%;
     overflow: hidden;
-    padding-left: 35px;
-    padding-right: 35px; }
+    padding: 65px 45px; }
   body.page-template-page-innerform #content {
     width: 65%;
     float: left; }

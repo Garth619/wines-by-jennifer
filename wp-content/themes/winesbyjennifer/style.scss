@@ -1711,14 +1711,14 @@ ul.sub-menu {
 
 .team_wrapper {
 	width:100%;
-	margin: 20px auto 0;
+	margin: 40px auto;
 	text-align: center;
 	background:#fff;
 }
 
 #content .single_team_member {
 	text-align: center;
-	margin:0px 5% 20px;
+	margin:0px 5% 40px;
 	display: inline-block;
 	vertical-align: top;
 	max-width:240px;
@@ -1918,9 +1918,10 @@ ul.sub-menu {
 	#content p.question {
 		margin-bottom:12px;
 		color:$purple;
-		cursor: pointer;
+		
 	}
 	
+/*
 	#content p.question:after {
 		content:"+ Expand";
 		display: inline;
@@ -1930,10 +1931,13 @@ ul.sub-menu {
 	#content p.question.open:after {
 		content:"-";
 	}
+*/
 	
+/*
 	#content p.answer {
 		display: none;
 	}
+*/
 	
 	
 	/* Become an Ambassador */
@@ -2938,8 +2942,7 @@ body.single .inner_banner .banner_overlay a {
 .content_container {
 	width: 86%;
 	overflow: hidden;
-	padding-left:35px;
-	padding-right:35px;
+	padding:65px 45px;
  }
  
  body.page-template-page-innerform {

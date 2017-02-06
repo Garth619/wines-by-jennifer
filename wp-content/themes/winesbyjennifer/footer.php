@@ -149,6 +149,63 @@ Cart (0) | Search
 <script type="text/javascript" src="<?php bloginfo('template_directory');?>/slick/slick/slick.min.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_directory');?>/js/custom-min.js"></script>
 
+<?php if(is_page_template( 'page-meettheteam.php' )):?>
+
+<script type="text/javascript">
+
+jQuery(document).ready(function(){
+
+
+		
+		
+	
+			<?php if(get_field('meet_the_team')): ?>
+			 
+				<?php $count=1;?>
+				
+				<?php while(has_sub_field('meet_the_team')): ?>
+			 
+					
+					jQuery('.single_team_member_<?php echo $count; ?>').click(function(){
+			
+						jQuery('.team_wrapper').hide(200);
+						jQuery('.single_bio_wrapper_<?php echo $count; ?>').show(200);
+			
+					});
+
+					
+				
+				<?php $count++ ;?>
+			    
+				<?php endwhile; ?>
+			 
+			<?php endif; ?>		
+		
+		
+		
+	jQuery('.bio_close').click(function(){
+			
+			jQuery('.team_wrapper').show(200);
+			jQuery('.single_bio_wrapper').hide(200);
+			
+		});
+		
+	jQuery('.back_to_bio').click(function(){
+			
+			jQuery('.team_wrapper').show(200);
+			jQuery('.single_bio_wrapper').hide(200);
+			
+		});
+
+
+
+
+});
+
+</script>
+
+<?php endif;?>
+
 
 </body>
 </html>

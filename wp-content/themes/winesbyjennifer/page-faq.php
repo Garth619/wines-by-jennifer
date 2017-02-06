@@ -18,29 +18,43 @@ get_header(); ?>
 	
 	<div id="content">
 	
+		<h1><?php the_title();?></h1>
 		
+		<?php the_field('faq_content');?>
 		
-		<?php get_template_part( 'loop', 'page' );?>
-		
-		
-		<!-- faq -->
-		
-		<?php if(is_page(34)):?>
-		
-		<p class="question">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod?</p>
-		<p class="answer">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut la</p>
-		
-		<p class="question">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod?</p>
-		<p class="answer">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut la</p>
-		
-		<p class="question">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod?</p>
-		<p class="answer">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut la</p>
-		
-		<p class="question">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod?</p>
-		<p class="answer">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut la</p>
 		
 
-	<?php endif;?>
+	
+		
+		<?php if(get_field('faqs')): ?>
+		 
+			<?php while(has_sub_field('faqs')): ?>
+			
+				<p class="question"><?php the_sub_field('question');?></p>
+				
+				<p class="answer"><?php the_sub_field('answer');?></p>
+		 
+				
+		    
+			<?php endwhile; ?>
+		 
+		<?php endif; ?>
+		
+		
+		<p class="question">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod?</p>
+		<p class="answer">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiut la</p>
+		
+		<p class="question">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod?</p>
+		<p class="answer">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elid tempor incididunt ut la</p>
+		
+		<p class="question">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod?</p>
+		<p class="answer">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing smod tempor incididunt ut la</p>
+		
+		<p class="question">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod?</p>
+		<p class="answer">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicusmod tempor incididunt ut la</p>
+		
+
+
 	
 	</div><!-- content -->
 	

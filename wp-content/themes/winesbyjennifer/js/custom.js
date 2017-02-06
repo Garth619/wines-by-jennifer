@@ -195,12 +195,14 @@ jQuery(document).ready(function(){
 		// Faq
 		
 		
+/*
 		jQuery('.question').click(function(){
 			
 			jQuery(this).next('.answer').slideToggle(200);
 			jQuery(this).toggleClass('open');
 			
 		});
+*/
 		
 		
 		// Back to Top
@@ -237,46 +239,7 @@ jQuery(document).ready(function(){
 
 		
 		
-		jQuery('.single_team_member_one').click(function(){
-			
-			jQuery('.team_wrapper').hide(200);
-			jQuery('.single_bio_wrapper_one').show(200);
-			
-		});
-		
-		
-		jQuery('.single_team_member_two').click(function(){
-			
-			jQuery('.team_wrapper').hide(200);
-			jQuery('.single_bio_wrapper_two').show(200);
-			
-		});
-		
-		
-		jQuery('.single_team_member_three').click(function(){
-			
-			jQuery('.team_wrapper').hide(200);
-			jQuery('.single_bio_wrapper_three').show(200);
-			
-		});
 
-		
-		
-		
-		
-	jQuery('.bio_close').click(function(){
-			
-			jQuery('.team_wrapper').show(200);
-			jQuery('.single_bio_wrapper').hide(200);
-			
-		});
-		
-	jQuery('.back_to_bio').click(function(){
-			
-			jQuery('.team_wrapper').show(200);
-			jQuery('.single_bio_wrapper').hide(200);
-			
-		});
 		
 
 		
@@ -290,6 +253,7 @@ jQuery(document).ready(function(){
 */
 
 // stackoverflow.com/questions/17064433/show-hide-divs-using-next-previous-button-using-jquery 
+/*
     
     jQuery("#next").click(function(){
         if (jQuery(".single_bio_wrapper:visible").next().length != 0)
@@ -310,6 +274,7 @@ jQuery(document).ready(function(){
         }
         return false;
     });
+*/
 
 
 
