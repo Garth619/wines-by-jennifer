@@ -3305,6 +3305,11 @@ input.gform_button {
 			.slide {
 				width:100%;
 				height:100%;
+				a {
+					display: block;
+					width:100%;
+					height:1200%;
+				}
 			}
 			.cycle-pager {
 				position: relative;

@@ -2392,6 +2392,10 @@ body.single .inner_banner .banner_overlay a:hover {
       .main_top .slideshow .slide {
         width: 100%;
         height: 100%; }
+        .main_top .slideshow .slide a {
+          display: block;
+          width: 100%;
+          height: 1200%; }
       .main_top .slideshow .cycle-pager {
         position: relative;
         bottom: 25px;
