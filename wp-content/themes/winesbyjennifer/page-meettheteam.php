@@ -88,10 +88,12 @@ get_header(); ?>
 
 <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et</p> 
 				</div><!-- bio_content -->
+<!--
 				<div class="bio_buttons">
 					<a href="" class="bio_back"><div class="arrow-right-purple-left"></div> Meet (Back)</a>	
 					<a href="" class="bio_next">Meet (Back) <div class="arrow-right-purple"></div></a>
-				</div>	
+				</div>
+-->	
 			</div><!-- right_col_bio -->
 			
 			
@@ -119,24 +121,8 @@ get_header(); ?>
 
 <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et</p> 
 				</div><!-- bio_content -->
-				<div class="bio_buttons">
-					
-<!-- 					<a id="prev">prev</a> -->
-<!--
-<a id="prev" class="bio_back">Previous Team Member <div class="arrow-right-purple"></div></a>
-					<a id="next" class="bio_next">Next Team Member <div class="arrow-right-purple"></div></a>
--->
-					
-					<span class="bio_back">Previous Team Member </span>
-					<span class="bio_next">Next Team Member </span>
-					
-					
-<!--
-					<a href="" class="bio_back"><div class="arrow-right-purple-left"></div> Meet (Back)</a>	
-					<a href="" class="bio_next">Meet (Back) <div class="arrow-right-purple"></div></a>
--->
-				</div>	
-			</div><!-- right_col_bio -->
+		
+		</div><!-- right_col_bio -->
 			
 			
 		</div><!-- single_bio_wrapper -->
@@ -163,19 +149,7 @@ get_header(); ?>
 
 <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et</p> 
 				</div><!-- bio_content -->
-				<div class="bio_buttons">
-					
-						<span class="bio_back">Previous Team Member </span>
-					<span class="bio_next">Next Team Member </span>
-<!--
-					<a id="prev" class="bio_back">Previous Team Member <div class="arrow-right-purple"></div></a>
-					<a id="next" class="bio_next">Next Team Member <div class="arrow-right-purple"></div></a>
--->
-<!--
-					<a href="" class="bio_back"><div class="arrow-right-purple-left"></div> Meet (Back)</a>	
-					<a href="" class="bio_next">Meet (Back) <div class="arrow-right-purple"></div></a>
--->
-				</div>	
+				
 			</div><!-- right_col_bio -->
 			
 			

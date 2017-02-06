@@ -26,6 +26,24 @@ jQuery(document).ready(function(){
 	  jQuery('.artist_list').slideDown();
 	  
 	 });
+	 
+	 // Tasting Room
+	 
+	 
+	 
+	 jQuery('.mysee_more_tasting').click(function(){
+	  
+	  jQuery('.tasting_drop').slideDown();
+	  
+	 });
+	 
+	 
+	 
+	 jQuery('a.tasting_title').click(function(){
+	  
+	  jQuery(this).next('.sub_tasting_list').slideToggle(200);
+	  
+	 });
   
   
   // Search Overlay

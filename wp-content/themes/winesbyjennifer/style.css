@@ -1495,6 +1495,8 @@ ul.sub-menu {
     width: 100%;
     position: relative;
     text-align: center; }
+    .single_bio_wrapper .right_col_bio h1 {
+      text-align: center !important; }
     .single_bio_wrapper .right_col_bio .bio_content {
       text-align: left; }
 
@@ -1930,6 +1932,33 @@ body.single .inner_banner .banner_overlay a:hover {
       float: left;
       margin-bottom: 5px; }
 
+/* Tasting Room */
+.tasting_room_wrapper {
+  text-align: center;
+  border-top: 1px #ccc solid;
+  padding-top: 35px; }
+  .tasting_room_wrapper .mysee_more_tasting {
+    background: #8c2555;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 5px 15px;
+    cursor: pointer;
+    display: inline-block; }
+  .tasting_room_wrapper .tasting_drop {
+    margin-top: 35px;
+    overflow: hidden;
+    display: none; }
+    .tasting_room_wrapper .tasting_drop a {
+      display: block;
+      margin-bottom: 5px; }
+    .tasting_room_wrapper .tasting_drop > ul.tasting_list > li > a {
+      font-size: 19px; }
+    .tasting_room_wrapper .tasting_drop > ul.tasting_list > li > ul.sub_tasting_list {
+      margin: 25px 0 !important;
+      display: none; }
+      .tasting_room_wrapper .tasting_drop > ul.tasting_list > li > ul.sub_tasting_list > li > a {
+        margin-bottom: 8px; }
+
 @media screen and (min-width: 400px) {
   .box .box_text_wrap h2 {
     font-size: 45px; } }
@@ -2060,6 +2089,8 @@ body.single .inner_banner .banner_overlay a:hover {
       float: right;
       padding-left: 1%;
       position: relative; }
+      .single_bio_wrapper .right_col_bio h1 {
+        text-align: left !important; }
   .back_to_bio_wrapper {
     display: block; }
   .back_to_bio {
@@ -2239,7 +2270,7 @@ body.single .inner_banner .banner_overlay a:hover {
     font-weight: bold;
     text-transform: uppercase;
     position: relative;
-    top: -2px;
+    top: -1px;
     left: -3px;
     cursor: pointer; }
   .menu-header {

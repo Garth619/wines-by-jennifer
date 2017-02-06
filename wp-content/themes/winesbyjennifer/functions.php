@@ -658,7 +658,7 @@ function twentyten_get_gallery_images() {
 }
 
 
-	// number one
+	
   
   add_action('init', 'featured_wines');    
    	 
@@ -677,6 +677,46 @@ function twentyten_get_gallery_images() {
    	 
     	register_post_type( 'featured_wines' , $args );    
 	} 
+	
+	
+	
+	add_action('init', 'featured_artists');    
+   	 
+	function featured_artists() {    
+    	$args = array(    
+        	'label' => __('Featured Artists'),    
+        	'singular_label' => __('Artists'),    
+        	'public' => true,    
+        	'show_ui' => true,
+        	'has_archive' => true,	 
+        	'capability_type' => 'post',    
+        	'hierarchical' => false,    
+        	'rewrite' => true,    
+        	'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )    
+       	);    
+   	 
+    	register_post_type( 'featured_artists' , $args );    
+	} 
+	
+	
+	add_action('init', 'tasting_room');    
+   	 
+	function tasting_room() {    
+    	$args = array(    
+        	'label' => __('Tasting Room'),    
+        	'singular_label' => __('Tasting Room'),    
+        	'public' => true,    
+        	'show_ui' => true,
+        	'has_archive' => true,	 
+        	'capability_type' => 'post',    
+        	'hierarchical' => false,    
+        	'rewrite' => true,    
+        	'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )    
+       	);    
+   	 
+    	register_post_type( 'tasting_room' , $args );    
+	} 
+
 	
    
 
