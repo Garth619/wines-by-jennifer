@@ -1581,8 +1581,7 @@ ul.sub-menu {
 #content a.button:hover {
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
-  top: 3px;
-  text-decoration: underline; }
+  top: 3px; }
 
 /* FAQ */
 #content p.question {

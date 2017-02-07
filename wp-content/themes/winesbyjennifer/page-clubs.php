@@ -13,14 +13,23 @@ get_header(); ?>
 	
 	<div class="club_right club_right_content wow fadeIn" data-wow-delay="0.2s">
 		<div id="content">
-			<h1>Wine Club</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla</p>
-			<a href="<?php bloginfo('url');?>/clubs/wine-club" class="button">Learn More <div class="arrow-right-white"></div></a>
+			<h1><?php the_field('wine_club_title');?></h1>
+			
+			<?php the_field('wine_club_content');?>
+			
+			<a href="<?php the_field('wine_club_learn_more_link');?>" class="button">Learn More <div class="arrow-right-white"></div></a>
 		</div><!-- content -->
 	</div><!-- club_right -->
 	
 	<div class="club_left club_left_image wow fadeIn" data-wow-delay="0.2s">
-		<img src="<?php bloginfo('template_directory');?>/images/wine_bg.png"/>
+		
+		
+		<?php $imageID = get_field('wine_club_image'); ?>
+		<?php $alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true); ?>
+		<?php $menu_one = wp_get_attachment_image_src(get_field('wine_club_image'), 'clubpic'); ?>
+		
+		<img src="<?php echo $menu_one[0]; ?>" alt="<?php echo $alt_text; ?>"/>
+	
 	</div><!-- club_left -->
 
 </div><!-- club one -->
@@ -30,14 +39,20 @@ get_header(); ?>
 	
 	<div class="club_left club_left_content wow fadeIn" data-wow-delay="0.2s">
 		<div id="content">
-			<h1>Cellar Club</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla</p>
-			<a href="<?php bloginfo('url');?>/clubs/cellar-club" class="button">Learn More <div class="arrow-right-white"></div></a>
+			<h1><?php the_field('cellar_club_title');?></h1>
+			<?php the_field('cellar_club_content');?>
+			<a href="<?php the_field('cellar_club_learn_more_link');?>" class="button">Learn More <div class="arrow-right-white"></div></a>
 		</div><!-- content -->
 	</div><!-- club_left -->
 	
 	<div class="club_right club_right_image wow fadeIn" data-wow-delay="0.2s">
-			<img src="<?php bloginfo('template_directory');?>/images/cellar-bg.png"/>
+			
+		<?php $imagetwoID = get_field('cellar_club_image'); ?>
+		<?php $alt_texttwo = get_post_meta($imagetwoID , '_wp_attachment_image_alt', true); ?>
+		<?php $menu_two = wp_get_attachment_image_src(get_field('cellar_club_image'), 'clubpic'); ?>
+		
+		<img src="<?php echo $menu_two[0]; ?>" alt="<?php echo $alt_texttwo; ?>"/>
+	
 	</div><!-- club_right -->
 
 </div><!-- club two -->
@@ -47,14 +62,27 @@ get_header(); ?>
 	
 	<div class="club_right club_right_content wow fadeIn" data-wow-delay="0.2s">
 		<div id="content">
-			<h1>Beer Club</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla</p>
-			<a href="<?php bloginfo('url');?>/clubs/beer-club" class="button">Learn More <div class="arrow-right-white"></div></a>
+			
+			<h1><?php the_field('beer_club_title');?></h1>
+			
+			
+			<?php the_field('beer_club_content');?>
+			
+			<a href="<?php the_field('beer_club_learn_more_link');?>" class="button">Learn More <div class="arrow-right-white"></div></a>
+		
 		</div><!-- content -->
 	</div><!-- club_left -->
 	
 	<div class="club_left club_left_image wow fadeIn" data-wow-delay="0.2s">
-			<img src="<?php bloginfo('template_directory');?>/images/beer.jpg"/>
+			
+			
+		<?php $imagethreeID = get_field('beer_club_image'); ?>
+		<?php $alt_textthree = get_post_meta($imagetwoID , '_wp_attachment_image_alt', true); ?>
+		<?php $menu_three = wp_get_attachment_image_src(get_field('beer_club_image'), 'clubpic'); ?>
+		
+		<img src="<?php echo $menu_three[0]; ?>" alt="<?php echo $alt_textthree; ?>"/>
+	
+	
 	</div><!-- club_right -->
 
 </div><!-- club three -->
