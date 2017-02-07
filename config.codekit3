@@ -20251,6 +20251,18 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/wp-content\/themes\/winesbyjennifer\/featured-wine-featured-list.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/winesbyjennifer\/featured-wine-featured-list.php",
+		"oF": 0
+		},
+	"\/wp-content\/themes\/winesbyjennifer\/featured-wine-featured-post.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/winesbyjennifer\/featured-wine-featured-post.php",
+		"oF": 0
+		},
 	"\/wp-content\/themes\/winesbyjennifer\/footer.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -23021,6 +23033,94 @@
 		"iS": 113479,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/02\/map-150x150.png": {
+		"ft": 32768,
+		"iS": 18410,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/02\/map-150x150.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/02\/map-180x180.png": {
+		"ft": 32768,
+		"iS": 19858,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/02\/map-180x180.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/02\/map-180x198.png": {
+		"ft": 32768,
+		"iS": 20982,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/02\/map-180x198.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/02\/map.png": {
+		"ft": 32768,
+		"iS": 18825,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/02\/map.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/02\/whitewine-128x300.png": {
+		"ft": 32768,
+		"iS": 32772,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/02\/whitewine-128x300.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/02\/whitewine-136x150.png": {
+		"ft": 32768,
+		"iS": 21575,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/02\/whitewine-136x150.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/02\/whitewine-136x180.png": {
+		"ft": 32768,
+		"iS": 25112,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/02\/whitewine-136x180.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/02\/whitewine-136x198.png": {
+		"ft": 32768,
+		"iS": 27018,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/02\/whitewine-136x198.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/02\/whitewine-136x300.png": {
+		"ft": 32768,
+		"iS": 34609,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/02\/whitewine-136x300.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/02\/whitewine-136x315.png": {
+		"ft": 32768,
+		"iS": 34698,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/02\/whitewine-136x315.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/02\/whitewine.png": {
+		"ft": 32768,
+		"iS": 32086,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/02\/whitewine.png",
 		"oF": 0,
 		"opt": 0
 		},

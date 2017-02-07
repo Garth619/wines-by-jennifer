@@ -1,25 +1,19 @@
 <?php
-/**
- * Template for displaying all single posts
- *
- * @package WordPress
- * @subpackage Twenty_Ten
- * @since Twenty Ten 1.0
- */
 
-get_header(); ?>
+$post_object = get_field('featured_wine_featured_post');
 
-<?php include('banner.php');?>
+if( $post_object ): 
 
-<div class="content_container">
-	
-	<div id="content">
-	
+	// override $post
+	$post = $post_object;
+	setup_postdata( $post ); 
 
-	<div class="featured_wine_wrapper">
-		
-		
-	<div class="single_wine_wrapper">
+	?>
+   
+   
+   
+   
+   <div class="single_wine_wrapper">
 	
 		
 		<span class="wine_title"><?php the_field('first_wine_title');?></span><!-- wine_title -->
@@ -59,31 +53,10 @@ get_header(); ?>
 		
 	
 	</div><!-- single_wine_wrapper -->
-	
-	<span class="mysee_more">See Past Featured Wines</span><!-- mysee_more -->
-	
-	
-	
-	<?php include('featured-wine-featured-list.php');?>
-	
-	
-	</div><!-- featured_wine_wrapper -->
-
-	
-	</div><!-- content -->
-	
-</div><!-- content_container -->
-		
-			
-	<div class="box_wrapper inner wow fadeIn" data-wow-delay="0.2s">
-		
-		<?php include('boxes.php');?>
-		
-	</div><!-- box_wrapper -->
-	
-	
-	<?php include('carousel.php');?>
-
- 
-
-<?php get_footer(); ?>
+   
+   
+   
+   
+   
+   <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+<?php endif; ?>

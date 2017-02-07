@@ -1867,9 +1867,9 @@ body.single .inner_banner .banner_overlay a:hover {
     .featured_wine_wrapper .single_wine_wrapper span.wine_title {
       font-family: "Cinzel", serif;
       color: #8c2555;
-      font-size: 28px;
+      font-size: 33px;
       display: block;
-      margin-bottom: 10px; }
+      margin-bottom: 30px; }
     .featured_wine_wrapper .single_wine_wrapper span.wine_name {
       color: #8c2555;
       font-size: 17px;
@@ -2163,7 +2163,7 @@ body.single .inner_banner .banner_overlay a:hover {
   .content_container {
     width: 86%;
     overflow: hidden;
-    padding: 65px 45px; }
+    padding: 55px 45px; }
   body.page-template-page-innerform #content {
     width: 65%;
     float: left; }
