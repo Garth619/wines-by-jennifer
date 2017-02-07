@@ -724,8 +724,8 @@ function twentyten_get_gallery_images() {
 	if( function_exists('acf_add_options_page') ) {
 	
 	acf_add_options_page(array(
-		'page_title' 	=> 'Theme General Settings',
-		'menu_title'	=> 'Theme Settings',
+		'page_title' 	=> 'Lists',
+		'menu_title'	=> 'Lists',
 		'menu_slug' 	=> 'theme-general-settings',
 		'capability'	=> 'edit_posts',
 		'redirect'		=> false
@@ -738,8 +738,8 @@ function twentyten_get_gallery_images() {
 	));
 	
 	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Theme Footer Settings',
-		'menu_title'	=> 'Footer',
+		'page_title' 	=> 'Featured Artist List',
+		'menu_title'	=> 'Featured Artist List',
 		'parent_slug'	=> 'theme-general-settings',
 	));
 	

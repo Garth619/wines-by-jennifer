@@ -20251,16 +20251,16 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/wp-content\/themes\/winesbyjennifer\/featured-artist-list.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/winesbyjennifer\/featured-artist-list.php",
+		"oF": 0
+		},
 	"\/wp-content\/themes\/winesbyjennifer\/featured-wine-featured-list.php": {
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/wp-content\/themes\/winesbyjennifer\/featured-wine-featured-list.php",
-		"oF": 0
-		},
-	"\/wp-content\/themes\/winesbyjennifer\/featured-wine-featured-post.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/wp-content\/themes\/winesbyjennifer\/featured-wine-featured-post.php",
 		"oF": 0
 		},
 	"\/wp-content\/themes\/winesbyjennifer\/footer.php": {

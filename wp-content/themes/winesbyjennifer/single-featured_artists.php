@@ -28,21 +28,7 @@ get_header(); ?>
 		
 		<div class="artist_list">
 			
-			<a href="">Artist Name</a>
-			<a href="">Artist Name</a>
-			<a href="">Artist Name</a>
-			<a href="">Artist Name</a>
-			<a href="">Artist Name</a>
-			<a href="">Artist Name</a>
-			<a href="">Artist Name</a>
-			<a href="">Artist Name</a>
-			<a href="">Artist Name</a>
-			<a href="">Artist Name</a>
-			<a href="">Artist Name</a>
-			<a href="">Artist Name</a>
-			<a href="">Artist Name</a>
-			<a href="">Artist Name</a>
-			<a href="">Artist Name</a>
+			<?php include('featured-artist-list.php');?>
 			
 		</div><!-- artist_list -->
 	
