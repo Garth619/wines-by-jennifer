@@ -28,7 +28,7 @@ if( $post_object ):
 	?>
     
     
-	    <a class="mymonth" href="<?php the_permalink();?>"><?php the_title();?></a><!-- mymonth -->
+	    <a class="mymonth" href="<?php the_permalink();?>"><?php the_field('front_title');?></a><!-- mymonth -->
     
     
     

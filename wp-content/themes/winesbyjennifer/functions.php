@@ -701,6 +701,11 @@ function twentyten_get_gallery_images() {
 	} 
 	
 	
+	
+	
+	
+	
+	
 	add_action('init', 'tasting_room');    
    	 
 	function tasting_room() {    

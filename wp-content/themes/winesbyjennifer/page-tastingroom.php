@@ -113,8 +113,7 @@ get_header(); ?>
 		
 	</div><!-- box_wrapper -->
 	
-	
-	<?php include('carousel.php');?>
+
 
  
 

@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<?php include('banner.php');?>
+<?php include('banner-single.php');?>
 
 <div class="content_container">
 	
@@ -82,7 +82,7 @@ get_header(); ?>
 	</div><!-- box_wrapper -->
 	
 	
-	<?php include('carousel.php');?>
+
 
  
 

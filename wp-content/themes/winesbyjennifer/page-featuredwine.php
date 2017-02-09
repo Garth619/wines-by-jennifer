@@ -104,7 +104,7 @@ if( $post_object ):
 	</div><!-- box_wrapper -->
 	
 	
-	<?php include('carousel.php');?>
+	
 
  
 
