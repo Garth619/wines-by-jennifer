@@ -2899,7 +2899,7 @@ body.single .inner_banner .banner_overlay a {
 	
 	.new_free_gift {
 		width:33.3333%;
-		height:215px;
+		padding:15px 0 0 15px;
 		
 		.new_free_gift_inner {
 			width:215px;
@@ -2910,10 +2910,9 @@ body.single .inner_banner .banner_overlay a {
 			color:#fff;
 			text-align:center;
 			border:2px solid #fff;
-			-webkit-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.58);
-			-moz-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.58);
-			box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.58);
-			transition: all .5s ease-in-out;
+			-webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.58);
+			-moz-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.58);
+			box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.58);
 			cursor: pointer;
 			&:hover {
 				background:linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)) repeat scroll 0 0%, rgba(0, 0, 0, 0) url(images/new-fg.jpg) top left no-repeat;
@@ -2960,6 +2959,7 @@ body.single .inner_banner .banner_overlay a {
 	
 	.new_logo_wrapper {
 		flex-grow: 1;
+		margin-top:10px;
 		img {
 			display: block;
 			margin:0 auto;
@@ -2971,14 +2971,96 @@ body.single .inner_banner .banner_overlay a {
 	
 	
 	.header_right {
+		padding:15px 15px 0 0;
 		width:33.3333%;
-		height:215px;
-		
 		.header_right_inner {
-			width:75%;
-			background: blue;
-			height:215px;
+			width:210px;
+			height:150px;
 			float:right;
+			span.new_cart {
+				text-transform: uppercase;
+				display: block;
+				font-size:15px;
+				img {
+					margin-right:4px;
+					position: relative;
+					top:3px;
+				}
+			}
+			.search_form {
+				margin-top:15px;
+				input[type="text"] {
+					font-size: 14px;
+					padding:3px 0 3px 8px;
+					border:1px solid #d4d4d4;
+					box-shadow: none;
+					width:80%;
+					float:left;
+					height:30px;
+				}
+				input[type="submit"] {
+					background: $green;
+					border: none;
+					color:#fff;
+					width:20%;
+					float:left;
+					cursor: pointer;
+					height:29px;
+					font-family: $cinzel;
+					font-size:16px;
+					font-weight: bold;
+					transition: all .2s ease-in-out;
+					&:hover {
+						background: $purple;
+					}
+				}
+			}
+		}
+	}
+	
+	.new_social_icons_wrapper {
+		clear:both;
+		padding-top:15px;
+		.single_social_icon {
+			float:left;
+			img {
+				margin-right:20px;
+			}
+			&:last-of-type {
+				img {
+					margin-right:0;
+				}
+			}
+		}
+	}
+	
+	
+	.new_nav {
+		.menu_header {
+			background: url(images/nav-bg.jpg) top left repeat;
+			ul {
+				list-style: none;
+				li {
+					a {
+						color:#fff;
+						text-decoration: none;
+					}
+				}
+			}
+			ul.menu {
+				display: flex;
+				text-align: center;
+				> li {
+					justify-content: space-around;
+					flex-grow: 1;
+					font-size:22px;
+					font-family: $cinzel;
+					text-shadow: 0 1px 2px black;
+					a {
+						
+					}
+				}
+			}
 		}
 	}
 	
@@ -3241,6 +3323,7 @@ input.gform_button {
 	
 	
 	
+/*
 .menu-header {
 	background:url(images/nav-bg.jpg) top left repeat-x;
 	width:75%;
@@ -3275,7 +3358,7 @@ input.gform_button {
 				padding-left:30%;
 			}
 			a:hover {
-// 				color:yellow;
+
 			}
 		}
 		li:nth-child(1) {
@@ -3372,6 +3455,7 @@ input.gform_button {
 		}
 	}	
 }
+*/
 
 	
 	.main_top {

@@ -23313,6 +23313,22 @@
 		"oF": 0,
 		"opt": 0
 		},
+	"\/wp-content\/themes\/winesbyjennifer\/images\/new-cart.png": {
+		"ft": 32768,
+		"iS": 1808,
+		"oA": 0,
+		"oAP": "\/wp-content\/themes\/winesbyjennifer\/images\/new-cart.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/themes\/winesbyjennifer\/images\/new-fb.png": {
+		"ft": 32768,
+		"iS": 1348,
+		"oA": 0,
+		"oAP": "\/wp-content\/themes\/winesbyjennifer\/images\/new-fb.png",
+		"oF": 0,
+		"opt": 0
+		},
 	"\/wp-content\/themes\/winesbyjennifer\/images\/new-fg.jpg": {
 		"ft": 16384,
 		"iS": 21236,
@@ -23321,11 +23337,43 @@
 		"oF": 0,
 		"opt": 0
 		},
+	"\/wp-content\/themes\/winesbyjennifer\/images\/new-g.png": {
+		"ft": 32768,
+		"iS": 2250,
+		"oA": 0,
+		"oAP": "\/wp-content\/themes\/winesbyjennifer\/images\/new-g.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/themes\/winesbyjennifer\/images\/new-instagram.png": {
+		"ft": 32768,
+		"iS": 2021,
+		"oA": 0,
+		"oAP": "\/wp-content\/themes\/winesbyjennifer\/images\/new-instagram.png",
+		"oF": 0,
+		"opt": 0
+		},
 	"\/wp-content\/themes\/winesbyjennifer\/images\/new-logo.jpg": {
 		"ft": 16384,
 		"iS": 60136,
 		"oA": 0,
 		"oAP": "\/wp-content\/themes\/winesbyjennifer\/images\/new-logo.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/themes\/winesbyjennifer\/images\/new-twitter.png": {
+		"ft": 32768,
+		"iS": 2030,
+		"oA": 0,
+		"oAP": "\/wp-content\/themes\/winesbyjennifer\/images\/new-twitter.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/themes\/winesbyjennifer\/images\/new-youtube.png": {
+		"ft": 32768,
+		"iS": 1952,
+		"oA": 0,
+		"oAP": "\/wp-content\/themes\/winesbyjennifer\/images\/new-youtube.png",
 		"oF": 0,
 		"opt": 0
 		},

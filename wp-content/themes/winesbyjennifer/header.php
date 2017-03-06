@@ -206,7 +206,7 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 			
 			<div class="new_logo_wrapper">
 				
-				<a href="">
+				<a href="<?php bloginfo('url');?>">
 					<img src="<?php bloginfo('template_directory');?>/images/new-logo.jpg"/>
 				</a>
 				
@@ -216,6 +216,43 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 				
 				<div class="header_right_inner">
 					
+					<span class="new_cart"><img class="new_cart" src="<?php bloginfo('template_directory');?>/images/new-cart.png"/> Shopping Cart | LOGIN </span>
+					
+					<div class="search_form"><?php get_search_form(); ?></div><!-- search_form -->
+					
+					<div class="new_social_icons_wrapper">
+						
+						<div class="single_social_icon">
+							
+							<img src="<?php bloginfo('template_directory');?>/images/new-fb.png"/>
+							
+						</div><!-- single_social_icon -->
+						
+						<div class="single_social_icon">
+							
+							<img src="<?php bloginfo('template_directory');?>/images/new-g.png"/>
+							
+						</div><!-- single_social_icon -->
+						
+						<div class="single_social_icon">
+							
+							<img src="<?php bloginfo('template_directory');?>/images/new-twitter.png"/>
+							
+						</div><!-- single_social_icon -->
+						
+						<div class="single_social_icon">
+							
+							<img src="<?php bloginfo('template_directory');?>/images/new-instagram.png"/>
+							
+						</div><!-- single_social_icon -->
+						
+						<div class="single_social_icon">
+							
+							<img src="<?php bloginfo('template_directory');?>/images/new-youtube.png"/>
+							
+						</div><!-- single_social_icon -->
+						
+					</div><!-- new_social_icons -->
 					
 				</div><!-- header_right_inner -->
 				
