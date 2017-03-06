@@ -525,7 +525,7 @@ trait admin_menu
 			->capability( 'edit_posts' )
 			->menu_slug( 'threewp_broadcast' )
 			->menu_title( $this->_( 'Broadcast' ) )
-			->page_title( $this->_( 'ThreeWP Broadcast' ) )
+			->page_title( $this->_( 'Broadcast' ) )
 			->icon_url( 'dashicons-rss' );
 
 		$this->menu_page()

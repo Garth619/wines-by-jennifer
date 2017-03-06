@@ -1,3 +1,12 @@
+20170224		Wordpress EDD updater.
+20170221		Clean up tests. Readd wpautop.
+20170217		Remove all thirdparty classes.
+				Remove add_query_arg and remove_query_arg
+				Remove drupal
+				Remove wpautop
+20170216		Wordpress: EDD updater ignore invalid statuses some other place also.
+20170216		Remove PHPmailer class completely.
+20170215		Wordpress: EDD updater ignore invalid statuses.
 20170201		Wordpress: Better EDD handler code.
 20170131		Wordpress: Updater updated.
 20170118		Wordpress: Correctly detect several IPs

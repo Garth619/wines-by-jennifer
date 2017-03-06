@@ -898,6 +898,23 @@ class ThreeWP_Broadcast
 	}
 
 	/**
+		@brief		Forces changes to the post dates.
+		@details	Accepts all four post date columns.
+		@since		2017-02-07 14:57:41
+	**/
+	public function set_post_date( $post_data )
+	{
+		$sets = [];
+		foreach( [ 'post_modified', 'post_modified_gmt', 'post_date', 'post_date_gmt' ] as $key )
+			if ( isset( $post_data->$key ) )
+				$sets[ $key ] = $post_data->$key;
+		if ( count( $sets ) < 1 )
+			return;
+		global $wpdb;
+		$wpdb->update( $wpdb->posts, $sets, [ 'ID' => $post_data->ID ] );
+	}
+
+	/**
 		@brief		Save the user's last used settings.
 		@details	Since v8 the data is stored in the user's meta.
 		@since		2014-10-09 06:19:53

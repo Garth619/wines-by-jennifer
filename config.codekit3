@@ -7,7 +7,7 @@
 		"uuidString": "78E380CC-1B8D-499A-A953-7BA9DDC3C128"
 		}
 	],
-"creatorBuild": "25504",
+"creatorBuild": "25568",
 "files": {
 	"\/.gitignore": {
 		"ft": 8192,
@@ -19,12 +19,6 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/.htaccess",
-		"oF": 0
-		},
-	"\/.maintenance": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/.maintenance",
 		"oF": 0
 		},
 	"\/index.php": {
@@ -4656,6 +4650,12 @@
 		"oAP": "\/wp-content\/plugins\/advanced-custom-fields-pro\/core\/compatibility.php",
 		"oF": 0
 		},
+	"\/wp-content\/plugins\/advanced-custom-fields-pro\/core\/deprecated.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/plugins\/advanced-custom-fields-pro\/core\/deprecated.php",
+		"oF": 0
+		},
 	"\/wp-content\/plugins\/advanced-custom-fields-pro\/core\/field.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -6708,36 +6708,6 @@
 		"oAP": "\/wp-content\/plugins\/better-wp-security\/core\/admin-pages\/sidebar-widget.php",
 		"oF": 0
 		},
-	"\/wp-content\/plugins\/better-wp-security\/core\/class-ithemes-sync-verb-itsec-get-everything.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/wp-content\/plugins\/better-wp-security\/core\/class-ithemes-sync-verb-itsec-get-everything.php",
-		"oF": 0
-		},
-	"\/wp-content\/plugins\/better-wp-security\/core\/class-ithemes-sync-verb-itsec-get-lockouts.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/wp-content\/plugins\/better-wp-security\/core\/class-ithemes-sync-verb-itsec-get-lockouts.php",
-		"oF": 0
-		},
-	"\/wp-content\/plugins\/better-wp-security\/core\/class-ithemes-sync-verb-itsec-get-temp-whitelist.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/wp-content\/plugins\/better-wp-security\/core\/class-ithemes-sync-verb-itsec-get-temp-whitelist.php",
-		"oF": 0
-		},
-	"\/wp-content\/plugins\/better-wp-security\/core\/class-ithemes-sync-verb-itsec-release-lockout.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/wp-content\/plugins\/better-wp-security\/core\/class-ithemes-sync-verb-itsec-release-lockout.php",
-		"oF": 0
-		},
-	"\/wp-content\/plugins\/better-wp-security\/core\/class-ithemes-sync-verb-itsec-set-temp-whitelist.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/wp-content\/plugins\/better-wp-security\/core\/class-ithemes-sync-verb-itsec-set-temp-whitelist.php",
-		"oF": 0
-		},
 	"\/wp-content\/plugins\/better-wp-security\/core\/class-itsec-core.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -6796,12 +6766,6 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/wp-content\/plugins\/better-wp-security\/core\/class-itsec-setup.php",
-		"oF": 0
-		},
-	"\/wp-content\/plugins\/better-wp-security\/core\/class-itsec-sync.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/wp-content\/plugins\/better-wp-security\/core\/class-itsec-sync.php",
 		"oF": 0
 		},
 	"\/wp-content\/plugins\/better-wp-security\/core\/css\/index.php": {
@@ -7454,18 +7418,6 @@
 		"oAP": "\/wp-content\/plugins\/better-wp-security\/core\/modules\/away-mode\/active.php",
 		"oF": 0
 		},
-	"\/wp-content\/plugins\/better-wp-security\/core\/modules\/away-mode\/class-ithemes-sync-verb-itsec-get-away-mode.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/wp-content\/plugins\/better-wp-security\/core\/modules\/away-mode\/class-ithemes-sync-verb-itsec-get-away-mode.php",
-		"oF": 0
-		},
-	"\/wp-content\/plugins\/better-wp-security\/core\/modules\/away-mode\/class-ithemes-sync-verb-itsec-override-away-mode.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/wp-content\/plugins\/better-wp-security\/core\/modules\/away-mode\/class-ithemes-sync-verb-itsec-override-away-mode.php",
-		"oF": 0
-		},
 	"\/wp-content\/plugins\/better-wp-security\/core\/modules\/away-mode\/class-itsec-away-mode.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -7650,6 +7602,24 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/wp-content\/plugins\/better-wp-security\/core\/modules\/away-mode\/setup.php",
+		"oF": 0
+		},
+	"\/wp-content\/plugins\/better-wp-security\/core\/modules\/away-mode\/sync-verbs\/index.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/plugins\/better-wp-security\/core\/modules\/away-mode\/sync-verbs\/index.php",
+		"oF": 0
+		},
+	"\/wp-content\/plugins\/better-wp-security\/core\/modules\/away-mode\/sync-verbs\/itsec-get-away-mode.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/plugins\/better-wp-security\/core\/modules\/away-mode\/sync-verbs\/itsec-get-away-mode.php",
+		"oF": 0
+		},
+	"\/wp-content\/plugins\/better-wp-security\/core\/modules\/away-mode\/sync-verbs\/itsec-override-away-mode.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/plugins\/better-wp-security\/core\/modules\/away-mode\/sync-verbs\/itsec-override-away-mode.php",
 		"oF": 0
 		},
 	"\/wp-content\/plugins\/better-wp-security\/core\/modules\/away-mode\/utilities.php": {
@@ -8135,12 +8105,6 @@
 		"oAP": "\/wp-content\/plugins\/better-wp-security\/core\/modules\/file-change\/admin.php",
 		"oF": 0
 		},
-	"\/wp-content\/plugins\/better-wp-security\/core\/modules\/file-change\/class-ithemes-sync-verb-itsec-perform-file-scan.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/wp-content\/plugins\/better-wp-security\/core\/modules\/file-change\/class-ithemes-sync-verb-itsec-perform-file-scan.php",
-		"oF": 0
-		},
 	"\/wp-content\/plugins\/better-wp-security\/core\/modules\/file-change\/class-itsec-file-change-log.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -8483,6 +8447,18 @@
 		"oAP": "\/wp-content\/plugins\/better-wp-security\/core\/modules\/file-change\/setup.php",
 		"oF": 0
 		},
+	"\/wp-content\/plugins\/better-wp-security\/core\/modules\/file-change\/sync-verbs\/index.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/plugins\/better-wp-security\/core\/modules\/file-change\/sync-verbs\/index.php",
+		"oF": 0
+		},
+	"\/wp-content\/plugins\/better-wp-security\/core\/modules\/file-change\/sync-verbs\/itsec-perform-file-scan.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/plugins\/better-wp-security\/core\/modules\/file-change\/sync-verbs\/itsec-perform-file-scan.php",
+		"oF": 0
+		},
 	"\/wp-content\/plugins\/better-wp-security\/core\/modules\/file-change\/validator.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -8723,18 +8699,6 @@
 		"oAP": "\/wp-content\/plugins\/better-wp-security\/core\/modules\/malware\/active.php",
 		"oF": 0
 		},
-	"\/wp-content\/plugins\/better-wp-security\/core\/modules\/malware\/class-ithemes-sync-verb-itsec-do-malware-scan.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/wp-content\/plugins\/better-wp-security\/core\/modules\/malware\/class-ithemes-sync-verb-itsec-do-malware-scan.php",
-		"oF": 0
-		},
-	"\/wp-content\/plugins\/better-wp-security\/core\/modules\/malware\/class-ithemes-sync-verb-itsec-get-malware-scan-log.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/wp-content\/plugins\/better-wp-security\/core\/modules\/malware\/class-ithemes-sync-verb-itsec-get-malware-scan-log.php",
-		"oF": 0
-		},
 	"\/wp-content\/plugins\/better-wp-security\/core\/modules\/malware\/class-itsec-malware-log.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -8831,6 +8795,24 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/wp-content\/plugins\/better-wp-security\/core\/modules\/malware\/setup.php",
+		"oF": 0
+		},
+	"\/wp-content\/plugins\/better-wp-security\/core\/modules\/malware\/sync-verbs\/index.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/plugins\/better-wp-security\/core\/modules\/malware\/sync-verbs\/index.php",
+		"oF": 0
+		},
+	"\/wp-content\/plugins\/better-wp-security\/core\/modules\/malware\/sync-verbs\/itsec-do-malware-scan.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/plugins\/better-wp-security\/core\/modules\/malware\/sync-verbs\/itsec-do-malware-scan.php",
+		"oF": 0
+		},
+	"\/wp-content\/plugins\/better-wp-security\/core\/modules\/malware\/sync-verbs\/itsec-get-malware-scan-log.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/plugins\/better-wp-security\/core\/modules\/malware\/sync-verbs\/itsec-get-malware-scan-log.php",
 		"oF": 0
 		},
 	"\/wp-content\/plugins\/better-wp-security\/core\/modules\/multisite-tweaks\/active.php": {
@@ -9320,6 +9302,42 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/wp-content\/plugins\/better-wp-security\/core\/sidebar-widget-temp-whitelist.php",
+		"oF": 0
+		},
+	"\/wp-content\/plugins\/better-wp-security\/core\/sync-verbs\/index.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/plugins\/better-wp-security\/core\/sync-verbs\/index.php",
+		"oF": 0
+		},
+	"\/wp-content\/plugins\/better-wp-security\/core\/sync-verbs\/itsec-get-everything.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/plugins\/better-wp-security\/core\/sync-verbs\/itsec-get-everything.php",
+		"oF": 0
+		},
+	"\/wp-content\/plugins\/better-wp-security\/core\/sync-verbs\/itsec-get-lockouts.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/plugins\/better-wp-security\/core\/sync-verbs\/itsec-get-lockouts.php",
+		"oF": 0
+		},
+	"\/wp-content\/plugins\/better-wp-security\/core\/sync-verbs\/itsec-get-temp-whitelist.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/plugins\/better-wp-security\/core\/sync-verbs\/itsec-get-temp-whitelist.php",
+		"oF": 0
+		},
+	"\/wp-content\/plugins\/better-wp-security\/core\/sync-verbs\/itsec-release-lockout.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/plugins\/better-wp-security\/core\/sync-verbs\/itsec-release-lockout.php",
+		"oF": 0
+		},
+	"\/wp-content\/plugins\/better-wp-security\/core\/sync-verbs\/itsec-set-temp-whitelist.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/plugins\/better-wp-security\/core\/sync-verbs\/itsec-set-temp-whitelist.php",
 		"oF": 0
 		},
 	"\/wp-content\/plugins\/better-wp-security\/history.txt": {
@@ -25363,6 +25381,12 @@
 		"oAP": "\/wp-content\/uploads\/ithemes-security\/backups\/backup-wines-by-jennifer-20170207-201639-dOI7cqPvhA3S6aEAYC1tJLUFAPUplD.zip",
 		"oF": 0
 		},
+	"\/wp-content\/uploads\/ithemes-security\/backups\/backup-wines-by-jennifer-20170213-201923-oRw7wKIyuPl5TF3XFARHDOBOeEgqm7.zip": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/ithemes-security\/backups\/backup-wines-by-jennifer-20170213-201923-oRw7wKIyuPl5TF3XFARHDOBOeEgqm7.zip",
+		"oF": 0
+		},
 	"\/wp-content\/uploads\/ithemes-security\/backups\/index.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -32777,6 +32801,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"no-multi-assign": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-multi-spaces": {
 			"active": 0,
 			"optionString": "{'exceptions': {'Property': true, 'BinaryExpression': false, 'VariableDeclarator': false, 'ImportDeclaration': false}}"
@@ -33105,6 +33133,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"prefer-promise-reject-errors": {
+			"active": 0,
+			"optionString": "{'allowEmptyReject': false}"
+			},
 		"prefer-rest-params": {
 			"active": 0,
 			"optionString": ""
@@ -33198,6 +33230,10 @@
 			"optionString": ""
 			},
 		"template-curly-spacing": {
+			"active": 0,
+			"optionString": "'never'"
+			},
+		"template-tag-spacing": {
 			"active": 0,
 			"optionString": "'never'"
 			},

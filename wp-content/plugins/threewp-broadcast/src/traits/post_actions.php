@@ -445,6 +445,10 @@ trait post_actions
 
 		foreach( $post_ids as $post_id )
 		{
+			// Sanitize our input here.
+			$post_id = intval( $post_id );
+			if ( $post_id < 1 )
+				continue;
 			$action->post_id = $post_id;
 			$action->execute();
 		}
@@ -463,7 +467,7 @@ trait post_actions
 
 		if ( ! isset( $_REQUEST[ 'post_id' ] ) )
 			wp_die( 'No nonce.' );
-		$post_id = $_REQUEST[ 'post_id' ];
+		$post_id = intval( $_REQUEST[ 'post_id' ] );
 
 		$action = 'broadcast_post_action_form';
 		if ( ! wp_verify_nonce( $nonce, $action . $post_id ) )

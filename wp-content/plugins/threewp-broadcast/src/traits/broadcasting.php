@@ -118,8 +118,7 @@ trait broadcasting
 
 		if ( $bcd->custom_fields !== false )
 		{
-			if ( ! is_object( $bcd->custom_fields ) )
-				$bcd->custom_fields = (object)[];
+			$bcd->prepare_custom_fields();
 
 			$this->debug( 'Custom fields: Will broadcast custom fields.' );
 
@@ -174,13 +173,6 @@ trait broadcasting
 			}
 			else
 				$this->debug( 'Custom fields: Post does not have a thumbnail (featured image).' );
-
-			$bcd->custom_fields->blacklist = array_filter( explode( ' ', $this->get_site_option( 'custom_field_blacklist' ) ) );
-			$this->debug( 'The custom field blacklist is: %s', $bcd->custom_fields->blacklist );
-			$bcd->custom_fields->protectlist = array_filter( explode( ' ', $this->get_site_option( 'custom_field_protectlist' ) ) );
-			$this->debug( 'The custom field protectlist is: %s', $bcd->custom_fields->protectlist );
-			$bcd->custom_fields->whitelist = array_filter( explode( ' ', $this->get_site_option( 'custom_field_whitelist' ) ) );
-			$this->debug( 'The custom field whitelist is: %s', $bcd->custom_fields->whitelist );
 
 			foreach( $bcd->custom_fields() as $custom_field => $ignore )
 			{
@@ -258,6 +250,12 @@ trait broadcasting
 
 		foreach( $bcd->blogs as $child_blog )
 		{
+			if ( $child_blog->get_id() == $bcd->parent_blog_id )
+			{
+				$this->debug( 'Will not broadcast to our own parent blog.' );
+				continue;
+			}
+
 			if ( ! $this->blog_exists( $child_blog->get_id() ) )
 			{
 				$this->debug( 'Blog %s does not exist anymore. Skipping!', $child_blog->get_id() );
@@ -345,9 +343,6 @@ trait broadcasting
 						$temp_post_data = $bcd->new_post;
 						$temp_post_data->ID = $child_post_id;
 
-						// Allow modification of post date.
-						$temp_post_data->edit_date = true;
-
 						$this->debug( 'Running wp_update_post with %s', $temp_post_data );
 						wp_update_post( $temp_post_data );
 						$bcd->new_post->ID = $child_post_id;
@@ -390,6 +385,11 @@ trait broadcasting
 			}
 
 			$bcd->new_post = get_post( $bcd->new_post( 'ID' ) );
+
+			// Force setting of the correct post dates.
+			$dated_post = clone( $bcd->post );
+			$dated_post->ID = $bcd->new_post->ID;
+			$this->set_post_date( $dated_post );
 
 			$bcd->equivalent_posts()->set( $bcd->parent_blog_id, $bcd->post->ID, $bcd->current_child_blog_id, $bcd->new_post( 'ID' ) );
 			$this->debug( 'Equivalent of %s/%s is %s/%s', $bcd->parent_blog_id, $bcd->post->ID, $bcd->current_child_blog_id, $bcd->new_post( 'ID' )  );
@@ -530,6 +530,7 @@ trait broadcasting
 			{
 				$this->debug( 'Modifying new post: %s', $modified_post );
 				wp_update_post( $modified_post );	// Or maybe it is.
+				$this->set_post_date( $modified_post );
 			}
 			else
 				$this->debug( 'No need to modify the post.' );
@@ -736,7 +737,7 @@ trait broadcasting
 		// Does this post_id match up with the one in the post?
 		if ( isset( $_POST[ 'ID' ] ) )
 		{
-			$_post_id = $_POST[ 'ID' ];
+			$_post_id = intval( $_POST[ 'ID' ] );
 			if ( $_post_id != $post_id )
 				return $this->debug( 'Post ID %s does not match up with ID in POST %s.', $post_id, $_post_id );
 		}

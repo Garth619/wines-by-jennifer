@@ -126,6 +126,7 @@ trait attachments
 		$upload_dir = wp_upload_dir();
 
 		$target = $upload_dir[ 'path' ] . '/' . $attachment_data->filename_base;
+
 		if( ! $attachment_data->is_url() )
 		{
 			// Only copy the file if it is local.
@@ -133,6 +134,7 @@ trait attachments
 			copy( $source, $target );
 			$this->debug( 'Copy attachment: File sizes: %s %s ; %s %s', $source, filesize( $source ), $target, filesize( $target ) );
 			$target_path = $target;
+			$new_guid = $upload_dir[ 'url' ] . '/' . $attachment_data->filename_base;
 		}
 		else
 		{
@@ -140,6 +142,9 @@ trait attachments
 			$target = $source;
 			// PW 30/04/2015 - not accurate but required for wp_generate_attachment_metadata
 			$target_path = $upload_dir[ 'path' ] . '/' . $attachment_data->filename_base;
+
+			// In the case of URLs... use the existing URL.
+			$new_guid = $attachment_data->post->guid;
 		}
 
 		// And now create the attachment stuff.
@@ -147,7 +152,7 @@ trait attachments
 		$this->debug( 'Copy attachment: Checking filetype.' );
 		$wp_filetype = wp_check_filetype( $target, null );
 		$attachment = [
-			'guid' => $upload_dir[ 'url' ] . '/' . $attachment_data->filename_base,
+			'guid' => $new_guid,
 			'menu_order' => $attachment_data->post->menu_order,
 			'post_author' => $attachment_data->post->post_author,
 			'post_excerpt' => $attachment_data->post->post_excerpt,
@@ -217,7 +222,8 @@ trait attachments
 			}
 		}
 
-		$this->debug( 'Copy attachment: File sizes again: %s %s ; %s %s', $source, filesize( $source ), $target, filesize( $target ) );
+		if ( ! $is_url )
+			$this->debug( 'Copy attachment: File sizes again: %s %s ; %s %s', $source, filesize( $source ), $target, filesize( $target ) );
 		$action->finish();
 	}
 

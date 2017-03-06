@@ -45,6 +45,9 @@ trait edd
 		$r = '';
 		$status = $this->edd_get_cached_license_status();
 
+		if ( ! $status )
+			$status = (object)[ 'license' => 'none' ];
+
 		switch( $status->license )
 		{
 			case 'deactivated':
@@ -311,6 +314,10 @@ trait edd
 			$this->add_filter( 'http_api_transports', 'edd_http_api_transports', 10, 3 );
 
 		$status = $this->edd_get_cached_license_status();
+
+		// Ignore invalid statuses completely. This is hopefully just temporary.
+		if ( ! $status )
+			return;
 
 		if ( $status->license == 'valid' )
 		{
