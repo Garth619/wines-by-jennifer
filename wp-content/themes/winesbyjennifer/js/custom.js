@@ -102,7 +102,7 @@ jQuery(document).ready(function(){
 			// Newsletter
 		
 		
-			jQuery('.newsletter_signup, .mobile_offer').click(function(){
+			jQuery('.new_free_gift_inner, .mobile_offer').click(function(){
 				
 				jQuery('.overlay').addClass('open');
 				jQuery('.newsletter_overlay_content').fadeIn(50);

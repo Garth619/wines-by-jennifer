@@ -85,30 +85,86 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 
 <body <?php body_class(); ?>>
 
-				
-		
+
 	
 		
-		<div class="mobile_header">
+		<div class="mymobile_header">
 			
-			<h1><a href="<?php bloginfo('url');?>">Wines by Jennifer&reg;</a></h1>
+			<div class="mobile_offer">
+				
+				<span class="offer_title">
+					
+					<span class="color_change">Free Gift!</span> Five Days to Expert Wine Tasting&nbsp;<sup>&reg;</sup> <span class="color_change">Click&nbsp;Here</span><!-- color_change -->
+				
+				</span><!-- offer_title -->
+				
+			</div><!-- mobile_offer -->
 			
-			<?php if(is_handheld()): ?>	
+			<div class="mymenu_main">
+				
+				<div class="mymobile_icons_wrapper">
+					
+					<a href=""><img class="icon" src="<?php bloginfo('template_directory');?>/images/cart.png"/></a>
+					<a href="<?php bloginfo('url');?>/locations"><img class="icon" src="<?php bloginfo('template_directory');?>/images/pin.png"/></a>
+					<img class="icon mysearchicon" src="<?php bloginfo('template_directory');?>/images/search.png"/>
+					
+				</div><!-- mymobile_icons_wrapper -->
+				
+				<div class="mylogo_wrapper">
+					
+					<a href="<?php bloginfo('url');?>">
+					
+						<img src="<?php bloginfo('template_directory');?>/images/logo.jpg"/>
+					
+					</a>
+					
+				</div><!-- mylogo_wrapper -->
+				
+				<div class="my_mobile_menu_wrapper">
+					
+					<div class="sign_in_wrapper">
+					
+						<a class="mysign_in" href="">Sign In</a>
+					
+						<div class="menu_bars_wrapper">
+						
+							<div class="menu_bar"></div><!-- menu_bar -->
+							<div class="menu_bar"></div><!-- menu_bar -->
+							<div class="menu_bar"></div><!-- menu_bar -->
+						
+						</div><!-- menu_bars_wrapper -->
+					
+					</div><!-- sign_in_wrapper -->
+					
+				</div><!-- my_mobile_menu_wrapper -->
+				
+				
+			</div><!-- mymenu_main -->
+			
+			
+		</div><!-- mymobile_header -->
 		
-			<span class="overlay_close_mobile_menu">Close X</span>
+		<nav class="mymobile_dropdown">
 			
-			<div class="mobile_menu">
-				<div class="white_bar"></div>
-				<div class="white_bar"></div>
-				<div class="white_bar"></div>
-			</div><!-- mobile menu -->
+			<span class="myclose">Close X</span><!-- close -->
 			
+			<ul>
+				<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
+			</ul>
 			
-			
-			<?php endif; ?>
+		</nav><!-- mymobile_dropdown -->
 		
-		</div><!-- mobile_header --> 
 		
+		
+		
+		<div class="search_overlay">
+			
+			<span class="mysearchclose">Close X</span><!-- close -->
+			
+			<?php get_search_form(); ?>
+			
+			
+		</div><!-- search_overlay -->
 	
 		
 		<div class="bg_bug"></div><!-- bg_bug -->
@@ -128,11 +184,13 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 		
 		
 						
+<!--
 			<?php if(!is_page_template('page-main.php')) { ?>
 			
 			<div class="inner_page_hide_header">
 			
-			<?php } ?><!-- main page info -->
+			<?php } ?>
+--><!-- main page info -->
 			
 			<div class="header">
 			
@@ -148,9 +206,15 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 				
 				<div class="right_header">
 					<div class="desktop_store_wrap">
-						shopping cart will go here<br/>
-						search will go here
-						<?php //get_search_form();?>
+						
+						<span style="margin-bottom:4px;display:block">shopping cart will go here</span>
+						
+						<div class="desktop_search">
+						
+							<?php get_search_form(); ?>
+						
+						</div><!-- desktop_search -->
+					
 					</div><!-- desktop_store_wrap -->
 					<div class="newsletter_signup">
 						<img class="newsletter_bg" src="<?php bloginfo('template_directory');?>/images/newsletter.png"/>
@@ -169,25 +233,8 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 				
 		</div><!-- header -->		
 				
-			<?php if(is_handheld()): ?>
+						
 			
-				<div class="nav">
-					
-					<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
-					<div class="social_icons_wrapper">
-						<ul class="social_icons">
-							<li><a href="https://www.facebook.com/WinesByJennifer" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/facebook.png"/></a></li>
-							<li><a href="" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/google-plus.png"/></a></li>
-							<li><a href="https://twitter.com/WinesByJennifer" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/twitter.png"/></a></li>
-							<li><a href="" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/instagram.png"/></a></li>
-							<li><a href="http://www.youtube.com/user/WinesByJennifer" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/youtube.png"/></a></li>
-						</ul>
-					</div><!-- social_icons_wrapper -->
-				</div><!-- nav -->
-			
-			<?php endif;?>
-			
-			<?php if(!is_handheld()): ?>
 			
 			<div class="modernizr_wrapper">
 				<div class="nav mymenu">
@@ -205,11 +252,11 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 				</div><!-- nav -->
 			</div><!-- modernizr_wrapper -->
 			
-			<?php endif;?>
+			
 		
 		<?php if(!is_page_template('page-main.php')) : ?>
 			
-			</div><!-- inner_page_hide_header -->
+<!-- 			</div> --><!-- inner_page_hide_header -->
 			<div class="main inner">
 				
 				<?php else: ?>

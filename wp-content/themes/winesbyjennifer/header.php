@@ -182,77 +182,54 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 		
 		
 		
-		
-						
-<!--
-			<?php if(!is_page_template('page-main.php')) { ?>
+		<div class="new_header">
 			
-			<div class="inner_page_hide_header">
-			
-			<?php } ?>
---><!-- main page info -->
-			
-			<div class="header">
-			
-				<div class="intro">
-					<div class="logo_wrapper">
-						<a href="<?php bloginfo('url');?>"><img class="logo" src="<?php bloginfo('template_directory');?>/images/logo.jpg"/></a>
-					</div><!-- logo_wrapper -->
-					<div class="intro_content">
-						<p><span class="purple">Wines by Jennifer <sup style="font-size:10px;">&reg;</sup></span> is a unique luxury entertainment destination that has been helping people enjoy an authentic global wine country experience since&nbsp;2003.</p>
-					</div><!-- intro_content -->
-				</div><!-- intro -->
+			<div class="new_free_gift">
 				
-				
-				<div class="right_header">
-					<div class="desktop_store_wrap">
-						
-						<span style="margin-bottom:4px;display:block">shopping cart will go here</span>
-						
-						<div class="desktop_search">
-						
-							<?php get_search_form(); ?>
-						
-						</div><!-- desktop_search -->
+				<div class="new_free_gift_inner">
 					
-					</div><!-- desktop_store_wrap -->
-					<div class="newsletter_signup">
-						<img class="newsletter_bg" src="<?php bloginfo('template_directory');?>/images/newsletter.png"/>
-						<div class="newsletter_text_wrap">
-							<div class="newsletter_text">
-							<span class="newsletter_title"><img class="gift_icon" src="<?php bloginfo('template_directory');?>/images/gift.png"/>Free Gift!</span>
-							
-								<span class="newsletter_subtitle">“5 DAYS TO EXPERT<br/>&nbsp;&nbsp;WINE&nbsp;TASTING” <sup class="regsitered">&reg;</sup> <div class="arrow-right-yellow"></div> </span>
-							</div><!-- newsletter_text -->
-						</div><!-- newsletter_text_wrap -->
+					<div class="new_free_gift_inner_content">
+					
+						<span class="new_free_gift_title"><img src="<?php bloginfo('template_directory');?>/images/gift.png"/> Free Gift!</span><!-- new_free_gift_title -->
+						<span class="five_days">"5 Days to Expert<br/>Wine Tasting" <sup>&reg;</sup></span><!-- five_days -->
+					
+					</div><!-- new_free_gift_inner_content -->
+					
+					<div class="new_newletter">
 						
-						<img class="flyer" src="<?php bloginfo('template_directory');?>/images/flyer.png"/>
-					</div><!-- newsletter_signup -->
-				
-				</div>	<!-- right_header -->
-				
-		</div><!-- header -->		
-				
 						
+					</div><!-- new_newletter -->
+					
+				</div><!-- new_free_gift_inner -->
+				
+			</div><!-- new_free_gift -->
 			
+			<div class="new_logo_wrapper">
+				
+				<a href="">
+					<img src="<?php bloginfo('template_directory');?>/images/new-logo.jpg"/>
+				</a>
+				
+			</div><!-- new_logo_wrapper -->
 			
-			<div class="modernizr_wrapper">
-				<div class="nav mymenu">
-					<h1 class="logotest">Wines by Jennifer</h1>
-					<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
-					<div class="social_icons_wrapper">
-						<ul class="social_icons">
-							<li><a href="" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/facebook.png"/></a></li>
-							<li><a href="" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/google-plus.png"/></a></li>
-							<li><a href="" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/twitter.png"/></a></li>
-							<li><a href="" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/instagram.png"/></a></li>
-							<li><a href="" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/youtube.png"/></a></li>
-						</ul>
-					</div><!-- social_icons_wrapper -->
-				</div><!-- nav -->
-			</div><!-- modernizr_wrapper -->
+			<div class="header_right">
+				
+				<div class="header_right_inner">
+					
+					
+				</div><!-- header_right_inner -->
+				
+			</div><!-- header_right -->
 			
+		</div><!-- new_header -->
+						
+		<div class="new_nav">
 			
+			<?php wp_nav_menu( array( 'container_class' => 'menu_header', 'theme_location' => 'primary' ) ); ?>
+			
+		</div><!-- new_nav -->
+			
+						
 		
 		<?php if(!is_page_template('page-main.php')) : ?>
 			

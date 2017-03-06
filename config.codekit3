@@ -5838,6 +5838,14 @@
 		"oF": 0,
 		"opt": 0
 		},
+	"\/wp-content\/plugins\/ajax-load-more\/admin\/img\/add-ons\/next-page-add-on.jpg": {
+		"ft": 16384,
+		"iS": 32162,
+		"oA": 0,
+		"oAP": "\/wp-content\/plugins\/ajax-load-more\/admin\/img\/add-ons\/next-page-add-on.jpg",
+		"oF": 0,
+		"opt": 0
+		},
 	"\/wp-content\/plugins\/ajax-load-more\/admin\/img\/add-ons\/paging-add-ons.jpg": {
 		"ft": 16384,
 		"iS": 25939,
@@ -6609,12 +6617,6 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/wp-content\/plugins\/akismet\/views\/stats.php",
-		"oF": 0
-		},
-	"\/wp-content\/plugins\/akismet\/views\/strict.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/wp-content\/plugins\/akismet\/views\/strict.php",
 		"oF": 0
 		},
 	"\/wp-content\/plugins\/akismet\/wrapper.php": {
@@ -11851,6 +11853,12 @@
 		"oAP": "\/wp-content\/plugins\/gravityforms\/languages\/gravityforms-it_IT.mo",
 		"oF": 0
 		},
+	"\/wp-content\/plugins\/gravityforms\/languages\/gravityforms-ja.mo": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/plugins\/gravityforms\/languages\/gravityforms-ja.mo",
+		"oF": 0
+		},
 	"\/wp-content\/plugins\/gravityforms\/languages\/gravityforms-ka_GE.mo": {
 		"ft": 8192,
 		"oA": 2,
@@ -11861,6 +11869,12 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/wp-content\/plugins\/gravityforms\/languages\/gravityforms-nb_NO.mo",
+		"oF": 0
+		},
+	"\/wp-content\/plugins\/gravityforms\/languages\/gravityforms-nl_be.mo": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/plugins\/gravityforms\/languages\/gravityforms-nl_be.mo",
 		"oF": 0
 		},
 	"\/wp-content\/plugins\/gravityforms\/languages\/gravityforms-nl_NL.mo": {
@@ -15253,12 +15267,6 @@
 		"oAP": "\/wp-content\/plugins\/threewp-broadcast\/src\/sdk\/Doxyfile",
 		"oF": 0
 		},
-	"\/wp-content\/plugins\/threewp-broadcast\/src\/sdk\/drupal\/db_aware_object.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/wp-content\/plugins\/threewp-broadcast\/src\/sdk\/drupal\/db_aware_object.php",
-		"oF": 0
-		},
 	"\/wp-content\/plugins\/threewp-broadcast\/src\/sdk\/form2\/form.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -15847,12 +15855,6 @@
 		"oAP": "\/wp-content\/plugins\/threewp-broadcast\/src\/sdk\/mail\/mail.php",
 		"oF": 0
 		},
-	"\/wp-content\/plugins\/threewp-broadcast\/src\/sdk\/mail\/tests\/MailTest.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/wp-content\/plugins\/threewp-broadcast\/src\/sdk\/mail\/tests\/MailTest.php",
-		"oF": 0
-		},
 	"\/wp-content\/plugins\/threewp-broadcast\/src\/sdk\/object_stores\/Store.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -16007,18 +16009,6 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/wp-content\/plugins\/threewp-broadcast\/src\/sdk\/tests\/TestCase.php",
-		"oF": 0
-		},
-	"\/wp-content\/plugins\/threewp-broadcast\/src\/sdk\/thirdparty\/phpmailer\/class.phpmailer.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/wp-content\/plugins\/threewp-broadcast\/src\/sdk\/thirdparty\/phpmailer\/class.phpmailer.php",
-		"oF": 0
-		},
-	"\/wp-content\/plugins\/threewp-broadcast\/src\/sdk\/thirdparty\/wordpress\/functions.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/wp-content\/plugins\/threewp-broadcast\/src\/sdk\/thirdparty\/wordpress\/functions.php",
 		"oF": 0
 		},
 	"\/wp-content\/plugins\/threewp-broadcast\/src\/sdk\/traits\/db_aware_object.php": {
@@ -16388,6 +16378,12 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/wp-content\/plugins\/threewp-broadcast\/src\/sdk\/wordpress\/updater\/EDD_SL_Plugin_Updater.php",
+		"oF": 0
+		},
+	"\/wp-content\/plugins\/threewp-broadcast\/src\/sdk\/wpautop.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/plugins\/threewp-broadcast\/src\/sdk\/wpautop.php",
 		"oF": 0
 		},
 	"\/wp-content\/plugins\/threewp-broadcast\/src\/ThreeWP_Broadcast.php": {
@@ -23317,6 +23313,22 @@
 		"oF": 0,
 		"opt": 0
 		},
+	"\/wp-content\/themes\/winesbyjennifer\/images\/new-fg.jpg": {
+		"ft": 16384,
+		"iS": 21236,
+		"oA": 0,
+		"oAP": "\/wp-content\/themes\/winesbyjennifer\/images\/new-fg.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/themes\/winesbyjennifer\/images\/new-logo.jpg": {
+		"ft": 16384,
+		"iS": 60136,
+		"oA": 0,
+		"oAP": "\/wp-content\/themes\/winesbyjennifer\/images\/new-logo.jpg",
+		"oF": 0,
+		"opt": 0
+		},
 	"\/wp-content\/themes\/winesbyjennifer\/images\/newsletter.png": {
 		"ft": 32768,
 		"iS": 69613,
@@ -25387,6 +25399,18 @@
 		"oAP": "\/wp-content\/uploads\/ithemes-security\/backups\/backup-wines-by-jennifer-20170213-201923-oRw7wKIyuPl5TF3XFARHDOBOeEgqm7.zip",
 		"oF": 0
 		},
+	"\/wp-content\/uploads\/ithemes-security\/backups\/backup-wines-by-jennifer-20170305-204935-SVci7ZIb9swyMIrw26k7AHoz7Sbmf2.zip": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/ithemes-security\/backups\/backup-wines-by-jennifer-20170305-204935-SVci7ZIb9swyMIrw26k7AHoz7Sbmf2.zip",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/ithemes-security\/backups\/backup-wines-by-jennifer-20170305-204945-f8qgV9xZFMlXKqXSNtrmQvozmdM5Gu.zip": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/ithemes-security\/backups\/backup-wines-by-jennifer-20170305-204945-f8qgV9xZFMlXKqXSNtrmQvozmdM5Gu.zip",
+		"oF": 0
+		},
 	"\/wp-content\/uploads\/ithemes-security\/backups\/index.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -25922,6 +25946,30 @@
 		"iS": 18825,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/sites\/2\/2017\/02\/map.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/sites\/2\/2017\/02\/Pate-with-Toasted-Baguettes-e1488248637554-150x136.jpg": {
+		"ft": 16384,
+		"iS": 6124,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/sites\/2\/2017\/02\/Pate-with-Toasted-Baguettes-e1488248637554-150x136.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/sites\/2\/2017\/02\/Pate-with-Toasted-Baguettes-e1488248637554-180x136.jpg": {
+		"ft": 16384,
+		"iS": 6973,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/sites\/2\/2017\/02\/Pate-with-Toasted-Baguettes-e1488248637554-180x136.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/sites\/2\/2017\/02\/Pate-with-Toasted-Baguettes-e1488248637554.jpg": {
+		"ft": 16384,
+		"iS": 7156,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/sites\/2\/2017\/02\/Pate-with-Toasted-Baguettes-e1488248637554.jpg",
 		"oF": 0,
 		"opt": 0
 		},
