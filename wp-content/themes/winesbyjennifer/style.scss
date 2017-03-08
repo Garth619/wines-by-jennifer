@@ -3036,28 +3036,65 @@ body.single .inner_banner .banner_overlay a {
 	
 	
 	.new_nav {
+		margin-top:25px;
 		.menu_header {
-			background: url(images/nav-bg.jpg) top left repeat;
+			
 			ul {
 				list-style: none;
 				li {
+					
 					a {
 						color:#fff;
 						text-decoration: none;
+						display: block;
+						cursor: pointer;
+						
 					}
+					
 				}
 			}
 			ul.menu {
 				display: flex;
-				text-align: center;
+				justify-content: space-around;
+				background: url(images/nav-bg.jpg) top left repeat;
+				padding-left: 10%;
+				> li:hover {
+					ul.sub-menu {
+						opacity: 1;
+						visibility: visible;
+					}
+				}
 				> li {
-					justify-content: space-around;
+					position: relative;
 					flex-grow: 1;
 					font-size:22px;
 					font-family: $cinzel;
 					text-shadow: 0 1px 2px black;
-					a {
-						
+					
+					> a {
+						display: block;
+						padding:5px 0;
+					}
+					> ul.sub-menu {
+						position: absolute;
+						top:32px;
+						left:-13px;
+						z-index:50000;
+						background: $purple;
+						text-align: left;
+						padding:8px;
+						min-width:250px;
+						opacity: 0;
+						visibility: hidden;
+						transition: all .2s ease-in-out;
+						> li {
+							font-size: 16px;
+							font-family: $lato;
+							padding:8px;
+							> a {
+								
+							}
+						}
 					}
 				}
 			}

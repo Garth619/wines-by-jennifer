@@ -2251,27 +2251,54 @@ body.single .inner_banner .banner_overlay a:hover {
         margin-right: 20px; }
       .new_social_icons_wrapper .single_social_icon:last-of-type img {
         margin-right: 0; }
-  .new_nav .menu_header {
-    background: url(images/nav-bg.jpg) top left repeat; }
+  .new_nav {
+    margin-top: 25px; }
     .new_nav .menu_header ul {
       list-style: none; }
       .new_nav .menu_header ul li a {
         color: #fff;
-        text-decoration: none; }
+        text-decoration: none;
+        display: block;
+        cursor: pointer; }
     .new_nav .menu_header ul.menu {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      text-align: center; }
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+      background: url(images/nav-bg.jpg) top left repeat;
+      padding-left: 10%; }
+      .new_nav .menu_header ul.menu > li:hover ul.sub-menu {
+        opacity: 1;
+        visibility: visible; }
       .new_nav .menu_header ul.menu > li {
-        -ms-flex-pack: distribute;
-            justify-content: space-around;
+        position: relative;
         -webkit-box-flex: 1;
             -ms-flex-positive: 1;
                 flex-grow: 1;
         font-size: 22px;
         font-family: "Cinzel", serif;
         text-shadow: 0 1px 2px black; }
+        .new_nav .menu_header ul.menu > li > a {
+          display: block;
+          padding: 5px 0; }
+        .new_nav .menu_header ul.menu > li > ul.sub-menu {
+          position: absolute;
+          top: 32px;
+          left: -13px;
+          z-index: 50000;
+          background: #8c2555;
+          text-align: left;
+          padding: 8px;
+          min-width: 250px;
+          opacity: 0;
+          visibility: hidden;
+          -webkit-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out; }
+          .new_nav .menu_header ul.menu > li > ul.sub-menu > li {
+            font-size: 16px;
+            font-family: "Lato", sans-serif;
+            padding: 8px; }
   .modernizr_wrapper {
     display: block; }
   .logotest {
