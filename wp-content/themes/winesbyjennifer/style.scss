@@ -2411,6 +2411,9 @@ body.single .inner_banner .banner_overlay a:hover {
 	}
 }
 
+.new_nav {
+	display: none;
+}
 
 
 
@@ -3037,6 +3040,7 @@ body.single .inner_banner .banner_overlay a {
 	
 	.new_nav {
 		margin-top:25px;
+		display: block;
 		.menu_header {
 			
 			ul {

@@ -1965,6 +1965,9 @@ body.single .inner_banner .banner_overlay a:hover {
       .tasting_room_wrapper .tasting_drop > ul.tasting_list > li > ul.sub_tasting_list > li > a {
         margin-bottom: 8px; }
 
+.new_nav {
+  display: none; }
+
 @media screen and (min-width: 400px) {
   .box .box_text_wrap h2 {
     font-size: 45px; } }
@@ -2252,7 +2255,8 @@ body.single .inner_banner .banner_overlay a:hover {
       .new_social_icons_wrapper .single_social_icon:last-of-type img {
         margin-right: 0; }
   .new_nav {
-    margin-top: 25px; }
+    margin-top: 25px;
+    display: block; }
     .new_nav .menu_header ul {
       list-style: none; }
       .new_nav .menu_header ul li a {
