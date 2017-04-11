@@ -207,7 +207,7 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 			<div class="new_logo_wrapper">
 				
 				<a href="<?php bloginfo('url');?>">
-					<img src="<?php bloginfo('template_directory');?>/images/new-logo.jpg"/>
+					<img src="<?php bloginfo('template_directory');?>/images/newlogo.jpg"/>
 				</a>
 				
 			</div><!-- new_logo_wrapper -->

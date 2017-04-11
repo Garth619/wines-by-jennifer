@@ -2204,7 +2204,7 @@ body.single .inner_banner .banner_overlay a:hover {
       margin: 0 auto;
       max-width: 100%;
       height: auto;
-      width: 150px; }
+      width: 180px; }
   .header_right {
     padding: 15px 15px 0 0;
     width: 33.3333%; }
@@ -2255,7 +2255,8 @@ body.single .inner_banner .banner_overlay a:hover {
       .new_social_icons_wrapper .single_social_icon:last-of-type img {
         margin-right: 0; }
   .new_nav {
-    margin-top: 25px;
+    margin-top: -50px;
+    margin-bottom: 10px;
     display: block; }
     .new_nav .menu_header ul {
       list-style: none; }
@@ -2265,16 +2266,16 @@ body.single .inner_banner .banner_overlay a:hover {
         display: block;
         cursor: pointer; }
     .new_nav .menu_header ul.menu {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-pack: distribute;
-          justify-content: space-around;
-      background: url(images/nav-bg.jpg) top left repeat;
-      padding-left: 10%; }
+      background: url(images/nav-bg.jpg) top left repeat; }
       .new_nav .menu_header ul.menu > li:hover ul.sub-menu {
         opacity: 1;
         visibility: visible; }
+      .new_nav .menu_header ul.menu li.menu-item-120 {
+        margin: 0 16% 0 0%; }
+      .new_nav .menu_header ul.menu li.menu-item-29 {
+        margin-right: 0; }
+      .new_nav .menu_header ul.menu li.menu-item-121 {
+        margin: 0 5% 0 14%; }
       .new_nav .menu_header ul.menu > li {
         position: relative;
         -webkit-box-flex: 1;
@@ -2282,7 +2283,9 @@ body.single .inner_banner .banner_overlay a:hover {
                 flex-grow: 1;
         font-size: 22px;
         font-family: "Cinzel", serif;
-        text-shadow: 0 1px 2px black; }
+        text-shadow: 0 1px 2px black;
+        display: inline-block;
+        margin: 0 8%; }
         .new_nav .menu_header ul.menu > li > a {
           display: block;
           padding: 5px 0; }
@@ -2294,7 +2297,7 @@ body.single .inner_banner .banner_overlay a:hover {
           background: #8c2555;
           text-align: left;
           padding: 8px;
-          min-width: 250px;
+          min-width: 180px;
           opacity: 0;
           visibility: hidden;
           -webkit-transition: all .2s ease-in-out;

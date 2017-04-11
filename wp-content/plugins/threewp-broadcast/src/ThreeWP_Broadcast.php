@@ -84,6 +84,12 @@ class ThreeWP_Broadcast
 	];
 
 	/**
+		@brief		The language domain to use.
+		@since		2017-02-21 20:00:41
+	**/
+	public $language_domain = 'threewp_broadcast';
+
+	/**
 		@brief		Caches permalinks looked up during this page view.
 		@see		post_link()
 		@since		20130923
@@ -746,7 +752,8 @@ class ThreeWP_Broadcast
 
 		$row = $table->body()->row();
 		$row->td()->text_( 'PHP maximum execution time' );
-		$text = $this->p_( '%s seconds', ini_get ( 'max_execution_time' ) );
+		$count = ini_get ( 'max_execution_time' );
+		$text = $this->p_( _n( '%d second', '%d seconds', $count, 'threewp_broadcast' ), $count );
 		$row->td()->text( $text );
 
 		$row = $table->body()->row();
@@ -771,7 +778,7 @@ class ThreeWP_Broadcast
 
 <code>ini_set('display_errors','On');</code>
 <code>define('WP_DEBUG', true);</code>
-",		$this->p_( 'Add the following lines to your wp-config.php to help find out why errors or blank screens are occurring:' ) ) );
+",		$this->p( __( 'Add the following lines to your wp-config.php to help find out why errors or blank screens are occurring:' ) ), 'threewp_broadcast' ) );
 		$row->td()->text( $text );
 
 		$row = $table->body()->row();

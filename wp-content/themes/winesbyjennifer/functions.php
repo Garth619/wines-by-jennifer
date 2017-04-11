@@ -679,6 +679,10 @@ function twentyten_get_gallery_images() {
 	} 
 	
 	
+	
+	register_taxonomy("wine-cat", array("featured_wines"), array("hierarchical" => true, "label" => "Wine Categories", "singular_label" => "Wine Category", "rewrite" => true));
+	
+	
 
 	
 	
@@ -701,7 +705,7 @@ function twentyten_get_gallery_images() {
 	} 
 	
 	
-	
+		register_taxonomy("artist-cat", array("featured_artists"), array("hierarchical" => true, "label" => "Artist Categories", "singular_label" => "Artist Category", "rewrite" => true));
 	
 	
 	
@@ -723,6 +727,9 @@ function twentyten_get_gallery_images() {
    	 
     	register_post_type( 'tasting_room' , $args );    
 	} 
+	
+	
+	register_taxonomy("tasting-room-cat", array("tasting_room"), array("hierarchical" => true, "label" => "Tasting Room Categories", "singular_label" => "Tasting Room Category", "rewrite" => true));
 	
 	
 	
@@ -750,8 +757,12 @@ function twentyten_get_gallery_images() {
 	
 }
 
-	
-   
+
+function remove_posts_menu() {
+    remove_menu_page('edit.php');
+}
+add_action('admin_init', 'remove_posts_menu');
+
 
 
 

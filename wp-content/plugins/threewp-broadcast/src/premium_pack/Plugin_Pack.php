@@ -12,6 +12,13 @@ abstract class Plugin_Pack
 {
 	use \plainview\sdk_broadcast\wordpress\updater\edd;
 
+	/**
+		@brief		The language domain to use.
+		@details	Use the same as the basic plugin in order to leech off its translations.
+		@since		2017-02-21 20:00:41
+	**/
+	public $language_domain = 'threewp_broadcast';
+
 	public function _construct()
 	{
 		$this->add_action( 'threewp_broadcast_broadcasting_started', 'dump_pack_info' );
@@ -19,6 +26,7 @@ abstract class Plugin_Pack
 		$this->add_action( 'threewp_broadcast_plugin_pack_uninstall' );
 		$this->add_action( 'threewp_broadcast_plugin_pack_tabs' );
 		$this->edd_init();
+		$this->load_language();
 	}
 
 	// --------------------------------------------------------------------------------------------
@@ -31,7 +39,10 @@ abstract class Plugin_Pack
 	**/
 	public function edd_admin_license_tab_text()
 	{
-		return $this->p( "If the pack is not activating as it should due to an SSL error, add this to your wp-config.php file: <code>define( 'BROADCAST_PP_SSL_WORKAROUND', true );</code>" );
+		return $this->p_(
+			__( "If the pack is not activating as it should due to an SSL error, add this to your wp-config.php file: %s", 'threewp_broadcast' ),
+			"<code>define( 'BROADCAST_PP_SSL_WORKAROUND', true );</code>"
+		);
 	}
 
 	/**

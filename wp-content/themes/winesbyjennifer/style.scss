@@ -2968,7 +2968,7 @@ body.single .inner_banner .banner_overlay a {
 			margin:0 auto;
 			max-width: 100%;
 			height:auto;
-			width:150px;
+			width:180px;
 		}
 	}
 	
@@ -3039,7 +3039,8 @@ body.single .inner_banner .banner_overlay a {
 	
 	
 	.new_nav {
-		margin-top:25px;
+		margin-top:-50px;
+		margin-bottom:10px;
 		display: block;
 		.menu_header {
 			
@@ -3058,15 +3059,25 @@ body.single .inner_banner .banner_overlay a {
 				}
 			}
 			ul.menu {
-				display: flex;
-				justify-content: space-around;
+// 				display: flex;
+// 				justify-content: space-around;
 				background: url(images/nav-bg.jpg) top left repeat;
-				padding-left: 10%;
+// 				padding-left: 10%;
 				> li:hover {
 					ul.sub-menu {
 						opacity: 1;
 						visibility: visible;
+// 						text-align: center;
 					}
+				}
+				li.menu-item-120 {
+					margin: 0 16% 0 0%;
+				}
+				li.menu-item-29 {
+					margin-right:0;
+				}
+				li.menu-item-121 {
+					 margin: 0 5% 0 14%;
 				}
 				> li {
 					position: relative;
@@ -3074,7 +3085,8 @@ body.single .inner_banner .banner_overlay a {
 					font-size:22px;
 					font-family: $cinzel;
 					text-shadow: 0 1px 2px black;
-					
+					display: inline-block;
+					 margin: 0 8%;
 					> a {
 						display: block;
 						padding:5px 0;
@@ -3087,7 +3099,7 @@ body.single .inner_banner .banner_overlay a {
 						background: $purple;
 						text-align: left;
 						padding:8px;
-						min-width:250px;
+						min-width:180px;
 						opacity: 0;
 						visibility: hidden;
 						transition: all .2s ease-in-out;

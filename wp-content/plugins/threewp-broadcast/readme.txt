@@ -1,10 +1,11 @@
-=== ThreeWP Broadcast ===
+=== Broadcast ===
 Contributors: edward_plainview
+Donate link: https://broadcast.plainviewplugins.com
 License: GPLv3
-Requires at least: 4.4
+Requires at least: 4.6
 Stable tag: trunk
-Tags: broadcast, multipost, sharing, share content, duplicate, posts, syndicate, syndication, marketing, threewp, linking, aggregator, aggregation, autoblogging, news, content hub, content sharing, publishing
-Tested up to: 4.7.2
+Tags: multipost, sharing, duplicate, franchise, syndication, marketing, news, hub
+Tested up to: 4.7.3
 
 Network content syndication made easy! Automatically share content by multiposting between multisite blogs.
 
@@ -14,13 +15,19 @@ Network content syndication made easy! Automatically share content by multiposti
 
 Automatically share content by multiposting between multisite blogs. Syndicate posts to other blogs, update posts between blogs, sync posts, share content templates, etc. Broadcasted posts can be linked to their parents, which updates child posts when the parent post is updated. This includes all data: title, slug, content, custom fields, attachments, etc.
 
-Broadcast is great for:
+Broadcast, formerly ThreeWP Broadcast, is great for:
 
 * Chain stores
 * Franchises
 * News sites
 * Schools
 * Anything else with distributed content!
+
+Here are some use cases for Broadcast:
+
+* <a href="https://broadcast.plainviewplugins.com/2017/04/02/broadcast-in-the-school-classroom/">Broadcast in the school classroom</a>
+* <a href="https://broadcast.plainviewplugins.com/2017/04/02/franchising-with-wordpress-and-broadcast/">Franchising with WordPress and Broadcast</a>
+* <a href="https://broadcast.plainviewplugins.com/2017/03/28/wholesale-with-woocommerce-and-broadcast/">Wholesale with WooCommerce and Broadcast</a>
 
 Requires PHP version 5.4 or higher.
 
@@ -88,6 +95,7 @@ Control pack
 
 * <a href="https://broadcast.plainviewplugins.com/addon/all-blogs/">All Blogs</a> gives all users access to all of the blogs in the network.
 * <a href="https://broadcast.plainviewplugins.com/addon/all-blogs/">All Blogs Superadmin</a> allows only superadmins to broadcast to all blogs in the network without having to be a user of the blog.
+* <a href="https://broadcast.plainviewplugins.com/addon/all-images/">All Images</a> detects all referenced local images in post text fields and adds them to the broadcast.
 * <a href="https://broadcast.plainviewplugins.com/addon/back-to-parent/">Back To Parent</a> updates the parent post with the new child content.
 * <a href="https://broadcast.plainviewplugins.com/addon/comments/">Comments</a> adds support for broadcasting of comments.
 * <a href="https://broadcast.plainviewplugins.com/addon/custom-field-attachments/">Custom Field Attachments</a> allows post custom field containing attachment IDs to be broadcasted correctly.
@@ -148,19 +156,6 @@ For developers: the code should be well-commented and easily legible for the mos
 = Misc =
 
 Requires PHP v5.4, since 5.3 is no longer officially supported.
-
-Available in the following languages:
-
-* Czech - <a href="https://profiles.wordpress.org/melangercz/">Melanger.cz</a>
-* English
-* Dutch
-* French - Seb giss <sgissinger@gmail.com>
-* Italian
-* French
-* Romanian, Web Geek Sciense <a href="http://webhostinggeeks.com/">Web Hosting Geeks</a>
-* Serbian, Borisa Djuraskovic at <a href="http://www.webhostinghub.com">www.webhostinghub.com</a>
-* Spanish
-* Swedish
 
 The git repository can be found at: https://bitbucket.org/edward_electric/broadcast
 
@@ -227,7 +222,7 @@ If your web host refuses to upgrade to a supported version, go find a new host.
 
 = Incompatible plugins =
 
-Below is a list of plugins that just will not work properly with Broadcast and / or it's addons:
+Below is a list of plugins that just will not work properly with Broadcast and / or its addons:
 
 * Post Type Switcher
 
@@ -263,18 +258,15 @@ Make sure that:
 
 = WooCommerce =
 
-Broadcast is capable of handling WooCommerce products.
+Broadcast is capable of handling simple WooCommerce products.
 
-1. In the Broadcast custom post type settings: Add "product"
-2. When broadcasting, select custom fields and taxonomies.
+1. In the Broadcast custom post type settings: Add "product".
+2. Save the product normally first.
+3. Then broadcast, selecting the custom fields and taxonomies checkboxes.
 
 This will broadcast all normal product settings: SKU, price, etc.
 
-If your products have variations, want to sync stock, want to sync orders, need the attribute taxonomies to be synced, you'll be wanting the <a href="https://broadcast.plainviewplugins.com/addon/woocommerce/">WooCommerce add-on</a>.
-
-If you have a product gallery, use the <a href="https://broadcast.plainviewplugins.com/addon/custom-field-attachments/">Custom Field Attachments</a> add-on to broadcast the "_product_image_gallery" custom field.
-
-Need your PDF vouchers synced upon each purchase? See the WooCommerce extras in the premium add-on pack.
+If your products have variations, a product image gallery, want to sync stock, want to sync orders, need the attribute taxonomies to be synced, you'll be wanting the <a href="https://broadcast.plainviewplugins.com/addon/woocommerce/">WooCommerce add-on</a>.
 
 = WPML Sitepress =
 
@@ -291,6 +283,24 @@ Xcache v2 does not support PHP namespaces, which is a PHP 5.3 feature. Trying to
 Xcache v3, which does support namespaces, has not yet been tested. Anyone with Xcache v3 experience is welcome to contact me with info.
 
 == Changelog ==
+
+= 38 20170406 =
+
+Finally dropped the "ThreeWP" prefix from the plugin name! The code remains the same, though, just the plugin name is changed.
+
+* Fix: Extra check to see whether the attachment was correctly copied. Catches a fatal error when the attachment does not return with a real filename.
+* Fix: Some attachments do not have proper filenames (mp3), so avoid clearing the filename completely. Fixes fatal errors when broadcasting those types of files.
+* Code: Make _get_post_children function public so that the <a href="https://broadcast.plainviewplugins.com/addon/rebroadcast/">Rebroadcast add-on</a> can queue posts.
+
+= 37 20170316 =
+
+* Fix: Try to replace all media thumbnail URLs in the post content, instead of just the full image size. This will fix references to image thumbnails also.
+* Fix: Plugin now uses standard Wordpress translation functions so that it can now be translated online. No experience with this, but it looks to make translation really easy.
+* New add-on: <a href="https://broadcast.plainviewplugins.com/addon/all-images/">All Images</a> detects all referenced local images in post text fields and adds them to the broadcast.
+
+The next major version of Broadcast will finally have the "ThreeWP" dropped from the name. The files on disk will still be called the same, and the action names will still have the threewp prefix. Only the visible name in the repo and plugin list will change.
+
+The add-on pack names will also lose their prefixes.
 
 = 36 20170303 =
 

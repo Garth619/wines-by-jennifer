@@ -321,7 +321,7 @@ class base
 			$this->language_domain = str_replace( '.php', '', $this->paths( 'filename' ) );
 
 		// This will allow other plugins to load a custom language file.
-		// The filter name will be similar to: ThreeWP_Broadcast_language_directory
+		// The filter name will be similar to: threewp_broadcast_language_directory
 		$filter_name = $this->language_domain . '_language_directory';
 		$language_directory = $this->paths ( 'path_from_plugin_directory' ) . '/lang';
 		$language_directory = $this->filters( $filter_name, $language_directory );

@@ -421,6 +421,7 @@ trait terms_and_taxonomies
 
 	/**
 		@brief		[Maybe] update a term.
+		@details	The "old" term is the term on the child. The "new" term is the term from the parent.
 		@since		2014-04-10 14:26:23
 	**/
 	public function threewp_broadcast_wp_update_term( $action )
