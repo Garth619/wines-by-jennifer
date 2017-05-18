@@ -390,9 +390,59 @@ jQuery('.slider-nav').slick({
 });
  
 
+// Press
 
-
-
+jQuery('.press_slider').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  prevArrow: ".press_slider_wrapper .back_button",
+  nextArrow: ".press_slider_wrapper .next_button",
+  arrows: true,
+  mobileFirst:true,
+  responsive: [
+     {
+      breakpoint: 615,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        prevArrow: ".press_slider_wrapper .back_button",
+				nextArrow: ".press_slider_wrapper .next_button",
+				arrows: true,
+     }
+    },
+    {
+      breakpoint: 800,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        prevArrow: ".press_slider_wrapper .back_button",
+				nextArrow: ".press_slider_wrapper .next_button",
+				arrows: true,
+     }
+    },
+    {
+      breakpoint: 1040,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        prevArrow: ".press_slider_wrapper .back_button",
+				nextArrow: ".press_slider_wrapper .next_button",
+				arrows: true,
+     }
+    },
+    {
+      breakpoint: 1204,
+      settings: {
+        slidesToShow: 5,
+        slidesToScroll: 5,
+        prevArrow: ".press_slider_wrapper .back_button",
+				nextArrow: ".press_slider_wrapper .next_button",
+				arrows: true,
+     }
+    }
+ 
+  ]
+});
 
 
 		

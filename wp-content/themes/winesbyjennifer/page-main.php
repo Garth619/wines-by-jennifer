@@ -422,6 +422,9 @@ get_header(); ?>
 			
 		</div><!-- my_testimonials -->
 		
+		
+		
+		
 	
 	
 	

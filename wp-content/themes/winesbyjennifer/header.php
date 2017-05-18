@@ -58,7 +58,7 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 
 	?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>?v=4" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>?v=5" />
 <link href='https://fonts.googleapis.com/css?family=Cinzel:400,700|Lato:400,400italic' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/animate.css">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -186,21 +186,7 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 			
 			<div class="new_free_gift">
 				
-				<div class="new_free_gift_inner">
-					
-					<div class="new_free_gift_inner_content">
-					
-						<span class="new_free_gift_title"><img src="<?php bloginfo('template_directory');?>/images/gift.png"/> Free Gift!</span><!-- new_free_gift_title -->
-						<span class="five_days">"5 Days to Expert<br/>Wine Tasting" <sup>&reg;</sup></span><!-- five_days -->
-					
-					</div><!-- new_free_gift_inner_content -->
-					
-					<div class="new_newletter">
-						
-						
-					</div><!-- new_newletter -->
-					
-				</div><!-- new_free_gift_inner -->
+				
 				
 			</div><!-- new_free_gift -->
 			

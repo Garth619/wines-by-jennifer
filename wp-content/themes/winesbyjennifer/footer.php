@@ -13,6 +13,78 @@
 
 </div><!-- main -->
 </div><!-- wrapper -->
+
+
+
+
+<div class="press">
+			
+			<span class="large_header">AS FEATURED IN</span>
+			
+			<div class="press_slider_wrapper">
+				
+				<div class="back_button press_button"><span></span></div><!-- back_button -->
+				
+				<div class="press_slider">
+					
+					<div class="single_slide">
+						
+						<img src="<?php bloginfo('template_directory');?>/images/press/logo1.png"/>
+						
+					</div><!-- single_slide -->
+					
+					<div class="single_slide">
+						
+						<img src="<?php bloginfo('template_directory');?>/images/press/logo1.png"/>
+						
+					</div><!-- single_slide -->
+					
+					<div class="single_slide">
+						
+						<img src="<?php bloginfo('template_directory');?>/images/press/logo1.png"/>
+						
+					</div><!-- single_slide -->
+					
+					<div class="single_slide">
+						
+						<img src="<?php bloginfo('template_directory');?>/images/press/logo1.png"/>
+						
+					</div><!-- single_slide -->
+					
+					<div class="single_slide">
+						
+						<img src="<?php bloginfo('template_directory');?>/images/press/logo1.png"/>
+						
+					</div><!-- single_slide -->
+					
+					<div class="single_slide">
+						
+						<img src="<?php bloginfo('template_directory');?>/images/press/logo1.png"/>
+						
+					</div><!-- single_slide -->
+					
+					<div class="single_slide">
+						
+						<img src="<?php bloginfo('template_directory');?>/images/press/logo1.png"/>
+						
+					</div><!-- single_slide -->
+					
+				</div><!-- press_slider -->
+				
+				<div class="next_button press_button"><span></span></div><!-- next_button -->
+				
+			</div><!-- press_slider_wrapper -->
+			
+			
+			
+		</div><!-- press -->
+
+
+
+
+
+
+
 <div class="footer">
 	<div class="footer_col1">
 		<ul class="desktop_copyright">
