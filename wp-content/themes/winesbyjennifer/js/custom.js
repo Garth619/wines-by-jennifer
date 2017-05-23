@@ -434,7 +434,7 @@ jQuery('.press_slider').slick({
       breakpoint: 1204,
       settings: {
         slidesToShow: 5,
-        slidesToScroll: 5,
+        slidesToScroll: 1,
         prevArrow: ".press_slider_wrapper .back_button",
 				nextArrow: ".press_slider_wrapper .next_button",
 				arrows: true,

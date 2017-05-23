@@ -35,39 +35,35 @@
 					
 					<div class="single_slide">
 						
-						<img src="<?php bloginfo('template_directory');?>/images/press/logo1.png"/>
+						<img src="<?php bloginfo('template_directory');?>/images/press/logo2.png"/>
 						
 					</div><!-- single_slide -->
 					
 					<div class="single_slide">
 						
-						<img src="<?php bloginfo('template_directory');?>/images/press/logo1.png"/>
+						<img src="<?php bloginfo('template_directory');?>/images/press/logo3.png"/>
 						
 					</div><!-- single_slide -->
 					
 					<div class="single_slide">
 						
-						<img src="<?php bloginfo('template_directory');?>/images/press/logo1.png"/>
+						<img src="<?php bloginfo('template_directory');?>/images/press/logo4.png"/>
 						
 					</div><!-- single_slide -->
 					
 					<div class="single_slide">
 						
-						<img src="<?php bloginfo('template_directory');?>/images/press/logo1.png"/>
+						<img src="<?php bloginfo('template_directory');?>/images/press/logo5.png"/>
 						
 					</div><!-- single_slide -->
 					
 					<div class="single_slide">
 						
-						<img src="<?php bloginfo('template_directory');?>/images/press/logo1.png"/>
+						<img src="<?php bloginfo('template_directory');?>/images/press/logo6.png"/>
 						
 					</div><!-- single_slide -->
 					
-					<div class="single_slide">
-						
-						<img src="<?php bloginfo('template_directory');?>/images/press/logo1.png"/>
-						
-					</div><!-- single_slide -->
+
 					
 				</div><!-- press_slider -->
 				
