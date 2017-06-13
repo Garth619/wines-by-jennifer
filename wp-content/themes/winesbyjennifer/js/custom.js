@@ -422,6 +422,9 @@ jQuery('.press_slider').slick({
   nextArrow: ".press_slider_wrapper .next_button",
   arrows: true,
   mobileFirst:true,
+   variableWidth: true,
+   centerMode: true,
+   
   responsive: [
      {
       breakpoint: 615,
@@ -436,8 +439,8 @@ jQuery('.press_slider').slick({
     {
       breakpoint: 800,
       settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToShow: 2,
+        slidesToScroll: 2,
         prevArrow: ".press_slider_wrapper .back_button",
 				nextArrow: ".press_slider_wrapper .next_button",
 				arrows: true,

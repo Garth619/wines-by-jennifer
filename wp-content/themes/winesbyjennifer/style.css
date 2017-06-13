@@ -2008,7 +2008,8 @@ body:not(.page-template-page-main) .press {
     width: calc(100% - 50px);
     float: left; }
     .press_slider_wrapper .press_slider .single_slide {
-      padding: 40px 0 30px; }
+      padding: 40px 0 30px;
+      margin: 0 20px; }
       .press_slider_wrapper .press_slider .single_slide img {
         margin: 0 auto; }
   .press_slider_wrapper .next_button {
