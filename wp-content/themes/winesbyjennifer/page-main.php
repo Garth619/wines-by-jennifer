@@ -83,32 +83,25 @@ get_header(); ?>
 			
 		
 		
-			<div class="slideshow cycle-slideshow" data-cycle-slides="> .slide">
+			<div class="slideshow">
 				
 				
 				
-				<?php if(get_field('slideshow')): ?>
-				 
-					<?php while(has_sub_field('slideshow')): ?>
-					
-							<?php $imageID = get_sub_field('slide_image'); ?>
-							<?php $menu_one = wp_get_attachment_image_src(get_sub_field('slide_image'), 'mainslides'); ?>
+									
+							<?php $imageID = get_field('video_poster_image'); ?>
+							<?php $menu_one = wp_get_attachment_image_src(get_field('video_poster_image'), 'mainslides'); ?>
 						
 				 
-							<div class="slide" style="background:url(<?php echo $menu_one[0]; ?>) top center no-repeat;background-size:cover;"><a href="<?php the_sub_field('slide_link');?>"></a></div><!-- slide -->
+							<div class="slide" style="background:url(<?php echo $menu_one[0]; ?>) top center no-repeat;background-size:cover;"></div><!-- slide -->
+					
 					
 				    
-					<?php endwhile; ?>
-				 
-				<?php endif; ?>
+		
 				
 			
 				
 				
-				<div class="cycle-pager"></div>
-				<div class="cycle-prev"><img src="<?php bloginfo('template_directory');?>/images/left.png"/></div>
-				<div class="cycle-next"><img src="<?php bloginfo('template_directory');?>/images/right.png"/></div>
-			
+							
 		</div><!-- slideshow -->
 		
 		

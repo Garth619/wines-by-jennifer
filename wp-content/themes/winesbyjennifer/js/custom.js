@@ -7,6 +7,29 @@ jQuery(document).ready(function(){
   });	
   
   
+  
+  // Video Overlay
+  
+  
+  jQuery('.slideshow').click(function(){
+  	
+  	jQuery('.video_overlay').addClass('open');
+  	
+  	
+  });
+  
+  
+  jQuery('span.video_close').click(function(){
+  	
+  	jQuery('.video_overlay').removeClass('open');
+  	
+  	jQuery('#youtube_player')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*'); 
+  	
+  	
+  });
+                                               
+  
+  
   // Featured Wine Year List
   
   

@@ -209,6 +209,22 @@ Cart (0) | Search
 </div><!-- overlay_carousel -->
 
 
+<div class="video_overlay">
+	
+	<div class="video_overlay_inner_wrapper">
+		
+		<span class="video_close">X</span><!-- close -->
+		
+		
+		<div class='embed-container'><iframe id="youtube_player" src='https://www.youtube.com/embed/<?php the_field('youtube_video_link');?>?enablejsapi=1&version=3&playerapiid=ytplayer' frameborder='0' allowfullscreen></iframe></div>
+		
+		
+	</div><!-- video_overlay_inner_wrapper -->
+	
+	
+</div><!-- video_overlay -->
+
+
 	
 <?php wp_footer(); ?>
 <script type="text/javascript" src="<?php bloginfo('template_directory');?>/cycle2.js"></script>

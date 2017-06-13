@@ -2501,7 +2501,52 @@ body:not(.page-template-page-main) {
 	
 }
 
+.video_overlay.open {
+	opacity: 1;
+	visibility: visible;
+}
 
+.video_overlay {
+	position: fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background: rgba(0, 0, 0, 0.7);
+	z-index:60000;
+	opacity: 0;
+	visibility: hidden;
+	transition: all .3s ease-in-out;
+	.video_overlay_inner_wrapper {
+		width:95%;
+		height:auto;
+		background: #fff;
+		max-width: 730px;
+		margin:70px auto;
+		position: relative;
+		border:6px solid #fff;
+		span.video_close {
+			text-transform: uppercase;
+			display: inline-block;
+			background: $purple;
+			padding: 8px 0 0 13px;
+			border-radius: 50%;
+			width:40px;
+			height:40px;
+			color:#fff;
+			font-size:22px;
+			font-weight: bold;
+			position: absolute;
+			top:-15px;
+			right:-18px;
+			cursor: pointer;
+			z-index:50;
+		}
+	}
+}
+
+
+.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
 
 @media screen and (min-width: 400px) {
@@ -3689,6 +3734,7 @@ input.gform_button {
 // 			position: relative;
 			height:350px;
 			text-align: center;
+			cursor: pointer;
 			.slide {
 				width:100%;
 				height:100%;
