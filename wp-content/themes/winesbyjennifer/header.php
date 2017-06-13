@@ -186,7 +186,12 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 			
 			<div class="new_free_gift">
 				
-				
+				<a class="" href="<?php bloginfo('url');?>/newsletter-page">
+					
+					<img src="<?php bloginfo('template_directory');?>/images/free-gift.jpg"/>
+					
+					
+				</a>
 				
 			</div><!-- new_free_gift -->
 			

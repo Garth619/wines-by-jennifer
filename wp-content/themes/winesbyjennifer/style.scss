@@ -3089,6 +3089,17 @@ body.single .inner_banner .banner_overlay a {
 	.new_free_gift {
 		width:33.3333%;
 		padding:15px 0 0 15px;
+		img {
+			max-width: 100%;
+			width: 218px;
+		}
+	}
+	
+	
+/*
+	.new_free_gift {
+		width:33.3333%;
+		padding:15px 0 0 15px;
 		
 		.new_free_gift_inner {
 			width:215px;
@@ -3145,6 +3156,7 @@ body.single .inner_banner .banner_overlay a {
 			}
 		}
 	}
+*/
 	
 	.new_logo_wrapper {
 		flex-grow: 1;

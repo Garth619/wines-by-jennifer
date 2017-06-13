@@ -32301,6 +32301,24 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/wp-content\/themes\/winesbyjennifer\/images\/free-gift.gif": {
+		"ft": 4194304,
+		"iS": 28519,
+		"oA": 0,
+		"oAP": "\/wp-content\/themes\/winesbyjennifer\/images\/free-gift.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/themes\/winesbyjennifer\/images\/free-gift.jpg": {
+		"ft": 16384,
+		"iS": 74994,
+		"oA": 0,
+		"oAP": "\/wp-content\/themes\/winesbyjennifer\/images\/free-gift.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/wp-content\/themes\/winesbyjennifer\/images\/gift.png": {
 		"ft": 32768,
 		"iS": 1665,
@@ -36979,6 +36997,12 @@
 		"opt": 0,
 		"oT": 1,
 		"q": 100
+		},
+	"\/wp-content\/uploads\/sites\/2\/2017\/06\/acf-export-2017-06-13.json_.txt": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/sites\/2\/2017\/06\/acf-export-2017-06-13.json_.txt",
+		"oF": 0
 		},
 	"\/wp-content\/uploads\/sites\/2\/GeoIP.dat": {
 		"ft": 8192,
