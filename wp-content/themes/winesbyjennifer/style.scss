@@ -2436,7 +2436,9 @@ body:not(.page-template-page-main) {
 	width:100%;
 	background:#fff;
 	text-align: center;
-	padding:45px 20px 20px;
+	height: 235px;
+// 	padding:45px 20px 20px;
+padding:32px 20px 12px;
 	max-width: 1175px;
 	margin:0 auto;
 	span.large_header {
@@ -2450,6 +2452,7 @@ body:not(.page-template-page-main) {
 
 .press_slider_wrapper {
 	overflow: hidden;
+	margin: 32px 0 45px;
 	.press_button {
 		display: block !important;
 	}
@@ -2475,10 +2478,15 @@ body:not(.page-template-page-main) {
 		float:left;
 		
 		.single_slide {
-			padding:40px 0 30px;
+// 			padding:40px 0 30px;
 			margin:0 20px;
+			height: 110px;
 			img {
 				margin:0 auto;
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+				
 			}
 		}
 	}
@@ -3047,7 +3055,8 @@ body.single .inner_banner .banner_overlay a {
 		
 		
 		.single_slide {
-			padding: 10px 0 30px;
+// 			padding: 10px 0 30px;
+
 			img {
 				
 			}

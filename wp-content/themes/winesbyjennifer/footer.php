@@ -27,43 +27,31 @@
 				
 				<div class="press_slider">
 					
-					<div class="single_slide">
-						
-						<img src="<?php bloginfo('template_directory');?>/images/press/logo1.png"/>
-						
-					</div><!-- single_slide -->
 					
-					<div class="single_slide">
+					<?php if(get_field('press_logos')): ?>
+					 
+						<?php while(has_sub_field('press_logos')): ?>
 						
-						<img src="<?php bloginfo('template_directory');?>/images/press/logo2.png"/>
 						
-					</div><!-- single_slide -->
-					
-					<div class="single_slide">
 						
-						<img src="<?php bloginfo('template_directory');?>/images/press/logo3.png"/>
+						<?php $imageID = get_sub_field('logo_image'); ?>
+						<?php $alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true); ?>
+						<?php $logo_one = wp_get_attachment_image_src(get_sub_field('logo_image'), 'presslogos'); ?>
 						
-					</div><!-- single_slide -->
-					
-					<div class="single_slide">
+					 
+								<div class="single_slide">
 						
-						<img src="<?php bloginfo('template_directory');?>/images/press/logo4.png"/>
+									<img alt="<?php echo $alt_text; ?>" src="<?php echo $logo_one[0]; ?>"/>
 						
-					</div><!-- single_slide -->
-					
-					<div class="single_slide">
+								</div><!-- single_slide -->
+							
+							
 						
-						<img src="<?php bloginfo('template_directory');?>/images/press/logo5.png"/>
-						
-					</div><!-- single_slide -->
-					
-					<div class="single_slide">
-						
-						<img src="<?php bloginfo('template_directory');?>/images/press/logo6.png"/>
-						
-					</div><!-- single_slide -->
-					
-
+					    
+						<?php endwhile; ?>
+					 
+					<?php endif; ?>
+		
 					
 				</div><!-- press_slider -->
 				

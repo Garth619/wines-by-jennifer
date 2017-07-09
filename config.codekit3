@@ -35679,6 +35679,16 @@
 		"oS": 0,
 		"sC": 1
 		},
+	"\/wp-content\/uploads\/2015\/12\/slide-145x93.jpg": {
+		"ft": 16384,
+		"iS": 949,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2015\/12\/slide-145x93.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/wp-content\/uploads\/2015\/12\/slide-150x150.jpg": {
 		"ft": 16384,
 		"iS": 1089,
@@ -35686,7 +35696,7 @@
 		"oAP": "\/wp-content\/uploads\/2015\/12\/slide-150x150.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/wp-content\/uploads\/2015\/12\/slide-180x180.jpg": {
@@ -35696,7 +35706,7 @@
 		"oAP": "\/wp-content\/uploads\/2015\/12\/slide-180x180.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/wp-content\/uploads\/2015\/12\/slide-300x193.jpg": {
@@ -35706,7 +35716,7 @@
 		"oAP": "\/wp-content\/uploads\/2015\/12\/slide-300x193.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/wp-content\/uploads\/2015\/12\/slide-300x300.jpg": {
@@ -35714,6 +35724,16 @@
 		"iS": 2135,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2015\/12\/slide-300x300.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2015\/12\/slide-430x315.jpg": {
+		"ft": 16384,
+		"iS": 2847,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2015\/12\/slide-430x315.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -35726,6 +35746,26 @@
 		"oAP": "\/wp-content\/uploads\/2015\/12\/slide-490x198.jpg",
 		"oF": 0,
 		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2015\/12\/slide-490x315.jpg": {
+		"ft": 16384,
+		"iS": 3167,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2015\/12\/slide-490x315.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2015\/12\/slide-test-133x93.jpg": {
+		"ft": 16384,
+		"iS": 1038,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2015\/12\/slide-test-133x93.jpg",
+		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
@@ -35736,7 +35776,7 @@
 		"oAP": "\/wp-content\/uploads\/2015\/12\/slide-test-150x150.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/wp-content\/uploads\/2015\/12\/slide-test-180x180.jpg": {
@@ -35746,7 +35786,7 @@
 		"oAP": "\/wp-content\/uploads\/2015\/12\/slide-test-180x180.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/wp-content\/uploads\/2015\/12\/slide-test-300x210.jpg": {
@@ -35756,7 +35796,7 @@
 		"oAP": "\/wp-content\/uploads\/2015\/12\/slide-test-300x210.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/wp-content\/uploads\/2015\/12\/slide-test-300x300.jpg": {
@@ -35764,6 +35804,26 @@
 		"iS": 2866,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2015\/12\/slide-test-300x300.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2015\/12\/slide-test-430x329.jpg": {
+		"ft": 16384,
+		"iS": 3880,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2015\/12\/slide-test-430x329.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2015\/12\/slide-test-490x315.jpg": {
+		"ft": 16384,
+		"iS": 3988,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2015\/12\/slide-test-490x315.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -35774,6 +35834,16 @@
 		"iS": 3361,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2015\/12\/slide-test-500x198.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2015\/12\/slide-test-500x350.jpg": {
+		"ft": 16384,
+		"iS": 4411,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2015\/12\/slide-test-500x350.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -35799,6 +35869,16 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/wp-content\/uploads\/2015\/12\/slide2-133x93.jpg": {
+		"ft": 16384,
+		"iS": 5176,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2015\/12\/slide2-133x93.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/wp-content\/uploads\/2015\/12\/slide2-150x150.jpg": {
 		"ft": 16384,
 		"iS": 8001,
@@ -35806,7 +35886,7 @@
 		"oAP": "\/wp-content\/uploads\/2015\/12\/slide2-150x150.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/wp-content\/uploads\/2015\/12\/slide2-180x180.jpg": {
@@ -35816,7 +35896,7 @@
 		"oAP": "\/wp-content\/uploads\/2015\/12\/slide2-180x180.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/wp-content\/uploads\/2015\/12\/slide2-300x210.jpg": {
@@ -35826,7 +35906,7 @@
 		"oAP": "\/wp-content\/uploads\/2015\/12\/slide2-300x210.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/wp-content\/uploads\/2015\/12\/slide2-300x300.jpg": {
@@ -35839,11 +35919,41 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/wp-content\/uploads\/2015\/12\/slide2-430x329.jpg": {
+		"ft": 16384,
+		"iS": 32865,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2015\/12\/slide2-430x329.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2015\/12\/slide2-490x315.jpg": {
+		"ft": 16384,
+		"iS": 35220,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2015\/12\/slide2-490x315.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/wp-content\/uploads\/2015\/12\/slide2-500x198.jpg": {
 		"ft": 16384,
 		"iS": 25369,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2015\/12\/slide2-500x198.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2015\/12\/slide2-500x350.jpg": {
+		"ft": 16384,
+		"iS": 42762,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2015\/12\/slide2-500x350.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -35889,6 +35999,16 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/wp-content\/uploads\/2016\/01\/blank-profile-hi-430x329.jpg": {
+		"ft": 16384,
+		"iS": 4454,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/blank-profile-hi-430x329.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/wp-content\/uploads\/2016\/01\/blank-profile-hi-450x198.jpg": {
 		"ft": 16384,
 		"iS": 3249,
@@ -35919,6 +36039,16 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/wp-content\/uploads\/2016\/01\/blank-profile-hi-93x93.jpg": {
+		"ft": 16384,
+		"iS": 1381,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/blank-profile-hi-93x93.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/wp-content\/uploads\/2016\/01\/blank-profile-hi.jpg": {
 		"ft": 16384,
 		"iS": 7172,
@@ -35939,9 +36069,29 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/wp-content\/uploads\/2016\/01\/inner-banner-1024x331.jpg": {
+		"ft": 16384,
+		"iS": 86998,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/inner-banner-1024x331.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/wp-content\/uploads\/2016\/01\/inner-banner-150x150.jpeg": {
 		"ft": 16384,
 		"iS": 9637,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/inner-banner-150x150.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2016\/01\/inner-banner-150x150.jpg": {
+		"ft": 16384,
+		"iS": 9216,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/01\/inner-banner-150x150.jpg",
 		"oF": 0,
@@ -35959,9 +36109,39 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/wp-content\/uploads\/2016\/01\/inner-banner-180x180.jpg": {
+		"ft": 16384,
+		"iS": 12853,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/inner-banner-180x180.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2016\/01\/inner-banner-288x93.jpeg": {
+		"ft": 16384,
+		"iS": 10743,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/inner-banner-288x93.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/wp-content\/uploads\/2016\/01\/inner-banner-300x300.jpeg": {
 		"ft": 16384,
 		"iS": 29557,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/inner-banner-300x300.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2016\/01\/inner-banner-300x300.jpg": {
+		"ft": 16384,
+		"iS": 28900,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/01\/inner-banner-300x300.jpg",
 		"oF": 0,
@@ -35979,9 +36159,39 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/wp-content\/uploads\/2016\/01\/inner-banner-300x97.jpg": {
+		"ft": 16384,
+		"iS": 11408,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/inner-banner-300x97.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2016\/01\/inner-banner-430x329.jpeg": {
+		"ft": 16384,
+		"iS": 43491,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/inner-banner-430x329.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/wp-content\/uploads\/2016\/01\/inner-banner-490x315.jpeg": {
 		"ft": 16384,
 		"iS": 47517,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/inner-banner-490x315.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2016\/01\/inner-banner-490x315.jpg": {
+		"ft": 16384,
+		"iS": 46675,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/01\/inner-banner-490x315.jpg",
 		"oF": 0,
@@ -35999,9 +36209,29 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/wp-content\/uploads\/2016\/01\/inner-banner-500x348.jpg": {
+		"ft": 16384,
+		"iS": 56081,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/inner-banner-500x348.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/wp-content\/uploads\/2016\/01\/inner-banner-600x348.jpeg": {
 		"ft": 16384,
 		"iS": 65970,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/inner-banner-600x348.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2016\/01\/inner-banner-600x348.jpg": {
+		"ft": 16384,
+		"iS": 64985,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/01\/inner-banner-600x348.jpg",
 		"oF": 0,
@@ -36019,9 +36249,29 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/wp-content\/uploads\/2016\/01\/inner-banner-768x248.jpg": {
+		"ft": 16384,
+		"iS": 55264,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/inner-banner-768x248.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/wp-content\/uploads\/2016\/01\/inner-banner-940x198.jpeg": {
 		"ft": 16384,
 		"iS": 49199,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/inner-banner-940x198.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2016\/01\/inner-banner-940x198.jpg": {
+		"ft": 16384,
+		"iS": 48581,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/01\/inner-banner-940x198.jpg",
 		"oF": 0,
@@ -36064,6 +36314,16 @@
 		"iS": 1303,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/01\/newsbanner-180x180.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2016\/01\/newsbanner-288x93.jpg": {
+		"ft": 16384,
+		"iS": 1299,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/newsbanner-288x93.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -36165,8 +36425,8 @@
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/01\/Screen-Shot-2015-11-08-at-12.59.17-PM-150x150.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -36176,8 +36436,8 @@
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/01\/Screen-Shot-2015-11-08-at-12.59.17-PM-180x180.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -36187,8 +36447,8 @@
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/01\/Screen-Shot-2015-11-08-at-12.59.17-PM-298x300.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -36198,8 +36458,8 @@
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/01\/Screen-Shot-2015-11-08-at-12.59.17-PM-300x300.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -36208,6 +36468,39 @@
 		"iS": 61489,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/01\/Screen-Shot-2015-11-08-at-12.59.17-PM-346x198.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2016\/01\/Screen-Shot-2015-11-08-at-12.59.17-PM-346x315.png": {
+		"ft": 32768,
+		"iS": 97591,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Screen-Shot-2015-11-08-at-12.59.17-PM-346x315.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2016\/01\/Screen-Shot-2015-11-08-at-12.59.17-PM-346x329.png": {
+		"ft": 32768,
+		"iS": 101585,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Screen-Shot-2015-11-08-at-12.59.17-PM-346x329.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2016\/01\/Screen-Shot-2015-11-08-at-12.59.17-PM-92x93.png": {
+		"ft": 32768,
+		"iS": 10768,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Screen-Shot-2015-11-08-at-12.59.17-PM-92x93.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -36232,7 +36525,7 @@
 		"oAP": "\/wp-content\/uploads\/2016\/01\/Screen-Shot-2016-01-10-at-4.10.54-PM-1024x499.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/wp-content\/uploads\/2016\/01\/Screen-Shot-2016-01-10-at-4.10.54-PM-150x150.jpg": {
@@ -36242,7 +36535,7 @@
 		"oAP": "\/wp-content\/uploads\/2016\/01\/Screen-Shot-2016-01-10-at-4.10.54-PM-150x150.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/wp-content\/uploads\/2016\/01\/Screen-Shot-2016-01-10-at-4.10.54-PM-180x180.jpg": {
@@ -36255,6 +36548,16 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/wp-content\/uploads\/2016\/01\/Screen-Shot-2016-01-10-at-4.10.54-PM-191x93.jpg": {
+		"ft": 16384,
+		"iS": 6641,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Screen-Shot-2016-01-10-at-4.10.54-PM-191x93.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/wp-content\/uploads\/2016\/01\/Screen-Shot-2016-01-10-at-4.10.54-PM-300x146.jpg": {
 		"ft": 16384,
 		"iS": 18650,
@@ -36262,7 +36565,7 @@
 		"oAP": "\/wp-content\/uploads\/2016\/01\/Screen-Shot-2016-01-10-at-4.10.54-PM-300x146.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/wp-content\/uploads\/2016\/01\/Screen-Shot-2016-01-10-at-4.10.54-PM-300x300.jpg": {
@@ -36270,6 +36573,36 @@
 		"iS": 29232,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/01\/Screen-Shot-2016-01-10-at-4.10.54-PM-300x300.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2016\/01\/Screen-Shot-2016-01-10-at-4.10.54-PM-430x329.jpg": {
+		"ft": 16384,
+		"iS": 34411,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Screen-Shot-2016-01-10-at-4.10.54-PM-430x329.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2016\/01\/Screen-Shot-2016-01-10-at-4.10.54-PM-490x315.jpg": {
+		"ft": 16384,
+		"iS": 40356,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Screen-Shot-2016-01-10-at-4.10.54-PM-490x315.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2016\/01\/Screen-Shot-2016-01-10-at-4.10.54-PM-500x350.jpg": {
+		"ft": 16384,
+		"iS": 42739,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/Screen-Shot-2016-01-10-at-4.10.54-PM-500x350.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -36292,7 +36625,7 @@
 		"oAP": "\/wp-content\/uploads\/2016\/01\/Screen-Shot-2016-01-10-at-4.10.54-PM-768x374.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/wp-content\/uploads\/2016\/01\/Screen-Shot-2016-01-10-at-4.10.54-PM-940x198.jpg": {
@@ -36315,6 +36648,17 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/wp-content\/uploads\/2016\/01\/wine_bg-114x93.png": {
+		"ft": 32768,
+		"iS": 9797,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/01\/wine_bg-114x93.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/wp-content\/uploads\/2016\/01\/wine_bg-150x150.png": {
 		"ft": 32768,
 		"iS": 16384,
@@ -36332,8 +36676,8 @@
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/01\/wine_bg-180x180.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -36343,8 +36687,8 @@
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/01\/wine_bg-300x245.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -36354,8 +36698,8 @@
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/01\/wine_bg-300x300.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -36365,8 +36709,8 @@
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/01\/wine_bg-403x198.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -36376,8 +36720,8 @@
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/01\/wine_bg-403x315.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -36387,8 +36731,8 @@
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/01\/wine_bg-403x329.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -36403,6 +36747,16 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-143x93.jpg": {
+		"ft": 16384,
+		"iS": 3240,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-143x93.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-150x150.jpg": {
 		"ft": 16384,
 		"iS": 5710,
@@ -36410,7 +36764,7 @@
 		"oAP": "\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-150x150.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-180x180.jpg": {
@@ -36420,7 +36774,7 @@
 		"oAP": "\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-180x180.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-300x195.jpg": {
@@ -36430,7 +36784,7 @@
 		"oAP": "\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-300x195.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-300x300.jpg": {
@@ -36438,6 +36792,36 @@
 		"iS": 15462,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-300x300.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-430x329.jpg": {
+		"ft": 16384,
+		"iS": 16078,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-430x329.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-490x315.jpg": {
+		"ft": 16384,
+		"iS": 17683,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-490x315.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-500x350.jpg": {
+		"ft": 16384,
+		"iS": 19071,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-500x350.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -36450,7 +36834,7 @@
 		"oAP": "\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-600x600.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-768x500.jpg": {
@@ -36460,7 +36844,7 @@
 		"oAP": "\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-768x500.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-940x198.jpg": {
@@ -36470,7 +36854,7 @@
 		"oAP": "\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14-940x198.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/wp-content\/uploads\/2016\/02\/205655-1000-144716078710885710-R3L8T8D-990-14.jpg": {
@@ -36508,6 +36892,16 @@
 		"iS": 1303,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2016\/02\/blog-180x180.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2016\/02\/blog-288x93.jpg": {
+		"ft": 16384,
+		"iS": 1228,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2016\/02\/blog-288x93.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -36633,6 +37027,16 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/wp-content\/uploads\/2017\/02\/artists-288x93.jpg": {
+		"ft": 16384,
+		"iS": 1379,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/02\/artists-288x93.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/wp-content\/uploads\/2017\/02\/artists-300x300.jpg": {
 		"ft": 16384,
 		"iS": 2262,
@@ -36729,8 +37133,8 @@
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2017\/02\/map-150x150.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -36740,8 +37144,8 @@
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2017\/02\/map-180x180.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -36750,6 +37154,17 @@
 		"iS": 20982,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2017\/02\/map-180x198.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2017\/02\/map-80x93.png": {
+		"ft": 32768,
+		"iS": 7147,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/02\/map-80x93.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -36817,8 +37232,8 @@
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2017\/02\/whitewine-136x300.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -36827,6 +37242,17 @@
 		"iS": 34698,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2017\/02\/whitewine-136x315.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2017\/02\/whitewine-40x93.png": {
+		"ft": 32768,
+		"iS": 4686,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/02\/whitewine-40x93.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -36869,6 +37295,16 @@
 		"iS": 1303,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2017\/02\/wine-180x180.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2017\/02\/wine-288x93.jpg": {
+		"ft": 16384,
+		"iS": 1349,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/02\/wine-288x93.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -36969,6 +37405,17 @@
 		"iS": 6629,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2017\/04\/About.com_-150x150.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2017\/04\/About.com_-156x93.png": {
+		"ft": 32768,
+		"iS": 10003,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/About.com_-156x93.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -37085,6 +37532,30 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/wp-content\/uploads\/2017\/04\/Ingrams-Magazine-150x100.gif": {
+		"ft": 4194304,
+		"iS": 3624,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/Ingrams-Magazine-150x100.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/04\/Ingrams-Magazine-180x100.gif": {
+		"ft": 4194304,
+		"iS": 4273,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/Ingrams-Magazine-180x100.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/04\/Ingrams-Magazine-252x93.gif": {
+		"ft": 4194304,
+		"iS": 9052,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/Ingrams-Magazine-252x93.gif",
+		"oF": 0,
+		"opt": 0
+		},
 	"\/wp-content\/uploads\/2017\/04\/Ingrams-Magazine.gif": {
 		"ft": 4194304,
 		"iS": 5941,
@@ -37159,6 +37630,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/wp-content\/uploads\/2017\/04\/KC-Destinations-70x93.png": {
+		"ft": 32768,
+		"iS": 7009,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/KC-Destinations-70x93.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/wp-content\/uploads\/2017\/04\/KC-Destinations.png": {
 		"ft": 32768,
 		"iS": 48075,
@@ -37175,6 +37657,16 @@
 		"iS": 5643,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2017\/04\/KC-Star-150x150.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2017\/04\/KC-Star-158x93.jpeg": {
+		"ft": 16384,
+		"iS": 4070,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/KC-Star-158x93.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -37240,6 +37732,30 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/wp-content\/uploads\/2017\/04\/KCBizJournal-150x60.gif": {
+		"ft": 4194304,
+		"iS": 2311,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/KCBizJournal-150x60.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/04\/KCBizJournal-180x60.gif": {
+		"ft": 4194304,
+		"iS": 2701,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/KCBizJournal-180x60.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/04\/KCBizJournal-300x60.gif": {
+		"ft": 4194304,
+		"iS": 3781,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/KCBizJournal-300x60.gif",
+		"oF": 0,
+		"opt": 0
+		},
 	"\/wp-content\/uploads\/2017\/04\/KCBizJournal.gif": {
 		"ft": 4194304,
 		"iS": 3820,
@@ -37281,9 +37797,29 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/wp-content\/uploads\/2017\/04\/KCTV5-133x93.jpeg": {
+		"ft": 16384,
+		"iS": 5522,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/KCTV5-133x93.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/wp-content\/uploads\/2017\/04\/KCTV5-150x150.jpeg": {
 		"ft": 16384,
 		"iS": 25047,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/KCTV5-150x150.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2017\/04\/KCTV5-150x150.jpg": {
+		"ft": 16384,
+		"iS": 7217,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2017\/04\/KCTV5-150x150.jpg",
 		"oF": 0,
@@ -37298,12 +37834,32 @@
 		"oAP": "\/wp-content\/uploads\/2017\/04\/KCTV5-180x180.jpg",
 		"oF": 0,
 		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2017\/04\/KCTV5-180x180.jpg": {
+		"ft": 16384,
+		"iS": 8911,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/KCTV5-180x180.jpg",
+		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
 	"\/wp-content\/uploads\/2017\/04\/KCTV5-300x209.jpeg": {
 		"ft": 16384,
 		"iS": 32845,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/KCTV5-300x209.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2017\/04\/KCTV5-300x209.jpg": {
+		"ft": 16384,
+		"iS": 14980,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2017\/04\/KCTV5-300x209.jpg",
 		"oF": 0,
@@ -37318,6 +37874,16 @@
 		"oAP": "\/wp-content\/uploads\/2017\/04\/KCTV5-300x300.jpg",
 		"oF": 0,
 		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2017\/04\/KCTV5-300x300.jpg": {
+		"ft": 16384,
+		"iS": 18167,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/KCTV5-300x300.jpg",
+		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
@@ -37328,12 +37894,32 @@
 		"oAP": "\/wp-content\/uploads\/2017\/04\/KCTV5-430x198.jpg",
 		"oF": 0,
 		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2017\/04\/KCTV5-430x198.jpg": {
+		"ft": 16384,
+		"iS": 17711,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/KCTV5-430x198.jpg",
+		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
 	"\/wp-content\/uploads\/2017\/04\/KCTV5-430x300.jpeg": {
 		"ft": 16384,
 		"iS": 44596,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/KCTV5-430x300.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2017\/04\/KCTV5-430x300.jpg": {
+		"ft": 16384,
+		"iS": 26761,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2017\/04\/KCTV5-430x300.jpg",
 		"oF": 0,
@@ -37398,12 +37984,32 @@
 		"oAP": "\/wp-content\/uploads\/2017\/04\/NWMSU-Alumni-Mag-430x329.jpg",
 		"oF": 0,
 		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2017\/04\/NWMSU-Alumni-Mag-430x329.jpg": {
+		"ft": 16384,
+		"iS": 55947,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/NWMSU-Alumni-Mag-430x329.jpg",
+		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
 	"\/wp-content\/uploads\/2017\/04\/NWMSU-Alumni-Mag-490x315.jpeg": {
 		"ft": 16384,
 		"iS": 55280,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/NWMSU-Alumni-Mag-490x315.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2017\/04\/NWMSU-Alumni-Mag-490x315.jpg": {
+		"ft": 16384,
+		"iS": 59215,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2017\/04\/NWMSU-Alumni-Mag-490x315.jpg",
 		"oF": 0,
@@ -37418,6 +38024,16 @@
 		"oAP": "\/wp-content\/uploads\/2017\/04\/NWMSU-Alumni-Mag-500x350.jpg",
 		"oF": 0,
 		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2017\/04\/NWMSU-Alumni-Mag-500x350.jpg": {
+		"ft": 16384,
+		"iS": 66129,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/NWMSU-Alumni-Mag-500x350.jpg",
+		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
@@ -37426,6 +38042,16 @@
 		"iS": 110303,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2017\/04\/NWMSU-Alumni-Mag-600x600.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2017\/04\/NWMSU-Alumni-Mag-72x93.jpeg": {
+		"ft": 16384,
+		"iS": 4609,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/NWMSU-Alumni-Mag-72x93.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -37458,6 +38084,16 @@
 		"oAP": "\/wp-content\/uploads\/2017\/04\/NWMSU-Alumni-Mag-940x198.jpg",
 		"oF": 0,
 		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2017\/04\/NWMSU-Alumni-Mag-940x198.jpg": {
+		"ft": 16384,
+		"iS": 51446,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/NWMSU-Alumni-Mag-940x198.jpg",
+		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
@@ -37471,6 +38107,94 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/wp-content\/uploads\/2017\/04\/Platte-County-Citizen-150x150.gif": {
+		"ft": 4194304,
+		"iS": 6666,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/Platte-County-Citizen-150x150.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/04\/Platte-County-Citizen-180x180.gif": {
+		"ft": 4194304,
+		"iS": 8437,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/Platte-County-Citizen-180x180.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/04\/Platte-County-Citizen-300x206.gif": {
+		"ft": 4194304,
+		"iS": 8454,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/Platte-County-Citizen-300x206.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/04\/Platte-County-Citizen-300x70.gif": {
+		"ft": 4194304,
+		"iS": 9020,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/Platte-County-Citizen-300x70.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/04\/Platte-County-Citizen-397x93.gif": {
+		"ft": 4194304,
+		"iS": 13730,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/Platte-County-Citizen-397x93.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/04\/Platte-County-Citizen-430x206.gif": {
+		"ft": 4194304,
+		"iS": 13703,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/Platte-County-Citizen-430x206.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/04\/Platte-County-Citizen-490x206.gif": {
+		"ft": 4194304,
+		"iS": 18655,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/Platte-County-Citizen-490x206.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/04\/Platte-County-Citizen-500x206.gif": {
+		"ft": 4194304,
+		"iS": 19563,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/Platte-County-Citizen-500x206.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/04\/Platte-County-Citizen-600x206.gif": {
+		"ft": 4194304,
+		"iS": 29756,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/Platte-County-Citizen-600x206.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/04\/Platte-County-Citizen-768x180.gif": {
+		"ft": 4194304,
+		"iS": 41073,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/Platte-County-Citizen-768x180.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/04\/Platte-County-Citizen-879x198.gif": {
+		"ft": 4194304,
+		"iS": 51003,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/Platte-County-Citizen-879x198.gif",
+		"oF": 0,
+		"opt": 0
+		},
 	"\/wp-content\/uploads\/2017\/04\/Platte-County-Citizen.gif": {
 		"ft": 4194304,
 		"iS": 48728,
@@ -37478,6 +38202,16 @@
 		"oAP": "\/wp-content\/uploads\/2017\/04\/Platte-County-Citizen.gif",
 		"oF": 0,
 		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/04\/Platte-County-Magazine-140x93.jpg": {
+		"ft": 16384,
+		"iS": 5011,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/Platte-County-Magazine-140x93.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/wp-content\/uploads\/2017\/04\/Platte-County-Magazine-150x150.jpg": {
 		"ft": 16384,
@@ -37669,6 +38403,17 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/wp-content\/uploads\/2017\/04\/University-Daily-Kansan-117x93.png": {
+		"ft": 32768,
+		"iS": 11051,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/University-Daily-Kansan-117x93.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/wp-content\/uploads\/2017\/04\/University-Daily-Kansan-150x150.png": {
 		"ft": 32768,
 		"iS": 9929,
@@ -37815,6 +38560,16 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/wp-content\/uploads\/2017\/04\/Visit_KC-77x93.jpeg": {
+		"ft": 16384,
+		"iS": 3646,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/04\/Visit_KC-77x93.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/wp-content\/uploads\/2017\/04\/Visit_KC.jpeg": {
 		"ft": 16384,
 		"iS": 22552,
@@ -37850,6 +38605,16 @@
 		"iS": 3297,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2017\/05\/AMA_Gold-4-c_Logow-tag-180x180.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2017\/05\/AMA_Gold-4-c_Logow-tag-279x93.jpg": {
+		"ft": 16384,
+		"iS": 3754,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/05\/AMA_Gold-4-c_Logow-tag-279x93.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -37945,6 +38710,78 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/wp-content\/uploads\/2017\/05\/free-gift-150x150.gif": {
+		"ft": 4194304,
+		"iS": 5925,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/05\/free-gift-150x150.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/05\/free-gift-180x180.gif": {
+		"ft": 4194304,
+		"iS": 7451,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/05\/free-gift-180x180.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/05\/free-gift-184x93.gif": {
+		"ft": 4194304,
+		"iS": 5489,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/05\/free-gift-184x93.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/05\/free-gift-300x151.gif": {
+		"ft": 4194304,
+		"iS": 10794,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/05\/free-gift-300x151.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/05\/free-gift-300x277.gif": {
+		"ft": 4194304,
+		"iS": 20446,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/05\/free-gift-300x277.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/05\/free-gift-430x277.gif": {
+		"ft": 4194304,
+		"iS": 32975,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/05\/free-gift-430x277.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/05\/free-gift-490x277.gif": {
+		"ft": 4194304,
+		"iS": 37771,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/05\/free-gift-490x277.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/05\/free-gift-500x277.gif": {
+		"ft": 4194304,
+		"iS": 38200,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/05\/free-gift-500x277.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/wp-content\/uploads\/2017\/05\/free-gift-549x198.gif": {
+		"ft": 4194304,
+		"iS": 35966,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/05\/free-gift-549x198.gif",
+		"oF": 0,
+		"opt": 0
+		},
 	"\/wp-content\/uploads\/2017\/05\/free-gift.gif": {
 		"ft": 4194304,
 		"iS": 28519,
@@ -38009,8 +38846,8 @@
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2017\/07\/logo-best-things-missouri-150x146.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -38020,8 +38857,8 @@
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2017\/07\/logo-best-things-missouri-180x146.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -38031,8 +38868,8 @@
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2017\/07\/logo-best-things-missouri-300x146.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -38042,8 +38879,8 @@
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2017\/07\/logo-best-things-missouri-300x43.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -38053,8 +38890,8 @@
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2017\/07\/logo-best-things-missouri-430x146.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -38064,8 +38901,8 @@
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2017\/07\/logo-best-things-missouri-490x146.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -38075,8 +38912,8 @@
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2017\/07\/logo-best-things-missouri-500x146.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -38085,6 +38922,17 @@
 		"iS": 4645,
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2017\/07\/logo-best-things-missouri-600x146.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/wp-content\/uploads\/2017\/07\/logo-best-things-missouri-647x93.png": {
+		"ft": 32768,
+		"iS": 28613,
+		"oA": 0,
+		"oAP": "\/wp-content\/uploads\/2017\/07\/logo-best-things-missouri-647x93.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -38097,8 +38945,8 @@
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2017\/07\/logo-best-things-missouri-768x110.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -38108,8 +38956,8 @@
 		"oA": 0,
 		"oAP": "\/wp-content\/uploads\/2017\/07\/logo-best-things-missouri-940x146.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
