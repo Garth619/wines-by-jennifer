@@ -46,13 +46,20 @@ trait post_actions
 		{
 			if (  $this->display_broadcast_columns )
 			{
-				$this->add_filter( 'manage_posts_columns' );
-				$this->add_filter( 'manage_pages_columns', 'manage_posts_columns' );
+				// Add the broadcasted column to each post type we support.
 
-				$this->add_action( 'manage_posts_custom_column', 10, 2 );
-				$this->add_action( 'manage_pages_custom_column', 'manage_posts_custom_column', 10, 2 );
+				$action = new actions\get_post_types;
+				$action->execute();
+
+				foreach( $action->post_types as $post_type )
+				{
+					$key = sprintf( 'manage_%s_posts_columns', $post_type );
+					$this->add_filter( $key, 'manage_posts_columns', 100 );
+
+					$key = sprintf( 'manage_%s_posts_custom_column', $post_type );
+					$this->add_action( $key, 'manage_posts_custom_column', 100, 2 );
+				}
 			}
-
 		}
 	}
 
@@ -63,6 +70,14 @@ trait post_actions
 
 	public function manage_posts_columns( $defaults )
 	{
+		if ( isset( $_GET[ 'post_type' ] ) )
+		{
+			$action = new actions\get_post_types;
+			$action->execute();
+			if ( ! in_array( $_GET[ 'post_type' ], $action->post_types ) )
+				return;
+		}
+
 		$action = new actions\get_post_bulk_actions();
 		$action->execute();
 		$this->add_admin_script( 'post_bulk_actions', $action->get_js() );
@@ -260,10 +275,22 @@ trait post_actions
 			break;
 			case 'find_unlinked':
 				$post = get_post( $post_id );
+
+				if ( ! $post )
+				{
+					$this->debug( 'Post action: post %d is invalid!', $post_id );
+					break;
+				}
+
 				$broadcast_data = $this->get_post_broadcast_data( $blog_id, $post_id );
 				// Get a list of blogs that this user can link to.
 				$filter = new actions\get_user_writable_blogs( $this->user_id() );
 				$blogs = $filter->execute()->blogs;
+
+				$filter = new actions\find_unlinked_posts_blogs();
+				$filter->blogs = $blogs;
+				$blogs = $filter->execute()->blogs;
+
 				foreach( $blogs as $blog )
 				{
 					if ( $blog->id == $blog_id )
@@ -272,7 +299,7 @@ trait post_actions
 					if ( $broadcast_data->has_linked_child_on_this_blog( $blog->id ) )
 						continue;
 
-					$blog->switch_to();
+					switch_to_blog( $blog->id );
 
 					$args = [
 						'cache_results' => false,
@@ -303,7 +330,7 @@ trait post_actions
 					else
 						$this->debug( 'Not exactly one match on blog.' );
 
-					$blog->switch_from();
+					restore_current_blog();
 				}
 				$broadcast_data = $this->set_post_broadcast_data( $blog_id, $post_id, $broadcast_data );
 			break;
@@ -495,8 +522,32 @@ trait post_actions
 		$has_links = false;
 
 		// Linked to a parent.
-		if ( $broadcast_data->get_linked_parent() !== false )
+		$parent = $broadcast_data->get_linked_parent();
+		if ( $parent !== false )
 		{
+			switch_to_blog( $parent[ 'blog_id' ] );
+
+			$edit_link = sprintf( '<a href="%s">%s</a>',
+				get_edit_post_link( $parent[ 'post_id' ] ),
+				__( 'Edit' )
+			);
+			$view_link = sprintf( '<a href="%s">%s</a>',
+				get_permalink( $parent[ 'post_id' ] ),
+				__( 'View' )
+			);
+
+			$links = sprintf( '%s: %s | %s',
+				// Parent post: VIEW / LINK, in the child post action popup.
+				__( 'Parent post', 'threewp_braodcast' ),
+				$edit_link,
+				$view_link
+			);
+
+			$form->markup( 'm_parent_links' )
+				->p_ ( $links );
+
+			restore_current_blog();
+
 			$unlink = $form->checkbox( 'unlink' )
 				// Description of unlink checkbox
 				->description( __( 'Unlink this post from its parent.', 'threewp_broadcast' ) )
@@ -526,11 +577,23 @@ trait post_actions
 				switch_to_blog( $child_blog_id );
 				$info = get_blog_details();
 				$blogname = $info->blogname ? $info->blogname : $info->domain . $info->path;
+				$edit_link = sprintf( '<a href="%s">%s</a>',
+					get_edit_post_link( $child_post_id ),
+					__( 'Edit' )
+				);
+				$view_link = sprintf( '<a href="%s">%s</a>',
+					get_permalink( $child_post_id ),
+					__( 'View' )
+				);
 				$select = $form->select( $child_blog_id )
 					->label( $blogname )
 					->prefix( 'blogs' )
 					->options( $options )
 					;
+
+				// The edit link we put in the description, but it requires that the HTML be set without escaping.
+				$select->description->label->content = sprintf( '<div class="row-actions">%s | %s</a>', $edit_link, $view_link );;
+
 				$select->blog_id = $child_blog_id;
 				$select->post_id = $child_post_id;
 				$form->blogs []= $select;

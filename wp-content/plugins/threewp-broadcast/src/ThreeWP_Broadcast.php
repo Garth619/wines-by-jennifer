@@ -101,7 +101,7 @@ class ThreeWP_Broadcast
 	public function _construct()
 	{
 		if ( ! $this->is_network )
-			wp_die( $this->_( 'Broadcast requires a Wordpress network to function.' ) );
+			return;
 
 		$this->add_action( 'add_meta_boxes' );
 		$this->add_action( 'admin_menu' );
@@ -109,6 +109,7 @@ class ThreeWP_Broadcast
 
 		if ( $this->get_site_option( 'override_child_permalinks' ) )
 		{
+			$this->add_filter( 'page_link', 'post_link', 10, 3 );
 			$this->add_filter( 'post_link', 10, 3 );
 			$this->add_filter( 'post_type_link', 'post_link', 10, 3 );
 		}
@@ -116,6 +117,7 @@ class ThreeWP_Broadcast
 		$this->attachments_init();
 		$this->post_actions_init();
 		$this->savings_calculator_init();
+		$this->terms_and_taxonomies_init();
 
 		$this->add_action( 'network_admin_menu', 'admin_menu' );
 		$this->add_action( 'plugins_loaded' );
@@ -126,8 +128,6 @@ class ThreeWP_Broadcast
 		// This is a normal broadcast action, not a special action object. This is a holdover from the good old days from when Broadcast used normal actions.
 		// Don't want to break anyone's plugins.
 		$this->add_action( 'threewp_broadcast_broadcast_post' );
-
-		$this->add_action( 'threewp_broadcast_collect_post_type_taxonomies', 5 );
 
 		$this->add_action( 'threewp_broadcast_each_linked_post' );
 		$this->add_action( 'threewp_broadcast_get_user_writable_blogs', 100 );		// Allow other plugins to do this first.
@@ -140,8 +140,6 @@ class ThreeWP_Broadcast
 		$this->add_filter( 'threewp_broadcast_prepare_meta_box', 5 );
 		$this->add_filter( 'threewp_broadcast_prepare_meta_box', 'threewp_broadcast_prepared_meta_box', 100 );
 		$this->add_filter( 'threewp_broadcast_preparse_content' );
-		$this->add_action( 'threewp_broadcast_wp_insert_term', 5 );
-		$this->add_action( 'threewp_broadcast_wp_update_term', 5 );
 
 		if ( $this->get_site_option( 'canonical_url' ) )
 			$this->add_action( 'wp_head', 1 );
@@ -158,7 +156,7 @@ class ThreeWP_Broadcast
 	public function activate()
 	{
 		if ( !$this->is_network )
-			wp_die("This plugin requires a Wordpress Network installation.");
+			return;
 
 		$db_ver = $this->get_site_option( 'database_version', 0 );
 
@@ -298,6 +296,10 @@ class ThreeWP_Broadcast
 
 		$blog_id = get_current_blog_id();
 
+		// Pages return just the ID. Posts return a proper page object.
+		if ( ! is_object( $post ) )
+			$post = get_post( $post );
+
 		// Have we already checked this post ID for a link?
 		$key = 'b' . $blog_id . '_p' . $post->ID;
 		if ( property_exists( $this->permalink_cache, $key ) )
@@ -319,13 +321,21 @@ class ThreeWP_Broadcast
 
 		switch_to_blog( $linked_parent[ 'blog_id' ] );
 		$post = get_post( $linked_parent[ 'post_id' ] );
-		$permalink = get_permalink( $post );
+		$parent_permalink = get_permalink( $post );
 		restore_current_blog();
 
-		$this->permalink_cache->$key = $permalink;
-
 		unset( $this->_is_getting_permalink );
-		return $permalink;
+
+		$action = new actions\override_child_permalink();
+		$action->child_permalink = $link;
+		$action->parent_permalink = $parent_permalink;
+		$action->post = $post;
+		$action->returned_permalink = $parent_permalink;
+		$action->execute();
+
+		$this->permalink_cache->$key = $action->returned_permalink;
+
+		return $action->returned_permalink;
 	}
 
 	/**
@@ -351,14 +361,17 @@ class ThreeWP_Broadcast
 			if ( $action->on_parent )
 			{
 				$this->debug( $prefix . 'Executing callbacks on parent post %s on blog %s.', $parent[ 'post_id' ], $parent[ 'blog_id' ] );
-				switch_to_blog( $parent[ 'blog_id' ] );
-				$o = (object)[];
-				$o->post_id = $parent[ 'post_id' ];
-				$o->post = get_post( $o->post_id );
-				$this->debug( $prefix . '' );
-				foreach( $action->callbacks as $callback )
-					$callback( $o );
-				restore_current_blog();
+				if ( $this->blog_exists( $parent[ 'blog_id' ] ) )
+				{
+					switch_to_blog( $parent[ 'blog_id' ] );
+					$o = (object)[];
+					$o->post_id = $parent[ 'post_id' ];
+					$o->post = get_post( $o->post_id );
+					$this->debug( $prefix . '' );
+					foreach( $action->callbacks as $callback )
+						$callback( $o );
+					restore_current_blog();
+				}
 			}
 			else
 				$this->debug( $prefix . 'Not executing on parent.' );
@@ -374,6 +387,8 @@ class ThreeWP_Broadcast
 			{
 				// Do not bother eaching this child if we started here.
 				if ( $blog_id == $action->blog_id )
+					continue;
+				if ( ! $this->blog_exists( $blog_id ) )
 					continue;
 				switch_to_blog( $blog_id );
 				$o = (object)[];
@@ -695,7 +710,12 @@ class ThreeWP_Broadcast
 			foreach( $plugins as $plugin_filename )
 			{
 				$s = [];
-				$plugin_data = get_plugin_data( WP_PLUGIN_DIR . '/' . $plugin_filename );
+
+				$plugin_filepath = WP_PLUGIN_DIR . '/' . $plugin_filename;
+				if ( !file_exists($plugin_filepath) )
+					continue;
+				$plugin_data = get_plugin_data( $plugin_filepath );
+
 				$plugin_data = (object)$plugin_data;
 				$s []= $plugin_filename;
 				$s []= $plugin_data->Name;
@@ -835,13 +855,13 @@ class ThreeWP_Broadcast
 	public function is_blog_user_writable( $user_id, $blog )
 	{
 		// Check that the user has write access.
-		$blog->switch_to();
+		switch_to_blog( $blog->id );
 
 		global $current_user;
 		wp_get_current_user();
 		$r = current_user_can( 'edit_posts' );
 
-		$blog->switch_from();
+		restore_current_blog();
 
 		return $r;
 	}
