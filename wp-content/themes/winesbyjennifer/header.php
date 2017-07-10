@@ -215,31 +215,31 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 						
 						<div class="single_social_icon">
 							
-							<img src="<?php bloginfo('template_directory');?>/images/new-fb.png"/>
+							<a href="<?php the_field('facebook_url','option');?>" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/new-fb.png"/></a>
 							
 						</div><!-- single_social_icon -->
 						
 						<div class="single_social_icon">
 							
-							<img src="<?php bloginfo('template_directory');?>/images/new-g.png"/>
+							<a href="<?php the_field('googler_plus_url','option');?>" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/new-g.png"/></a>
 							
 						</div><!-- single_social_icon -->
 						
 						<div class="single_social_icon">
 							
-							<img src="<?php bloginfo('template_directory');?>/images/new-twitter.png"/>
+							<a href="<?php the_field('twitter_url','option');?>" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/new-twitter.png"/></a>
 							
 						</div><!-- single_social_icon -->
 						
 						<div class="single_social_icon">
 							
-							<img src="<?php bloginfo('template_directory');?>/images/new-instagram.png"/>
+							<a href="<?php the_field('instagram_url','option');?>" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/new-instagram.png"/></a>
 							
 						</div><!-- single_social_icon -->
 						
 						<div class="single_social_icon">
 							
-							<img src="<?php bloginfo('template_directory');?>/images/new-youtube.png"/>
+							<a href="<?php the_field('youtube_url','option');?>" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/new-youtube.png"/></a>
 							
 						</div><!-- single_social_icon -->
 						

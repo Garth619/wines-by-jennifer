@@ -755,6 +755,12 @@ function twentyten_get_gallery_images() {
 		'parent_slug'	=> 'theme-general-settings',
 	));
 	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Header Footer',
+		'menu_title'	=> 'Header Footer',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+	
 }
 
 

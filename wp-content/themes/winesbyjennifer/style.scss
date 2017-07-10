@@ -4037,9 +4037,11 @@ input.gform_button {
 			text-decoration: none;
 		}
 	}
-	p {
-		font-size:15px;
-		line-height: 19px;
+	
+	p, .desktop_events_content {
+		font-size: 15px;
+    line-height: 19px;
+    
 		
 	}
 }

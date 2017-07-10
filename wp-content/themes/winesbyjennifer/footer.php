@@ -41,7 +41,7 @@
 					 
 								<div class="single_slide">
 						
-									<img alt="<?php echo $alt_text; ?>" src="<?php echo $logo_one[0]; ?>"/>
+									<a href="<?php the_field('press_page_link');?>"><img alt="<?php echo $alt_text; ?>" src="<?php echo $logo_one[0]; ?>"/></a>
 						
 								</div><!-- single_slide -->
 							

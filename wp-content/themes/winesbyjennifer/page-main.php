@@ -151,7 +151,7 @@ get_header(); ?>
 			<div class="desktop_single_event">
 				<h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
 				<div class="desktop_events_content">
-					<?php the_excerpt();?>
+					<?php echo wp_trim_words( get_the_content(), 40, '...' );?>
 					<a class="read_more_main" href="<?php the_permalink();?>">Read More <div class="arrow-right"></div></a>
 				</div><!-- events_content -->
 			</div><!-- desktop_single_event -->
@@ -186,64 +186,31 @@ get_header(); ?>
 			
 			
 			<div class="event_slider">
+				
+				
+				
+			<?php $myeventstwo_query = new WP_Query( array( 'post_type' => array ( 'inthenews' ),'posts_per_page' => '40', 'order' => 'DSC' ) ); while($myeventstwo_query->have_posts()) : $myeventstwo_query->the_post(); ?>
+           
+           
+       <div class="single_event">
 			
-			
-			<div class="single_event">
-			
-				<a href="">
+				<a href="<?php the_permalink();?>">
 
-				<span class="title">Lorem ipsum dolor</span><!-- description -->
+				<span class="title"><?php the_title();?></span><!-- description -->
 			
-				<span class="description">Lorem ipsum dolor sit amet, conse ctetur adi pisicing elit, sed do eiusmod tem por in cid idunt ut labore et dolore magna aliq ua. Ut enim ad minim veniam, quis nostrud ex ercitation ullamco laboris nisi ut aliquip ex ea </span><!-- description -->
+				<span class="description"><?php echo wp_trim_words( get_the_content(), 50, '...' );?></span><!-- description -->
 			
 				<span class="events_read_more">Read More</span><!-- events_read_more -->
 			
 			</a>
 			
 			</div><!-- single_event -->
-			
-			<div class="single_event">
-			
-				<a href="">
+        
+        
+        <?php endwhile; ?>
+       <?php wp_reset_postdata(); // reset the query ?>
 
-				<span class="title">Lorem ipsum dolor</span><!-- description -->
-			
-				<span class="description">Lorem ipsum dolor sit amet, conse ctetur adi pisicing elit, sed do eiusmod tem por in cid idunt ut labore et dolore magna aliq ua. Ut enim ad minim veniam, quis nostrud ex ercitation ullamco laboris nisi ut aliquip ex ea </span><!-- description -->
-			
-				<span class="events_read_more">Read More</span><!-- events_read_more -->
-			
-			</a>
-			
-			</div><!-- single_event -->
-			
-			<div class="single_event">
-			
-				<a href="">
 
-				<span class="title">Lorem ipsum dolor</span><!-- description -->
-			
-				<span class="description">Lorem ipsum dolor sit amet, conse ctetur adi pisicing elit, sed do eiusmod tem por in cid idunt ut labore et dolore magna aliq ua. Ut enim ad minim veniam, quis nostrud ex ercitation ullamco laboris nisi ut aliquip ex ea </span><!-- description -->
-			
-				<span class="events_read_more">Read More</span><!-- events_read_more -->
-			
-			</a>
-			
-			</div><!-- single_event -->
-			
-			<div class="single_event">
-			
-				<a href="">
-
-				<span class="title">Lorem ipsum dolor</span><!-- description -->
-			
-				<span class="description">Lorem ipsum dolor sit amet, conse ctetur adi pisicing elit, sed do eiusmod tem por in cid idunt ut labore et dolore magna aliq ua. Ut enim ad minim veniam, quis nostrud ex ercitation ullamco laboris nisi ut aliquip ex ea </span><!-- description -->
-			
-				<span class="events_read_more">Read More</span><!-- events_read_more -->
-			
-			</a>
-			
-			</div><!-- single_event -->
-			
 			</div><!-- event_slider -->
 			
 		</div><!-- inner_event -->
@@ -268,25 +235,33 @@ get_header(); ?>
 		
 		
 		<div class="blog_slider">
-		
-		
-		<div class="main_page_blog_post">
-		
-			<a href="">
-				
-				
 			
-				<img src="<?php bloginfo('template_directory');?>/images/blog-test.jpg"/>
+				<?php $myblogtwo_query = new WP_Query( array( 'post_type' => array ( 'inthenews' ),'posts_per_page' => '40', 'order' => 'DSC' ) ); while($myblogtwo_query->have_posts()) : $myblogtwo_query->the_post(); ?>
+           
+           
+     <div class="main_page_blog_post">
+		
+			<a href="<?php the_permalink();?>">
+
 				
-				<span class="my_blog_title">Blog Title</span>
+				<span class="my_blog_title"><?php the_title();?></span>
 			
-				<span class="blog_description">Lorem ipsum dolor sit amet, conse ctetur adi pisicing elit, sed do eiusmod tem por in cid idunt ut labore et dolore magna aliq ua. Ut enim ad minim veniam, quis nostrud ex ercitation ullamco laboris nisi ut aliquip ex ea commodo conse quat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillu</span>
+				<span class="blog_description"><?php echo wp_trim_words( get_the_content(), 50, '...' );?></span>
 			
 				<span class="blog_readmore">Read More</span><!-- blog_readmore -->
 			
 			</a>
 			
 		</div><!-- main_page_blog_post -->
+        
+        
+        <?php endwhile; ?>
+       <?php wp_reset_postdata(); // reset the query ?>
+		
+		
+		
+		
+		
 		
 		<div class="main_page_blog_post">
 		
@@ -294,25 +269,7 @@ get_header(); ?>
 				
 				
 			
-				<img src="<?php bloginfo('template_directory');?>/images/blog-test.jpg"/>
 				
-				<span class="my_blog_title">Blog Title</span>
-			
-				<span class="blog_description">Lorem ipsum dolor sit amet, conse ctetur adi pisicing elit, sed do eiusmod tem por in cid idunt ut labore et dolore magna aliq ua. Ut enim ad minim veniam, quis nostrud ex ercitation ullamco laboris nisi ut aliquip ex ea commodo conse quat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillu</span>
-			
-				<span class="blog_readmore">Read More</span><!-- blog_readmore -->
-			
-			</a>
-			
-		</div><!-- main_page_blog_post -->
-		
-		<div class="main_page_blog_post">
-		
-			<a href="">
-				
-				
-			
-				<img src="<?php bloginfo('template_directory');?>/images/blog-test.jpg"/>
 				
 				<span class="my_blog_title">Blog Title</span>
 			

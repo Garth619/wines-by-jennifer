@@ -2936,7 +2936,7 @@ body:not(.page-template-page-main) .press {
       .desktop_single_event h2 a {
         color: #8c2555;
         text-decoration: none; }
-    .desktop_single_event p {
+    .desktop_single_event p, .desktop_single_event .desktop_events_content {
       font-size: 15px;
       line-height: 19px; }
   .box_wrapper {
