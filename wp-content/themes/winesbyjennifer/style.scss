@@ -3820,6 +3820,101 @@ input.gform_button {
 		width:100%;
 	}
 	
+	
+	
+	.new_single_testimonial {
+		border-bottom: 1px solid #eee;
+		margin-bottom:15px;
+		padding-top:4px;
+		&:last-of-type {
+			border:none;
+		}
+		span.new_name, span.audio {
+			font-size:16px;
+			margin-bottom:10px;
+			color:$purple;
+			display: block;
+			margin-bottom:20px;
+			a {
+				color:$purple;
+				text-decoration: none;
+			}
+		}
+		p {
+			font-size:15px;
+			line-height: 19px;
+			margin-bottom:20px;
+		}
+	}
+	
+	span.play_audio {
+		background:$purple;
+		border-radius: 3px;
+		color:#fff;
+		padding:2px 7px;
+		cursor: pointer;
+	}
+	
+	
+	.testi_scroll {
+		overflow-y: scroll;
+		height: 253px;
+	}
+	
+	
+	
+	.testimonial_audio_overlay {
+		position: fixed;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		background:rgba(0, 0, 0, 0.7);
+		z-index: 60000;
+		opacity: 0;
+		visibility: hidden;
+		transition: all .3s ease-in-out;
+		.testimonial_audio_inner_overlay {
+			width:100%;
+			max-width:700px;
+			margin:200px auto;
+			display: block;
+			position: relative;
+		}
+	}
+	
+	.testimonial_audio_overlay.open {
+		opacity: 1;
+		visibility: visible;
+	}
+	
+	
+	span.overlay_name {
+		color:#fff;
+		display: block;
+		margin-bottom:10px;
+	}
+	
+	span.audio_close {
+		background: #8c2555 none repeat scroll 0 0;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 22px;
+    font-weight: bold;
+    height: 40px;
+    padding: 8px 0 0 13px;
+    position: absolute;
+    right: -18px;
+    text-transform: uppercase;
+    top: -40px;
+    width: 40px;
+    z-index: 50;
+	}
+	
+	
+	
 	.test_wrapper {
 		overflow: hidden;
 	}
@@ -3883,6 +3978,17 @@ input.gform_button {
 		width:33.3333333%;
 		float:left;
 		padding:0 1%;
+		position: relative;
+		
+		&:first-of-type {
+			top:-7px;
+		}
+		&:nth-of-type(2) {
+			top:-7px;
+		}
+		&:last-of-type {
+			top:-4px;
+		}
 		img {
 			max-width: 100%;
 			height:auto;
@@ -3913,7 +4019,7 @@ input.gform_button {
 
 .desktop_single_event {
 	padding:12px;
-	h1 {
+	h2 {
 		font-size:16px;
 		margin-bottom:10px;
 		a {

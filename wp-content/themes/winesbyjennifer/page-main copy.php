@@ -19,71 +19,36 @@ get_header(); ?>
 		
 		<div class="desktop_testimomials">
 			<div class="testimonial_top_half">
+		
+				<div style="width:100%;" class="cycle-slideshow" data-cycle-slides="> .test_wrapper"  data-cycle-timeout=5000  data-cycle-prev=".test-prev"
+        data-cycle-next=".test-next">
+			
+				<div class="test_wrapper">
+					<span class="testimonial_quote purple_quote">"</span><p class="tesimonial_content">Thank you for helping make our wedding and reception absolutely perfect! We were able to relax, enjoy the evening with loved ones, as well as enjoy the outstanding food and drink. It was truly a surreal and  magical&nbsp;evening.<span class="purple_quote">"</span></p>
+					<img class="testimonial_img" src="<?php bloginfo('template_directory');?>/images/circle.png"/>
+					<div class="testimonial_name">
+						<p>Ryan Kalis</p>
+						<p>Parkville, Missouri</p>
+					</div><!-- testimonial_name -->
+				</div><!-- test_wrapper -->
 				
 				
-				<div class="testi_scroll">
-					
-					<?php if(get_field('testimonials')): ?>
-					
-							<?php $audiocount=1;?>
-						 
-							<?php while(has_sub_field('testimonials')): ?>
-						 
-									<div class="new_single_testimonial">
-							
-							<?php if( get_sub_field('testimonial_type') == 'Testimonial Audio' ): ?>
-	
-								
-								<span class="audio"> Audio Testimonial by <br/><?php the_sub_field('testimonial_name');?></span>
-								
-								
-								<p>
-									
-									
-									
-									<?php 
-											$attr = array(
-											'src'      => get_sub_field('testimonial_audio'),
-											'loop'     => '',
-											'autoplay' => '',
-											'preload' => 'none'
-											);
-											echo wp_audio_shortcode( $attr );
-									?>
+				<div class="test_wrapper">
+					<span class="testimonial_quote purple_quote">"</span><p class="tesimonial_content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <span class="purple_quote">"</span></p>
+					<img class="testimonial_img" src="<?php bloginfo('template_directory');?>/images/circle.png"/>
+					<div class="testimonial_name">
+						<p>Name</p>
+						<p>Location</p>
+					</div><!-- testimonial_name -->
+				</div><!-- test_wrapper -->
+				
 
-										
-								</p>
 					
-								
-							
-							
-							<?php endif; ?>
-							
-							
-							<?php if( get_sub_field('testimonial_type') == 'Testimonial Content' ): ?>
 	
-								<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-					
-								<span class="new_name">- <?php the_sub_field('testimonial_name');?></span>
-							
-							
-							<?php endif; ?>
-							
-							
-							</div><!-- new_single_testimonial -->
-							
-							<?php $audiocount++ ;?>
-							
-							<?php endwhile; ?>
-								
-								
-						 
-						<?php endif; ?>
-					
-
-								
+				</div><!-- cycle-slideshow -->
 				
-				</div><!-- testi_scroll -->
+				<div class="arrow-left-purple-test test-prev"></div>
+				<div class="arrow-right-purple-test test-next"></div>
 					
 			
 			</div><!-- testimonial_top_half -->
@@ -149,9 +114,9 @@ get_header(); ?>
     
 			
 			<div class="desktop_single_event">
-				<h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
+				<h1><a href="<?php the_permalink();?>"><?php the_title();?></a></h1>
 				<div class="desktop_events_content">
-					<?php the_excerpt();?>
+					<p>	<?php the_excerpt();?></p>
 					<a class="read_more_main" href="<?php the_permalink();?>">Read More <div class="arrow-right"></div></a>
 				</div><!-- events_content -->
 			</div><!-- desktop_single_event -->
@@ -164,6 +129,63 @@ get_header(); ?>
    <?php wp_reset_postdata(); // reset the query ?>
 		
 		
+		
+	
+			
+			<div class="desktop_single_event">
+				<div class="desktop_social_icon">
+					<img src="<?php bloginfo('template_directory');?>/images/fb.png"/>
+				</div><!-- social_icon -->
+				<div class="desktop_events_content">
+					<p>Lorem ipsum dolor sit amet, cons ectet ur adipi sicing elit, sed do eiusmod tem por inc idid unt ut labore et dolore magnrem ipsum dolor sit amet, cons ectet ur adipi sicing...</p>
+					<a class="read_more_main" href="">Read More <div class="arrow-right"></div></a>
+				</div><!-- events_content -->
+			</div><!-- desktop_single_event -->
+			<div class="divider"></div><!-- divider -->
+			
+			<div class="desktop_single_event">
+				<div class="desktop_social_icon">
+					<img src="<?php bloginfo('template_directory');?>/images/fb.png"/>
+				</div><!-- social_icon -->
+				<div class="desktop_events_content">
+					<p>Lorem ipsum dolor sit amet, cons ectet ur adipi sicing elit, sed do eiusmod tem por inc idid unt ut labore et dolore magnrem ipsum dolor sit amet, cons ectet ur adipi sicing...</p>
+					<a class="read_more_main" href="">Read More <div class="arrow-right"></div></a>
+				</div><!-- events_content -->
+			</div><!-- desktop_single_event -->
+			<div class="divider"></div><!-- divider -->
+			
+			<div class="desktop_single_event">
+				<div class="desktop_social_icon">
+					<img src="<?php bloginfo('template_directory');?>/images/fb.png"/>
+				</div><!-- social_icon -->
+				<div class="desktop_events_content">
+					<p>Lorem ipsum dolor sit amet, cons ectet ur adipi sicing elit, sed do eiusmod tem por inc idid unt ut labore et dolore magnrem ipsum dolor sit amet, cons ectet ur adipi sicing...</p>
+					<a class="read_more_main" href="">Read More <div class="arrow-right"></div></a>
+				</div><!-- events_content -->
+			</div><!-- desktop_single_event -->
+			<div class="divider"></div><!-- divider -->
+			
+			<div class="desktop_single_event">
+				<div class="desktop_social_icon">
+					<img src="<?php bloginfo('template_directory');?>/images/fb.png"/>
+				</div><!-- social_icon -->
+				<div class="desktop_events_content">
+					<p>Lorem ipsum dolor sit amet, cons ectet ur adipi sicing elit, sed do eiusmod tem por inc idid unt ut labore et dolore magnrem ipsum dolor sit amet, cons ectet ur adipi sicing...</p>
+					<a class="read_more_main" href="">Read More <div class="arrow-right"></div></a>
+				</div><!-- events_content -->
+			</div><!-- desktop_single_event -->
+			<div class="divider"></div><!-- divider -->
+			
+			<div class="desktop_single_event">
+				<div class="desktop_social_icon">
+					<img src="<?php bloginfo('template_directory');?>/images/fb.png"/>
+				</div><!-- social_icon -->
+				<div class="desktop_events_content">
+					<p>Lorem ipsum dolor sit amet, cons ectet ur adipi sicing elit, sed do eiusmod tem por inc idid unt ut labore et dolore magnrem ipsum dolor sit amet, cons ectet ur adipi sicing...</p>
+					<a class="read_more_main" href="">Read More <div class="arrow-right"></div></a>
+				</div><!-- events_content -->
+			</div><!-- desktop_single_event -->
+			<div class="divider"></div><!-- divider -->
 			
 		</div><!-- desktop_events -->
 		

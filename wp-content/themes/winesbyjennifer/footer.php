@@ -197,6 +197,18 @@ Cart (0) | Search
 </div><!-- overlay_carousel -->
 
 
+
+
+
+		
+		
+			
+		
+
+
+
+
+
 <div class="video_overlay">
 	
 	<div class="video_overlay_inner_wrapper">
@@ -228,6 +240,70 @@ Cart (0) | Search
 jQuery(document).ready(function(){
 
 
+
+
+
+
+
+	<?php if(get_field('testimonials')): ?>
+					
+					// Testimonial Audio Overlay
+					
+					<?php $audiocount=1;?>
+					
+					
+						
+						 
+							<?php while(has_sub_field('testimonials')): ?>
+							
+							
+							
+  
+  jQuery('span.play_audio_<?php echo $audiocount; ?>').click(function(){
+  	
+  	
+  	jQuery('.testimonial_audio_overlay').addClass('open');
+  	
+  	
+  });
+  
+  
+  jQuery('span.audio_close').click(function(){
+  	
+  	
+  	jQuery('.testimonial_audio_overlay').removeClass('open');
+  	
+  	
+  });
+
+							<?php $audiocount++ ;?>
+						 
+																
+							<?php endwhile; ?>
+								
+								
+						 
+						<?php endif; ?>
+					
+
+
+
+
+
+
+		
+		
+		  
+  
+  
+
+		
+		
+		
+		
+		
+		
+		
 		
 		
 	

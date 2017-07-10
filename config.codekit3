@@ -35109,6 +35109,12 @@
 		"oAP": "\/wp-content\/themes\/winesbyjennifer\/page-inthenews.php",
 		"oF": 0
 		},
+	"\/wp-content\/themes\/winesbyjennifer\/page-main copy.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/themes\/winesbyjennifer\/page-main copy.php",
+		"oF": 0
+		},
 	"\/wp-content\/themes\/winesbyjennifer\/page-main.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -39966,6 +39972,12 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/wp-content\/uploads\/sites\/2\/wc-logs\/index.html",
+		"oF": 0
+		},
+	"\/wp-content\/uploads\/sites\/2\/wc-logs\/wc_db_updates-00293197b544f05c825f43191b23b2bb.log": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-content\/uploads\/sites\/2\/wc-logs\/wc_db_updates-00293197b544f05c825f43191b23b2bb.log",
 		"oF": 0
 		},
 	"\/wp-content\/uploads\/sites\/2\/woocommerce_uploads\/.htaccess": {
