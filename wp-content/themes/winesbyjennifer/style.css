@@ -1048,11 +1048,18 @@ h3#reply-title {
     text-decoration: none; }
   .my_testimonials .single_testimonial {
     width: 90%;
-    margin: 0 auto; }
+    margin: 0 auto;
+    display: block; }
+    .my_testimonials .single_testimonial span.audio {
+      color: #fff;
+      margin-bottom: 30px;
+      display: block; }
     .my_testimonials .single_testimonial img.mytestimonial_img {
       border-radius: 50%;
       width: 95px;
       display: inline-block; }
+    .my_testimonials .single_testimonial p {
+      color: #fff; }
     .my_testimonials .single_testimonial span.my_testimonial_name {
       color: #fff;
       text-transform: uppercase;

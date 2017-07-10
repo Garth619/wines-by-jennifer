@@ -25,7 +25,7 @@ get_header(); ?>
 					
 					<?php if(get_field('testimonials')): ?>
 					
-							<?php $audiocount=1;?>
+							
 						 
 							<?php while(has_sub_field('testimonials')): ?>
 						 
@@ -34,7 +34,7 @@ get_header(); ?>
 							<?php if( get_sub_field('testimonial_type') == 'Testimonial Audio' ): ?>
 	
 								
-								<span class="audio"> Audio Testimonial by <br/><?php the_sub_field('testimonial_name');?></span>
+								<span class="audio"> Audio Testimonial by <br/><?php the_sub_field('testimonial_name_new');?></span>
 								
 								
 								<p>
@@ -62,9 +62,9 @@ get_header(); ?>
 							
 							<?php if( get_sub_field('testimonial_type') == 'Testimonial Content' ): ?>
 	
-								<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+								<?php the_sub_field('testimonial_content');?>
 					
-								<span class="new_name">- <?php the_sub_field('testimonial_name');?></span>
+								<span class="new_name">- <?php the_sub_field('testimonial_name_new');?></span>
 							
 							
 							<?php endif; ?>
@@ -72,7 +72,7 @@ get_header(); ?>
 							
 							</div><!-- new_single_testimonial -->
 							
-							<?php $audiocount++ ;?>
+							
 							
 							<?php endwhile; ?>
 								
@@ -338,48 +338,70 @@ get_header(); ?>
 		<div class="my_testimonials">
 			
 			<div class="testimonials_slider">
+				
+				
+				
+				<?php if(get_field('testimonials')): ?>
+					
+						
+						 
+							<?php while(has_sub_field('testimonials')): ?>
+						 
+							<div class="single_testimonial">
+							
+							<?php if( get_sub_field('testimonial_type') == 'Testimonial Audio' ): ?>
+	
+								
+								<span class="audio"> Audio Testimonial by <br/><?php the_sub_field('testimonial_name_new');?></span>
+								
+								
+								<p>
+									
+									
+									
+									<?php 
+											$attr = array(
+											'src'      => get_sub_field('testimonial_audio'),
+											'loop'     => '',
+											'autoplay' => '',
+											'preload' => 'none'
+											);
+											echo wp_audio_shortcode( $attr );
+									?>
+
+										
+								</p>
+					
+								
+							
+							
+							<?php endif; ?>
+							
+							
+							<?php if( get_sub_field('testimonial_type') == 'Testimonial Content' ): ?>
+	
+								<?php the_sub_field('testimonial_content');?>
+					
+								<span class="my_testimonial_name">- <?php the_sub_field('testimonial_name_new');?></span>
+							
+							
+							<?php endif; ?>
+							
+							
+							</div><!-- single_testimonial -->
+							
+							
+							
+							<?php endwhile; ?>
+								
+								
+						 
+						<?php endif; ?>
+				
+				
+
+						
 			
-			<div class="single_testimonial">
-				
-				<a href="">
-					
-					<img class="mytestimonial_img" src="<?php bloginfo('template_directory');?>/images/testimonials.png"/>
-					
-					<span class="my_testimonial_name">Lorem ipsum dolor</span><!-- my_testimonial_name -->
-					
-					<span class="my_testimonial_content">"Lorem ipsum dolor sit amet, conse ctetur adi pisicing elit, sed do eiusmod tem por in cid idunt ut labore et dolore magna aliq ua. Ut enim ad minim veniam, quis nostrud ex ercitation ullamco laboris nisi ut aliquip ex ea commodo conse quat. Duis aute irure dolor in"</span><!-- my_testimonial_content -->
-					
-				</a>
-				
-			</div><!-- single_testimonial -->
-			
-			<div class="single_testimonial">
-				
-				<a href="">
-					
-					<img class="mytestimonial_img" src="<?php bloginfo('template_directory');?>/images/testimonials.png"/>
-					
-					<span class="my_testimonial_name">Lorem ipsum dolor</span><!-- my_testimonial_name -->
-					
-					<span class="my_testimonial_content">"Lorem ipsum dolor sit amet, conse ctetur adi pisicing elit, sed do eiusmod tem por in cid idunt ut labore et dolore magna aliq ua. Ut enim ad minim veniam, quis nostrud ex ercitation ullamco laboris nisi ut aliquip ex ea commodo conse quat. Duis aute irure dolor in"</span><!-- my_testimonial_content -->
-					
-				</a>
-				
-			</div><!-- single_testimonial -->
-			
-			<div class="single_testimonial">
-				
-				<a href="">
-					
-					<img class="mytestimonial_img" src="<?php bloginfo('template_directory');?>/images/testimonials.png"/>
-					
-					<span class="my_testimonial_name">Lorem ipsum dolor</span><!-- my_testimonial_name -->
-					
-					<span class="my_testimonial_content">"Lorem ipsum dolor sit amet, conse ctetur adi pisicing elit, sed do eiusmod tem por in cid idunt ut labore et dolore magna aliq ua. Ut enim ad minim veniam, quis nostrud ex ercitation ullamco laboris nisi ut aliquip ex ea commodo conse quat. Duis aute irure dolor in"</span><!-- my_testimonial_content -->
-					
-				</a>
-				
-			</div><!-- single_testimonial -->
 			
 			</div><!-- testimonials_slider -->
 			

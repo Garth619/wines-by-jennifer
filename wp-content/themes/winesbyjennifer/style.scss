@@ -1224,10 +1224,20 @@ flex-direction: row;
 	.single_testimonial {
 		width:90%;
 			margin:0 auto;
+			
+			display: block;
+			span.audio {
+				color:#fff;
+				margin-bottom:30px;
+				display: block;
+			}
 		img.mytestimonial_img {
 			border-radius: 50%;
 			width:95px;
 			display: inline-block;
+		}
+		p {
+			color:#fff;
 		}
 		span.my_testimonial_name {
 			color:#fff;
