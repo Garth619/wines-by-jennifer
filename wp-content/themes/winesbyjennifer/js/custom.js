@@ -126,6 +126,7 @@ jQuery(document).ready(function(){
 			// Newsletter
 		
 		
+/*
 			jQuery('.new_free_gift_inner, .mobile_offer').click(function(){
 				
 				jQuery('.overlay').addClass('open');
@@ -140,6 +141,7 @@ jQuery(document).ready(function(){
 			jQuery('.newsletter_form').delay(1000).fadeIn(500);
 			
 			});
+*/
 			
 			
 			// Privacy

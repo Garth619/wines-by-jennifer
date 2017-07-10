@@ -869,9 +869,16 @@ h3#reply-title {
 		letter-spacing: 0.2px;
 		line-height: 22px;
 		cursor: pointer;
+		a {
+			text-decoration: none;
+			color:#272727;
+		}
 		span.offer_title {
 			padding:10px 4px;
 			display: block;
+			a {
+				
+			}
 			span.color_change {
 				color:#811d49;
 			}
@@ -4108,6 +4115,7 @@ margin-right:4%;
 .inner_banner {
 	border-top:1px solid #fff;
 	border-bottom:1px solid #fff;
+	margin-top:20px;
 	.banner_overlay {
 	
 		

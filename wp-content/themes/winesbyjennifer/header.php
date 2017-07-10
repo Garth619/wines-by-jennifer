@@ -94,8 +94,9 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 				
 				<span class="offer_title">
 					
-					<span class="color_change">Free Gift!</span> Five Days to Expert Wine Tasting&nbsp;<sup>&reg;</sup> <span class="color_change">Click&nbsp;Here</span><!-- color_change -->
-				
+					<a href="<?php bloginfo('url');?>/newsletter-page">
+						<span class="color_change">Free Gift!</span> Five Days to Expert Wine Tasting&nbsp;<sup>&reg;</sup> <span class="color_change">Click&nbsp;Here</span><!-- color_change -->
+					</a>
 				</span><!-- offer_title -->
 				
 			</div><!-- mobile_offer -->

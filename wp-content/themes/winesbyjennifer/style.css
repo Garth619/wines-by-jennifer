@@ -778,6 +778,9 @@ h3#reply-title {
     letter-spacing: 0.2px;
     line-height: 22px;
     cursor: pointer; }
+    .mymobile_header .mobile_offer a {
+      text-decoration: none;
+      color: #272727; }
     .mymobile_header .mobile_offer span.offer_title {
       padding: 10px 4px;
       display: block; }
@@ -2967,7 +2970,8 @@ body:not(.page-template-page-main) .press {
   /* inner pages */
   .inner_banner {
     border-top: 1px solid #fff;
-    border-bottom: 1px solid #fff; }
+    border-bottom: 1px solid #fff;
+    margin-top: 20px; }
     .inner_banner .banner_overlay h1 {
       padding: 120px 35px 130px;
       font-size: 45px; }
