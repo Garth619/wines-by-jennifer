@@ -72,43 +72,22 @@
 <div class="footer">
 	<div class="footer_col1">
 		<ul class="desktop_copyright">
-			<li>&copy; <?php echo date("Y"); ?> Wines By Jennifer <sup>&reg;</sup></li>
+			<li>&copy; 2017 Wines By Jennifer <sup>&reg;</sup></li>
 		</ul><!-- desktop_copyright -->
 	</div><!-- footer_col1 -->
 	<div class="footer_col2">
-	
-			
-			<?php $posts = get_field('footer_list','option');
-			
-			if( $posts ): ?>
-			    <ul class="menu">
-			    <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
-			        <?php setup_postdata($post); ?>
-			        <li>
-			            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-			            
-			        </li>
-			    <?php endforeach; ?>
-			    </ul>
-			    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-			<?php endif; ?>
-			
-			
-			
-			
-<!--
+		<ul class="menu">
 			<li><a href="<?php bloginfo('url');?>/contact-us">Contact</a></li>
 			<li><a href="<?php bloginfo('url');?>/about-us/faq">FAQ</a></li>
-			<li><a href="<?php bloginfo('url');?>/about-us/faq">Private Policy</a></li>
+			<li class="privacy" style="cursor:pointer">Privacy</li>
 			<li><a href="<?php bloginfo('url');?>/drink-responsibly/">Please Drink Responsibly</a></li>
--->
 			
-		
+		</ul>
 	</div><!-- footer_col2 -->
 	<div class="footer_col3">
 		<ul class="language" style="clear:both;">
 <!-- 			<li>View In: Eng ESp</li> -->
-			<li>&copy; <?php echo date("Y"); ?> Wines By Jennifer <sup>&reg;</sup></li>
+			<li>&copy; 2017 Wines By Jennifer <sup>&reg;</sup></li>
 			<li class="backtotop">Back to Top</li>
 		</ul>
 	</div><!-- footer_col3 -->
@@ -165,12 +144,10 @@ Cart (0) | Search
 	
 	
 	<div class="privacy_overlay_content">
-<!--
 		<h2>Private Policy</h2>
 			
 
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
--->
 	
 	</div><!-- privacy_overlay_content -->
 	
@@ -201,7 +178,6 @@ Cart (0) | Search
 	<span class="overlay_close">Close X</span>
 	<div class="carousel_content">
 		
-<!--
 		<div class="slider-for">
 			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p1.jpg"/></div>
 			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p2.jpg"/></div>
@@ -212,7 +188,6 @@ Cart (0) | Search
 			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p7.jpg"/></div>
 			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p8.jpg"/></div>
  		</div>
--->
 		
 		
 		</div><!-- carousel_content -->
