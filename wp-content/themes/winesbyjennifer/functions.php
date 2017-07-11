@@ -756,6 +756,12 @@ function twentyten_get_gallery_images() {
 	));
 	
 	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Tasting Room List',
+		'menu_title'	=> 'Tasting Room List',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+	
+	acf_add_options_sub_page(array(
 		'page_title' 	=> 'Header Footer',
 		'menu_title'	=> 'Header Footer',
 		'parent_slug'	=> 'theme-general-settings',

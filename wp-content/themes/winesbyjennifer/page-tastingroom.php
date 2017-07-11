@@ -13,18 +13,27 @@ get_header(); ?>
 	
 	<div id="content">
 		
-		<h1>Tasting Room</h1>
-		
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-	
+<?php
 
-<?php // get_template_part( 'loop', 'page' );?>
+$post_object = get_field('tasting_room_post');
+
+if( $post_object ): 
+
+	// override $post
+	$post = $post_object;
+	setup_postdata( $post ); 
+
+	?>
+
+		
+		
+		<h1><?php the_field('tasting_room_single_title');?></h1>
+		
+		<?php the_content();?>
+
+    
+    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+<?php endif; ?>
 
 	
 	
@@ -36,66 +45,7 @@ get_header(); ?>
 		<div class="tasting_drop">
 			
 			
-			<ul class="tasting_list">
-			
-				<li><a class="tasting_title">Review Our 2016 Tasting Room Selections</a>
-			
-					<ul class="sub_tasting_list">
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-					</ul><!-- sub_tasting_list -->
-			
-				</li>
-				
-				
-				<li><a class="tasting_title">Review Our 2016 Tasting Room Selections</a>
-			
-					<ul class="sub_tasting_list">
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-					</ul><!-- sub_tasting_list -->
-			
-				</li>
-				
-				
-				<li><a class="tasting_title">Review Our 2016 Tasting Room Selections</a>
-			
-					<ul class="sub_tasting_list">
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-					</ul><!-- sub_tasting_list -->
-			
-				</li>
-				
-				
-				<li><a class="tasting_title">Review Our 2016 Tasting Room Selections</a>
-			
-					<ul class="sub_tasting_list">
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-					</ul><!-- sub_tasting_list -->
-			
-				</li>
-			
-			
-			</ul>
-			
+			<?php include('tasting-room-list.php');?>			
 			
 						
 		</div><!-- tasting_list -->

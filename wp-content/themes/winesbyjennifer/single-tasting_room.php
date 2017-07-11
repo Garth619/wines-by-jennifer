@@ -10,14 +10,51 @@
 get_header(); ?>
 
 
-<?php include('banner.php');?>
+<?php if(get_field('inner_banner')):?>
+
+	<div class="inner_banner" style="background: rgba(0, 0, 0, 0) url(<?php the_field('inner_banner');?>) no-repeat scroll center top / cover ;">
+	
+<?php else:?>
+
+	<div class="inner_banner">
+
+
+<?php endif;?>	
+
+	<div class="banner_overlay">
+		
+		
+	
+		<h1><img class="ribbon ribbon_left" src="<?php bloginfo('template_directory');?>/images/ribbon.png"/>Tasting Room<img class="ribbon ribbon_right" src="<?php bloginfo('template_directory');?>/images/ribbon-right.png"/></h1>
+	
+	</div><!-- banner_overlay -->
+	
+</div><!-- inner_banner -->
 		
 
 <div class="content_container">
 	
 	<div id="content">
 		
-		<?php get_template_part( 'loop', 'page' );?>	
+		<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+
+				
+					
+					
+					
+					<h1 class="entry-title"><?php the_field('tasting_room_single_title');?></h1>
+					
+
+					<div class="entry-content">
+						<?php the_content(); ?>
+						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'twentyten' ), 'after' => '</div>' ) ); ?>
+						<?php edit_post_link( __( 'Edit', 'twentyten' ), '<span class="edit-link">', '</span>' ); ?>
+					</div><!-- .entry-content -->
+				
+
+				
+
+<?php endwhile; // end of the loop. ?>	
 	
 	
 	<div class="tasting_room_wrapper">
@@ -26,69 +63,8 @@ get_header(); ?>
 		
 		<div class="tasting_drop">
 			
+			<?php include('tasting-room-list.php');?>
 			
-			<ul class="tasting_list">
-			
-				<li><a class="tasting_title">Review Our 2016 Tasting Room Selections</a>
-			
-					<ul class="sub_tasting_list">
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-					</ul><!-- sub_tasting_list -->
-			
-				</li>
-				
-				
-				<li><a class="tasting_title">Review Our 2016 Tasting Room Selections</a>
-			
-					<ul class="sub_tasting_list">
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-					</ul><!-- sub_tasting_list -->
-			
-				</li>
-				
-				
-				<li><a class="tasting_title">Review Our 2016 Tasting Room Selections</a>
-			
-					<ul class="sub_tasting_list">
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-					</ul><!-- sub_tasting_list -->
-			
-				</li>
-				
-				
-				<li><a class="tasting_title">Review Our 2016 Tasting Room Selections</a>
-			
-					<ul class="sub_tasting_list">
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-						<li><a href="">Week of December 27th: "Holiday Wines"</a></li>
-					</ul><!-- sub_tasting_list -->
-			
-				</li>
-			
-			
-			</ul>
-			
-			
-						
 		</div><!-- tasting_list -->
 	
 	</div><!-- tasting_room_wrapper -->
