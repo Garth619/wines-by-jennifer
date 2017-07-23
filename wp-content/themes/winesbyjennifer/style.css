@@ -3149,4 +3149,7 @@ body:not(.page-template-page-main) .press {
     margin: 25px 0 0 !important; }
   .regsitered {
     font-size: 10px; } }
+
+body.search .hentry {
+  padding-bottom: 35px; }
 /*# sourceMappingURL=style.css.map */
