@@ -22,7 +22,7 @@ if ( ! defined('MLA_DEBUG_LEVEL') ) {
 	/**
 	 * Activates debug options; can be set in wp-config.php
 	 */
-	define('MLA_DEBUG_LEVEL', 0);
+	define('MLA_DEBUG_LEVEL', 1);
 }
 
 if ( ! defined('MLA_AJAX_EXCEPTIONS') ) {
@@ -63,31 +63,28 @@ $mla_plugin_loader_error_messages .= MLATest::min_WordPress_version( '3.5.0' );
 if ( ! empty( $mla_plugin_loader_error_messages ) ) {
 	add_action( 'admin_notices', 'mla_plugin_loader_reporting_action' );
 } else {
-	/*
-	 * MLATest is loaded above
-	 */
+	// MLATest is loaded above
 	add_action( 'init', 'MLATest::initialize', 0x7FFFFFFF );
 
-	/*
-	 * Minimum support functions required by all other components
-	 */
+	// Minimum support functions required by all other components
 	require_once( MLA_PLUGIN_PATH . 'includes/class-mla-core.php' );
 	add_action( 'plugins_loaded', 'MLACore::mla_plugins_loaded_action', 0x7FFFFFFF );
 	add_action( 'init', 'MLACore::initialize', 0x7FFFFFFF );
 
-	/*
-	 * Check for XMLPRC, WP REST API and front end requests
-	 */
+	// Check for XMLPRC, WP REST API and front end requests
 	if( !( defined('WP_ADMIN') && WP_ADMIN ) ) {
+		$front_end_only = true;
 
 		// XMLRPC requests need everything loaded to process uploads
-		$front_end_only = !( defined('XMLRPC_REQUEST') && XMLRPC_REQUEST );
+		if ( defined('XMLRPC_REQUEST') && XMLRPC_REQUEST ) {
+			$front_end_only = false;
+		}
 
 		// WP REST API calls need everything loaded to process uploads
 		if ( isset( $_SERVER['REQUEST_URI'] ) && 0 === strpos( $_SERVER['REQUEST_URI'], '/wp-json/' ) ) {
 			$front_end_only = false; // TODO be more selective
 		}
-		
+
 		// Front end posts/pages only need shortcode support; load the interface shims.
 		if ( $front_end_only ) {
 			require_once( MLA_PLUGIN_PATH . 'includes/class-mla-shortcodes.php' );
@@ -97,9 +94,13 @@ if ( ! empty( $mla_plugin_loader_error_messages ) ) {
 	}
 
 	if( defined('DOING_AJAX') && DOING_AJAX ) {
-		/*
-		 * Ajax handlers
-		 */
+		//error_log( __LINE__ . " mla-plugin-loader.php DOING_AJAX \$_REQUEST = " . var_export( $_REQUEST, true ), 0 );
+		//error_log( __LINE__ . ' MEMORY mla-plugin-loader.php memory_get_peak_usage( true ) ' . number_format( memory_get_peak_usage( true ) ), 0);
+		//error_log( __LINE__ . ' MEMORY mla-plugin-loader.php memory_get_peak_usage( false ) ' . number_format( memory_get_peak_usage( false ) ), 0);
+		//error_log( __LINE__ . ' MEMORY mla-plugin-loader.php memory_get_usage( true ) ' . number_format( memory_get_usage( true ) ), 0);
+		//error_log( __LINE__ . ' MEMORY mla-plugin-loader.php memory_get_usage( false ) ' . number_format( memory_get_usage( false ) ), 0);
+
+		// Ajax handlers
 		require_once( MLA_PLUGIN_PATH . 'includes/class-mla-ajax.php' );
 		add_action( 'init', 'MLA_Ajax::initialize', 0x7FFFFFFF );
 
@@ -108,7 +109,7 @@ if ( ! empty( $mla_plugin_loader_error_messages ) ) {
 		 * IPTC/EXIF and Custom Field mapping require full support, too.
 		 * NOTE: AJAX upload_attachment is no longer used - see /wp-admin/asynch-upload.php
 		 */
-		$ajax_exceptions = array( MLACore::JAVASCRIPT_INLINE_EDIT_SLUG, 'mla-inline-mapping-iptc-exif-scripts', 'mla-inline-mapping-custom-scripts', 'mla-polylang-quick-translate', 'mla-inline-edit-upload-scripts', 'mla-inline-edit-view-scripts', 'mla-inline-edit-custom-scripts', 'upload-attachment' );
+		$ajax_exceptions = array( MLACore::JAVASCRIPT_INLINE_EDIT_SLUG, 'mla-inline-mapping-iptc-exif-scripts', 'mla-inline-mapping-custom-scripts', 'mla-polylang-quick-translate', 'mla-inline-edit-upload-scripts', 'mla-inline-edit-view-scripts', 'mla-inline-edit-custom-scripts', 'mla-inline-edit-iptc-exif-scripts', 'upload-attachment' );
 
  		$ajax_only = true;
 		if ( MLA_AJAX_EXCEPTIONS ) {
@@ -124,7 +125,7 @@ if ( ! empty( $mla_plugin_loader_error_messages ) ) {
 				$ajax_only = false;
 			} elseif ( 'mla-update-compat-fields' == $_REQUEST['action'] ) {
 				global $sitepress;
-			
+
 				//Look for multi-lingual terms updates
 				if ( is_object( $sitepress ) || class_exists( 'Polylang' ) ) {
 					$ajax_only = false;
@@ -144,9 +145,7 @@ if ( ! empty( $mla_plugin_loader_error_messages ) ) {
 			require_once( MLA_PLUGIN_PATH . 'includes/class-mla-data-query.php' );
 			add_action( 'init', 'MLAQuery::initialize', 0x7FFFFFFF );
 
-			/*
-			 * Other plugins such as "No Cache AJAX Widgets" might need shortcodes
-			 */
+			// Other plugins such as "No Cache AJAX Widgets" might need shortcodes
 			require_once( MLA_PLUGIN_PATH . 'includes/class-mla-shortcodes.php' );
 			add_action( 'init', 'MLAShortcodes::initialize', 0x7FFFFFFF );
 
@@ -154,50 +153,36 @@ if ( ! empty( $mla_plugin_loader_error_messages ) ) {
 		}
 	}
 
-	/*
-	 * Template file and database access functions.
-	 */
+	// Template file and database access functions.
 	require_once( MLA_PLUGIN_PATH . 'includes/class-mla-data-query.php' );
 	add_action( 'init', 'MLAQuery::initialize', 0x7FFFFFFF );
 
 	require_once( MLA_PLUGIN_PATH . 'includes/class-mla-data.php' );
 	add_action( 'init', 'MLAData::initialize', 0x7FFFFFFF );
 
-	/*
-	 * Shortcode shim functions
-	 */
+	// Shortcode shim functions
 	require_once( MLA_PLUGIN_PATH . 'includes/class-mla-shortcodes.php' );
 	add_action( 'init', 'MLAShortcodes::initialize', 0x7FFFFFFF );
 
 	require_once( MLA_PLUGIN_PATH . 'includes/class-mla-shortcode-support.php' );
 
-	/*
-	 * Plugin settings management
-	 */
+	// Plugin settings management
 	require_once( MLA_PLUGIN_PATH . 'includes/class-mla-options.php' );
 	add_action( 'init', 'MLAOptions::initialize', 0x7FFFFFFF );
 	 
-	/*
-	 * Plugin settings management page
-	 */
+	// Plugin settings management page
 	require_once( MLA_PLUGIN_PATH . 'includes/class-mla-settings.php' );
 	add_action( 'init', 'MLASettings::initialize', 0x7FFFFFFF );
 
-	/*
-	 * Main program
-	 */
+	// Main program
 	require_once( MLA_PLUGIN_PATH . 'includes/class-mla-main.php' );
 	add_action( 'init', 'MLA::initialize', 0x7FFFFFFF );
 
-	/*
-	 * Edit Media screen additions, e.g., meta boxes
-	 */
+	// Edit Media screen additions, e.g., meta boxes
 	require_once( MLA_PLUGIN_PATH . 'includes/class-mla-edit-media.php' );
 	add_action( 'init', 'MLAEdit::initialize', 0x7FFFFFFF );
 
-	/*
-	 * Media Manager (Modal window) additions
-	 */
+	// Media Manager (Modal window) additions
 	require_once( MLA_PLUGIN_PATH . 'includes/class-mla-media-modal.php' );
 	add_action( 'init', 'MLAModal::initialize', 0x7FFFFFFF );
 

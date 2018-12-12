@@ -5,6 +5,8 @@ namespace threewp_broadcast\premium_pack;
 class base
 	extends \plainview\sdk_broadcast\wordpress\base
 {
+	use \threewp_broadcast\traits\actions;		// For new_action()
+
 	/**
 		@brief		Convenience method to add a select of user writeable blogs to a forum.
 		@details	The options array contains the following parameters.
@@ -14,6 +16,8 @@ class base
 		- form						The form2 object.
 		- [multiple] = false		May the user select several blogs?
 		- name						The name of the input. "blogs" is a good name.
+		- [options]					An array of prepopulated options.
+		- [opts]					An array of prepopulated options using the new opts() call.
 		- [required] = false		Is the input required?
 		- [size] = 0				Optional size, else the input is autosized.
 		- value						Value or values to be selected.
@@ -29,6 +33,8 @@ class base
 			'required' => true,
 			'multiple' => true,
 			'name' => '',
+			'options' => [],
+			'opts' => [],
 			'size' => 0,
 			'value' => '',
 		], $options );
@@ -36,6 +42,10 @@ class base
 		$input = $options->form->select( $options->name )
 			->label( $options->label )
 			->value( $options->value );
+
+		// Prepopulate
+		$input->options( $options->options );
+		$input->opts( $options->opts );
 
 		// Add all available blogs as options.
 		$filter = new \threewp_broadcast\actions\get_user_writable_blogs( $this->user_id() );
@@ -90,7 +100,7 @@ class base
 					So instead of writing:
 
 					$mbd->lock_post = $form->checkbox( 'lock_post' )
-						->label( __( 'Lock the post', 'threewp_broadcast' ) )
+						->label( __( 'Lock the post', 'threewp-broadcast' ) )
 
 					You have to ask the plugin itself to translate the string first, before it is given to the form:
 
@@ -98,6 +108,7 @@ class base
 						->label( $this->_( 'Lock the post' ) )
 
 
+		@obsolete	Don't use since 2017-09-15.
 		@since		2015-10-03 15:32:24
 	**/
 	public function load_language( $domain = '' )
@@ -107,6 +118,35 @@ class base
 		// Allow people to load their own pot files.
 		$directory = apply_filters( 'Broadcast_Pack_language_directory', $directory );
 		load_plugin_textdomain( $this->language_domain, false, $directory );
+	}
+
+	/**
+		@brief		Maybe match this subject to a pattern.
+		@details	Accepts a plaintext $pattern, or a regexp if the pattern starts and ends with a forward slash.
+		@since		2017-09-15 18:27:08
+	**/
+	public static function maybe_preg_match( $pattern, $subject )
+	{
+		$is_regexp = false;
+		// A straight up regexp starts and ends with a forward slash.
+		if ( ( $pattern[ 0 ] == '/' ) AND ( $pattern[ strlen( $pattern ) - 1 ] == '/' ) )
+			$is_regexp = true;
+		else
+		{
+			// An asterisk is accepted as a regexp.
+			if ( strpos( $pattern, '*' ) !== false )
+			{
+				// But it needs to be modified to be a real regexp.
+				$pattern = '/' . str_replace( '*', '.*', $pattern ) . '/';
+				$is_regexp = true;
+			}
+		}
+
+		if ( ! $is_regexp )
+			return $pattern == $subject;
+
+		preg_match( $pattern, $subject, $matches );
+		return ( count( $matches ) > 0 );
 	}
 
 	/**

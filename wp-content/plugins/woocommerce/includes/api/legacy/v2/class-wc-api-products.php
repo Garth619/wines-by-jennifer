@@ -247,13 +247,13 @@ class WC_API_Products extends WC_API_Resource {
 			$post_content = isset( $data['description'] ) ? wc_clean( $data['description'] ) : '';
 			if ( $post_content && isset( $data['enable_html_description'] ) && true === $data['enable_html_description'] ) {
 
-				$post_content = $data['description'];
+				$post_content = wp_filter_post_kses( $data['description'] );
 			}
 
 			// Enable short description html tags.
 			$post_excerpt = isset( $data['short_description'] ) ? wc_clean( $data['short_description'] ) : '';
 			if ( $post_excerpt && isset( $data['enable_html_short_description'] ) && true === $data['enable_html_short_description'] ) {
-				$post_excerpt = $data['short_description'];
+				$post_excerpt = wp_filter_post_kses( $data['short_description'] );
 			}
 
 			$classname = WC_Product_Factory::get_classname_from_product_type( $data['type'] );
@@ -353,14 +353,14 @@ class WC_API_Products extends WC_API_Resource {
 			// Product short description.
 			if ( isset( $data['short_description'] ) ) {
 				// Enable short description html tags.
-				$post_excerpt = ( isset( $data['enable_html_short_description'] ) && true === $data['enable_html_short_description'] ) ? $data['short_description'] : wc_clean( $data['short_description'] );
+				$post_excerpt = ( isset( $data['enable_html_short_description'] ) && true === $data['enable_html_short_description'] ) ? wp_filter_post_kses( $data['short_description'] ) : wc_clean( $data['short_description'] );
 				$product->set_short_description( $post_excerpt );
 			}
 
 			// Product description.
 			if ( isset( $data['description'] ) ) {
 				// Enable description html tags.
-				$post_content = ( isset( $data['enable_html_description'] ) && true === $data['enable_html_description'] ) ? $data['description'] : wc_clean( $data['description'] );
+				$post_content = ( isset( $data['enable_html_description'] ) && true === $data['enable_html_description'] ) ? wp_filter_post_kses( $data['description'] ) : wc_clean( $data['description'] );
 				$product->set_description( $post_content );
 			}
 
@@ -429,18 +429,23 @@ class WC_API_Products extends WC_API_Resource {
 			if ( $product->is_type( 'variable' ) ) {
 				foreach ( $product->get_children() as $child_id ) {
 					$child = wc_get_product( $child_id );
-					$child->delete( true );
+					if ( ! empty( $child ) ) {
+						$child->delete( true );
+					}
 				}
-			} elseif ( $product->is_type( 'grouped' ) ) {
+			} else {
+				// For other product types, if the product has children, remove the relationship.
 				foreach ( $product->get_children() as $child_id ) {
 					$child = wc_get_product( $child_id );
-					$child->set_parent_id( 0 );
-					$child->save();
+					if ( ! empty( $child ) ) {
+						$child->set_parent_id( 0 );
+						$child->save();
+					}
 				}
 			}
 
 			$product->delete( true );
-			$result = $product->get_id() > 0 ? false : true;
+			$result = ! ( $product->get_id() > 0 );
 		} else {
 			$product->delete();
 			$result = 'trash' === $product->get_status();
@@ -694,6 +699,10 @@ class WC_API_Products extends WC_API_Resource {
 	private function get_product_data( $product ) {
 		if ( is_numeric( $product ) ) {
 			$product = wc_get_product( $product );
+		}
+
+		if ( ! is_a( $product, 'WC_Product' ) ) {
+			return array();
 		}
 
 		$prices_precision = wc_get_price_decimals();
@@ -1030,7 +1039,7 @@ class WC_API_Products extends WC_API_Resource {
 			$product->set_attributes( $attributes );
 		}
 
-		// Sales and prices
+		// Sales and prices.
 		if ( in_array( $product->get_type(), array( 'variable', 'grouped' ) ) ) {
 
 			// Variable and grouped products have no prices.
@@ -1042,22 +1051,17 @@ class WC_API_Products extends WC_API_Resource {
 
 		} else {
 
-			// Regular Price
+			// Regular Price.
 			if ( isset( $data['regular_price'] ) ) {
 				$regular_price = ( '' === $data['regular_price'] ) ? '' : $data['regular_price'];
-			} else {
-				$regular_price = $product->get_regular_price();
+				$product->set_regular_price( $regular_price );
 			}
 
-			// Sale Price
+			// Sale Price.
 			if ( isset( $data['sale_price'] ) ) {
 				$sale_price = ( '' === $data['sale_price'] ) ? '' : $data['sale_price'];
-			} else {
-				$sale_price = $product->get_sale_price();
+				$product->set_sale_price( $sale_price );
 			}
-
-			$product->set_regular_price( $regular_price );
-			$product->set_sale_price( $sale_price );
 
 			if ( isset( $data['sale_price_dates_from'] ) ) {
 				$date_from = $data['sale_price_dates_from'];
@@ -1077,10 +1081,11 @@ class WC_API_Products extends WC_API_Resource {
 
 			$product->set_date_on_sale_to( $date_to );
 			$product->set_date_on_sale_from( $date_from );
-			if ( $product->is_on_sale() ) {
-				$product->set_price( $product->get_sale_price() );
+
+			if ( $product->is_on_sale( 'edit' ) ) {
+				$product->set_price( $product->get_sale_price( 'edit' ) );
 			} else {
-				$product->set_price( $product->get_regular_price() );
+				$product->set_price( $product->get_regular_price( 'edit' ) );
 			}
 		}
 
@@ -1494,11 +1499,9 @@ class WC_API_Products extends WC_API_Resource {
 
 		// Shipping class
 		if ( isset( $data['shipping_class'] ) ) {
-			$data_store         = $product->get_data_store();
-			$shipping_class_id  = $data_store->get_shipping_class_id_by_slug( wc_clean( $data['shipping_class'] ) );
-			if ( $shipping_class_id ) {
-				$product->set_shipping_class_id( $shipping_class_id );
-			}
+			$data_store        = $product->get_data_store();
+			$shipping_class_id = $data_store->get_shipping_class_id_by_slug( wc_clean( $data['shipping_class'] ) );
+			$product->set_shipping_class_id( $shipping_class_id );
 		}
 
 		return $product;
@@ -1529,7 +1532,7 @@ class WC_API_Products extends WC_API_Resource {
 			}
 
 			$download = new WC_Product_Download();
-			$download->set_id( $key );
+			$download->set_id( ! empty( $file['id'] ) ? $file['id'] : wp_generate_uuid4() );
 			$download->set_name( $file['name'] ? $file['name'] : wc_get_filename_from_url( $file['file'] ) );
 			$download->set_file( apply_filters( 'woocommerce_file_download_path', $file['file'], $product, $key ) );
 			$files[]  = $download;

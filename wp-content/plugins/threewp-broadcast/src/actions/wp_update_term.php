@@ -87,9 +87,10 @@ class wp_update_term
 
 		foreach( $keys as $key )
 		{
-			$temp = $this->old_term->$key;
-			$this->old_term->$key = $this->new_term->$key;
-			$this->new_term->$key = $temp;
+			$old_key = $this->old_term->$key . '';
+			$new_key = $this->new_term->$key . '';
+			$this->old_term->$key = $new_key;
+			$this->new_term->$key = $old_key;
 		}
 	}
 }

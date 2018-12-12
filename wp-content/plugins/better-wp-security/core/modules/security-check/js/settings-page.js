@@ -1,7 +1,6 @@
 jQuery( document ).ready( function ( $ ) {
-	var $container = $( '#itsec-module-card-security-check' );
 
-	$container.on( 'click', '#itsec-security-check-secure_site', function( e ) {
+	$( document ).on( 'click', '#itsec-security-check-secure_site', function( e ) {
 		e.preventDefault();
 
 		$( '#itsec-security-check-secure_site' )
@@ -16,7 +15,7 @@ jQuery( document ).ready( function ( $ ) {
 			'method': 'secure-site'
 		};
 
-		itsecSettingsPage.sendModuleAJAXRequest( 'security-check', data, function( results ) {
+		itsecUtil.sendModuleAJAXRequest( 'security-check', data, function( results ) {
 			$( '#itsec-security-check-secure_site' )
 				.addClass( 'button-primary' )
 				.removeClass( 'button-secondary' )
@@ -27,7 +26,7 @@ jQuery( document ).ready( function ( $ ) {
 		} );
 	} );
 
-	$container.on( 'click', '.itsec-security-check-container-is-interactive :submit', function( e ) {
+	$( document ).on( 'click', '#itsec-module-card-security-check .itsec-security-check-container-is-interactive :submit', function( e ) {
 		e.preventDefault();
 
 		var $button = $( this );
@@ -63,7 +62,7 @@ jQuery( document ).ready( function ( $ ) {
 				.attr( 'value', $( this ).data( 'clicked-value' ) )
 		}
 
-		var ajaxFunction = itsecSettingsPage.sendModuleAJAXRequest;
+		var ajaxFunction = itsecUtil.sendModuleAJAXRequest;
 
 		if ( 'undefined' !== typeof itsecSecurityCheckAJAXRequest ) {
 			ajaxFunction = itsecSecurityCheckAJAXRequest;
@@ -109,6 +108,6 @@ jQuery( document ).ready( function ( $ ) {
 /*
 function itsecSecurityCheckAJAXRequest( type, data, callback ) {
 	console.log( 'Override called' );
-	itsecSettingsPage.sendModuleAJAXRequest( type, data, callback );
+	itsecUtil.sendModuleAJAXRequest( type, data, callback );
 }
 */

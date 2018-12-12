@@ -2,7 +2,6 @@
 
 namespace threewp_broadcast\traits;
 
-use threewp_broadcast\actions;
 use threewp_broadcast\attachment_data;
 
 use \Exception;
@@ -33,7 +32,6 @@ trait attachments
 
 		$this->debug( 'Copying attachments to the child blog.' );
 
-		$bcd->copied_attachments = [];
 		$this->debug( 'Looking through %s attachments.', count( $bcd->attachment_data ) );
 		foreach( $bcd->attachment_data as $key => $attachment )
 		{
@@ -51,6 +49,7 @@ trait attachments
 				$this->debug( 'Resetting post parent for attachment %s.', $o->attachment_data->post->ID );
 				$o->attachment_data->post->post_parent = 0;
 			}
+
 			$this->maybe_copy_attachment( $o );
 
 			try
@@ -63,7 +62,7 @@ trait attachments
 				$attachment->post->attachment_data = $attachment;
 
 				$bcd->copied_attachments()->add( $attachment->post, $copied_attachment );
-				$this->debug( 'Copied attachment %s to %s', $attachment->post->ID, $o->attachment_id );
+				$this->debug( 'Copied attachment %s to %s. %d attachments known.', $attachment->post->ID, $o->attachment_id, $bcd->copied_attachments()->count() );
 			}
 			catch ( Exception $e )
 			{
@@ -211,17 +210,10 @@ trait attachments
 
 				foreach( $attachment_data->post_custom as $key => $value )
 				{
+					if ( $key == '_wp_attached_file' )
+						continue;
 					$value = reset( $value );
 					$value = maybe_unserialize( $value );
-					switch( $key )
-					{
-						// Some values need to handle completely different upload paths (from different months, for example).
-						case '_wp_attached_file':
-							// Some files, like MP3s, don't have this key.
-							if ( isset( $attach_data[ 'file' ] ) )
-								$value = $attach_data[ 'file' ];
-							break;
-					}
 					update_post_meta( $action->attachment_id, $key, $value );
 				}
 
@@ -236,6 +228,9 @@ trait attachments
 			$this->debug( 'Copy attachment: Directly copying all metadata.' );
 			foreach( $attachment_data->post_custom as $key => $value )
 			{
+				// Don't overwrite this key since it probably isn't uploaded to the same directory.
+				if ( $key == '_wp_attached_file' )
+					continue;
 				$value = reset( $value );
 				$value = maybe_unserialize( $value );
 				update_post_meta( $action->attachment_id, $key, $value );
@@ -254,15 +249,15 @@ trait attachments
 	public function threewp_broadcast_get_existing_attachment_actions( $action )
 	{
 		// Existing attachment action.
-		$s = __( 'Use the existing attachment on the child blog', 'threewp_broadcast' );
+		$s = __( 'Use the existing attachment on the child blog', 'threewp-broadcast' );
 		$action->add( 'use', $s );
 
 		// Existing attachment action.
-		$s = __( 'Delete and then recopy the attachment', 'threewp_broadcast' );
+		$s = __( 'Delete and then recopy the attachment', 'threewp-broadcast' );
 		$action->add( 'overwrite', $s );
 
 		// Existing attachment action.
-		$s = __( 'Create a new attachment with a randomized suffix', 'threewp_broadcast' );
+		$s = __( 'Create a new attachment with a randomized suffix', 'threewp-broadcast' );
 		$action->add( 'randomize', $s );
 	}
 
@@ -309,7 +304,7 @@ trait attachments
 			$existing_action = $this->get_site_option( 'existing_attachments', 'use' );
 			$this->debug( 'Maybe copy attachment: The action for existing attachments is to %s.', $existing_action );
 
-			$apply_existing_attachment_action = new actions\apply_existing_attachment_action();
+			$apply_existing_attachment_action = $this->new_action( 'apply_existing_attachment_action' );
 			$apply_existing_attachment_action->action = $existing_action;
 			$apply_existing_attachment_action->broadcasting_data = $options;
 			$apply_existing_attachment_action->source_attachment = $attachment_data;
@@ -327,7 +322,7 @@ trait attachments
 
 		// Since it doesn't exist, copy it.
 		$this->debug( 'Maybe copy attachment: Really copying attachment.' );
-		$copy_attachment_action = new actions\copy_attachment();
+		$copy_attachment_action = $this->new_action( 'copy_attachment' );
 		$copy_attachment_action->attachment_data = $attachment_data;
 		$copy_attachment_action->execute();
 		$options->attachment_id = $copy_attachment_action->attachment_id;
@@ -355,6 +350,11 @@ trait attachments
 					$guids [ $old_dirname . '/' . $file ] = $new_dirname . '/' . $file;
 				}
 			}
+
+			// Modify the captions.
+			$content = str_replace( '[caption id="attachment_' . $a->old->ID . '"', '[caption id="attachment_' . $a->new->ID . '"', $content, $count );
+			if ( $count > 0 )
+				$this->debug( 'Modified caption ID: %s times', $count );
 
 			foreach( $guids as $old_guid => $new_guid )
 			{

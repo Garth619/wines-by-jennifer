@@ -125,7 +125,8 @@ broadcast_popup = function( options )
                 $this.addClass( 'auto_tabbed' );
 
 				var $fieldsets = $( 'div.fieldset', $this );
-				if ( $fieldsets.length < 1 )
+				// At least two fieldsets for this to make sense.
+				if ( $fieldsets.length < 2 )
 					return;
 
 				$this.prepend( '<div style="clear: both"></div>' );
@@ -298,7 +299,7 @@ broadcast_popup = function( options )
 						if ( $input.prop( 'hidden' ) === true )
 							return;
 						if ( ! checked )
-							$input.parent().hide();
+							$input.parent().parent().hide();
 					} );
 				},
 
@@ -314,7 +315,7 @@ broadcast_popup = function( options )
 						var $input = $( this );
 						if ( $input.prop( 'hidden' ) === true )
 							return;
-						$input.parent().show();
+						$input.parent().parent().show();
 					} );
 				}
 

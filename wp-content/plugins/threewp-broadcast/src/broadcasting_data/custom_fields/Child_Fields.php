@@ -44,7 +44,7 @@ class Child_Fields
 	**/
 	public function add_meta( $key, $value )
 	{
-		add_post_meta( $this->broadcasting_data->new_post( 'ID' ), $key, $value );
+		add_post_meta( $this->broadcasting_data->new_post( 'ID' ), $key, wp_slash( $value ) );
 		return $this;
 	}
 
@@ -72,11 +72,24 @@ class Child_Fields
 	/**
 		@brief		Update the meta key and value pair for this current child.
 		@details	Note that is a convenience method that does not keep the collection in sync with the database.
+		@see		update_meta_json()
 		@since		2015-08-05 14:42:20
 	**/
 	public function update_meta( $key, $value )
 	{
+		ThreeWP_Broadcast()->debug( 'Child fields: updating %s on blog %s post %s with %s', $key, get_current_blog_id(), $this->broadcasting_data->new_post( 'ID' ), $value );
 		update_post_meta( $this->broadcasting_data->new_post( 'ID' ), $key, $value );
 		return $this;
+	}
+
+	/**
+		@brief		Update the meta key and json encoded value pair for this current child.
+		@details	Similar to update_meta, but adds a wp_slash call to the value before saving, since that is required for saving json encoded data.
+		@see		update_meta()
+		@since		2017-10-19 18:43:21
+	**/
+	public function update_meta_json( $key, $value )
+	{
+		return $this->update_meta( $key, wp_slash( $value ) );
 	}
 }

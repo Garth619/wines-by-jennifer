@@ -5,7 +5,9 @@ final class ITSEC_Response {
 
 	private $response;
 	private $errors;
+	private $warnings;
 	private $messages;
+	private $infos;
 	private $success;
 	private $js_function_calls;
 	private $show_default_success_message;
@@ -15,6 +17,7 @@ final class ITSEC_Response {
 	private $close_modal;
 	private $regenerate_wp_config;
 	private $regenerate_server_config;
+	private $has_new_notifications = false;
 
 	private function __construct() {
 		$this->reset_to_defaults();
@@ -70,6 +73,24 @@ final class ITSEC_Response {
 		return $self->errors;
 	}
 
+	public static function add_warnings( $warnings ) {
+		foreach ( $warnings as $warning ) {
+			self::add_warning( $warning );
+		}
+	}
+
+	public static function add_warning( $warning ) {
+		$self = self::get_instance();
+
+		$self->warnings[] = $warning;
+	}
+
+	public static function get_warnings() {
+		$self = self::get_instance();
+
+		return $self->warnings;
+	}
+
 	public static function get_error_count() {
 		$self = self::get_instance();
 
@@ -92,6 +113,24 @@ final class ITSEC_Response {
 		$self = self::get_instance();
 
 		return $self->messages;
+	}
+
+	public static function add_infos( $messages ) {
+		foreach ( $messages as $message ) {
+			self::add_info( $message );
+		}
+	}
+
+	public static function add_info( $message ) {
+		$self = self::get_instance();
+
+		$self->infos[] = $message;
+	}
+
+	public static function get_infos() {
+		$self = self::get_instance();
+
+		return $self->infos;
 	}
 
 	public static function add_js_function_call( $js_function, $args = null ) {
@@ -154,6 +193,14 @@ final class ITSEC_Response {
 		$self = self::get_instance();
 
 		$self->add_js_function_call( 'reloadModule', $module );
+	}
+
+	public static function reload_all_modules() {
+		self::get_instance()->add_js_function_call( 'reloadAllModules' );
+	}
+
+	public static function refresh_page() {
+		self::get_instance()->add_js_function_call( 'refreshPage' );
 	}
 
 	public static function regenerate_wp_config() {
@@ -226,6 +273,36 @@ final class ITSEC_Response {
 		}
 	}
 
+	public static function maybe_flag_new_notifications_available() {
+		$nc = ITSEC_Core::get_notification_center();
+
+		$current = array_keys( $nc->get_notifications() );
+		$nc->clear_notifications_cache();
+		$new = array_keys( $nc->get_notifications() );
+
+		$added = array_diff( $new, $current );
+
+		if ( $added ) {
+			self::flag_new_notifications_available();
+		}
+	}
+
+	public static function flag_new_notifications_available() {
+		static $run_count = 0;
+
+		if ( $run_count++ > 0 ) {
+			return;
+		}
+
+		self::reload_module( 'notification-center' );
+		self::get_instance()->has_new_notifications = true;
+		self::get_instance()->add_info( sprintf(
+			esc_html__( 'New notifications available in the %1$sNotification Center%2$s.', 'better-wp-security' ),
+			'<a href="#" data-module-link="notification-center">',
+			'</a>'
+		) );
+	}
+
 	public static function get_raw_data() {
 		$self = self::get_instance();
 
@@ -240,14 +317,17 @@ final class ITSEC_Response {
 
 
 		$data = array(
-			'source'        => 'ITSEC_Response',
-			'success'       => $self->success,
-			'response'      => $self->response,
-			'errors'        => self::get_error_strings( $self->errors ),
-			'messages'      => $self->messages,
-			'functionCalls' => $self->js_function_calls,
-			'redirect'      => $self->redirect,
-			'closeModal'    => $self->close_modal,
+			'source'           => 'ITSEC_Response',
+			'success'          => $self->success,
+			'response'         => $self->response,
+			'errors'           => self::get_error_strings( $self->errors ),
+			'warnings'         => self::get_error_strings( $self->warnings ),
+			'messages'         => $self->messages,
+			'infos'            => $self->infos,
+			'functionCalls'    => self::parse_js_function_calls_for_module_reloads(),
+			'redirect'         => $self->redirect,
+			'closeModal'       => $self->close_modal,
+			'newNotifications' => $self->has_new_notifications,
 		);
 
 		return $data;
@@ -271,7 +351,9 @@ final class ITSEC_Response {
 	public function reset_to_defaults() {
 		$this->response = null;
 		$this->errors = array();
+		$this->warnings = array();
 		$this->messages = array();
+		$this->infos = array();
 		$this->success = true;
 		$this->js_function_calls = array();
 		$this->show_default_success_message = true;
@@ -310,6 +392,32 @@ final class ITSEC_Response {
 
 		/* translators: 1: variable type */
 		return array( sprintf( __( 'Unknown error type received: %1$s.', 'better-wp-security' ), gettype( $error ) ) );
+	}
+
+	private static function parse_js_function_calls_for_module_reloads() {
+
+		$has_reload_all = false;
+
+		$function_calls = self::get_instance()->js_function_calls;
+
+		foreach ( $function_calls as $function_call ) {
+			if ( $function_call[0] === 'reloadAllModules' ) {
+				$has_reload_all = true;
+				break;
+			}
+		}
+
+		if ( ! $has_reload_all ) {
+			return $function_calls;
+		}
+
+		foreach ( $function_calls as $i => $function_call ) {
+			if ( $function_call[0] === 'reloadModule' ) {
+				unset( $function_calls[ $i ] );
+			}
+		}
+
+		return array_values( $function_calls );
 	}
 
 	public function shutdown() {

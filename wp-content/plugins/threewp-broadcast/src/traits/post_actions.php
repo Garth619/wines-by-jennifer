@@ -2,7 +2,6 @@
 
 namespace threewp_broadcast\traits;
 
-use \threewp_broadcast\actions;
 use \threewp_broadcast\ajax;
 use \threewp_broadcast\posts\actions\action as post_action;
 use \threewp_broadcast\posts\actions\bulk\wp_ajax;
@@ -27,13 +26,9 @@ trait post_actions
 		$this->add_action( 'wp_ajax_broadcast_post_bulk_action' );
 
 		// We need to keep track of linking.
-		$this->add_action( 'wp_trash_post', 'trash_post' );
-		$this->add_action( 'trash_post' );
-		$this->add_action( 'trash_page', 'trash_post' );
-		$this->add_action( 'untrash_post' );
-		$this->add_action( 'untrash_page', 'untrash_post' );
 		$this->add_action( 'delete_post' );
-		$this->add_action( 'delete_page', 'delete_post' );
+		$this->add_action( 'trash_post' );
+		$this->add_action( 'untrash_post' );
 	}
 
 	/**
@@ -48,7 +43,7 @@ trait post_actions
 			{
 				// Add the broadcasted column to each post type we support.
 
-				$action = new actions\get_post_types;
+				$action = $this->new_action( 'get_post_types' );
 				$action->execute();
 
 				foreach( $action->post_types as $post_type )
@@ -63,7 +58,7 @@ trait post_actions
 		}
 	}
 
-	public function delete_post( $post_id)
+	public function delete_post( $post_id )
 	{
 		$this->trash_untrash_delete_post( 'wp_delete_post', $post_id );
 	}
@@ -72,13 +67,13 @@ trait post_actions
 	{
 		if ( isset( $_GET[ 'post_type' ] ) )
 		{
-			$action = new actions\get_post_types;
+			$action = $this->new_action( 'get_post_types' );
 			$action->execute();
 			if ( ! in_array( $_GET[ 'post_type' ], $action->post_types ) )
 				return;
 		}
 
-		$action = new actions\get_post_bulk_actions();
+		$action = $this->new_action( 'get_post_bulk_actions' );
 		$action->execute();
 		$this->add_admin_script( 'post_bulk_actions', $action->get_js() );
 
@@ -93,9 +88,9 @@ trait post_actions
 
 		$defaults[ '3wp_broadcast' ] = '<span title="'
 			// Title for broadcast column in overview
-			. __( 'Shows which blogs have posts linked to this one', 'threewp_broadcast' ) . '">'
+			. __( 'Shows which blogs have posts linked to this one', 'threewp-broadcast' ) . '">'
 			// Name of broadcast column in overview
-			. __( 'Broadcasted', 'threewp_broadcast' )
+			. __( 'Broadcasted', 'threewp-broadcast' )
 			. '</span>';
 		return $defaults;
 	}
@@ -113,7 +108,7 @@ trait post_actions
 			->get_for( $blog_id, $parent_post_id );
 
 		global $post;
-		$action = new actions\manage_posts_custom_column();
+		$action = $this->new_action( 'manage_posts_custom_column' );
 		$action->post = $post;
 		$action->parent_blog_id = $blog_id;
 		$action->parent_post_id = $parent_post_id;
@@ -131,13 +126,13 @@ trait post_actions
 	{
 		foreach( [
 			// Single post action in the popup
-			'delete' => __( 'Delete child', 'threewp_broadcast' ),
+			'delete' => __( 'Delete child', 'threewp-broadcast' ),
 			// Single post action in the popup
-			'restore' => __( 'Restore child', 'threewp_broadcast' ),
+			'restore' => __( 'Restore child', 'threewp-broadcast' ),
 			// Single post action in the popup
-			'trash' => __( 'Trash child', 'threewp_broadcast' ),
+			'trash' => __( 'Trash child', 'threewp-broadcast' ),
 			// Single post action in the popup
-			'unlink' => __( 'Unlink child', 'threewp_broadcast' ),
+			'unlink' => __( 'Unlink child', 'threewp-broadcast' ),
 		] as $slug => $name )
 		{
 			$a = new post_action;
@@ -158,15 +153,15 @@ trait post_actions
 
 		foreach( [
 			// Bulk post action in the dropdown
-			'delete' => __( 'Delete children', 'threewp_broadcast' ),
+			'delete' => __( 'Delete children', 'threewp-broadcast' ),
 			// Bulk post action in the dropdown
-			'find_unlinked' => __( 'Find unlinked children', 'threewp_broadcast' ),
+			'find_unlinked' => __( 'Find unlinked children', 'threewp-broadcast' ),
 			// Bulk post action in the dropdown
-			'restore' => __( 'Restore children', 'threewp_broadcast' ),
+			'restore' => __( 'Restore children', 'threewp-broadcast' ),
 			// Bulk post action in the dropdown
-			'trash' => __( 'Trash children', 'threewp_broadcast' ),
+			'trash' => __( 'Trash children', 'threewp-broadcast' ),
 			// Bulk post action in the dropdown
-			'unlink' => __( 'Unlink', 'threewp_broadcast' ),
+			'unlink' => __( 'Unlink', 'threewp-broadcast' ),
 		] as $subaction => $name )
 		{
 			$a = new wp_ajax;
@@ -186,7 +181,7 @@ trait post_actions
 	public function threewp_broadcast_manage_posts_custom_column( $action )
 	{
 		// Title when hovering over the links in the broadcast column
-		$title = __( "Click to modify the post's linkage", 'threewp_broadcast' );
+		$title = __( "Click to modify the post's linkage", 'threewp-broadcast' );
 		$nonce = wp_create_nonce( 'broadcast_post_action_form' . $action->post->ID );
 		$nonce = sprintf( 'data-nonce="%s"', $nonce );
 
@@ -284,10 +279,11 @@ trait post_actions
 
 				$broadcast_data = $this->get_post_broadcast_data( $blog_id, $post_id );
 				// Get a list of blogs that this user can link to.
-				$filter = new actions\get_user_writable_blogs( $this->user_id() );
+				$filter = $this->new_action( 'get_user_writable_blogs' );
+				$filter->user_id = $this->user_id();
 				$blogs = $filter->execute()->blogs;
 
-				$filter = new actions\find_unlinked_posts_blogs();
+				$filter = $this->new_action( 'find_unlinked_posts_blogs' );
 				$filter->blogs = $blogs;
 				$blogs = $filter->execute()->blogs;
 
@@ -307,8 +303,16 @@ trait post_actions
 						'post_type' => $post->post_type,
 						'post_status' => $post->post_status,
 					];
-					$this->debug( 'Searching for posts on blog %s: %s', $args, $blog->id );
 					$posts = get_posts( $args );
+					$post_ids = [];
+					foreach( $posts as $post )
+						$post_ids []= $post->ID;
+					$this->debug( 'Found %d posts (%s) on blog %s: %s',
+						count( $post_ids ),
+						implode( ",", $post_ids ),
+						$blog->id,
+						$args
+					);
 
 					// An exact match was found.
 					if ( count( $posts ) == 1 )
@@ -327,8 +331,6 @@ trait post_actions
 								$this->set_post_broadcast_data( $blog->id, $unlinked->ID, $child_broadcast_data );
 							}
 					}
-					else
-						$this->debug( 'Not exactly one match on blog.' );
 
 					restore_current_blog();
 				}
@@ -394,7 +396,7 @@ trait post_actions
 		}
 	}
 
-	public function trash_post( $post_id)
+	public function trash_post( $post_id )
 	{
 		$this->trash_untrash_delete_post( 'wp_trash_post', $post_id );
 	}
@@ -404,7 +406,7 @@ trait post_actions
 	 * @param string $command Command to run.
 	 * @param int $post_id Post with linked children
 	 */
-	private function trash_untrash_delete_post( $command, $post_id)
+	private function trash_untrash_delete_post( $command, $post_id )
 	{
 		global $blog_id;
 		$broadcast_data = $this->get_post_broadcast_data( $blog_id, $post_id );
@@ -445,7 +447,7 @@ trait post_actions
 		}
 	}
 
-	public function untrash_post( $post_id)
+	public function untrash_post( $post_id )
 	{
 		$this->trash_untrash_delete_post( 'wp_untrash_post', $post_id );
 	}
@@ -456,7 +458,7 @@ trait post_actions
 	**/
 	public function wp_ajax_broadcast_post_bulk_action()
 	{
-		$action = new actions\post_action;
+		$action = $this->new_action( 'post_action' );
 		$json = new ajax\json();
 
 		if ( ! isset( $_REQUEST[ 'nonce' ] ) )
@@ -508,8 +510,6 @@ trait post_actions
 
 		// Everything is good to go.
 
-		$this->load_language();
-
 		$blog_id = get_current_blog_id();
 		$broadcast_data = $this->get_post_broadcast_data( $blog_id, $post_id );
 		$form = $this->form2();
@@ -544,15 +544,15 @@ trait post_actions
 			);
 
 			$form->markup( 'm_parent_links' )
-				->p_ ( $links );
+				->p( $links );
 
 			restore_current_blog();
 
 			$unlink = $form->checkbox( 'unlink' )
 				// Description of unlink checkbox
-				->description( __( 'Unlink this post from its parent.', 'threewp_broadcast' ) )
+				->description( __( 'Unlink this post from its parent.', 'threewp-broadcast' ) )
 				// Label of unlink checkbox
-				->label( __( 'Unlink', 'threewp_broadcast' ) );
+				->label( __( 'Unlink', 'threewp-broadcast' ) );
 			$has_links = true;
 		}
 
@@ -560,7 +560,7 @@ trait post_actions
 		{
 			$form->blogs = [];
 			// Find all options for posts.
-			$action = new actions\get_post_actions();
+			$action = $this->new_action( 'get_post_actions' );
 			$action->post = get_post( $post_id );
 			$action->execute();
 			$options = [ '' => $this->_( 'No change' ) ];
@@ -569,7 +569,6 @@ trait post_actions
 				$options[ $post_action->action ] = $post_action->get_name();
 			}
 			ksort( $options );
-			$options = array_flip( $options );
 
 			$children = $broadcast_data->get_linked_children();
 			foreach( $children as $child_blog_id => $child_post_id )
@@ -588,7 +587,7 @@ trait post_actions
 				$select = $form->select( $child_blog_id )
 					->label( $blogname )
 					->prefix( 'blogs' )
-					->options( $options )
+					->opts( $options )
 					;
 
 				// The edit link we put in the description, but it requires that the HTML be set without escaping.
@@ -603,11 +602,11 @@ trait post_actions
 		}
 
 		if ( ! $has_links )
-			$json->html .= $this->p( __( 'This post has no broadcast links.', 'threewp_broadcast' ) );
+			$json->html .= $this->p( __( 'This post has no broadcast links.', 'threewp-broadcast' ) );
 
 		$submit = $form->primary_button( 'submit' )
 			// Submit button for post actions
-			->value( __( 'Submit', 'threewp_broadcast' ) );
+			->value( __( 'Submit', 'threewp-broadcast' ) );
 
 		if ( $form->is_posting() )
 		{
@@ -617,7 +616,7 @@ trait post_actions
 			{
 				if ( isset( $unlink ) && $unlink->is_checked() )
 				{
-					$post_action = new actions\post_action;
+					$post_action = $this->new_action( 'post_action' );
 					$post_action->action = 'unlink';
 					$post_action->post_id = $post_id;
 					$post_action->execute();
@@ -629,7 +628,7 @@ trait post_actions
 						$value = $select->get_post_value();
 						if( $value == '' )
 							continue;
-						$post_action = new actions\post_action;
+						$post_action = $this->new_action( 'post_action' );
 						$post_action->action = $value;
 						$post_action->post_id = $post_id;
 						$post_action->child_blog_id = $select->blog_id;

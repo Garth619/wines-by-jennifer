@@ -12,25 +12,33 @@ final class ITSEC_Setup {
 	}
 
 	public static function handle_deactivation() {
-		if ( ! self::is_only_active_itsec_plugin() ) {
+		if ( ! self::is_at_least_one_itsec_version_active() ) {
 			return;
 		}
 
 		if ( defined( 'ITSEC_DEVELOPMENT' ) && ITSEC_DEVELOPMENT ) {
 			// Set this in wp-config.php to run the uninstall routine on deactivate.
-			self::handle_uninstall();
+			self::deactivate();
+			self::uninstall();
 		} else {
 			self::deactivate();
 		}
 	}
 
 	public static function handle_uninstall() {
-		if ( ! self::is_only_active_itsec_plugin() ) {
+
+		if ( self::is_at_least_one_itsec_version_active() ) {
 			return;
 		}
 
 		self::deactivate();
-		self::uninstall();
+
+		$uninstalled = self::get_version_being_uninstalled();
+		$loaded      = self::get_version_loaded();
+
+		if ( $uninstalled === $loaded ) {
+			self::uninstall();
+		}
 	}
 
 	public static function handle_upgrade( $build = false ) {
@@ -49,10 +57,7 @@ final class ITSEC_Setup {
 
 			if ( is_array( $plugin_data ) && ! empty( $plugin_data['build'] ) ) {
 				$build = $plugin_data['build'];
-
-				if ( ! empty( $plugin_data['activation_timestamp'] ) ) {
-					ITSEC_Modules::set_setting( 'global', 'activation_timestamp', $plugin_data['activation_timestamp'] );
-				}
+				ITSEC_Modules::set_setting( 'global', 'activation_timestamp', $plugin_data['activation_timestamp'] );
 			}
 
 			delete_site_option( 'itsec_data' );
@@ -74,6 +79,9 @@ final class ITSEC_Setup {
 			}
 		}
 
+		if ( ! ITSEC_Modules::get_setting( 'global', 'activation_timestamp' ) ) {
+			ITSEC_Modules::set_setting( 'global', 'activation_timestamp', ITSEC_Core::get_current_time_gmt() );
+		}
 
 		// Ensure that the database tables are present and updated to the current schema.
 		ITSEC_Lib::create_database_tables();
@@ -82,8 +90,9 @@ final class ITSEC_Setup {
 		$itsec_modules = ITSEC_Modules::get_instance();
 		$itsec_modules->run_activation();
 
-
-		if ( ! empty( $build ) ) {
+		if ( empty( $build ) ) {
+			ITSEC_Lib::schedule_cron_test();
+		} else {
 			// Existing install. Perform data upgrades.
 
 			if ( $build < 4031 ) {
@@ -105,6 +114,40 @@ final class ITSEC_Setup {
 		$itsec_files = ITSEC_Core::get_itsec_files();
 		$itsec_files->do_activate();
 
+		if ( $build < 4079 ) {
+			ITSEC_Core::get_scheduler()->register_events();
+
+			wp_clear_scheduled_hook( 'itsec_purge_lockouts' );
+			wp_clear_scheduled_hook( 'itsec_clear_locks' );
+
+			ITSEC_Lib::schedule_cron_test();
+		}
+
+		if ( $build < 4080 ) {
+			ITSEC_Core::get_scheduler()->uninstall();
+			ITSEC_Core::get_scheduler()->register_events();
+
+			$crons = _get_cron_array();
+
+			foreach ( $crons as $timestamp => $args ) {
+				unset( $crons[ $timestamp ]['itsec_cron_test'] );
+
+				if ( empty( $crons[ $timestamp ] ) ) {
+					unset( $crons[ $timestamp ] );
+				}
+			}
+
+			_set_cron_array( $crons );
+
+			ITSEC_Lib::schedule_cron_test();
+		}
+
+		if ( null === get_site_option( 'itsec-enable-grade-report', null ) ) {
+			update_site_option( 'itsec-enable-grade-report', ITSEC_Modules::get_setting( 'global', 'enable_grade_report' ) );
+		}
+
+		ITSEC_Core::get_scheduler()->register_events();
+
 		// Update stored build number.
 		ITSEC_Modules::set_setting( 'global', 'build', ITSEC_Core::get_plugin_build() );
 	}
@@ -116,6 +159,8 @@ final class ITSEC_Setup {
 
 		$itsec_files = ITSEC_Core::get_itsec_files();
 		$itsec_files->do_deactivate();
+
+		ITSEC_Core::get_scheduler()->uninstall();
 
 		delete_site_option( 'itsec_temp_whitelist_ip' );
 		delete_site_transient( 'itsec_notification_running' );
@@ -144,8 +189,8 @@ final class ITSEC_Setup {
 	}
 
 	private static function uninstall() {
-
-		global $wpdb;
+		require_once( ITSEC_Core::get_core_dir() . '/lib/schema.php' );
+		require_once( ITSEC_Core::get_core_dir() . '/lib/class-itsec-lib-directory.php' );
 
 		ITSEC_Modules::run_uninstall();
 
@@ -154,28 +199,45 @@ final class ITSEC_Setup {
 
 		delete_site_option( 'itsec-storage' );
 		delete_site_option( 'itsec_active_modules' );
+		delete_site_option( 'itsec-enable-grade-report' );
 
-		$wpdb->query( "DROP TABLE IF EXISTS " . $wpdb->base_prefix . "itsec_log;" );
-		$wpdb->query( "DROP TABLE IF EXISTS " . $wpdb->base_prefix . "itsec_lockouts;" );
-		$wpdb->query( "DROP TABLE IF EXISTS " . $wpdb->base_prefix . "itsec_temp;" );
-
-		if ( is_dir( ITSEC_Core::get_storage_dir() ) ) {
-			require_once( ITSEC_Core::get_core_dir() . '/lib/class-itsec-lib-directory.php' );
-
-			ITSEC_Lib_Directory::remove( ITSEC_Core::get_storage_dir() );
-		}
-
+		ITSEC_Schema::remove_database_tables();
+		ITSEC_Lib_Directory::remove( ITSEC_Core::get_storage_dir() );
 		ITSEC_Lib::clear_caches();
 
 	}
 
-	private static function is_only_active_itsec_plugin() {
-		$active_plugins = (array) get_option( 'active_plugins', array() );
+	private static function get_version_being_uninstalled() {
 
-		if ( is_multisite() ) {
-			$network_plugins = (array) get_site_option( 'active_sitewide_plugins', array() );
-			$active_plugins = array_merge( $active_plugins, array_keys( $network_plugins ) );
+		if ( doing_action( 'uninstall_better-wp-security/better-wp-security.php' ) ) {
+			return 'free';
 		}
+
+		if ( doing_action( 'uninstall_ithemes-security-pro/ithemes-security-pro.php' ) ) {
+			return 'pro';
+		}
+
+		return '';
+	}
+
+	private static function get_version_loaded() {
+
+		$plugin_dir = plugin_basename( dirname( dirname( __FILE__ ) ) );
+
+		if ( $plugin_dir === 'better-wp-security' ) {
+			return 'free';
+		}
+
+		if ( $plugin_dir === 'ithemes-security-pro' ) {
+			return 'pro';
+		}
+
+		return '';
+	}
+
+	private static function is_at_least_one_itsec_version_active() {
+
+		$active_plugins = self::get_active_plugins();
 
 		foreach ( $active_plugins as $active_plugin ) {
 			$file = basename( $active_plugin );
@@ -186,6 +248,18 @@ final class ITSEC_Setup {
 		}
 
 		return false;
+	}
+
+	private static function get_active_plugins() {
+
+		$active_plugins = (array) get_option( 'active_plugins', array() );
+
+		if ( is_multisite() ) {
+			$network_plugins = (array) get_site_option( 'active_sitewide_plugins', array() );
+			$active_plugins = array_merge( $active_plugins, array_keys( $network_plugins ) );
+		}
+
+		return $active_plugins;
 	}
 
 	private static function upgrade_from_bwps() {

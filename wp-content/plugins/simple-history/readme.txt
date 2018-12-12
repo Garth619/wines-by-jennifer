@@ -1,10 +1,11 @@
 === Simple History ===
 Contributors: eskapism
 Donate link: http://eskapism.se/sida/donate/
-Tags: history, log, changes, changelog, audit, trail, pages, attachments, users, dashboard, admin, syslog, feed, activity, stream, audit trail, brute-force
+Tags: history, log, changes, changelog, audit, audit log, event log, user tracking, trail, pages, attachments, users, dashboard, admin, syslog, feed, activity, stream, audit trail, brute-force
 Requires at least: 4.5.1
-Tested up to: 4.7
-Stable tag: 2.17
+Tested up to: 4.9
+Requires PHP: 5.3
+Stable tag: 2.28.1
 
 View changes made by users within WordPress. See who created a page, uploaded an attachment or approved an comment, and more.
 
@@ -37,11 +38,26 @@ see when someone has tried to log in, but failed. The log will then include ip a
 * **Menu edits**
 * **Option screens**<br>
 view details about changes made in the differnt settings sections of WordPress. Things like changes to the site title and the permalink structure will be logged.
+* **Privacy page**<br>
+when a privacy page is created or set to a new page.
+* **Data Export**<br>
+see when a privacy data export request is added and when this request is approved by the user, downloaded by an admin, or emailed to the user.
+* **User Data Erasure Requests**<br>
+see when a user privacy data export request is added and when this request is approved by the user and when the user data is removed.
 
 
 #### Support for third party plugins
 
 By default Simple History comes with built in support for the following plugins:
+
+**Jetpack**<br>
+The [Jetpack plugin](https://wordpress.org/plugins/jetpack/) is a plugin from Automattic (the creators of WordPress) that lets you supercharge your website by adding a lot of extra functions.
+In Simple History you will see what Jetpack modules that are activated and deactivated.
+(The creator of Simple History recommends this plugin and its [brute force attack protection](https://jetpack.com/features/security/brute-force-attack-protection/) functions btw. It's a really good way to block unwanted login attempts from malicious botnets and distributed attacks.
+
+**Advanced Custom Fields (ACF)**<br>
+[ACF](https://www.advancedcustomfields.com/) adds fields to your posts and pages.
+Simple History will log changes made to the field groups and the fields inside field groups. Your will see when both field groups and fields are created and modified.
 
 **User Switching**<br>
 The [User Switching plugin](https://wordpress.org/plugins/user-switching/) allows you to quickly swap between user accounts in WordPress at the click of a button.
@@ -52,12 +68,12 @@ The [Enable Media Replace plugin](https://wordpress.org/plugins/enable-media-rep
 Simple history will log details about the file being replaced and details about the new file.
 
 **Limit Login Attempts**<br>
-The plugin [Limit Login Attempts](https://sv.wordpress.org/plugins/limit-login-attempts/) is old
+The plugin [Limit Login Attempts](https://wordpress.org/plugins/limit-login-attempts/) is old
 and has not been updated for 4 years. However it still has +1 million installs, so many users will benefit from
 Simple History logging login attempts, lockouts, and configuration changes made in the plugin Limit Login Attempts.
 
 **Redirection**
-The [redirection plugin](https://sv.wordpress.org/plugins/redirection/) manages url redirections, using a nice GUI.
+The [redirection plugin](https://wordpress.org/plugins/redirection/) manages url redirections, using a nice GUI.
 Simple History will log redirects and groups that are created, changed, enabled or disabled and also when the global plugin settings have been modified.
 
 **Duplicate Post**
@@ -65,7 +81,7 @@ The plugin [Duplicate Post](https://wordpress.org/plugins/duplicate-post/) allow
 clone posts of any type.
 Simple History will log when a clone of a post or page is done.
 
-#### RSS feed available
+#### RSS feed with changes
 
 There is also a **RSS feed of changes** available, so you can keep track of the changes made via your favorite RSS reader on your phone, on your iPad, or on your computer.
 
@@ -84,12 +100,7 @@ Or for debug purposes:
 _"The site feels slow since yesterday. Has anyone done anything special? ... Ah, Steven activated 'naughy-plugin-x',
 that must be it."_
 
-#### See it in action
-
-See the plugin in action with this short screencast:
-[youtube http://www.youtube.com/watch?v=4cu4kooJBzs]
-
-#### API so you can add your own events to Simple History
+#### API so you can add your own events to the audit log
 
 If you are a theme or plugin developer and would like to add your own things/events to Simple History you can do that by using the function `SimpleLogger()` like this:
 
@@ -98,13 +109,13 @@ If you are a theme or plugin developer and would like to add your own things/eve
 
 if ( function_exists("SimpleLogger") ) {
 
-    // Most basic example: just add some information to the log
-    SimpleLogger()->info("This is a message sent to the log");
+		// Most basic example: just add some information to the log
+		SimpleLogger()->info("This is a message sent to the log");
 
-    // A bit more advanced: log events with different severities
-    SimpleLogger()->info("User admin edited page 'About our company'");
-    SimpleLogger()->warning("User 'Jessie' deleted user 'Kim'");
-    SimpleLogger()->debug("Ok, cron job is running!");
+		// A bit more advanced: log events with different severities
+		SimpleLogger()->info("User admin edited page 'About our company'");
+		SimpleLogger()->warning("User 'Jessie' deleted user 'Kim'");
+		SimpleLogger()->debug("Ok, cron job is running!");
 
 }
 ?>
@@ -133,11 +144,19 @@ to your language then read about how this is done over at the [Polyglots handboo
 Development of this plugin takes place at GitHub. Please join in with feature requests, bug reports, or even pull requests!
 https://github.com/bonny/WordPress-Simple-History
 
-#### Donation & more plugins
+#### Donation
 
-* If you like this plugin don't forget to [donate to support further development](http://eskapism.se/sida/donate/).
-* More [WordPress CMS plugins](https://profiles.wordpress.org/eskapism#content-plugins) by the same author.
+* If you like this plugin please consider [donating to support the development](https://www.paypal.me/eskapism).
 
+== Frequently Asked Questions ==
+
+= Can I add my own events to the log? =
+
+Yes. See the [examples file](https://github.com/bonny/WordPress-Simple-History/blob/master/examples/examples.php).
+
+= For how long are events stored? =
+
+Events in the log are stored for 60 days by default. Events older than this will be removed.
 
 == Screenshots ==
 
@@ -161,6 +180,135 @@ A simple way to see any uncommon activity, for example an increased number of lo
 == Changelog ==
 
 ## Changelog
+
+= 2.28.1 (September 2018) =
+
+- Remove a debug message that was left in the code.
+
+= 2.28 (September 2018) =
+
+- Always show time and sometimes date before each event, in addition to the relative date. Fixes https://wordpress.org/support/topic/feature-request-granular-settings-changes-detailed-timestamp/.
+- Use WordPress own function (`wp_privacy_anonymize_ip`, available since WordPress version 4.9.6) to anonymize IP addresses, instead of our own class.
+- Update timeago.js
+
+= 2.27 (August 2018) =
+
+- Fix notice errors when syncing an ACF field group. Fixes https://github.com/bonny/WordPress-Simple-History/issues/150.
+- Fix notice error when trying to read plugin info for a plugin that no longer exists or has changed name. Fixes https://github.com/bonny/WordPress-Simple-History/issues/146.
+- Always load the SimpleLogger logger. Fixes https://github.com/bonny/WordPress-Simple-History/issues/129.
+- Make more texts translatable.
+- Show plugin slug instead of name when translations are updated and a plugin name is not provided by the upgrader. This can happen when a plugin is using an external update service, like EDD.
+- Group translation updates in the log. Useful because sometimes you update a lot of translations at the same time and the log is full of just those messages.
+
+= 2.26.1 (July 2018) =
+
+- Fix 5.3 compatibility.
+
+= 2.26 (July 2018) =
+
+- Add support for the [Jetpack plugin](https://wordpress.org/plugins/jetpack/). To begin with, activation and deactivation of Jetpack modules is logged.
+- Add logging of translation updates, so now you can see when a plugin or a theme has gotten new translations. Fixes https://github.com/bonny/WordPress-Simple-History/issues/147.
+- Fix notice in Advanced Custom Fields logger when saving an ACF options page.
+Fixes https://wordpress.org/support/topic/problem-with-acf-options-pages/, https://wordpress.org/support/topic/problem-with-recent-version-and-acf/, https://github.com/bonny/WordPress-Simple-History/issues/145.
+
+= 2.25 (July 2018) =
+
+- Add `wp_cron_current_filter` to event context when something is logged during a cron job. This can help debugging thing like posts being added or deleted by some plugin and you're trying to figure out which plugin it is.
+- Fix for event details not always being shown.
+- Fix for sometimes missing user name and user email in export file.
+
+= 2.24 (July 2018) =
+
+- Added user login and user email to CSV export file.
+- Fix notice in postlogger when a post was deleted from the trash.
+- Clear database in smaller steps. Fixes https://github.com/bonny/WordPress-Simple-History/issues/143.
+- Fix notice in ACF logger due to misspelled variable. Fixes https://wordpress.org/support/topic/problem-with-recent-version-and-acf/.
+
+= 2.23.1 (May 2018) =
+
+- Remove some debug messages that was outputed to the error log. Fixes https://wordpress.org/support/topic/errors-in-php-log-since-v2-23/.
+- Fix error beacuse function `ucwords()` does not allow a second argument on PHP versions before 5.4.32. Fixes https://wordpress.org/support/topic/error-message-since-last-update/, https://wordpress.org/support/topic/errors-related-to-php-version/.
+- Added new function `sh_ucwords()` that works like `ucwords()` but it also works on PHP 5.3.
+
+= 2.23 (May 2018) =
+
+- Add logging of privacy and GDPR related functions in WordPress. Some of the new [privacy related features in WordPress 4.9.6](https://wordpress.org/news/2018/05/wordpress-4-9-6-privacy-and-maintenance-release/) that are logged:
+	- Privacy policy page is created or changed to a new page.
+	- Privacy data export is requested for a user and when this request is confirmed by the user and when the data for the request is downloaded by an admin or emailed to the user.
+	- Erase Personal Data: Request is added for user to have their personal data erased, user confirms the data removal and when the deletion of user data is done.
+- Fix error when categories changes was shown in the log. Fixes https://wordpress.org/support/topic/php-notice-undefined-variable-term_object/.
+- Fix error when a ACF Field Group was saved.
+- Fix error when the IP address anonymization function tried to anonymize an empty IP adress. Could happen when for example running wp cron locally on your server.
+- Fix error when calling the REST API with an API endpoint with a closure as the callback. Fixes https://github.com/bonny/WordPress-Simple-History/issues/141.
+- Rewrote logger loading method so now it's possible to name your loggers in a WordPress codings standard compatible way. Also: made a bit more code more WordPress-ish.
+- The post types in the `skip_posttypes` filter are now also applied to deleted posts.
+- Add function `sh_get_callable_name()` that returns a human readable name for a callback.
+
+= 2.22.1 (May 2018) =
+
+- Fix for some REST API Routes not working, for example when using WPCF7. Should fix https://wordpress.org/support/topic/errorexception-with-wpcf7/ and similar.
+
+= 2.22 (May 2018) =
+
+- IP addresses are now anonymized by default. This is mainly done because of the [General Data Protection Regulation](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation) (GDPR)
+Both IPv4 and IPv6 addresses will be anonymized and the IP addresses are anonymized to their network ID.
+So for example the IPv4 address `192.168.123.124` is anonymized to `192.168.123.0` and
+the IPv6 address `2a03:2880:2110:df07:face:b00c::1` is anonymized by default to `2610:28:3090:3001::`.
+
+- Added filter `simple_history/privacy/anonymize_ip_address` than can be used to disable ip address anonymization.
+
+- Added function `sh_error_log()` to easily log variables to the error log. Probably only of interest to developers.
+
+- Fixed logging for [plugin Redirection](https://wordpress.org/plugins/redirection/). The logging of URL redirects and so on stopped working some while back because the Redirection plugin started using the WP REST API. But now it's working again!
+
+
+= 2.21.1 (May 2018) =
+
+- Make sure support for Advanced Custom Fields is activated for all users – and not only for the developer of the plugin ;)
+
+
+= 2.21 (May 2018) =
+
+- Added support for Advanced Custom Fields (ACF): when a ACF Field or ACF Field Group is created or modified or deleted you will now get more details in the activity feed.
+- Changes to taxonomies/categories/tags now include a link to the modified term and to the category that the term belongs to.
+- The post types in the `skip_posttypes` filter are now also applied to trashed and untrashed posts (not only post edits, as before).
+- Don't log Jetpack sitemap updates. (Don't log updates to posttypes `jp_sitemap`, `jp_sitemap_master` and `jp_img_sitemap`, i.e. the post types used by Jetpack's Sitemap function.) Should fix https://wordpress.org/support/topic/jetpack-sitemap-logging/.
+- Don't log the taxonomies `post_translations` or `term_translations`, that are used by Polylang to store translation mappings. That contained md5-hashed strings and was not of any benefit (a separate logger for Polylang will come soon anyway).
+- Fix notice in theme logger because did not check if `$_POST['sidebar']` was set. Fixes https://github.com/bonny/WordPress-Simple-History/issues/136.
+- Fix thumbnail title missing notice in post logger.
+- Fix PHP warning when a plugin was checked by WordPress for an update, but your WordPress install did not have the plugin folder for that plugin.
+- Fix unexpected single-quotations included in file name in Internet Explorer 11 (and possibly other versions) when exporting CSV/JSON file.
+- Fix filter/search log by specific users not working. Fixes https://wordpress.org/support/topic/show-activity-from-other-authors-only/.
+- Fix a notice in SimpleOptionsLogger.
+- Better CSS styling on dashboard.
+- Add filter `simple_history/post_logger/post_updated/context` that can be used to modify the context added by SimplePostLogger.
+- Add filter `simple_history/post_logger/post_updated/ok_to_log` that can be used to skip logging a post update.
+- Add filter `simple_history/categories_logger/skip_taxonomies` that can be used to modify what taxonomies to skip when logging updates to taxonomy terms.
+
+= 2.20 (November 2017) =
+
+- Add logging of post thumbnails.
+- Use medium size of image attachments when showing uploaded files in the log. Previously a custom size was used, a size that most sites did not have and instead the full size image would be outputed = waste of bandwidth.
+- Make image previews smaller because many uploaded images could make the log a bit to long and not so quick to overview.
+- Update Select2 to latest version. Fixes https://wordpress.org/support/topic/select2-js-is-outdated/.
+- Show a message if user is running to old WordPress version, and don't continue running the code of this plugin.
+  Should fix stuff like https://wordpress.org/support/topic/simple-history-i-cannot-login/.
+- Fix an error with PHP 7.1.
+
+= 2.19 (November 2017) =
+
+- Add filter `simple_history/user_can_clear_log`. Return `false` from this filter to disable the "Clear blog" button.
+- Remove static keyword from some methods in SimpleLogger, so now calls like `SimpleLogger()->critical('Doh!');` works.
+- Don't show link to WordPress updates if user is not allowed to view the updates page.
+- Fix notice error in SimpleOptionsLogger.
+- Fix for fatal errors when using the lost password form in [Membership 2](https://wordpress.org/plugins/membership/). Fixes https://wordpress.org/support/topic/conflict-with-simple-history-plugin-and-php-7/.
+- Code (a little bit) better formatted according to [WordPress coding standard](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards).
+
+= 2.18 (August 2017) =
+
+- Set from_term_description correctly, fixes https://github.com/bonny/WordPress-Simple-History/issues/127.
+- Add filter `simple_history/post_logger/skip_posttypes`.
+- Don't log post type `jetpack_migation` because for some users that post type filled the log. Fixes https://wordpress.org/support/topic/updated-jetpack_migration-sidebars_widgets/.
 
 = 2.17 (June 2017) =
 
@@ -186,7 +334,7 @@ so you can see what CSS styles a client changed or what PHP changes they made in
 
 - Use thumbnail version of PDF preview instead of full size image.
 - Remove Google Maps image when clicking IP address of failed login and similar, because Google Maps must be used with API key.
-  Hostname, Network, City, Region and Country is still shown.
+	Hostname, Network, City, Region and Country is still shown.
 - Fix notice in available updates logger.
 - Fix notice in redirection logger.
 
@@ -197,7 +345,7 @@ so you can see what CSS styles a client changed or what PHP changes they made in
 = 2.14 (April 2017) =
 
 - Added support for plugin [Duplicate Post](https://wordpress.org/plugins/duplicate-post/).
-  Now when a user clones a post or page you will se this in the history log, with links to both the original post and the new copy.
+	Now when a user clones a post or page you will se this in the history log, with links to both the original post and the new copy.
 - Removed log level info from title in RSS feed
 - Make date dropdown less "jumpy" when loading page (due to select element switching to Select2)
 - Only add filters for plugin Limit Login Attempts if plugin is active. This fixes problem with Limit Login Attempts Reloaded and possibly other forks of the plugin.
@@ -219,20 +367,20 @@ so you can see what CSS styles a client changed or what PHP changes they made in
 = 2.11 (September 2016) =
 
 - Added support for plugin [Redirection](https://wordpress.org/plugins/redirection/).
-  Redirects and groups that are created, changed, enabled and disabled will be logged. Also when the plugin global settings are changed that will be logged.
+	Redirects and groups that are created, changed, enabled and disabled will be logged. Also when the plugin global settings are changed that will be logged.
 - Fix possible notice error from User logger.
 - "View changelog" link now works on multisite.
 
 = 2.10 (September 2016) =
 
 - Available updates to plugins, themes, and WordPress itself is now logged.
-  Pretty great if you subscribe to the RSS feed to get the changes on a site. No need to manually check the updates-page to see if there are any updates.
+	Pretty great if you subscribe to the RSS feed to get the changes on a site. No need to manually check the updates-page to see if there are any updates.
 - Changed to logic used to determine if a post edit should be logged or not. Version 2.9 used a version that started to log a bit to much for some plugins. This should fix the problems with the Nextgen Gallery, All-In-One Events Calendar, and Membership 2 plugins. If you still have problems with a plugin that is causing to many events to be logged, please let me know!
 
 = 2.9.1 (August 2016) =
 
 - Fixed an issue where the logged time was off by some hours, due to timezone being manually set elsewhere.
-  Should fix https://wordpress.org/support/topic/logged-time-off-by-2-hours and https://wordpress.org/support/topic/different-time-between-dashboard-and-logger.
+	Should fix https://wordpress.org/support/topic/logged-time-off-by-2-hours and https://wordpress.org/support/topic/different-time-between-dashboard-and-logger.
 - Fixed Nextgen Gallery and Nextgen Gallery Plus logging lots and lots of event when viewing posts with galleries. The posts was actually updated, so this plugin did nothing wrong. But it was indeed a bit annoying and most likely something you didn't want in your log. Fixes https://wordpress.org/support/topic/non-stop-logging-nextgen-gallery-items.
 
 = 2.9 (August 2016) =
@@ -249,7 +397,7 @@ so you can see what CSS styles a client changed or what PHP changes they made in
 - ...and so are theme updates
 - ...and theme deletions. Awesome!
 - Support for plugin [Limit Login Attempts](https://wordpress.org/plugins/limit-login-attempts/).
-  Failed login attempts, lockouts and configuration changes will be logged.
+	Failed login attempts, lockouts and configuration changes will be logged.
 - Correct message is now used when a plugin update fails, i.e. the message for key `plugin_update_failed`.
 - The original untranslated strings for plugin name and so on are stored when storing info for plugin installs and updates and similar.
 - Default number of events to show is now 10 instead of 5.
@@ -258,7 +406,7 @@ so you can see what CSS styles a client changed or what PHP changes they made in
 
 - User logins using e-mail are now logged correctly. Previously the user would be logged in successfully but the log said that they failed.
 - Security fix: only users with [`list_users`](https://codex.wordpress.org/Roles_and_Capabilities#list_users) capability can view the users filter and use the autocomplete api for users.
-  Previously the autocomplete function could be used by all logged in users.
+	Previously the autocomplete function could be used by all logged in users.
 - Add labels to search filters. (I do really hate label-less forms so it's kinda very strange that this was not in place before.)
 - Misc other internal fixes
 

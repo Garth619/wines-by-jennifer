@@ -1,17 +1,16 @@
 <?php
 /*
 Author:			edward_plainview
-Author Email:	edward@plainviewplugins.com
+Author Email:	info@plainviewplugins.com
 Author URI:		https://plainviewplugins.com
 Description:	Broadcast / multipost posts, with attachments, custom fields and taxonomies to other blogs in the network.
 Domain Path:	/lang
 Plugin Name:	Broadcast
 Plugin URI:		https://broadcast.plainviewplugins.com/
-Text Domain:	threewp_broadcast
-Version:		38.6
+Version:		43.12
 */
 
-DEFINE( 'THREEWP_BROADCAST_VERSION', 38.6 );
+DEFINE( 'THREEWP_BROADCAST_VERSION', 43.12 );
 
 require_once( __DIR__ . '/vendor/autoload.php' );
 
