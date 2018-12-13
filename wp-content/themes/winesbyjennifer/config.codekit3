@@ -30,16 +30,6 @@
 		"oAP": "/404.php",
 		"oF": 0
 		},
-	"/animate.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/animate-min.css",
-		"oF": 0,
-		"oS": 3
-		},
 	"/archive.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -154,13 +144,6 @@
 		"oAP": "/featured-wine-featured-list.php",
 		"oF": 0
 		},
-	"/footer copy.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/footer copy.php",
-		"oF": 0
-		},
 	"/footer.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -168,11 +151,11 @@
 		"oAP": "/footer.php",
 		"oF": 0
 		},
-	"/formtest.html": {
+	"/functions copy.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "/formtest.html",
+		"oAP": "/functions copy.php",
 		"oF": 0
 		},
 	"/functions.php": {
@@ -180,13 +163,6 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/functions.php",
-		"oF": 0
-		},
-	"/header copy.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/header copy.php",
 		"oF": 0
 		},
 	"/header.php": {
@@ -2254,19 +2230,25 @@
 		"sC": 0,
 		"tS": 0
 		},
-	"/languages/twentyten.pot": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/languages/twentyten.pot",
-		"oF": 0
+	"/js/slick.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/js/slick.min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
 		},
-	"/license.txt": {
-		"cB": 0,
-		"ft": 8192,
+	"/js/wow.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
 		"oA": 0,
-		"oAP": "/license.txt",
-		"oF": 0
+		"oAP": "/js/wow-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
 		},
 	"/loop-attachment.php": {
 		"cB": 0,
@@ -2362,13 +2344,6 @@
 		"oAP": "/page-inthenews.php",
 		"oF": 0
 		},
-	"/page-main copy.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/page-main copy.php",
-		"oF": 0
-		},
 	"/page-main.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2442,6 +2417,19 @@
 		"oAP": "/screenshot.png.og",
 		"oF": 0
 		},
+	"/scss/style.scss": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 1,
+		"oA": 0,
+		"oAP": "/style.css",
+		"oF": 2,
+		"oS": 3,
+		"uL": 1
+		},
 	"/search.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2512,238 +2500,6 @@
 		"oAP": "/single.php",
 		"oF": 0
 		},
-	"/slick/bower.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "/slick/bower-min.json",
-		"oF": 0,
-		"oO": 0,
-		"oS": 1
-		},
-	"/slick/component.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "/slick/component-min.json",
-		"oF": 0,
-		"oO": 0,
-		"oS": 1
-		},
-	"/slick/CONTRIBUTING.markdown": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/slick/CONTRIBUTING.markdown",
-		"oF": 0
-		},
-	"/slick/LICENSE": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/slick/LICENSE",
-		"oF": 0
-		},
-	"/slick/Makefile": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/slick/Makefile",
-		"oF": 0
-		},
-	"/slick/package.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "/slick/package-min.json",
-		"oF": 0,
-		"oO": 0,
-		"oS": 1
-		},
-	"/slick/README.markdown": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/slick/README.markdown",
-		"oF": 0
-		},
-	"/slick/slick.jquery.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "/slick/slick.jquery-min.json",
-		"oF": 0,
-		"oO": 0,
-		"oS": 1
-		},
-	"/slick/slick/ajax-loader.gif": {
-		"ft": 4194304,
-		"iS": 4178,
-		"oA": 0,
-		"oAP": "/slick/slick/ajax-loader.gif",
-		"oF": 0,
-		"opt": 0
-		},
-	"/slick/slick/config.rb": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/slick/slick/config.rb",
-		"oF": 0
-		},
-	"/slick/slick/fonts/slick.eot": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/slick/slick/fonts/slick.eot",
-		"oF": 0
-		},
-	"/slick/slick/fonts/slick.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "/slick/slick/fonts/slick.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"/slick/slick/fonts/slick.ttf": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/slick/slick/fonts/slick.ttf",
-		"oF": 0
-		},
-	"/slick/slick/fonts/slick.woff": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/slick/slick/fonts/slick.woff",
-		"oF": 0
-		},
-	"/slick/slick/slick-theme.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/slick/slick/slick-theme-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/slick/slick/slick-theme.less": {
-		"aP": 0,
-		"bl": 0,
-		"eJ": 0,
-		"ft": 1,
-		"ie": 0,
-		"iI": 0,
-		"ma": 1,
-		"mS": 0,
-		"oA": 0,
-		"oAP": "/slick/slick/slick-theme.css",
-		"oF": 0,
-		"oS": 0,
-		"rwU": 0,
-		"sI": 0,
-		"sU": 0
-		},
-	"/slick/slick/slick-theme.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/slick/slick/slick-theme.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/slick/slick/slick.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/slick/slick/slick-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/slick/slick/slick.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/slick/slick/slick-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/slick/slick/slick.less": {
-		"aP": 0,
-		"bl": 0,
-		"eJ": 0,
-		"ft": 1,
-		"ie": 0,
-		"iI": 0,
-		"ma": 1,
-		"mS": 0,
-		"oA": 0,
-		"oAP": "/slick/slick/slick.css",
-		"oF": 0,
-		"oS": 0,
-		"rwU": 0,
-		"sI": 0,
-		"sU": 0
-		},
-	"/slick/slick/slick.min.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/slick/slick/slick.min-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/slick/slick/slick.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/slick/slick/slick.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/style copy 2.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/style copy 2.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/style copy.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/style copy.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
 	"/style.css": {
 		"aP": 1,
 		"bl": 0,
@@ -2760,19 +2516,6 @@
 		"oA": 0,
 		"oAP": "/style.css.map",
 		"oF": 0
-		},
-	"/style.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/style.css",
-		"oF": 0,
-		"oS": 3,
-		"uL": 1
 		},
 	"/tag.php": {
 		"cB": 0,
@@ -2794,198 +2537,6 @@
 		"oA": 0,
 		"oAP": "/woocommerce.php",
 		"oF": 0
-		},
-	"/wow/.travis.yml": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/wow/.travis.yml",
-		"oF": 0
-		},
-	"/wow/bower.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "/wow/bower-min.json",
-		"oF": 0,
-		"oO": 0,
-		"oS": 1
-		},
-	"/wow/css/libs/animate.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/wow/css/libs/animate-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/wow/css/site.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/wow/css/site-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/wow/demo.html": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/wow/demo.html",
-		"oF": 0
-		},
-	"/wow/dist/wow.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/wow/dist/wow-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/wow/dist/wow.min.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/wow/dist/wow.min-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/wow/Gruntfile.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/wow/Gruntfile-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/wow/LICENSE-MIT": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/wow/LICENSE-MIT",
-		"oF": 0
-		},
-	"/wow/package.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "/wow/package-min.json",
-		"oF": 0,
-		"oO": 0,
-		"oS": 1
-		},
-	"/wow/README.md": {
-		"cB": 0,
-		"cS": 0,
-		"eF": 1,
-		"eL": 1,
-		"ema": 1,
-		"eSQ": 1,
-		"ft": 4096,
-		"oA": 0,
-		"oAP": "/wow/README.html",
-		"oF": 0,
-		"oFM": 0,
-		"oS": 0,
-		"pHT": 0,
-		"pME": 1,
-		"rFN": 0,
-		"uCM": 0
-		},
-	"/wow/spec/coffeescripts/helpers/SpecHelper.coffee": {
-		"ft": 32,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/wow/spec/coffeescripts/helpers/SpecHelper.js",
-		"oF": 0,
-		"oS": 0,
-		"sC": 1,
-		"tS": 1
-		},
-	"/wow/spec/coffeescripts/wow-spec.coffee": {
-		"ft": 32,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/wow/spec/coffeescripts/wow-spec.js",
-		"oF": 0,
-		"oS": 0,
-		"sC": 1,
-		"tS": 1
-		},
-	"/wow/spec/javascripts/fixtures/custom.html": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/wow/spec/javascripts/fixtures/custom.html",
-		"oF": 0
-		},
-	"/wow/spec/javascripts/fixtures/simple.html": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/wow/spec/javascripts/fixtures/simple.html",
-		"oF": 0
-		},
-	"/wow/spec/javascripts/helpers/SpecHelper.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/wow/spec/javascripts/helpers/SpecHelper-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/wow/spec/javascripts/libs/jasmine-jquery.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/wow/spec/javascripts/libs/jasmine-jquery-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/wow/spec/javascripts/libs/jquery.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/wow/spec/javascripts/libs/jquery-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/wow/spec/javascripts/wow-spec.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/wow/spec/javascripts/wow-spec-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/wow/src/wow.coffee": {
-		"ft": 32,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/wow/src/wow.js",
-		"oF": 0,
-		"oS": 0,
-		"sC": 1,
-		"tS": 1
 		}
 	},
 "hooks": [
@@ -3001,7 +2552,7 @@
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
-	"alwaysUseExternalServer": 0,
+	"alwaysUseExternalServer": 1,
 	"animateCSSInjections": 1,
 	"autoBuildNewItems": 1,
 	"autoprefixerEnableIEGrid": 0,
@@ -4402,7 +3953,7 @@
 			}
 		},
 	"esLintSourceType": 0,
-	"externalServerAddress": "http://localhost:8888",
+	"externalServerAddress": "http://wbj.com",
 	"gitIgnoreBuildFolder": 1,
 	"hideConfigFile": 0,
 	"jsCheckerReservedNamesString": "",

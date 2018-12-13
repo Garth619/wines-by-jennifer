@@ -1,33 +1,30 @@
-jQuery(document).ready(function(){
+// @codekit-prepend 'slick.min.js'
+
+jQuery(document).ready(function($){
 		
 
-	new WOW().init({
-	  mobile:       false
-	  
-  });	
-  
-  
-  
     
   // Video Overlay
   
   
-  jQuery('.slideshow').click(function(){
+/*
+  $('.slideshow').click(function(){
   	
-  	jQuery('.video_overlay').addClass('open');
+  	$('.video_overlay').addClass('open');
   	
   	
   });
   
   
-  jQuery('span.video_close').click(function(){
+  $('span.video_close').click(function(){
   	
-  	jQuery('.video_overlay').removeClass('open');
+  	$('.video_overlay').removeClass('open');
   	
-  	jQuery('#youtube_player')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*'); 
+  	$('#youtube_player')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*'); 
   	
   	
   });
+*/
                                                
   
   
@@ -35,9 +32,9 @@ jQuery(document).ready(function(){
   
   
   
-  jQuery('.mysee_more').click(function(){
+  $('.mysee_more').click(function(){
 	  
-	  jQuery('.years_list').slideDown();
+	  $('.years_list').slideDown();
 	  
 	 });
 	 
@@ -45,9 +42,9 @@ jQuery(document).ready(function(){
 	 
 	 
 	 
-  jQuery('.mysee_more_artists').click(function(){
+  $('.mysee_more_artists').click(function(){
 	  
-	  jQuery('.artist_list').slideDown();
+	  $('.artist_list').slideDown();
 	  
 	 });
 	 
@@ -55,17 +52,17 @@ jQuery(document).ready(function(){
 	 
 	 
 	 
-	 jQuery('.mysee_more_tasting').click(function(){
+	 $('.mysee_more_tasting').click(function(){
 	  
-	  jQuery('.tasting_drop').slideDown();
+	  $('.tasting_drop').slideDown();
 	  
 	 });
 	 
 	 
 	 
-	 jQuery('a.tasting_title').click(function(){
+	 $('a.tasting_title').click(function(){
 	  
-	  jQuery(this).next('.sub_tasting_list').slideToggle(200);
+	  $(this).next('.sub_tasting_list').slideToggle(200);
 	  
 	 });
   
@@ -73,15 +70,15 @@ jQuery(document).ready(function(){
   // Search Overlay
   
   
-  jQuery('.mysearchicon').click(function(){
+  $('.mysearchicon').click(function(){
 	  
-	  jQuery('.search_overlay').slideDown();
+	  $('.search_overlay').slideDown();
 	  
   });
   
-  jQuery('.mysearchclose').click(function(){
+  $('.mysearchclose').click(function(){
 	  
-	  jQuery('.search_overlay').slideUp();
+	  $('.search_overlay').slideUp();
 	  
   });
   
@@ -89,26 +86,26 @@ jQuery(document).ready(function(){
   // Mobile Menu
   
   
-  jQuery('.sign_in_wrapper').click(function(){
+  $('.sign_in_wrapper').click(function(){
 	  
 	  
-	  jQuery('.mymobile_dropdown').slideDown(300);
-	  
-	  
-  });
-  
-  
-  jQuery('.mymobile_dropdown span.myclose').click(function(){
-	  
-	  
-	  jQuery('.mymobile_dropdown').slideUp(300);
+	  $('.mymobile_dropdown').slideDown(300);
 	  
 	  
   });
   
-  jQuery('.mymobile_dropdown li.menu-item-has-children').click(function(){
+  
+  $('.mymobile_dropdown span.myclose').click(function(){
 	  
-	  jQuery(this).find('ul.sub-menu').toggleClass('myopen');
+	  
+	  $('.mymobile_dropdown').slideUp(300);
+	  
+	  
+  });
+  
+  $('.mymobile_dropdown li.menu-item-has-children').click(function(){
+	  
+	  $(this).find('ul.sub-menu').toggleClass('myopen');
 	  
 	  
   });
@@ -118,27 +115,27 @@ jQuery(document).ready(function(){
 	
 	//Overlay
 		
-			jQuery('.newsletter_overlay_content, .privacy_overlay_content, .carousel_content, .review_content').hide();
+			$('.newsletter_overlay_content, .privacy_overlay_content, .carousel_content, .review_content').hide();
 			
-			jQuery('.newsletter_form').hide();
+			$('.newsletter_form').hide();
 		
 		
 			// Newsletter
 		
 		
 /*
-			jQuery('.new_free_gift_inner, .mobile_offer').click(function(){
+			$('.new_free_gift_inner, .mobile_offer').click(function(){
 				
-				jQuery('.overlay').addClass('open');
-				jQuery('.newsletter_overlay_content').fadeIn(50);
+				$('.overlay').addClass('open');
+				$('.newsletter_overlay_content').fadeIn(50);
 				
 			});
 			
 			
-			jQuery('.newsletter_button_wrapper').click(function(){
+			$('.newsletter_button_wrapper').click(function(){
 			
-			jQuery('.cover').fadeOut(500);
-			jQuery('.newsletter_form').delay(1000).fadeIn(500);
+			$('.cover').fadeOut(500);
+			$('.newsletter_form').delay(1000).fadeIn(500);
 			
 			});
 */
@@ -146,10 +143,10 @@ jQuery(document).ready(function(){
 			
 			// Privacy
 			
-			jQuery('li.privacy').click(function(){
+			$('li.privacy').click(function(){
 				
-				jQuery('.overlay').addClass('open');
-				jQuery('.privacy_overlay_content').fadeIn(50);
+				$('.overlay').addClass('open');
+				$('.privacy_overlay_content').fadeIn(50);
 				
 				
 				
@@ -159,11 +156,11 @@ jQuery(document).ready(function(){
 			
 			
 			
-			jQuery('.mobile_menu').click(function(){
+			$('.mobile_menu').click(function(){
 				
-				jQuery('.mobile_menu_overlay').fadeIn();
-				jQuery('.mobile_menu').fadeOut();
-				jQuery('.overlay_close_mobile_menu').fadeIn();
+				$('.mobile_menu_overlay').fadeIn();
+				$('.mobile_menu').fadeOut();
+				$('.overlay_close_mobile_menu').fadeIn();
 				
 				
 			});
@@ -172,10 +169,10 @@ jQuery(document).ready(function(){
 			
 			// Leave a Review
 			
-			jQuery('.green_bar, .review_icons').click(function(){
+			$('.green_bar, .review_icons').click(function(){
 				
-				jQuery('.overlay').addClass('open');
-				jQuery('.review_content').fadeIn(50);
+				$('.overlay').addClass('open');
+				$('.review_content').fadeIn(50);
 				
 				
 				
@@ -185,25 +182,25 @@ jQuery(document).ready(function(){
 			// Carousel
 			
 			
-			jQuery('.slider-nav img.car_img').click(function(){
+			$('.slider-nav img.car_img').click(function(){
 				
-				jQuery('.overlay_carousel').addClass('open');
-				jQuery('.carousel_content').fadeIn(50);
+				$('.overlay_carousel').addClass('open');
+				$('.carousel_content').fadeIn(50);
 				
 			});
 			
 			
 			//
 			
-			jQuery('.overlay_close').click(function(){
+			$('.overlay_close').click(function(){
 				
-				jQuery('.overlay').removeClass('open');
-				jQuery('.overlay_carousel').removeClass('open');
-				jQuery('.newsletter_overlay_content, .privacy_overlay_content, .carousel_content, .review_content').fadeOut(400);
+				$('.overlay').removeClass('open');
+				$('.overlay_carousel').removeClass('open');
+				$('.newsletter_overlay_content, .privacy_overlay_content, .carousel_content, .review_content').fadeOut(400);
 				
 				
-				jQuery('.newsletter_form').fadeOut(500);
-				jQuery('.cover').delay(1000).fadeIn(500);
+				$('.newsletter_form').fadeOut(500);
+				$('.cover').delay(1000).fadeIn(500);
 				
 			});
 			
@@ -211,10 +208,10 @@ jQuery(document).ready(function(){
 		// Mobile CLose 
 		
 		
-		jQuery('.overlay_close_mobile_menu').click(function(){
+		$('.overlay_close_mobile_menu').click(function(){
 		
-			jQuery('.mobile_menu').fadeIn();
-			jQuery('.overlay_close_mobile_menu, .mobile_menu_overlay').fadeOut();
+			$('.mobile_menu').fadeIn();
+			$('.overlay_close_mobile_menu, .mobile_menu_overlay').fadeOut();
 		
 		});
 		
@@ -222,10 +219,10 @@ jQuery(document).ready(function(){
 		
 		
 /*
-		jQuery('.question').click(function(){
+		$('.question').click(function(){
 			
-			jQuery(this).next('.answer').slideToggle(200);
-			jQuery(this).toggleClass('open');
+			$(this).next('.answer').slideToggle(200);
+			$(this).toggleClass('open');
 			
 		});
 */
@@ -234,9 +231,9 @@ jQuery(document).ready(function(){
 		// Back to Top
 		
 		
-		jQuery('.backtotop').click(function(){
+		$('.backtotop').click(function(){
 				
-			jQuery('html, body').animate({ scrollTop: 0 }, 'slow');
+			$('html, body').animate({ scrollTop: 0 }, 'slow');
 				
 		});
 		
@@ -245,63 +242,28 @@ jQuery(document).ready(function(){
 		// List View / Grid view
 		
 		
-		jQuery('.post_list').click(function(){
+		$('.post_list').click(function(){
 			
-			jQuery('.content_container').removeClass('grid_view');
-			jQuery(this).addClass('active');
-			jQuery('.post_grid').removeClass('active');
-			
-		});
-		
-		jQuery('.post_grid').click(function(){
-			
-			jQuery('.content_container').addClass('grid_view');
-			jQuery(this).addClass('active');
-			jQuery('.post_list').removeClass('active');
-			
+			$('.content_container').removeClass('grid_view');
+			$(this).addClass('active');
+			$('.post_grid').removeClass('active');
 			
 		});
 		
+		$('.post_grid').click(function(){
+			
+			$('.content_container').addClass('grid_view');
+			$(this).addClass('active');
+			$('.post_list').removeClass('active');
+			
+			
+		});
+		
 
 		
 		
 
 		
-
-		
-
-/*
-
-    jQuery(".single_bio_wrapper").each(function(e) {
-        if (e != 0)
-            jQuery(this).hide();
-    });
-*/
-
-// stackoverflow.com/questions/17064433/show-hide-divs-using-next-previous-button-using-jquery 
-/*
-    
-    jQuery("#next").click(function(){
-        if (jQuery(".single_bio_wrapper:visible").next().length != 0)
-            jQuery(".single_bio_wrapper:visible").next().show().prev().hide();
-        else {
-            jQuery(".single_bio_wrapper:visible").hide();
-            jQuery(".single_bio_wrapper:first").show();
-        }
-        return false;
-    });
-
-    jQuery("#prev").click(function(){
-        if (jQuery(".single_bio_wrapper:visible").prev().length != 0)
-            jQuery(".single_bio_wrapper:visible").prev().show().next().hide();
-        else {
-            jQuery(".single_bio_wrapper:visible").hide();
-            jQuery(".single_bio_wrapper:last").show();
-        }
-        return false;
-    });
-*/
-
 
 
 		
@@ -311,11 +273,21 @@ jQuery(document).ready(function(){
 
 // Slick
 
+$('.slideshow').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed:4000,
+  fade:true,
+  //prevArrow: ".my_testimonials .myprev",
+  //nextArrow: ".my_testimonials .mynext",
+  arrows: false
+  
+});
 
 
 
-
-jQuery('.testimonials_slider').slick({
+$('.testimonials_slider').slick({
   slidesToShow: 1,
   slidesToScroll: 1,
   prevArrow: ".my_testimonials .myprev",
@@ -325,7 +297,7 @@ jQuery('.testimonials_slider').slick({
 });
 
 
-jQuery('.blog_slider').slick({
+$('.blog_slider').slick({
   slidesToShow: 1,
   slidesToScroll: 1,
   prevArrow: ".my_blog .myprev",
@@ -337,7 +309,7 @@ jQuery('.blog_slider').slick({
 
 
 
-jQuery('.event_slider').slick({
+$('.event_slider').slick({
   slidesToShow: 1,
   slidesToScroll: 1,
   prevArrow: ".new_events_wrapper .myprev",
@@ -348,7 +320,7 @@ jQuery('.event_slider').slick({
 
 
     
-jQuery('.slider-for').slick({
+$('.slider-for').slick({
   slidesToShow: 1,
   slidesToScroll: 1,
   lazyLoad: 'ondemand',
@@ -357,7 +329,7 @@ jQuery('.slider-for').slick({
   swipe: true,
   asNavFor: '.slider-nav'
 });
-jQuery('.slider-nav').slick({
+$('.slider-nav').slick({
    slidesToShow: 7,
         slidesToScroll: 7,
   lazyLoad: 'ondemand',
@@ -418,7 +390,7 @@ jQuery('.slider-nav').slick({
 
 // Press
 
-jQuery('.press_slider').slick({
+$('.press_slider').slick({
   slidesToShow: 1,
   slidesToScroll: 1,
   prevArrow: ".press_slider_wrapper .back_button",

@@ -58,29 +58,14 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 
 	?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>?v=6" />
+
 <link href='https://fonts.googleapis.com/css?family=Cinzel:400,700|Lato:400,400italic' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/animate.css">
+
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/slick/slick/slick.css"/>
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/slick/slick/slick-theme.css"/>
 
-<?php
-	/*
-	 * We add some JavaScript to pages with the comment form
-	 * to support sites with threaded comments (when in use).
-	 */
-	if ( is_singular() && get_option( 'thread_comments' ) )
-		wp_enqueue_script( 'comment-reply' );
 
-	/*
-	 * Always have wp_head() just before the closing </head>
-	 * tag of your theme, or you will break many plugins, which
-	 * generally use this hook to add elements to <head> such
-	 * as styles, scripts, and meta tags.
-	 */
-	wp_head();
-?>
+<?php wp_head(); ?>
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -187,12 +172,12 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 			
 			<div class="new_free_gift">
 				
-				<a class="" href="<?php bloginfo('url');?>/newsletter-page">
+				
 					
 					<img src="<?php bloginfo('template_directory');?>/images/free-gift.jpg"/>
 					
 					
-				</a>
+			
 				
 			</div><!-- new_free_gift -->
 			

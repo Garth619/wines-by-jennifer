@@ -28,26 +28,17 @@
 				<div class="press_slider">
 					
 					
-					<?php if(get_field('press_logos')): ?>
+					<?php if(get_field('press_logos_new')): ?>
 					 
-						<?php while(has_sub_field('press_logos')): ?>
+						<?php while(has_sub_field('press_logos_new')): ?>
 						
-						
-						
-						<?php $imageID = get_sub_field('logo_image'); ?>
-						<?php $alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true); ?>
-						<?php $logo_one = wp_get_attachment_image_src(get_sub_field('logo_image'), 'presslogos'); ?>
-						
-					 
-								<div class="single_slide">
-						
-									<a href="<?php the_field('press_page_link');?>"><img alt="<?php echo $alt_text; ?>" src="<?php echo $logo_one[0]; ?>"/></a>
-						
-								</div><!-- single_slide -->
+							<div class="single_slide">
+								
+								<?php $press_logo = get_sub_field( 'press_logo' ); ?>
+		
+									<a href="<?php the_field('press_page_link');?>"><img src="<?php echo $press_logo['url']; ?>" alt="<?php echo $press_logo['alt']; ?>" /></a>
+							</div><!-- single_slide -->
 							
-							
-						
-					    
 						<?php endwhile; ?>
 					 
 					<?php endif; ?>
@@ -178,37 +169,13 @@ Cart (0) | Search
 	
 	<span class="overlay_close">Close X</span>
 	<div class="carousel_content">
-		
-<!--
-		<div class="slider-for">
-			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p1.jpg"/></div>
-			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p2.jpg"/></div>
-			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p3.jpg"/></div>
-			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p4.jpg"/></div>
-			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p5.jpg"/></div>
-			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p6.jpg"/></div>
-			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p7.jpg"/></div>
-			<div><img class="car_img" data-lazy="<?php bloginfo('template_directory');?>/images/p8.jpg"/></div>
- 		</div>
--->
-		
+
 		
 		</div><!-- carousel_content -->
 		
 </div><!-- overlay_inner -->
 	
 </div><!-- overlay_carousel -->
-
-
-
-
-
-		
-		
-			
-		
-
-
 
 
 
@@ -230,22 +197,14 @@ Cart (0) | Search
 
 	
 <?php wp_footer(); ?>
-<script type="text/javascript" src="<?php bloginfo('template_directory');?>/cycle2.js"></script>
-<script src="<?php bloginfo('template_directory');?>/wow/dist/wow.min.js"></script>
-<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="<?php bloginfo('template_directory');?>/slick/slick/slick.min.js"></script>
-<script type="text/javascript" src="<?php bloginfo('template_directory');?>/js/custom-min.js"></script>
+
+
 
 <?php if(is_page_template( 'page-meettheteam.php' )):?>
 
 <script type="text/javascript">
 
 jQuery(document).ready(function(){
-
-
-
-
-
 
 
 	<?php if(get_field('testimonials')): ?>
@@ -290,25 +249,6 @@ jQuery(document).ready(function(){
 					
 
 
-
-
-
-
-		
-		
-		  
-  
-  
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	
 			<?php if(get_field('meet_the_team')): ?>
 			 

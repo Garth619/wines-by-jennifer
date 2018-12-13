@@ -1,16 +1,6 @@
 <?php
 /**
- * Template Name: Main Page
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
- *
- * @package WordPress
- * @subpackage Twenty_Ten
- * @since Twenty Ten 1.0
- */
+ * Template Name: Main Page */
 
 get_header(); ?>
 
@@ -18,16 +8,14 @@ get_header(); ?>
 	<div class="main_top">
 		
 		<div class="desktop_testimomials">
+			
 			<div class="testimonial_top_half">
-				
 				
 				<div class="testi_scroll">
 					
 					<?php if(get_field('testimonials')): ?>
 					
-							
-						 
-							<?php while(has_sub_field('testimonials')): ?>
+						<?php while(has_sub_field('testimonials')): ?>
 						 
 									<div class="new_single_testimonial">
 							
@@ -88,7 +76,8 @@ get_header(); ?>
 			
 			</div><!-- testimonial_top_half -->
 			<div class="testimonial_bottom_half">
-			<div style="margin-bottom:5px" class="divider"></div><!-- divider -->
+		
+				<div style="margin-bottom:5px" class="divider"></div><!-- divider -->
 			
 				<div class="review_icons">
 						
@@ -118,23 +107,35 @@ get_header(); ?>
 			
 		
 		
-			<div class="slideshow">
+			<div class="slideshow new_slideshow">
 				
-				
-				
-									
-							<?php $imageID = get_field('video_poster_image'); ?>
-							<?php $menu_one = wp_get_attachment_image_src(get_field('video_poster_image'), 'mainslides'); ?>
-						
+				<?php if(get_field('slideshow')): ?>
 				 
-							<div class="slide" style="background:url(<?php echo $menu_one[0]; ?>) top center no-repeat;background-size:cover;"></div><!-- slide -->
-					
-					
-				    
+					<?php while(has_sub_field('slideshow')): ?>
+				 
+						<div class="single_slide">
+								
+							<?php $slide_image = get_sub_field( 'slide_image' ); ?>
+							
+							<?php if(get_sub_field( 'slide_link' )) : ?>
+							
+								<a href="<?php the_sub_field( 'slide_link' ); ?>">
 		
-				
-			
-				
+									<img src="<?php echo $slide_image['url']; ?>" alt="<?php echo $slide_image['alt']; ?>" />
+								
+								</a>
+								
+								<?php else:?>
+								
+									<img src="<?php echo $slide_image['url']; ?>" alt="<?php echo $slide_image['alt']; ?>" />
+								
+							<?php endif;?>
+		
+						</div><!-- single_slide -->
+						
+				   <?php endwhile; ?>
+				 
+				<?php endif; ?>				
 				
 							
 		</div><!-- slideshow -->
