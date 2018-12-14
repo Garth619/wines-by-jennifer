@@ -2372,6 +2372,13 @@
 		"oAP": "/page-tastingroom.php",
 		"oF": 0
 		},
+	"/page-testimonials.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/page-testimonials.php",
+		"oF": 0
+		},
 	"/page-thankyou.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2409,13 +2416,6 @@
 		"oAP": "/rtl-min.css",
 		"oF": 0,
 		"oS": 3
-		},
-	"/screenshot.png.og": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/screenshot.png.og",
-		"oF": 0
 		},
 	"/scss/style.scss": {
 		"aP": 1,
@@ -2529,13 +2529,6 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/tasting-room-list.php",
-		"oF": 0
-		},
-	"/woocommerce.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/woocommerce.php",
 		"oF": 0
 		}
 	},

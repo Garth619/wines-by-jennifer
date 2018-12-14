@@ -169,6 +169,7 @@ jQuery(document).ready(function($){
 			
 			// Leave a Review
 			
+/*
 			$('.green_bar, .review_icons').click(function(){
 				
 				$('.overlay').addClass('open');
@@ -177,6 +178,7 @@ jQuery(document).ready(function($){
 				
 				
 			});
+*/
 			
 			
 			// Carousel

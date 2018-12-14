@@ -13,9 +13,9 @@ get_header(); ?>
 				
 				<div class="testi_scroll">
 					
-					<?php if(get_field('testimonials')): ?>
+					<?php if(get_field('testimonials',317)): ?>
 					
-						<?php while(has_sub_field('testimonials')): ?>
+						<?php while(has_sub_field('testimonials',317)): ?>
 						 
 									<div class="new_single_testimonial">
 							
@@ -94,8 +94,12 @@ get_header(); ?>
 				</div><!-- review_icons -->
 			
 			<div class="green_bar">
+					
+					<a href="<?php the_permalink(328);?>">
 				
-					<img style="margin-right:3px;" src="<?php bloginfo('template_directory');?>/images/stars.png"/>LEAVE A REVIEW<img style="margin-left:3px;" src="<?php bloginfo('template_directory');?>/images/stars.png"/>
+						<img style="margin-right:3px;" src="<?php bloginfo('template_directory');?>/images/stars.png"/>LEAVE A REVIEW<img style="margin-left:3px;" src="<?php bloginfo('template_directory');?>/images/stars.png"/>
+					
+					</a>
 			
 			</div><!-- green_bar -->
 			
