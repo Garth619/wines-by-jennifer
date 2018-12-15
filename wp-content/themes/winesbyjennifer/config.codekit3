@@ -151,13 +151,6 @@
 		"oAP": "/footer.php",
 		"oF": 0
 		},
-	"/functions copy.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/functions copy.php",
-		"oF": 0
-		},
 	"/functions.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -1227,6 +1220,17 @@
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
+		},
+	"/images/arrow.png": {
+		"ft": 32768,
+		"iS": 3521,
+		"oA": 0,
+		"oAP": "/images/arrow.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"/images/beer.jpg": {
 		"ft": 16384,

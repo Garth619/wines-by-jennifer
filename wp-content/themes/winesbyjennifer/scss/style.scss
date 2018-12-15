@@ -588,7 +588,7 @@ textarea {
 		text-decoration: none;
 	}
 	a:hover {
-		text-decoration: underline;
+		//text-decoration: underline;
 	}
 	 
 }
@@ -610,13 +610,14 @@ textarea {
 
 #content a {
 	color:$purple;
-	text-decoration: none;
+	
+	//text-decoration: none;
 }
 
 
 #content a:hover {
 	
-	text-decoration: underline;
+	// text-decoration: underline;
 }
 
 
@@ -2915,6 +2916,25 @@ padding:32px 20px 12px;
 	}
 }
 
+span.meta_date {
+	color:$purple;
+	display: block;
+	margin-bottom:20px;
+}
+
+.blog_content {
+	margin-bottom:25px;
+}
+
+nav.cpt_nav {
+	a {
+		color:$purple;text-decoration: none;
+		display: inline-block;
+		margin-top:30px;
+		margin-right:10px;
+	}
+}
+
 
 @media screen and (min-width: 400px) {
 	
@@ -4109,11 +4129,13 @@ input.gform_button {
 			overflow-y: scroll;
 		}
 		.slideshow {
-			width:56%;
+			/*
+width:56%;
 			float:left;
 // 			position: relative;
 			height:350px;
 			text-align: center;
+*/
 			
 			.slide {
 				width:100%;
@@ -4178,6 +4200,63 @@ input.gform_button {
 		width:100%;
 	}
 	
+	
+	.slideshow_wrapper {
+		position: relative;
+		width: 56%;
+    float: left;
+    height: 350px;
+    text-align: center;
+	}
+	
+	
+	.slideshow_button_wrapper {
+		.slideshow_button {
+			position: absolute;
+			top:0;
+			width:75px;
+			height:100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+			.button_inner {
+				width:35px;
+				height:35px;
+				background: #000;
+				border-radius: 50%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				&:before {
+					content:"";
+					display: block;
+					width:15px;
+					height:15px;
+					background: url('images/arrow.png') top left no-repeat;
+					background-size:contain;
+					position: relative;
+				}
+			}
+		}
+		.slideshow_button_left {
+			left:0;
+			.button_inner {
+				&:before {
+					left:1px;
+				}
+			}
+		}
+		.slideshow_button_right {
+			right:0;
+			.button_inner {
+				&:before {
+					transform: rotate(180deg);
+					right:1px;
+				}
+			}
+		}
+	}
 	
 	
 	.new_single_testimonial {
@@ -4468,7 +4547,7 @@ margin-right:4%;
 			
 		}
 		h1.inthenews_header {
-			padding: 120px 35px 15px;
+			padding: 120px 35px 140px;
 		}
 	}
 }

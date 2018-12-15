@@ -281,9 +281,9 @@ $('.slideshow').slick({
   autoplay: true,
   autoplaySpeed:4000,
   fade:true,
-  //prevArrow: ".my_testimonials .myprev",
-  //nextArrow: ".my_testimonials .mynext",
-  arrows: false
+  prevArrow: ".slideshow_button_left",
+  nextArrow: ".slideshow_button_right",
+  arrows: true
   
 });
 

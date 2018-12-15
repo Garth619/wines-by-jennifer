@@ -37,7 +37,7 @@
 
 	
 	
-		<div class="list_grid_wrapper">
+		<div class="list_grid_wrapper" style="display: none;">
 			
 			<div class="list_wrapper_with_titles">
 			

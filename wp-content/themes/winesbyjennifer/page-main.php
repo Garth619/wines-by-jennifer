@@ -109,7 +109,7 @@ get_header(); ?>
 		</div><!-- desktop_testimomials -->
 		
 			
-		
+		<div class="slideshow_wrapper">
 		
 			<div class="slideshow new_slideshow">
 				
@@ -144,7 +144,23 @@ get_header(); ?>
 							
 		</div><!-- slideshow -->
 		
+		<div class="slideshow_button_wrapper">
+			
+			<div class="slideshow_button slideshow_button_left">
+				
+				<div class="button_inner"></div><!-- button_inner -->
+				
+			</div><!-- slideshow_button -->
+			
+			<div class="slideshow_button slideshow_button_right">
+				
+				<div class="button_inner"></div><!-- button_inner -->
+				
+			</div><!-- slideshow_button -->
+			
+		</div><!-- slideshow_button_wrapper -->
 		
+		</div><!-- slideshow_wrapper -->
 		
 		
     <div class="desktop_events">
