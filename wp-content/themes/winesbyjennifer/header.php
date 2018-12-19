@@ -80,7 +80,7 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 				<span class="offer_title">
 					
 					<a href="<?php bloginfo('url');?>/newsletter-page">
-						<span class="color_change">Free Gift!</span> Five Days to Expert Wine Tasting&nbsp;<sup>&reg;</sup> <span class="color_change">Click&nbsp;Here</span><!-- color_change -->
+						<span class="color_change">Free Gift!</span> Call <a href="">1 (800) 123-1234</a></span><!-- color_change -->
 					</a>
 				</span><!-- offer_title -->
 				

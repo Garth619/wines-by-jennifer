@@ -1,61 +1,6 @@
-<?php
-/**
- * Template for displaying the footer
- *
- * Contains the closing of the id=main div and all content
- * after. Calls sidebar-footer.php for bottom widgets.
- *
- * @package WordPress
- * @subpackage Twenty_Ten
- * @since Twenty Ten 1.0
- */
-?>
 
 </div><!-- main -->
 </div><!-- wrapper -->
-
-
-
-
-<div class="press">
-			
-			<span class="large_header">AS FEATURED IN</span>
-			
-			<div class="press_slider_wrapper">
-				
-				<div class="back_button press_button"><span></span></div><!-- back_button -->
-				
-				<div class="press_slider">
-					
-					
-					<?php if(get_field('press_logos_new')): ?>
-					 
-						<?php while(has_sub_field('press_logos_new')): ?>
-						
-							<div class="single_slide">
-								
-								<?php $press_logo = get_sub_field( 'press_logo' ); ?>
-		
-									<a href="<?php the_field('press_page_link');?>"><img src="<?php echo $press_logo['url']; ?>" alt="<?php echo $press_logo['alt']; ?>" /></a>
-							</div><!-- single_slide -->
-							
-						<?php endwhile; ?>
-					 
-					<?php endif; ?>
-		
-					
-				</div><!-- press_slider -->
-				
-				<div class="next_button press_button"><span></span></div><!-- next_button -->
-				
-			</div><!-- press_slider_wrapper -->
-			
-			
-			
-		</div><!-- press -->
-
-
-
 
 
 

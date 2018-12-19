@@ -1,4 +1,5 @@
 // @codekit-prepend 'slick.min.js'
+// @codekit-prepend 'lity.js'
 
 jQuery(document).ready(function($){
 		
@@ -275,7 +276,7 @@ jQuery(document).ready(function($){
 
 // Slick
 
-$('.slideshow').slick({
+$('.new_slideshow').slick({
   slidesToShow: 1,
   slidesToScroll: 1,
   autoplay: true,
