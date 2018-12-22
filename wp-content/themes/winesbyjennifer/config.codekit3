@@ -1889,6 +1889,16 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/images/play-button.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/images/play-button.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"/images/press/logo1.png": {
 		"ft": 32768,
 		"iS": 4911,
@@ -2994,13 +3004,6 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/page.php",
-		"oF": 0
-		},
-	"/readme.txt": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/readme.txt",
 		"oF": 0
 		},
 	"/rtl.css": {

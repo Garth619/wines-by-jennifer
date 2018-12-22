@@ -17,16 +17,28 @@ get_header(); ?>
 				 
 						<div class="single_slide">
 							
-							<div class="single_slide_overlay"></div><!-- single_slide_overlay -->
+							
 							
 							<?php if(get_sub_field('slide_image_or_slide_video') == 'Slide Video') : ?>
 							
 							<?php $slide_image = get_sub_field( 'slide_image' ); ?>
 							
 								<a href="<?php the_sub_field( 'youtube_link' ); ?>" data-lity>
+									
+									<div class="single_slide_overlay">
+								
+										<div class="play">
+										
+											<?php echo file_get_contents("wp-content/themes/winesbyjennifer/images/play-button.svg"); ?>
+										
+										</div><!-- play -->
+									
+										<span class="slide_text"><?php the_sub_field( 'slide_description' ); ?></span><!-- slide_text -->
+								
+									</div><!-- single_slide_overlay -->
 		
 									<img src="<?php echo $slide_image['url']; ?>" alt="<?php echo $slide_image['alt']; ?>" />
-								
+									
 								</a>
 							
 							<?php endif;?>
@@ -39,12 +51,24 @@ get_header(); ?>
 							<?php if(get_sub_field( 'slide_link' )) : ?>
 							
 								<a href="<?php the_sub_field( 'slide_link' ); ?>">
+									
+									<div class="single_slide_overlay">
+										
+										<span class="slide_text"><?php the_sub_field( 'slide_description' ); ?></span><!-- slide_text -->
+										
+									</div><!-- single_slide_overlay -->
 		
 									<img src="<?php echo $slide_image['url']; ?>" alt="<?php echo $slide_image['alt']; ?>" />
 								
 								</a>
 								
 								<?php else:?>
+								
+									<div class="single_slide_overlay">
+										
+										<span class="slide_text"><?php the_sub_field( 'slide_description' ); ?></span><!-- slide_text -->
+										
+									</div><!-- single_slide_overlay -->
 								
 									<img src="<?php echo $slide_image['url']; ?>" alt="<?php echo $slide_image['alt']; ?>" />
 								
@@ -124,6 +148,14 @@ get_header(); ?>
 			
 			
 		</div><!-- press -->
+		
+		
+		<div class="new_testimonials_wrapper">
+			
+			
+			
+			
+		</div><!-- new_testimonials_wrapper -->
 
 
 

@@ -79,9 +79,8 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 				
 				<span class="offer_title">
 					
-					<a href="<?php bloginfo('url');?>/newsletter-page">
-						<span class="color_change">Free Gift!</span> Call <a href="">1 (800) 123-1234</a></span><!-- color_change -->
-					</a>
+					<span class="color_change">Free Gift!</span> Call <a href="tel:1 (800) 123-1234">1 (800) 123-1234</a></span><!-- color_change -->
+					
 				</span><!-- offer_title -->
 				
 			</div><!-- mobile_offer -->
@@ -193,7 +192,7 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 				
 				<div class="header_right_inner">
 					
-					<span class="new_cart"><img class="new_cart" src="<?php bloginfo('template_directory');?>/images/new-cart.png"/> Shopping Cart | LOGIN </span>
+					<span class="new_cart"><img class="new_cart" src="<?php bloginfo('template_directory');?>/images/new-cart.png"/> (0) | LOGIN </span>
 					
 					<div class="search_form"><?php get_search_form(); ?></div><!-- search_form -->
 					

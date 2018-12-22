@@ -282,10 +282,10 @@ $('.new_slideshow').slick({
   autoplay: true,
   autoplaySpeed:4000,
   fade:true,
+  dots:true,
   prevArrow: ".slideshow_button_left",
   nextArrow: ".slideshow_button_right",
   arrows: true
-  
 });
 
 
@@ -400,53 +400,37 @@ $('.press_slider').slick({
   nextArrow: ".press_slider_wrapper .next_button",
   arrows: true,
   mobileFirst:true,
-   variableWidth: true,
-   centerMode: true,
+  
    
-  responsive: [
+
+   responsive: [
      {
       breakpoint: 615,
       settings: {
         slidesToShow: 2,
         slidesToScroll: 2,
-        prevArrow: ".press_slider_wrapper .back_button",
-				nextArrow: ".press_slider_wrapper .next_button",
-				arrows: true,
+        
      }
     },
     {
       breakpoint: 800,
       settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        prevArrow: ".press_slider_wrapper .back_button",
-				nextArrow: ".press_slider_wrapper .next_button",
-				arrows: true,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        
      }
     },
     {
-      breakpoint: 1040,
+      breakpoint: 1000,
       settings: {
         slidesToShow: 4,
         slidesToScroll: 4,
-        prevArrow: ".press_slider_wrapper .back_button",
-				nextArrow: ".press_slider_wrapper .next_button",
-				arrows: true,
-     }
-    },
-    {
-      breakpoint: 1204,
-      settings: {
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        prevArrow: ".press_slider_wrapper .back_button",
-				nextArrow: ".press_slider_wrapper .next_button",
-				arrows: true,
+        //centerMode: true,
+				variableWidth: true,
      }
     }
- 
-  ]
-});
+   ]
+	});
 
 
 		

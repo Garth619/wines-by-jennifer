@@ -131,7 +131,7 @@ Cart (0) | Search
 		<span class="video_close">X</span><!-- close -->
 		
 		
-		<div class='embed-container'><iframe id="youtube_player" src='https://www.youtube.com/embed/<?php the_field('youtube_video_link');?>?enablejsapi=1&version=3&playerapiid=ytplayer' frameborder='0' allowfullscreen></iframe></div>
+		
 		
 		
 	</div><!-- video_overlay_inner_wrapper -->
