@@ -37,20 +37,6 @@
 		"oAP": "/archive.php",
 		"oF": 0
 		},
-	"/attachment.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/attachment.php",
-		"oF": 0
-		},
-	"/author.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/author.php",
-		"oF": 0
-		},
 	"/banner-grid.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -92,43 +78,6 @@
 		"oA": 0,
 		"oAP": "/category.php",
 		"oF": 0
-		},
-	"/comments.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/comments.php",
-		"oF": 0
-		},
-	"/cycle2.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/cycle2-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/editor-style-rtl.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/editor-style-rtl-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/editor-style.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/editor-style-min.css",
-		"oF": 0,
-		"oS": 3
 		},
 	"/featured-artist-list.php": {
 		"cB": 0,
@@ -3016,16 +2965,6 @@
 		"oAP": "/page.php",
 		"oF": 0
 		},
-	"/rtl.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/rtl-min.css",
-		"oF": 0,
-		"oS": 3
-		},
 	"/scss/style.scss": {
 		"aP": 1,
 		"bl": 0,
@@ -3124,13 +3063,6 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/style.css.map",
-		"oF": 0
-		},
-	"/tag.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/tag.php",
 		"oF": 0
 		},
 	"/tasting-room-list.php": {

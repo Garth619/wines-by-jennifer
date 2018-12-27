@@ -87,16 +87,5 @@ get_header(); ?>
 
 </div><!-- club three -->
 
-	
-	
-	
 
-		
-			
-	<div class="box_wrapper inner wow fadeIn" data-wow-delay="0.2s">
-		
-		<?php include('boxes.php');?>
-
-	</div><!-- box_wrapper -->
-	
 <?php get_footer(); ?>
