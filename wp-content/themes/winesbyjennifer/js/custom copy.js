@@ -293,14 +293,8 @@ $('.new_slideshow').slick({
 $('.new_test_slideshow').slick({
   slidesToShow: 1,
   slidesToScroll: 1,
-  adaptiveHeight:true,
-  fade:true,
-  // autoplay: true,
-  // autoplaySpeed:4000,
-  fade:true,
-  dots:false,
-  prevArrow: ".test_button_left",
-  nextArrow: ".test_button_right",
+  //prevArrow: ".my_testimonials .myprev",
+  //nextArrow: ".my_testimonials .mynext",
   arrows: true
   
 });

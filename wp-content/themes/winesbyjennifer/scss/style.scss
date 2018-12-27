@@ -459,7 +459,7 @@ text-shadow: 1px 1px 1px rgba(0,0,0,0.05);
 /* Dots */
 .slick-dotted.slick-slider
 {
-    margin-bottom: 0px;
+    //margin-bottom: 0px;
 }
 
 .slick-dots
@@ -2222,6 +2222,7 @@ ul.sub-menu {
 // 	border-bottom: 2px solid #fff;
 }
 
+/*
 .slider-nav img.car_img {
 	width:175px;
 	border-right:1px #fff solid !important;
@@ -2241,6 +2242,7 @@ ul.sub-menu {
 .slick-slider {
     margin-bottom: 0px !important;
 }
+*/
 
 /* Meet the team */
 
@@ -3288,10 +3290,82 @@ nav.cpt_nav {
 	
 	.new_testimonials_wrapper {
 		width:100%;
-		height:300px;
-		background: red;
-		display: none;
+		min-height: 280px;
+		background: #fff;
+		border-top:1px solid #f1f1f1;
+		padding:38px 0px 30px;
+		span.large_header {
+			color: #8c2555;
+			text-align: center;
+			font-family: $cinzel;
+			font-size: 25px;
+			font-weight: bold;
+			display: block;
+			text-transform: uppercase;
+		}
 	}
+	
+	
+	.new_test_slideshow_wrapper {
+		margin:25px auto 0;
+		display: flex;
+		justify-content: space-between;
+		.new_test_button_wrapper {
+			width:20px;
+			margin:35px 0 0;
+			cursor: pointer;
+			span.test_button {
+				display: block;
+				border-top: 10px solid transparent;
+				border-bottom: 10px solid transparent;
+				border-right: 10px solid #8c2555;
+			}
+			span.test_button_right {
+				transform: rotate(-180deg);
+			}
+		}
+	}
+	
+	
+	
+	.new_test_slideshow {
+		text-align: center;
+		max-width:700px;
+		width:calc(100% - 75px);
+	}
+	
+	.new_test_slide {
+		span {
+			display: block;
+		}
+		span.new_test_content {
+			font-size:20px;
+			line-height: 24px;
+			font-style: italic;
+		}
+		span.new_name {
+			color:$purple;
+			font-size: 19px;
+			display: block;
+			margin:20px 0 0;
+		}
+	}
+
+a.review_button {
+	display:block;
+	background: $purple;
+	color:#fff;
+	text-transform: uppercase;
+	//font-family: $cinzel;
+	text-decoration: none;
+	letter-spacing: 0.05em;
+	margin:40px auto 0;
+	text-align: center;
+	max-width:200px;
+	padding:13px 0;
+}
+
+
 
 
 @media screen and (min-width: 400px) {
@@ -3770,6 +3844,24 @@ body.single .inner_banner .banner_overlay a {
 	
 	
 	
+	
+	
+	.new_testimonials_wrapper {
+		border:none;
+		margin:25px 0 0;
+		padding-left:30px;
+		padding-right:30px;
+		box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
+	}
+	
+	
+	a.review_button {
+    margin: 41px auto 13px;
+  }
+	
+	
+	
+	
 .new_slideshow {
 	height:520px;
 	.single_slide {
@@ -3809,7 +3901,7 @@ body.single .inner_banner .banner_overlay a {
 
 
 .press {
-	padding:30px 30px 0;
+	padding:40px 30px 10px;
 	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
 	span.large_header {
 		

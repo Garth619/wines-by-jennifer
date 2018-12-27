@@ -152,11 +152,46 @@ get_header(); ?>
 		
 		<div class="new_testimonials_wrapper">
 			
+			<span class="large_header">Testimonials</span><!-- large_header -->
 			
+			<div class="new_test_slideshow_wrapper">
+				
+				<div class="new_test_button_wrapper">
+				
+					<span class="test_button_left test_button"></span><!-- slideshow_button_left -->
+				
+				</div><!-- new_test_button_wrapper -->
 			
+				<div class="new_test_slideshow">
 			
+					<?php if(get_field('testimonials')): ?>
+					
+						<?php while(has_sub_field('testimonials')): ?>
+						 
+							<div class="new_test_slide">
+							
+								<span class="new_test_content"<?php the_sub_field('testimonial_content');?></span><!-- new_test_content -->
+					
+								<span class="new_name">- <?php the_sub_field('testimonial_name_new');?></span>
+							
+							</div><!-- new_test_slide -->
+							
+						<?php endwhile; ?>
+								
+					<?php endif; ?>
+			
+				</div><!-- new_test_slideshow -->
+				
+				<div class="new_test_button_wrapper">
+				
+					<span class="test_button_right test_button"></span><!-- slideshow_button_right -->
+				
+				</div><!-- new_test_button_wrapper -->
+			
+			</div><!-- new_test_slideshow_wrapper -->
+			
+			<a class="review_button" href="<?php the_field( 'leave_a_review_link' ); ?>"><?php the_field( 'leave_a_review_verbiage' ); ?></a><!-- review_button -->
+					
 		</div><!-- new_testimonials_wrapper -->
-
-
 
 <?php get_footer(); ?>
