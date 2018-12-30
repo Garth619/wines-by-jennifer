@@ -2715,9 +2715,10 @@ body.single .inner_banner .banner_overlay a:hover {
 		border-bottom: 1px solid #ccc;
 		padding-bottom:40px;
 		span.wine_title {
-			font-family: $cinzel;
+			font-family: $lato;
+			font-weight: 300;
 			color:$purple;
-			font-size:33px;
+			font-size:27px;
 			display: block;
 			margin-bottom:30px;
 		}
@@ -2772,6 +2773,7 @@ body.single .inner_banner .banner_overlay a:hover {
 		span.myyear {
 			display: block;
 			font-weight: bold;
+			margin-bottom:15px;
 		}
 		a.mymonth {
 			display: block;
@@ -3315,6 +3317,18 @@ span.green {
 	border-bottom:1px solid #dcdcdc;
 	padding-bottom:5px;
 	margin-bottom:30px;
+}
+
+h2.wine {
+	font-family: $cinzel;
+  color: #8c2555;
+  font-size: 33px !important;
+  display: block;
+  margin-bottom: 30px;
+  text-align: center !important;
+}
+a.mymonth {
+	text-decoration: none;
 }
 
 

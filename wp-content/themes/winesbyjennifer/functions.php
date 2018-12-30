@@ -256,3 +256,41 @@ function wpbeginner_numeric_posts_nav() {
     echo '</ul></div></div>' . "\n";
  
 }
+
+
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page(array(
+		'page_title' 	=> 'Lists',
+		'menu_title'	=> 'Lists',
+		'menu_slug' 	=> 'theme-general-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Featured Wine Lists',
+		'menu_title'	=> 'Featured Wine Lists',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Featured Artist List',
+		'menu_title'	=> 'Featured Artist List',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Tasting Room List',
+		'menu_title'	=> 'Tasting Room List',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Header Footer',
+		'menu_title'	=> 'Header Footer',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+	
+}
+
