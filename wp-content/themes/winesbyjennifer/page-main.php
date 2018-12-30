@@ -174,7 +174,13 @@ get_header(); ?>
 							
 								<span class="new_test_content"<?php the_sub_field('testimonial_content');?></span><!-- new_test_content -->
 					
-								<span class="new_name">- <?php the_sub_field('testimonial_name_new');?></span>
+								<span class="new_name"><?php the_sub_field('testimonial_name_new');?></span>
+								
+								<?php if(get_sub_field( 'testimonial_location' )) :?>
+								
+									<span class="new_location"><?php the_sub_field( 'testimonial_location' ); ?></span>
+								
+								<?php endif;?>
 							
 							</div><!-- new_test_slide -->
 							

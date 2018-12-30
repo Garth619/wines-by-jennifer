@@ -3008,18 +3008,25 @@
 		"oAP": "/page-mystore.php",
 		"oF": 0
 		},
+	"/page-newslettertestimonials copy.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/page-newslettertestimonials copy.php",
+		"oF": 0
+		},
+	"/page-newslettertestimonials.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/page-newslettertestimonials.php",
+		"oF": 0
+		},
 	"/page-tastingroom.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/page-tastingroom.php",
-		"oF": 0
-		},
-	"/page-testimonials.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/page-testimonials.php",
 		"oF": 0
 		},
 	"/page-thankyou.php": {

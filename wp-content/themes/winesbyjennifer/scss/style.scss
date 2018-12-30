@@ -3240,7 +3240,7 @@ nav.cpt_nav {
 	
 	.new_test_slideshow {
 		text-align: center;
-		max-width:700px;
+		max-width:600px;
 		width:calc(100% - 75px);
 	}
 	
@@ -3249,15 +3249,24 @@ nav.cpt_nav {
 			display: block;
 		}
 		span.new_test_content {
-			font-size:20px;
+			font-size:19px;
 			line-height: 24px;
 			font-style: italic;
+			p {
+				margin-bottom:20px;
+			}
 		}
 		span.new_name {
 			color:$purple;
 			font-size: 19px;
 			display: block;
 			margin:20px 0 0;
+		}
+		span.new_location {
+			color:$purple;
+			font-size: 19px;
+			display: block;
+			margin:8px 0 0;
 		}
 	}
 
