@@ -56,6 +56,8 @@ get_header(); ?>
 										
 										<span class="slide_text"><?php the_sub_field( 'slide_description' ); ?></span><!-- slide_text -->
 										
+										<span class="learn_more_button" ><?php the_sub_field( 'slide_button_verbiage' ); ?></span><!-- learn_more_button -->	
+																		
 									</div><!-- single_slide_overlay -->
 		
 									<img src="<?php echo $slide_image['url']; ?>" alt="<?php echo $slide_image['alt']; ?>" />

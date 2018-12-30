@@ -3036,6 +3036,13 @@
 		"oAP": "/page-wbjblog.php",
 		"oF": 0
 		},
+	"/page-win.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/page-win.php",
+		"oF": 0
+		},
 	"/page.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -4565,7 +4572,7 @@
 			}
 		},
 	"esLintSourceType": 0,
-	"externalServerAddress": "http://wbj.com",
+	"externalServerAddress": "https://wbj.com",
 	"gitIgnoreBuildFolder": 1,
 	"hideConfigFile": 0,
 	"jsCheckerReservedNamesString": "",
