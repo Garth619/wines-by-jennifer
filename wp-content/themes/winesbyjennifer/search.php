@@ -11,15 +11,10 @@ get_header(); ?>
 
 		<div class="content_container no_banner">
 	
-		<div id="content"
+		<div id="content">
 <?php if ( have_posts() ) : ?>
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'twentyten' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<h1><?php printf( __( 'Search Results for: %s', '' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 				<?php
-				/*
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called loop-search.php and that will be used instead.
-				 */
 				get_template_part( 'loop', 'search' );
 				?>
 <?php else : ?>
@@ -36,10 +31,5 @@ get_header(); ?>
 			</div>
 		</div>
 
-<div class="box_wrapper inner wow fadeIn" data-wow-delay="0.2s">
-		
-		<?php include('boxes.php');?>
-
-	</div><!-- box_wrapper -->
 
 <?php get_footer(); ?>

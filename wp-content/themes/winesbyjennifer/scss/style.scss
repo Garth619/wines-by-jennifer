@@ -2211,7 +2211,7 @@ ul.sub-menu {
 	position: relative;
 	padding:35px 20px;
 	background: #fff;
-	
+	min-height:500px;
 	
   
 }
@@ -3366,6 +3366,28 @@ a.review_button {
 }
 
 
+.leavereview_content {
+	text-align: center;
+	max-width:700px;
+	margin:0 auto;
+}
+
+.locations_page {
+	iframe {
+		margin:25px 0;
+	}
+}
+
+.key {
+	margin-bottom:20px;
+	span.key_row {
+		display: block;
+	}
+}
+
+span.green {
+	color:$green;
+}
 
 
 @media screen and (min-width: 400px) {

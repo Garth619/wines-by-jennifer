@@ -1191,6 +1191,16 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"/images/avail.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/images/avail.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"/images/beer.jpg": {
 		"ft": 16384,
 		"iS": 38130,
@@ -1389,6 +1399,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/images/fb-banner.png": {
+		"ft": 32768,
+		"iS": 6193,
+		"oA": 0,
+		"oAP": "/images/fb-banner.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
 	"/images/fb.png": {
 		"ft": 32768,
 		"iS": 1286,
@@ -1446,6 +1467,17 @@
 		"iS": 8783,
 		"oA": 0,
 		"oAP": "/images/gift_bg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/images/google-banner.png": {
+		"ft": 32768,
+		"iS": 5961,
+		"oA": 0,
+		"oAP": "/images/google-banner.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -2199,6 +2231,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/images/yelp-banner.png": {
+		"ft": 32768,
+		"iS": 7715,
+		"oA": 0,
+		"oAP": "/images/yelp-banner.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/images/yelp.jpg": {
 		"ft": 16384,
 		"iS": 2245,
@@ -2921,6 +2964,20 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/page-inthenews.php",
+		"oF": 0
+		},
+	"/page-leavereview.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/page-leavereview.php",
+		"oF": 0
+		},
+	"/page-locations.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/page-locations.php",
 		"oF": 0
 		},
 	"/page-main copy.php": {
