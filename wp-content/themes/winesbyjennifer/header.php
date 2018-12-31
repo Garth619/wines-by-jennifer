@@ -1,37 +1,4 @@
-<?php if(is_page_template('page-inthenews.php')):?>
-
-<?php
-session_start();
- 
-if(!empty($_GET['display'])){
-$_SESSION['display'] = htmlspecialchars($_GET['display']);
-}
- 
-//If there's a session and it has a value for "campaign" but it's not in the
-//url, then this must be a successive page visit, so direct the user on to
-//the same page but with the url variable attached:
- 
-if(!empty($_SESSION['display']) && empty($_GET['display'])){
-header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display']);
-}
-
- 
-?>
-
-
-<?php endif;?>
-
-<?php
-/**
- * Header template for our theme
- *
- * Displays all of the <head> section and everything up till <div id="main">.
- *
- * @package WordPress
- * @subpackage Twenty_Ten
- * @since Twenty Ten 1.0
- */
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
@@ -65,6 +32,9 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 
 
 <?php wp_head(); ?>
+
+
+<?php the_field( 'header_scripts','option'); ?>
 
 </head>
 
@@ -150,9 +120,6 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 			
 			
 		</div><!-- search_overlay -->
-	
-		
-		<div class="bg_bug"></div><!-- bg_bug -->
 		
 		
 		<?php if(!is_page_template('page-main.php')) : ?>
@@ -200,31 +167,31 @@ header('location:' . $_SERVER['REQUEST_URI'] . '?display=' . $_SESSION['display'
 						
 						<div class="single_social_icon">
 							
-							<a href="<?php the_field('facebook_url','option');?>" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/new-fb.png"/></a>
+							<a href="<?php the_field('facebook_link','option');?>" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/new-fb.png"/></a>
 							
 						</div><!-- single_social_icon -->
 						
 						<div class="single_social_icon">
 							
-							<a href="<?php the_field('googler_plus_url','option');?>" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/new-g.png"/></a>
+							<a href="<?php the_field('google_plus_link','option');?>" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/new-g.png"/></a>
 							
 						</div><!-- single_social_icon -->
 						
 						<div class="single_social_icon">
 							
-							<a href="<?php the_field('twitter_url','option');?>" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/new-twitter.png"/></a>
+							<a href="<?php the_field('twitter_link','option');?>" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/new-twitter.png"/></a>
 							
 						</div><!-- single_social_icon -->
 						
 						<div class="single_social_icon">
 							
-							<a href="<?php the_field('instagram_url','option');?>" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/new-instagram.png"/></a>
+							<a href="<?php the_field('instagram_link','option');?>" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/new-instagram.png"/></a>
 							
 						</div><!-- single_social_icon -->
 						
 						<div class="single_social_icon">
 							
-							<a href="<?php the_field('youtube_url','option');?>" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/new-youtube.png"/></a>
+							<a href="<?php the_field('youtube_link','option');?>" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/new-youtube.png"/></a>
 							
 						</div><!-- single_social_icon -->
 						

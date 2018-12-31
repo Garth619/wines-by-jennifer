@@ -59,6 +59,30 @@ get_header(); ?>
 					<?php } ?>
 				
 				</a>
+				
+				<a href="<?php the_field( 'taplister_link' ); ?>" target="_blank">
+					
+					<?php $taplister_banner = get_field( 'taplister_banner' ); ?>
+					
+					<?php if ( $taplister_banner ) { ?>
+					
+					<img src="<?php echo $taplister_banner['url']; ?>" alt="<?php echo $taplister_banner['alt']; ?>" />
+					
+					<?php } ?>
+				
+				</a>
+				
+				<a href="<?php the_field( 'trip_advisor_link' ); ?>" target="_blank">
+					
+					<?php $trip_advisor_banner = get_field( 'trip_advisor_banner' ); ?>
+					
+					<?php if ( $trip_advisor_banner ) { ?>
+					
+					<img src="<?php echo $trip_advisor_banner['url']; ?>" alt="<?php echo $trip_advisor_banner['alt']; ?>" />
+					
+					<?php } ?>
+				
+				</a>
 								
 			</div><!-- leavereview_content -->
 				

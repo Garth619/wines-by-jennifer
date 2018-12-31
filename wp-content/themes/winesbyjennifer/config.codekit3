@@ -1377,6 +1377,17 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/images/countymagazine.jpg": {
+		"ft": 16384,
+		"iS": 74784,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/images/countymagazine.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/images/divider.jpg": {
 		"ft": 16384,
 		"iS": 1163,
@@ -1446,6 +1457,17 @@
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/images/free-gift.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/images/German_Wine_Label.jpg": {
+		"ft": 16384,
+		"iS": 83723,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/images/German_Wine_Label.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -2066,6 +2088,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/images/taplister-banner.png": {
+		"ft": 32768,
+		"iS": 3818,
+		"oA": 0,
+		"oAP": "/images/taplister-banner.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/images/team-test.png": {
 		"ft": 32768,
 		"iS": 2300,
@@ -2143,6 +2176,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/images/tripadvisor-banner.png": {
+		"ft": 32768,
+		"iS": 5493,
+		"oA": 0,
+		"oAP": "/images/tripadvisor-banner.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/images/twitter.png": {
 		"ft": 32768,
 		"iS": 2006,
@@ -2152,6 +2196,17 @@
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
+		"q": 100
+		},
+	"/images/usaorganic.jpg": {
+		"ft": 16384,
+		"iS": 21672,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/images/usaorganic.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"q": 100
 		},
 	"/images/vineyard.jpg": {
@@ -2931,6 +2986,13 @@
 		"oAP": "/page-clubs.php",
 		"oF": 0
 		},
+	"/page-countymagazinepost.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/page-countymagazinepost.php",
+		"oF": 0
+		},
 	"/page-faq.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -3020,6 +3082,20 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/page-newslettertestimonials.php",
+		"oF": 0
+		},
+	"/page-otherpublicationsphp.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/page-otherpublicationsphp.php",
+		"oF": 0
+		},
+	"/page-publications.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/page-publications.php",
 		"oF": 0
 		},
 	"/page-tastingroom.php": {

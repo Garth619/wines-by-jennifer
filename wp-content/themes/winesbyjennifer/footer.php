@@ -144,6 +144,7 @@ Cart (0) | Search
 <?php wp_footer(); ?>
 
 
+<?php the_field( 'footer_script','option'); ?>
 
 <?php if(is_page_template( 'page-meettheteam.php' )):?>
 
