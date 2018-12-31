@@ -17,101 +17,84 @@ get_header(); ?>
 		
 		<div class="publications_inner">
 			
-			<img src="<?php bloginfo('template_directory');?>/images/countymagazine.jpg"/>
 			
-			<p class="publications_intro"><strong>Jennifer is now a contributing author for Platte County Magazine.</strong></p>
-			
-			<div class="single_publication">
+			<?php if(get_field('wbj_publications')): ?>
+			 
+				<?php while(has_sub_field('wbj_publications')): ?>
+			 
+					<?php the_sub_field( 'intro' ); ?>
+					
+					<?php if(get_sub_field('publications')): ?>
+					 
+						<?php while(has_sub_field('publications')): ?>
+					 
+							<div class="single_publication">
 		
-				<span>February/March, 2008</span> - 
-				
-				<a href="">"A Brief History of Wine in America"</a>
+								<span><?php the_sub_field( 'monthyear' ); ?></span> - 
+								
+								<?php $post_object = get_sub_field( 'article_link' ); ?>
+								
+								<?php if ( $post_object ): ?>
+								
+								<?php $post = $post_object; ?>
+								
+								<?php setup_postdata( $post ); ?> 
+									
+									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+								<?php wp_reset_postdata(); ?>
+								
+								<?php endif; ?>
 			
-			</div><!-- single_publication -->
+							</div><!-- single_publication -->
+					    
+						<?php endwhile; ?>
+					 
+					<?php endif; ?>
+			    
+				<?php endwhile; ?>
+			 
+			<?php endif; ?>
 			
-			<div class="single_publication">
-		
-				<span>January, 2008</span> - 
-				
-				<a href="">"How to Make Your Holiday Party a Success with Sparkling Wines"</a>
-			
-			</div><!-- single_publication -->
-			
-			<div class="single_publication">
-		
-				<span>October/November, 2007</span> - 
-				
-				<a href="">"8 Great Wines for Your Thanksgiving Table"</a>
-			
-			</div><!-- single_publication -->
-			
-			<div class="single_publication">
-		
-				<span>August/September, 2007</span> - 
-				
-				<a href="">"Harvest Time in the Vineyards"</a>
-			
-			</div><!-- single_publication -->
-			
-			<div class="single_publication">
-		
-				<span>June/July, 2007 Premiere Issue</span> - 
-				
-				<a href="">"Wines for the Summer Season"</a>
-			
-			</div><!-- single_publication -->
-		
 		</div><!-- publications_inner -->
 		
 		<div class="publications_inner">
 			
-			<p class="publications_intro"><strong>Jennifer is also a contributing author for various other publications. Check back often to keep up with her musings on all things wine:</strong></p>
 			
-			<div class="single_publication">
+			<?php if(get_field('other_publications_repeater')): ?>
+			 
+				<?php while(has_sub_field('other_publications_repeater')): ?>
+			 
+					<?php the_sub_field( 'intro' ); ?>
+					
+					<?php if(get_sub_field('other_publications')): ?>
+					 
+						<?php while(has_sub_field('other_publications')): ?>
+					 
+							<div class="single_publication">
 		
-				<span>February/March, 2008</span> - 
-				
-				<a href="">"A Brief History of Wine in America"</a>
+								<?php $post_object = get_sub_field( 'article_title' ); ?>
+								<?php if ( $post_object ): ?>
+								<?php $post = $post_object; ?>
+								<?php setup_postdata( $post ); ?> 
+									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+								<?php wp_reset_postdata(); ?>
+								<?php endif; ?>
+								
+								<span class="other_pub_description"><?php the_sub_field( 'article_description' ); ?></span><!-- other_pub_description -->
 			
-			</div><!-- single_publication -->
+							</div><!-- single_publication -->
+					    
+						<?php endwhile; ?>
+					 
+					<?php endif; ?>
+			    
+				<?php endwhile; ?>
+			 
+			<?php endif; ?>
 			
-			<div class="single_publication">
-		
-				<span>January, 2008</span> - 
-				
-				<a href="">"How to Make Your Holiday Party a Success with Sparkling Wines"</a>
-			
-			</div><!-- single_publication -->
-			
-			<div class="single_publication">
-		
-				<span>October/November, 2007</span> - 
-				
-				<a href="">"8 Great Wines for Your Thanksgiving Table"</a>
-			
-			</div><!-- single_publication -->
-			
-			<div class="single_publication">
-		
-				<span>August/September, 2007</span> - 
-				
-				<a href="">"Harvest Time in the Vineyards"</a>
-			
-			</div><!-- single_publication -->
-			
-			<div class="single_publication">
-		
-				<span>June/July, 2007 Premiere Issue</span> - 
-				
-				<a href="">"Wines for the Summer Season"</a>
-			
-			</div><!-- single_publication -->
-		
-		</div><!-- publications_inner -->
+			</div><!-- publications_inner -->
 		
 		</div><!-- publications_wrapper -->
-		
-		<?php //get_template_part( 'loop', 'page' );?>
 	
 	</div><!-- content -->
 	
