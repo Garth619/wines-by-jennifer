@@ -1332,12 +1332,11 @@ h3#reply-title {
 	
 	.mymenu_main {
 		background: $green;
-
-display: flex;
-flex-direction: row;
+		display: flex;
+		flex-direction: row;
 		.mymobile_icons_wrapper {
 			width:120px;
-			padding-top: 60px;
+			padding-top: 42px;
 			padding-left: 18px;
 
 			img.icon {
@@ -1362,7 +1361,7 @@ flex-direction: row;
 			.sign_in_wrapper {
 				float:right;
 				padding-right:18px;
-				margin-top: 25px;
+				margin-top: 44px;
 				.mysign_in {
 					color:#fff;
 					text-transform: uppercase;
@@ -1370,7 +1369,7 @@ flex-direction: row;
 					letter-spacing: 0.2px;
 					font-size:14px;
 					margin-bottom:15px;
-					display: block;
+					display: none;
 				}
 				.menu_bars_wrapper {
 					width:53px;
@@ -1389,6 +1388,34 @@ flex-direction: row;
 	
 	
 }
+
+
+.mymenu_main.new_sticky_header {
+	position: fixed;
+	top:0;
+	left:0;
+	width:100%;
+	z-index:100;
+	height:80px;
+	align-items: center;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 400ms ease-in-out;
+	.mymobile_icons_wrapper {
+		padding-top:0;
+	}
+	.my_mobile_menu_wrapper {
+		.sign_in_wrapper {
+			margin:0;
+		}
+	}
+}
+
+.mymenu_main.new_sticky_header.visible {
+	opacity: 1;
+	visibility: visible;
+}
+
 
 
 /* Mobile Nav */
@@ -3442,6 +3469,12 @@ span.other_pub_description {
 	display: block;
 }
 
+
+a.mycart {
+	display: none;
+}
+
+
 @media screen and (min-width: 400px) {
 	
 	
@@ -4087,7 +4120,7 @@ img.aligncenter {
 	
 	.new_free_gift {
 		width:33.3333%;
-		padding:15px 0 0 15px;
+		padding:20px 0 0 15px;
 		img {
 			max-width: 100%;
 			width: 218px;
@@ -4182,6 +4215,7 @@ img.aligncenter {
 				display: block;
 				font-size:15px;
 				text-align: right;
+				display: none;
 				img {
 					margin-right:4px;
 					position: relative;
@@ -4189,7 +4223,7 @@ img.aligncenter {
 				}
 			}
 			.search_form {
-				margin-top:15px;
+				margin-top:10px;
 				input[type="text"] {
 					font-size: 14px;
 					padding:3px 0 3px 8px;

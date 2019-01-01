@@ -93,6 +93,13 @@
 		"oAP": "/featured-wine-featured-list.php",
 		"oF": 0
 		},
+	"/footer copy.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/footer copy.php",
+		"oF": 0
+		},
 	"/footer.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2917,12 +2924,12 @@
 		"sC": 3,
 		"tS": 0
 		},
-	"/js/wow.js": {
+	"/js/waypoints.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
-		"oAP": "/js/wow-min.js",
+		"oA": 1,
+		"oAP": "/js/waypoints-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0

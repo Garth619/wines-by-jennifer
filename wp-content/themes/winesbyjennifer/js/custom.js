@@ -1,32 +1,11 @@
 // @codekit-prepend 'slick.min.js'
 // @codekit-prepend 'lity.js'
+// @codekit-prepend 'waypoints.js'
 
 jQuery(document).ready(function($){
 		
 
-    
-  // Video Overlay
-  
-  
-/*
-  $('.slideshow').click(function(){
-  	
-  	$('.video_overlay').addClass('open');
-  	
-  	
-  });
-  
-  
-  $('span.video_close').click(function(){
-  	
-  	$('.video_overlay').removeClass('open');
-  	
-  	$('#youtube_player')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*'); 
-  	
-  	
-  });
-*/
-                                               
+                                           
   
   
   // Featured Wine Year List
@@ -114,44 +93,7 @@ jQuery(document).ready(function($){
   
 	
 	
-	//Overlay
-		
-			$('.newsletter_overlay_content, .privacy_overlay_content, .carousel_content, .review_content').hide();
-			
-			$('.newsletter_form').hide();
-		
-		
-			// Newsletter
-		
-		
-/*
-			$('.new_free_gift_inner, .mobile_offer').click(function(){
-				
-				$('.overlay').addClass('open');
-				$('.newsletter_overlay_content').fadeIn(50);
-				
-			});
-			
-			
-			$('.newsletter_button_wrapper').click(function(){
-			
-			$('.cover').fadeOut(500);
-			$('.newsletter_form').delay(1000).fadeIn(500);
-			
-			});
-*/
-			
-			
-			// Privacy
-			
-			$('li.privacy').click(function(){
-				
-				$('.overlay').addClass('open');
-				$('.privacy_overlay_content').fadeIn(50);
-				
-				
-				
-			});
+	
 			
 			// Mobile Menu
 			
@@ -168,68 +110,7 @@ jQuery(document).ready(function($){
 			
 			
 			
-			// Leave a Review
-			
-/*
-			$('.green_bar, .review_icons').click(function(){
 				
-				$('.overlay').addClass('open');
-				$('.review_content').fadeIn(50);
-				
-				
-				
-			});
-*/
-			
-			
-			// Carousel
-			
-			
-			$('.slider-nav img.car_img').click(function(){
-				
-				$('.overlay_carousel').addClass('open');
-				$('.carousel_content').fadeIn(50);
-				
-			});
-			
-			
-			//
-			
-			$('.overlay_close').click(function(){
-				
-				$('.overlay').removeClass('open');
-				$('.overlay_carousel').removeClass('open');
-				$('.newsletter_overlay_content, .privacy_overlay_content, .carousel_content, .review_content').fadeOut(400);
-				
-				
-				$('.newsletter_form').fadeOut(500);
-				$('.cover').delay(1000).fadeIn(500);
-				
-			});
-			
-			
-		// Mobile CLose 
-		
-		
-		$('.overlay_close_mobile_menu').click(function(){
-		
-			$('.mobile_menu').fadeIn();
-			$('.overlay_close_mobile_menu, .mobile_menu_overlay').fadeOut();
-		
-		});
-		
-		// Faq
-		
-		
-/*
-		$('.question').click(function(){
-			
-			$(this).next('.answer').slideToggle(200);
-			$(this).toggleClass('open');
-			
-		});
-*/
-		
 		
 		// Back to Top
 		
@@ -245,6 +126,7 @@ jQuery(document).ready(function($){
 		// List View / Grid view
 		
 		
+/*
 		$('.post_list').click(function(){
 			
 			$('.content_container').removeClass('grid_view');
@@ -261,6 +143,7 @@ jQuery(document).ready(function($){
 			
 			
 		});
+*/
 		
 
 		
@@ -437,6 +320,42 @@ $('.press_slider').slick({
     }
    ]
 	});
+	
+	
+	/* Waypoints
+     --------------------------------------------------------------------------------------- */
+
+
+    function createWaypoint(triggerElementId, animatedElement, className, offsetVal, functionName, reverse) {
+      if($('#' + triggerElementId).length) {
+        var waypoint = new Waypoint({
+          element: document.getElementById(triggerElementId),
+          handler: function (direction) {
+            if (direction === 'down') {
+              $(animatedElement).addClass(className);
+
+              if (typeof functionName === 'function') {
+                functionName();
+                this.destroy();
+              }
+
+            } else if (direction === 'up') {
+              if (reverse) {
+                $(animatedElement).removeClass(className);
+              }
+
+            }
+          },
+          offset: offsetVal
+          // Integer or percent
+          // 500 means when element is 500px from the top of the page, the event triggers
+          // 50% means when element is 50% from the top of the page, the event triggers
+        });
+      }
+    }
+
+
+    createWaypoint('main_trigger', '.new_sticky_header', 'visible', -150, null, true);
 
 
 		

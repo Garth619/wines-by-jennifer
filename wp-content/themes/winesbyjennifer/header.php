@@ -59,7 +59,7 @@
 				
 				<div class="mymobile_icons_wrapper">
 					
-					<a href=""><img class="icon" src="<?php bloginfo('template_directory');?>/images/cart.png"/></a>
+					<a href="" class="mycart"><img class="icon" src="<?php bloginfo('template_directory');?>/images/cart.png"/></a>
 					<a href="<?php bloginfo('url');?>/locations"><img class="icon" src="<?php bloginfo('template_directory');?>/images/pin.png"/></a>
 					<img class="icon mysearchicon" src="<?php bloginfo('template_directory');?>/images/search.png"/>
 					
@@ -72,6 +72,43 @@
 						<img src="<?php bloginfo('template_directory');?>/images/logo.jpg"/>
 					
 					</a>
+					
+				</div><!-- mylogo_wrapper -->
+				
+				<div class="my_mobile_menu_wrapper">
+					
+					<div class="sign_in_wrapper">
+					
+						<a class="mysign_in" href="">Sign In</a>
+					
+						<div class="menu_bars_wrapper">
+						
+							<div class="menu_bar"></div><!-- menu_bar -->
+							<div class="menu_bar"></div><!-- menu_bar -->
+							<div class="menu_bar"></div><!-- menu_bar -->
+						
+						</div><!-- menu_bars_wrapper -->
+					
+					</div><!-- sign_in_wrapper -->
+					
+				</div><!-- my_mobile_menu_wrapper -->
+				
+				
+			</div><!-- mymenu_main -->
+			
+			<div class="mymenu_main new_sticky_header">
+				
+				<div class="mymobile_icons_wrapper">
+					
+					<a href="" class="mycart"><img class="icon" src="<?php bloginfo('template_directory');?>/images/cart.png"/></a>
+					<a href="<?php bloginfo('url');?>/locations"><img class="icon" src="<?php bloginfo('template_directory');?>/images/pin.png"/></a>
+					<img class="icon mysearchicon" src="<?php bloginfo('template_directory');?>/images/search.png"/>
+					
+				</div><!-- mymobile_icons_wrapper -->
+				
+				<div class="mylogo_wrapper">
+					
+					
 					
 				</div><!-- mylogo_wrapper -->
 				
@@ -214,11 +251,11 @@
 		<?php if(!is_page_template('page-main.php')) : ?>
 			
 <!-- 			</div> --><!-- inner_page_hide_header -->
-			<div class="main inner">
+			<div id="main_trigger" class="main inner">
 				
 				<?php else: ?>
 				
-				<div class="main">
+				<div id="main_trigger" class="main">
 			
 			<?php endif; ?><!-- hide header on mobile inner pages -->
 		
