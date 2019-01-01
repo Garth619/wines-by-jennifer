@@ -202,35 +202,41 @@
 					
 					<div class="new_social_icons_wrapper">
 						
-						<div class="single_social_icon">
+					
 							
-							<a href="<?php the_field('facebook_link','option');?>" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/new-fb.png"/></a>
+							<a class="facebook" href="<?php the_field('facebook_link','option');?>" target="_blank">
+								
+								<?php echo file_get_contents("wp-content/themes/winesbyjennifer/images/facebook.svg"); ?>
 							
-						</div><!-- single_social_icon -->
+							</a>
+							
 						
-						<div class="single_social_icon">
-							
-							<a href="<?php the_field('google_plus_link','option');?>" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/new-g.png"/></a>
-							
-						</div><!-- single_social_icon -->
 						
-						<div class="single_social_icon">
+					
 							
-							<a href="<?php the_field('twitter_link','option');?>" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/new-twitter.png"/></a>
+							<a class="google" href="<?php the_field('google_plus_link','option');?>" target="_blank">
+								
+								<?php echo file_get_contents("wp-content/themes/winesbyjennifer/images/google-plus.svg"); ?>
 							
-						</div><!-- single_social_icon -->
+							</a>
+							
+					
+							
+							<a class="twitter" href="<?php the_field('twitter_link','option');?>" target="_blank">
+								
+								<?php echo file_get_contents("wp-content/themes/winesbyjennifer/images/twitter.svg"); ?>
+							
+							</a>
+							
+					
+							
+							<a class="youtube" href="<?php the_field('youtube_link','option');?>" target="_blank">
+								
+								<?php echo file_get_contents("wp-content/themes/winesbyjennifer/images/youtube.svg"); ?>
+							
+							</a>
+							
 						
-						<div class="single_social_icon">
-							
-							<a href="<?php the_field('instagram_link','option');?>" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/new-instagram.png"/></a>
-							
-						</div><!-- single_social_icon -->
-						
-						<div class="single_social_icon">
-							
-							<a href="<?php the_field('youtube_link','option');?>" target="_blank"><img src="<?php bloginfo('template_directory');?>/images/new-youtube.png"/></a>
-							
-						</div><!-- single_social_icon -->
 						
 					</div><!-- new_social_icons -->
 					

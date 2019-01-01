@@ -26,6 +26,17 @@
 			<li class="backtotop">Back to Top</li>
 		</ul>
 	</div><!-- footer_col3 -->
+	
+	<div class="mobile_social_icons">
+		
+		<a class="" href="">
+			
+			
+			
+		</a>
+		
+	</div><!-- mobile_social_icons -->
+	
 </div><!-- footer -->
 
 
