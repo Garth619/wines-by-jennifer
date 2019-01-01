@@ -1362,6 +1362,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/images/clams.jpg": {
+		"ft": 16384,
+		"iS": 16044,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/images/clams.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/images/cloth.jpg": {
 		"ft": 16384,
 		"iS": 78044,
@@ -1379,6 +1390,17 @@
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/images/cloth2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/images/cookbook.jpg": {
+		"ft": 16384,
+		"iS": 84392,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/images/cookbook.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -3181,6 +3203,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/page-win.php",
+		"oF": 0
+		},
+	"/page-winerecipe.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/page-winerecipe.php",
 		"oF": 0
 		},
 	"/page.php": {

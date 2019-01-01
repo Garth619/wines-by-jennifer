@@ -133,7 +133,8 @@ get_header(); ?>
 								
 								<?php $press_logo = get_sub_field( 'press_logo' ); ?>
 		
-									<a href="<?php the_field('press_page_link');?>"><img src="<?php echo $press_logo['url']; ?>" alt="<?php echo $press_logo['alt']; ?>" /></a>
+									<img src="<?php echo $press_logo['url']; ?>" alt="<?php echo $press_logo['alt']; ?>" />
+									
 							</div><!-- single_slide -->
 							
 						<?php endwhile; ?>

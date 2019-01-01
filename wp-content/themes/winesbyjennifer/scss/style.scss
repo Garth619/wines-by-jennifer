@@ -800,6 +800,10 @@ textarea {
 	text-align: center;
 }
 
+#content h2.centered {
+	text-align: center;
+}
+
 #content h2 {
 	font-size:21px;
 	line-height: 22px;
@@ -3478,6 +3482,81 @@ a.mycart {
 	display: none;
 }
 
+.new_social_icons_wrapper, .mobile_social_icons {
+		//clear:both;
+		padding-top:15px;
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		a {
+			display: block;
+			height:20px;
+			flex-shrink: 0;
+			svg {
+				width:100%;
+				height:100%;
+				path {
+					fill:$green;
+				}
+			}
+		}
+		a.facebook {
+			flex-basis:17px;
+		}
+		a.google {
+			flex-basis: 31px;
+		}
+		a.twitter {
+			flex-basis: 29px;
+		}
+		a.youtube {
+			flex-basis: 90px;
+		}
+	}
+	
+	.mobile_social_icons {
+		max-width:250px;
+		margin:0 auto;
+		a {
+			svg {
+				path {
+					fill:#fff;
+				}
+			}
+		}
+	}
+	
+	.search_results {
+		padding-bottom:20px;
+		border-bottom:1px solid #d1d1d1;
+		margin-bottom:20px;
+		h2 {
+			a {
+				text-decoration: none;
+			}
+		}
+	}
+	
+	
+	.cookbook_upsell {
+		border-top:1px solid #d1d1d1;
+		padding:35px 0 0;
+		span.small_header {
+			display: block;
+			text-align: center;
+		}
+		h2 {
+			text-align: center;
+		}
+		img {
+			display: block;
+			float:left;
+			max-width: 230px !important;
+			width:100%;
+			margin-top:20px !important;
+		}
+	}
+
 
 @media screen and (min-width: 400px) {
 	
@@ -3972,6 +4051,11 @@ body.single .inner_banner .banner_overlay a {
 
 @media screen and (min-width: 1204px) {
 	
+	.mobile_social_icons {
+		display: none;
+	}
+	
+	
 	
 	.alignleft,
 img.alignleft {
@@ -4257,37 +4341,7 @@ img.aligncenter {
 		}
 	}
 	
-	.new_social_icons_wrapper {
-		clear:both;
-		padding-top:15px;
-		display: flex;
-		width: 100%;
-		justify-content: space-between;
-		a {
-			display: block;
-			height:20px;
-			flex-shrink: 0;
-			svg {
-				width:100%;
-				height:100%;
-				path {
-					fill:$green;
-				}
-			}
-		}
-		a.facebook {
-			flex-basis:17px;
-		}
-		a.google {
-			flex-basis: 31px;
-		}
-		a.twitter {
-			flex-basis: 29px;
-		}
-		a.youtube {
-			flex-basis: 90px;
-		}
-	}
+	
 	
 	
 	.new_nav {

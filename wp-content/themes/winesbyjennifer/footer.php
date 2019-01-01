@@ -29,11 +29,38 @@
 	
 	<div class="mobile_social_icons">
 		
-		<a class="" href="">
-			
-			
-			
-		</a>
+		<a class="facebook" href="<?php the_field('facebook_link','option');?>" target="_blank">
+								
+								<?php echo file_get_contents("wp-content/themes/winesbyjennifer/images/facebook.svg"); ?>
+							
+							</a>
+							
+						
+						
+					
+							
+							<a class="google" href="<?php the_field('google_plus_link','option');?>" target="_blank">
+								
+								<?php echo file_get_contents("wp-content/themes/winesbyjennifer/images/google-plus.svg"); ?>
+							
+							</a>
+							
+					
+							
+							<a class="twitter" href="<?php the_field('twitter_link','option');?>" target="_blank">
+								
+								<?php echo file_get_contents("wp-content/themes/winesbyjennifer/images/twitter.svg"); ?>
+							
+							</a>
+							
+					
+							
+							<a class="youtube" href="<?php the_field('youtube_link','option');?>" target="_blank">
+								
+								<?php echo file_get_contents("wp-content/themes/winesbyjennifer/images/youtube.svg"); ?>
+							
+							</a>
+
 		
 	</div><!-- mobile_social_icons -->
 	
