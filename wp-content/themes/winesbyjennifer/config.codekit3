@@ -58,13 +58,6 @@
 		"oAP": "/banner.php",
 		"oF": 0
 		},
-	"/boxes.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/boxes.php",
-		"oF": 0
-		},
 	"/carousel.php": {
 		"cB": 0,
 		"ft": 8192,

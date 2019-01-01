@@ -111,8 +111,82 @@ get_header(); ?>
 
 
 	<div class="box_wrapper">
-		<?php include('boxes.php');?>
+			<div class="box_row">
+			
+			<div class="box">
+				
+				<?php $box_1_image = get_field( 'box_1_image' ); ?>
+				
+				<?php if ( $box_1_image ) { ?>
+				
+				<img src="<?php echo $box_1_image['url']; ?>" alt="<?php echo $box_1_image['alt']; ?>" />
+				
+				<?php } ?>
+				
+				<div class="box_text_wrap">
+					<h2><a href="<?php the_field('box_1_page_link');?>"><?php the_field('box_1_title');?></a></h2>
+				</div><!-- box_text_wrap -->
+			</div><!-- box -->
+			
+			<div class="box">
+				
+				
+			<?php $box_2_image = get_field( 'box_2_image' ); ?>
+			
+			<?php if ( $box_2_image ) { ?>
+			
+			<img src="<?php echo $box_2_image['url']; ?>" alt="<?php echo $box_2_image['alt']; ?>" />
+			
+			<?php } ?>
+
+				
+				<div class="box_text_wrap">
+					<h2><a href="<?php the_field('box_2_page_link');?>"><?php the_field('box_2_title');?></a></h2>
+				</div><!-- box_text_wrap -->
+			</div><!-- box -->
+		</div><!-- box_row -->
+		
+		<div class="box_row">
+			
+			<div class="box">
+				
+				
+				<?php $box_3_image = get_field( 'box_3_image' ); ?>
+				
+				<?php if ( $box_3_image ) { ?>
+				
+				<img src="<?php echo $box_3_image['url']; ?>" alt="<?php echo $box_3_image['alt']; ?>" />
+				
+				<?php } ?>
+				
+				
+				<div class="box_text_wrap">
+					<h2><a href="<?php the_field('box_3_page_link');?>"><?php the_field('box_3_title');?></a></h2>
+				</div><!-- box_text_wrap -->
+			</div><!-- box -->
+			
+			<div class="box">
+				
+				<?php $box_4_image = get_field( 'box_4_image' ); ?>
+				
+				<?php if ( $box_4_image ) { ?>
+				
+				<img src="<?php echo $box_4_image['url']; ?>" alt="<?php echo $box_4_image['alt']; ?>" />
+				
+				<?php } ?>
+				
+				<div class="box_text_wrap">
+					<h2><a href="<?php the_field('box_4_page_link');?>"><?php the_field('box_4_title');?></a></h2>
+				</div><!-- box_text_wrap -->
+			</div><!-- box -->
+	
+		</div><!-- box_row -->
 	</div><!-- box_wrapper -->
+	
+	<?php if( is_main_site()) :?>
+   
+
+
 	
 <div class="press">
 			
@@ -202,5 +276,7 @@ get_header(); ?>
 			<a class="review_button" href="<?php the_field( 'leave_a_review_link' ); ?>"><?php the_field( 'leave_a_review_verbiage' ); ?></a><!-- review_button -->
 					
 		</div><!-- new_testimonials_wrapper -->
+		
+		<?php endif;?>
 
 <?php get_footer(); ?>

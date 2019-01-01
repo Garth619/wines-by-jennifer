@@ -18,16 +18,17 @@ function load_my_styles_scripts() {
 		
 		// Localized PHP Data that needs to be passed onto my custom-min.js file, this grabs the live chat script acf and applies to my lazyload "getScript" function
 			
-		//$livechat = get_field('live_chat_script','option');
+		$current_site =get_current_blog_id();
+
 		
 		
 		
 			// Localize the script with new data array 
 		
-			//$translation_array = array(
-    		//'live_chat' => $livechat
-			//);
-			//wp_localize_script( 'jquery-addon', 'my_data', $translation_array );
+			$translation_array = array(
+    		'sitenumber' => $current_site
+			);
+			wp_localize_script( 'jquery-addon', 'my_data', $translation_array );
 		
 		
 		
@@ -258,6 +259,14 @@ function wpbeginner_numeric_posts_nav() {
 }
 
 
+
+	
+	
+	
+	
+
+
+
 if( function_exists('acf_add_options_page') ) {
 	
 	acf_add_options_page(array(
@@ -268,23 +277,31 @@ if( function_exists('acf_add_options_page') ) {
 		'redirect'		=> false
 	));
 	
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Featured Wine Lists',
-		'menu_title'	=> 'Featured Wine Lists',
-		'parent_slug'	=> 'theme-general-settings',
-	));
+	if( is_main_site()) {
 	
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Featured Artist List',
-		'menu_title'	=> 'Featured Artist List',
-		'parent_slug'	=> 'theme-general-settings',
-	));
+		acf_add_options_sub_page(array(
+			'page_title' 	=> 'Featured Wine Lists',
+			'menu_title'	=> 'Featured Wine Lists',
+			'parent_slug'	=> 'theme-general-settings',
+		));
 	
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Tasting Room List',
-		'menu_title'	=> 'Tasting Room List',
-		'parent_slug'	=> 'theme-general-settings',
-	));
+	}
+	
+	else {
+	
+		acf_add_options_sub_page(array(
+			'page_title' 	=> 'Featured Artist List',
+			'menu_title'	=> 'Featured Artist List',
+			'parent_slug'	=> 'theme-general-settings',
+		));
+	
+		acf_add_options_sub_page(array(
+			'page_title' 	=> 'Tasting Room List',
+			'menu_title'	=> 'Tasting Room List',
+			'parent_slug'	=> 'theme-general-settings',
+		));
+	
+	}
 	
 	acf_add_options_sub_page(array(
 		'page_title' 	=> 'Header Footer',
@@ -293,4 +310,8 @@ if( function_exists('acf_add_options_page') ) {
 	));
 	
 }
+
+
+
+
 

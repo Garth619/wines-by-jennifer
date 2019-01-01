@@ -356,6 +356,13 @@ $('.press_slider').slick({
 
 
     createWaypoint('main_trigger', '.new_sticky_header', 'visible', -150, null, true);
+    
+    
+    // currentsite number
+    
+    $('body').addClass('current-site-'+my_data.sitenumber);
+    
+	   
 
 
 		
