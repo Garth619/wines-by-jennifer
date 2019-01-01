@@ -3319,6 +3319,13 @@
 		"oAP": "/page-wbjblog.php",
 		"oF": 0
 		},
+	"/page-whattheyaresaying.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/page-whattheyaresaying.php",
+		"oF": 0
+		},
 	"/page-win.php": {
 		"cB": 0,
 		"ft": 8192,

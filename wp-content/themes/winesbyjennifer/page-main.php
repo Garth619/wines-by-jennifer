@@ -183,7 +183,7 @@ get_header(); ?>
 		</div><!-- box_row -->
 	</div><!-- box_wrapper -->
 	
-	<?php if( is_main_site()) :?>
+
    
 
 
@@ -226,6 +226,7 @@ get_header(); ?>
 			
 		</div><!-- press -->
 		
+			<?php if( is_main_site()) :?>
 		
 		<div class="new_testimonials_wrapper">
 			

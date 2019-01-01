@@ -83,9 +83,11 @@ jQuery(document).ready(function($){
 	  
   });
   
-  $('.mymobile_dropdown li.menu-item-has-children').click(function(){
+  $('.mymobile_dropdown li.menu-item-has-children > a').click(function(){
 	  
-	  $(this).find('ul.sub-menu').toggleClass('myopen');
+	  $(this).next('ul.sub-menu').toggleClass('myopen');
+	  
+	  $(this).toggleClass('myopen');
 	  
 	  
   });
