@@ -1170,6 +1170,17 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"/images/al.jpg": {
+		"ft": 16384,
+		"iS": 38689,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/images/al.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/images/arrow.png": {
 		"ft": 32768,
 		"iS": 3521,
@@ -1311,6 +1322,17 @@
 		"opt": 1,
 		"q": 100
 		},
+	"/images/brenda.jpg": {
+		"ft": 16384,
+		"iS": 51078,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/images/brenda.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/images/cart.png": {
 		"ft": 32768,
 		"iS": 4255,
@@ -1410,12 +1432,34 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/images/daniel.jpg": {
+		"ft": 16384,
+		"iS": 28447,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/images/daniel.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/images/divider.jpg": {
 		"ft": 16384,
 		"iS": 1163,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/images/divider.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/images/don.jpg": {
+		"ft": 16384,
+		"iS": 45543,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/images/don.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -1625,6 +1669,17 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/images/kurt.jpg": {
+		"ft": 16384,
+		"iS": 44149,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/images/kurt.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/images/left.png": {
 		"ft": 32768,
 		"iS": 1420,
@@ -1666,6 +1721,17 @@
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
+		"q": 100
+		},
+	"/images/michelle.jpg": {
+		"ft": 16384,
+		"iS": 27693,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/images/michelle.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"q": 100
 		},
 	"/images/myleft.png": {
@@ -1954,6 +2020,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/images/pinot.jpg": {
+		"ft": 16384,
+		"iS": 31777,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/images/pinot.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/images/play-button.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -2129,6 +2206,17 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/images/squatty.jpg": {
+		"ft": 16384,
+		"iS": 44925,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/images/squatty.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/images/stars.png": {
 		"ft": 32768,
 		"iS": 1308,
@@ -2138,6 +2226,28 @@
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
+		"q": 100
+		},
+	"/images/steve.jpg": {
+		"ft": 16384,
+		"iS": 47392,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/images/steve.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/images/suzanne.jpg": {
+		"ft": 16384,
+		"iS": 25039,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/images/suzanne.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"q": 100
 		},
 	"/images/taplister-banner.png": {
@@ -2160,6 +2270,17 @@
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
+		"q": 100
+		},
+	"/images/terri.jpg": {
+		"ft": 16384,
+		"iS": 48867,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/images/terri.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"q": 100
 		},
 	"/images/test-bg.png": {
@@ -3105,6 +3226,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/page-leavereview.php",
+		"oF": 0
+		},
+	"/page-locationabout.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/page-locationabout.php",
 		"oF": 0
 		},
 	"/page-locations.php": {

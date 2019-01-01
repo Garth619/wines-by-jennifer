@@ -363,7 +363,35 @@ $('.press_slider').slick({
     $('body').addClass('current-site-'+my_data.sitenumber);
     
 	   
+		// meet team overlay
+		
+		
+		$('.single_new_meet_team').on('click', function(e) {
+			
+			$('.new_team_overlay').fadeIn(400);
+			
+			$(this).find('.grid_name').clone().appendTo('.overlay_name');
+			
+			$(this).find('.overlay_info').clone().appendTo('.overlay_bio_content');
+		  
+		});
+		
+		$('.new_close').on('click', function(e) {
+			
+			$('.new_team_overlay').fadeOut(400);
+			
+			
+			var timeDelay = 400;       // DELAY IN MILLISECONDS (OR SIMPLY, 5 SECONDS DELAY).
+       setTimeout(clearContents, timeDelay);
 
+       function clearContents() {
+          $('.overlay_bio_content').empty();
+          $('.overlay_name').empty();
+       }
+			
+			
+		  
+		});
 
 		
 	}); /* Document Ready */
