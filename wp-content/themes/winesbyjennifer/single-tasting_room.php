@@ -23,8 +23,6 @@ get_header(); ?>
 
 	<div class="banner_overlay">
 		
-		
-	
 		<h1><img class="ribbon ribbon_left" src="<?php bloginfo('template_directory');?>/images/ribbon.png"/>Tasting Room<img class="ribbon ribbon_right" src="<?php bloginfo('template_directory');?>/images/ribbon-right.png"/></h1>
 	
 	</div><!-- banner_overlay -->
@@ -37,25 +35,31 @@ get_header(); ?>
 	<div id="content">
 		
 		<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-
-				
 					
 					
+					<h2 class="centered"><?php the_field('tasting_room_front_title');?></h2>
 					
-					<h1 class="entry-title"><?php the_field('tasting_room_single_title');?></h1>
-					
+					<h2 class="centered">Wine Tasting Table</h2>
 
 					<div class="entry-content">
+						
 						<?php the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'twentyten' ), 'after' => '</div>' ) ); ?>
 						<?php edit_post_link( __( 'Edit', 'twentyten' ), '<span class="edit-link">', '</span>' ); ?>
+					
 					</div><!-- .entry-content -->
-				
 
-				
 
 <?php endwhile; // end of the loop. ?>	
 	
+	<div class="wine_flights_wrapper">
+		
+		<?php the_field( 'wine_flights_content','option'); ?>
+		
+	</div><!-- wine_flights_wrapper -->
+	
+	
+	</div><!-- content -->
 	
 	<div class="tasting_room_wrapper">
 	
@@ -68,8 +72,6 @@ get_header(); ?>
 		</div><!-- tasting_list -->
 	
 	</div><!-- tasting_room_wrapper -->
-	
-	</div><!-- content -->
 	
 </div><!-- content_container -->
 		

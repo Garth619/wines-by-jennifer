@@ -10,14 +10,7 @@
 		</ul><!-- desktop_copyright -->
 	</div><!-- footer_col1 -->
 	<div class="footer_col2">
-		<ul class="menu">
-			
-			<li><a href="<?php bloginfo('url');?>/contact-us">Contact</a></li>
-			<li><a href="<?php bloginfo('url');?>/about-us/faq">FAQ</a></li>
-			<li><a href="<?php bloginfo('url');?>/private-policy">Private Policy</a></li>
-			<li><a href="<?php bloginfo('url');?>/drink-responsibly/">Please Drink Responsibly</a></li>
-			
-		</ul>
+		<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'footer' ) ); ?>
 	</div><!-- footer_col2 -->
 	<div class="footer_col3">
 		<ul class="language" style="clear:both;">

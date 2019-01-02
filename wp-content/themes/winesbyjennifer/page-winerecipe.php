@@ -17,7 +17,7 @@ get_header(); ?>
 		
 		<?php get_template_part( 'loop', 'page' );?>
 		
-		<div class="cookbook_upsell">
+		<div id="cookbook" class="cookbook_upsell">
 			
 			<?php the_field( 'cookbook_upsell' ); ?>
 						
