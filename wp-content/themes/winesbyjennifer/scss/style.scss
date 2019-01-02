@@ -1042,7 +1042,7 @@ img.aligncenter {
 	max-width:100%;
 	height:auto;
 	display: block;
-	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
+	//box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
 }
 
 .alignnone {
@@ -3800,7 +3800,28 @@ a.mycart {
 		}
 	}
 
+.special_events_wrapper {
+	margin-top:55px;
+}
 
+
+.single_event {
+	border-top:1px solid #d1d1d1;
+	padding-top:35px;
+	margin-top:15px;
+	margin-bottom:45px;
+	&:after {
+		content:"";
+		clear:both;
+		display: block;
+	}
+	h2 {
+		
+	}
+	.events_description {
+		padding-top:35px;
+	}
+}
 
 	
 @media screen and (max-width: 1100px) {
