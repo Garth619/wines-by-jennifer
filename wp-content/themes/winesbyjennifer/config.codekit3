@@ -1593,6 +1593,17 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/images/g1.jpg": {
+		"ft": 16384,
+		"iS": 43380,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/images/g1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/images/German_Wine_Label.jpg": {
 		"ft": 16384,
 		"iS": 83723,
