@@ -11,7 +11,8 @@ if( $posts ): ?>
         <?php setup_postdata($post); ?>
         
         
-        <a href="<?php the_permalink();?>"><?php the_title();?></a>
+        <a class="featured_art_link" href="<?php the_permalink();?>"><?php the_title();?></a>
+    
         
     <?php endforeach; ?>
    

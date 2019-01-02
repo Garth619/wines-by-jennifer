@@ -9,13 +9,15 @@
 
 get_header(); ?>
 
-<?php include('banner-single.php');?>
 
 
-<div class="content_container">
+
+<div class="content_container no_banner">
 	
 	<div id="content">
 		
+		
+		<h1 class="centered"><?php the_title();?></h1>
 		
 <?php get_template_part( 'loop', 'page' );?>
 
