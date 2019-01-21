@@ -56,14 +56,36 @@
 			</div><!-- mobile_offer -->
 			
 			<div class="mymenu_main">
+			
 				
-				<div class="mymobile_icons_wrapper">
+			
 					
-					<a href="" class="mycart"><img class="icon" src="<?php bloginfo('template_directory');?>/images/cart.png"/></a>
-					<a href="<?php bloginfo('url');?>/locations"><img class="icon" src="<?php bloginfo('template_directory');?>/images/pin.png"/></a>
-					<img class="icon mysearchicon" src="<?php bloginfo('template_directory');?>/images/search.png"/>
+					<?php if(!is_main_site()) : ?>
 					
-				</div><!-- mymobile_icons_wrapper -->
+						<div class="mymobile_icons_wrapper">
+					
+						<a href="" class="mycart"><img class="icon" src="<?php bloginfo('template_directory');?>/images/cart.png"/></a>
+						<a href="<?php bloginfo('url');?>/locations"><img class="icon" src="<?php bloginfo('template_directory');?>/images/pin.png"/></a>
+						<img class="icon mysearchicon" src="<?php bloginfo('template_directory');?>/images/search.png"/>
+					
+						<span class="mobile_welcome">Welcome to<br/> <?php echo get_bloginfo( 'name' ); ?>!</span><!-- mobile_welcome -->
+						
+						</div><!-- mymobile_icons_wrapper -->
+						
+						<?php else:?>
+						
+						<div class="mymobile_icons_wrapper mainsite">
+						
+						<a href="" class="mycart"><img class="icon" src="<?php bloginfo('template_directory');?>/images/cart.png"/></a>
+						<a href="<?php bloginfo('url');?>/locations"><img class="icon" src="<?php bloginfo('template_directory');?>/images/pin.png"/></a>
+						<img class="icon mysearchicon" src="<?php bloginfo('template_directory');?>/images/search.png"/>
+						
+						
+						</div><!-- mymobile_icons_wrapper -->
+					
+					<?php endif;?>
+					
+				
 				
 				<div class="mylogo_wrapper">
 					
@@ -76,6 +98,9 @@
 				</div><!-- mylogo_wrapper -->
 				
 				<div class="my_mobile_menu_wrapper">
+										
+					<?php if(!is_main_site()) : ?>
+					
 					
 					<div class="sign_in_wrapper">
 					
@@ -90,6 +115,27 @@
 						</div><!-- menu_bars_wrapper -->
 					
 					</div><!-- sign_in_wrapper -->
+					
+					<a class="mobile_return" href="<?php echo network_site_url(); ?>">Return to<br/> Main Site</a>
+					
+					<?php else:?>
+					
+					
+					<div class="sign_in_wrapper mainsite">
+					
+						<a class="mysign_in" href="">Sign In</a>
+					
+						<div class="menu_bars_wrapper">
+						
+							<div class="menu_bar"></div><!-- menu_bar -->
+							<div class="menu_bar"></div><!-- menu_bar -->
+							<div class="menu_bar"></div><!-- menu_bar -->
+						
+						</div><!-- menu_bars_wrapper -->
+					
+					</div><!-- sign_in_wrapper -->
+					
+					<?php endif;?>
 					
 				</div><!-- my_mobile_menu_wrapper -->
 				
@@ -173,16 +219,35 @@
 		
 		<div class="new_header">
 			
+			<?php if(!is_main_site()) : ?>
+			
+					
+				
+					<div class="new_free_gift">
+						
+						<span class="welcome_title">Welcome to <?php echo get_bloginfo( 'name' ); ?>!</span><!-- welcome_title -->
+						
+						<a class="return" href="<?php echo network_site_url(); ?>">Return to Main Site</a>
+				
+						<img class="location_free_gift" src="<?php bloginfo('template_directory');?>/images/free-gift.jpg"/><!-- location_free_gift -->
+					
+					</div><!-- new_free_gift -->
+				
+			
+			
+			<?php else:?>
+			
+		
+			
 			<div class="new_free_gift">
 				
-				
+				<img src="<?php bloginfo('template_directory');?>/images/free-gift.jpg"/>
 					
-					<img src="<?php bloginfo('template_directory');?>/images/free-gift.jpg"/>
-					
-					
-			
-				
 			</div><!-- new_free_gift -->
+			
+			<?php endif;?>
+			
+			
 			
 			<div class="new_logo_wrapper">
 				

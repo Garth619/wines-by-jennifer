@@ -1346,11 +1346,18 @@ h3#reply-title {
 		background: $green;
 		display: flex;
 		flex-direction: row;
+		.mymobile_icons_wrapper.mainsite {
+			padding-top: 39px;
+		}
 		.mymobile_icons_wrapper {
-			width:120px;
-			padding-top: 42px;
+			width:33.33333%;
+			padding-top: 17px;
 			padding-left: 18px;
-
+			span.mobile_welcome {
+				display: block;
+				margin-top:9px;
+				line-height: 19px;
+			}
 			img.icon {
 				width:30px;
 				height:30px;
@@ -1360,6 +1367,7 @@ h3#reply-title {
 		}
 		.mylogo_wrapper {
 			flex-grow:1;
+			width:33.33333%;
 			padding:7px 0;
 			img {
 				width:75px;
@@ -1368,12 +1376,26 @@ h3#reply-title {
 			}
 		}
 		.my_mobile_menu_wrapper {
-			width:120px;
+			width:33.33333%;
 			cursor: pointer;
+			position: relative;
+			a.mobile_return {
+				display: inline-block;
+				color:#fff;
+				position: absolute;
+				top: 57px;
+				right:17px;
+				text-align: right;
+				text-decoration: none;
+				line-height: 19px;
+			}
+			.sign_in_wrapper.mainsite {
+				margin-top: 43px;
+			}
 			.sign_in_wrapper {
 				float:right;
 				padding-right:18px;
-				margin-top: 44px;
+				margin-top: 23px;
 				.mysign_in {
 					color:#fff;
 					text-transform: uppercase;
@@ -1413,9 +1435,11 @@ h3#reply-title {
 	opacity: 0;
 	visibility: hidden;
 	transition: all 400ms ease-in-out;
+	
 	.mymobile_icons_wrapper {
 		padding-top:0;
 	}
+	
 	.my_mobile_menu_wrapper {
 		.sign_in_wrapper {
 			margin:0;
@@ -3842,11 +3866,27 @@ a.mycart {
 
 
 
-
 a.featured_art_link {
 	text-align: center;
 	margin-bottom:8px;
 }
+
+
+span.mobile_welcome {
+	display: inline-block;
+	color:#fff;
+}
+
+
+@media screen and (max-width: 600px) {
+	
+	
+	
+	
+	
+	
+	
+} /* Media Query */
 
 	
 @media screen and (max-width: 1100px) {
@@ -4452,6 +4492,35 @@ body.single .inner_banner .banner_overlay a {
 } /* Media Query */
 
 @media screen and (min-width: 1204px) {
+	
+	
+	.new_header {
+		position: relative;
+		span.welcome_title {
+			position: absolute;
+			top: 12px;
+			left: 28px;
+			
+		}
+		a.return {
+			position: absolute;
+			top: 32px;
+			left:28px;
+			color:$purple;
+			text-decoration: none;
+			transition: all 200ms ease-in-out;
+			&:hover {
+				color:$green;
+			}
+		}
+		img.location_free_gift {
+			margin-top:40px;
+			margin-left:10px;
+		}
+	}
+	
+
+	
 	
 	.mobile_social_icons {
 		display: none;
