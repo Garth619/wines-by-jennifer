@@ -279,11 +279,13 @@ if( function_exists('acf_add_options_page') ) {
 	
 	if( is_main_site()) {
 	
+/*
 		acf_add_options_sub_page(array(
 			'page_title' 	=> 'Featured Wine Lists',
 			'menu_title'	=> 'Featured Wine Lists',
 			'parent_slug'	=> 'theme-general-settings',
 		));
+*/
 	
 	}
 	

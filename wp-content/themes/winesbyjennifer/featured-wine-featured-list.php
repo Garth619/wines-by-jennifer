@@ -1,40 +1,22 @@
-<?php if(get_field('featured_wine_lists','option')): ?>
-	
-		<div class="years_list">
-	 
-		<?php while(has_sub_field('featured_wine_lists','option')): ?>
-	 
-			
-			<div class="single_list">
+<div class="mysee_more_wrapper">
 		
-			<span class="myyear"><?php the_sub_field('year');?></span>
-	    
-
-	   <?php $months = get_sub_field( 'months' ); ?>
-    
-			<?php if ( $months ): ?>
+		
+		<span class="mysee_more">See Past Featured Wines</span><!-- mysee_more -->
+		
+		<div class="see_more_list">
 			
-				<?php foreach ( $months as $post ):  ?>
-					<?php setup_postdata ( $post ); ?>
-					 
-					 <a class="mymonth" href="<?php the_permalink();?>"><?php the_field( 'featured_wine_front_title' ); ?></a><!-- mymonth -->
+			
+			<?php $mymain_query = new WP_Query( array( 'post_type' => array ('featured_wines'),'posts_per_page' => '-1','orderby' => 'title', 'order' => 'DSC' ) ); while($mymain_query->have_posts()) : $mymain_query->the_post(); ?>
+                	                	
+           <a href="<?php the_permalink();?>"><?php the_field( 'featured_wine_front_title' ); ?></a>     	                	
+                	                	
+      	<?php endwhile; ?>
+				<?php wp_reset_postdata(); // reset the query ?>
 				
-				<?php endforeach; ?>
 			
-			<?php wp_reset_postdata(); ?>
-			
-			<?php endif; ?>
-    
+		</div><!-- see_more_list -->
 		
-		</div><!-- single_list -->
-		
-		
-		<?php endwhile; ?>
-		
-		</div><!-- years_list -->
-	 
-	<?php endif; ?>
-	
+		</div><!-- mysee_more_wrapper -->	
 	
 	
 	

@@ -79,6 +79,13 @@
 		"oAP": "/featured-artist-list.php",
 		"oF": 0
 		},
+	"/featured-wine-featured-list copy.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/featured-wine-featured-list copy.php",
+		"oF": 0
+		},
 	"/featured-wine-featured-list.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -3518,6 +3525,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/style.css.map",
+		"oF": 0
+		},
+	"/tasting-room-list copy.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/tasting-room-list copy.php",
 		"oF": 0
 		},
 	"/tasting-room-list.php": {

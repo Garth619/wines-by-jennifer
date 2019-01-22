@@ -1,20 +1,12 @@
-<div class="mysee_more_wrapper">
-		
-		
-		<span class="mysee_more">See Previous Tasting Room Reviews</span><!-- mysee_more -->
-		
-		<div class="see_more_list">
-			
-			
-			<?php if(get_field('tasting_room_list','option')): ?>
+<div class="tr_list">
+	
+	<?php if(get_field('tasting_room_list','option')): ?>
 		
 		<ul class="year_list">
 	 
 		<?php while(has_sub_field('tasting_room_list','option')): ?>
 	 
-			<li>
-			
-				<span><?php the_sub_field( 'year' ); ?></span>
+			<li><?php the_sub_field( 'year' ); ?>
 		
 				<ul class="tr_titles">
 					
@@ -37,16 +29,7 @@
 		</ul><!-- year_list -->
 	 
 	<?php endif; ?>
-                	                	
-<!--            <a href="<?php the_permalink();?>"><?php the_field( 'featured_wine_front_title' ); ?></a>   -->   	                	
-                	                	
+	
+</div><!-- tr_list -->
 
-				
-			
-		</div><!-- see_more_list -->
-		
-		</div><!-- mysee_more_wrapper -->	
-	
-	
-	
-	
+

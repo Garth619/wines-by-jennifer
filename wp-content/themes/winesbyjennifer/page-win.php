@@ -86,7 +86,6 @@ get_header(); ?>
 <?php endif; ?>
 		
 		
-		<span class="mysee_more">See Past Featured Wines</span><!-- mysee_more -->
 	
 	
 		<?php include('featured-wine-featured-list.php');?>

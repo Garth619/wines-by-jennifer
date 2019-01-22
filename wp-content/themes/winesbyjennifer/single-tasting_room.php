@@ -63,13 +63,7 @@ get_header(); ?>
 	
 	<div class="tasting_room_wrapper">
 	
-		<span class="mysee_more_tasting">See Previous Tasting Room Reviews</span><!-- mysee_more_artists -->
-		
-		<div class="tasting_drop">
-			
-			<?php include('tasting-room-list.php');?>
-			
-		</div><!-- tasting_list -->
+		<?php include('tasting-room-list.php');?>		
 	
 	</div><!-- tasting_room_wrapper -->
 	

@@ -14,7 +14,7 @@ jQuery(document).ready(function($){
   
   $('.mysee_more').click(function(){
 	  
-	  $('.years_list').slideDown();
+	  $('.see_more_list').slideToggle();
 	  
 	 });
 	 
