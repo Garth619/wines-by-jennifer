@@ -76,10 +76,7 @@ if( $post_object ):
 	
 	<div class="tasting_room_wrapper">
 	
-		
-			
-			
-			<?php include('tasting-room-list.php');?>		
+		<?php include('tasting-room-list.php');?>		
 	
 	</div><!-- tasting_room_wrapper -->
 			

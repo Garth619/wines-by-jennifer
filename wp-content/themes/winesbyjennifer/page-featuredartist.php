@@ -43,38 +43,32 @@ get_header(); ?>
 			
 		</div><!-- gallery_intro -->
 		
-	<?php
-
-$post_object = get_field('featured_artist_featured_post');
-
-if( $post_object ): 
-
-	// override $post
-	$post = $post_object;
-	setup_postdata( $post ); 
-
-	?>
+		
+		
+<?php $featured_artist_page = get_field( 'featured_artist_page' ); ?>
+<?php if ( $featured_artist_page ): ?>
+	<?php foreach ( $featured_artist_page as $post ):  ?>
+		<?php setup_postdata ( $post ); ?>
+		
+			<div class="featured_art_content_wrapper">
+		
+			 	<h1 class="centered"><?php the_title();?></h1>
     
-    
-    <h1 class="centered"><?php the_title();?></h1>
-    
-    <?php the_content();?>
-    
-    
-    
-    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+			 	<?php the_content();?>
+			 
+			</div><!-- featured_art_content_wrapper -->
+		
+		
+	<?php endforeach; ?>
+<?php wp_reset_postdata(); ?>
 <?php endif; ?>
-
+		
+		
+		
 	<div class="more_artists_wrapper">
 	
-		<span class="mysee_more_artists">See Previous Artists</span><!-- mysee_more_artists -->
-		
-		<div class="artist_list">
+		<?php include('featured-artist-list.php');?>
 			
-			<?php include('featured-artist-list.php');?>
-			
-		</div><!-- artist_list -->
-	
 	</div><!-- more_artists_wrapper -->
 	
 	</div><!-- content -->
@@ -82,8 +76,5 @@ if( $post_object ):
 </div><!-- content_container -->
 		
 
-
-
- 
 
 <?php get_footer(); ?>

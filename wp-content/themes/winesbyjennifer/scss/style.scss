@@ -3924,6 +3924,31 @@ ul.year_list {
 	}
 }
 
+
+.featured_art_content_wrapper {
+	border-top: 1px #ccc solid;
+  padding-top: 35px;
+  margin-top:40px;
+  padding-bottom: 20px;
+}
+
+.single_newsletter {
+	border-bottom: 1px solid #d1d1d1;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+  .newsletter_content {
+	  margin-bottom:20px;
+  }
+}
+
+
+.newsletter_feed {
+	margin-top:35px;
+}
+
+
+
+
 	
 @media screen and (max-width: 1100px) {
 	

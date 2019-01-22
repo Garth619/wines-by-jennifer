@@ -26,14 +26,8 @@ get_header(); ?>
 	
 	<div class="more_artists_wrapper">
 	
-		<span class="mysee_more_artists">See Previous Artists</span><!-- mysee_more_artists -->
-		
-		<div class="artist_list">
+		<?php include('featured-artist-list.php');?>
 			
-			<?php include('featured-artist-list.php');?>
-			
-		</div><!-- artist_list -->
-	
 	</div><!-- more_artists_wrapper -->
 	
 	</div><!-- content -->
