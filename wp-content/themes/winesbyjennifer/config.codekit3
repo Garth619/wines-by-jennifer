@@ -30,6 +30,13 @@
 		"oAP": "/404.php",
 		"oF": 0
 		},
+	"/archive-newsletter.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/archive-newsletter.php",
+		"oF": 0
+		},
 	"/archive.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -3494,6 +3501,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/single-inthenews.php",
+		"oF": 0
+		},
+	"/single-newsletter.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/single-newsletter.php",
 		"oF": 0
 		},
 	"/single-tasting_room.php": {

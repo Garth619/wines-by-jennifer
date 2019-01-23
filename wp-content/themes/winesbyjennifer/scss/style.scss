@@ -3947,6 +3947,39 @@ ul.year_list {
 }
 
 
+.archive_sidebar {
+	width:100%;
+	background: $green;
+	color:#fff;
+	padding:35px;
+	h3 {
+		color:$yellow !important;
+	}
+	ul {
+		li {
+			padding:0 !important;
+			margin-bottom: 12px !important;
+			&:before {
+				display: none !important;
+			}
+			a {
+				color:#fff !important;
+				text-decoration: none !important;
+			}
+		}
+	}
+}
+
+
+	nav.newsletter_pagination {
+		a {
+			color:$purple;
+			text-decoration: none;
+			margin-bottom:35px;
+			display: inline-block;
+			margin-right:30px;
+		}
+	}
 
 
 	
@@ -4553,6 +4586,33 @@ body.single .inner_banner .banner_overlay a {
 } /* Media Query */
 
 @media screen and (min-width: 1204px) {
+	
+	
+	
+	
+	.newsletter_content_wrapper {
+		display: flex;
+	}
+	
+	.newsletter_left {
+		flex-grow:1;
+		padding-right:55px;
+	}
+	
+	
+	.newsletter_right {
+		flex-basis:300px;
+		flex-shrink:0;
+		margin-top:115px;
+	}
+	
+	
+	body.single-newsletter {
+		.newsletter_right {
+			margin-top:55px;
+		}
+	}
+	
 	
 	
 	.new_header {
