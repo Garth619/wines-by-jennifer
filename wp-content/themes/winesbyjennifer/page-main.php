@@ -23,7 +23,7 @@ get_header(); ?>
 							
 							<?php $slide_image = get_sub_field( 'slide_image' ); ?>
 							
-								<a href="<?php the_sub_field( 'youtube_link' ); ?>" data-lity>
+								<a href="<?php the_sub_field( 'video_file' ); ?>" data-lity>
 									
 									<div class="single_slide_overlay">
 								
